@@ -38,21 +38,21 @@
                 <li class="active"><a href="#">首页</a></li>
                 <li><a href="#">iOS 8图标</a></li>
                 <li><a href="#">WebApp图标</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">PSD模板 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">iOS图标模板</a></li>
+                        <li><a href="#">Andriod图标模板</a></li>
+                        <li><a href="#">OS X图标模板</a></li>
+                        <li><a href="#">截屏模板</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">来源</li>
+                        <li><a href="http://appicontemplate.com/" target="_blank">App Icon Template</a></li>
+                    </ul>
+                </li>
                 <li><a href="#about">睿鸿游戏</a></li>
                 <li><a href="#about">关于我们</a></li>
                 <li><a href="#contact">联系我们</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -62,11 +62,13 @@
 
     <div class="jumbotron">
         <h2><?php echo Config::get('constants.slogan') ?></h2>
-        <p><strong>拖放您的设计文件到这里。</strong>支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果。</p>
+        <img src="img/launcher.png" alt="" class="pull-right jumbotron_img"/>
+        <p><strong>拖放您的设计文件到这里。</strong></p>
+        <p>支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果。</p>
         <p><a href="#" class="btn btn-primary btn-lg">或者点击这里上传</a></p>
     </div>
 
-    <div class="row">
+    <div class="row row-margin">
         <div class="col-md-4">
             <div class="media">
                 <a class="media-left" href="#">
@@ -106,6 +108,10 @@
     </div>
 
     <hr>
+
+    <div class="page-header">
+        <h1></h1>
+    </div>
 
     <footer>
         <p>&copy; Company 2014</p>
