@@ -7,13 +7,9 @@ body {
     font-size: 40px;
     margin-bottom: 20px;
 }
-.jumbotron-img {
+.jumbotron_img {
     margin-top: -20px;
 }
-.index-col {
+.row-margin {
     margin: 40px -15px;
-    text-align: center;
-}
-.index-col img {
-    margin-bottom: 15px;
 }

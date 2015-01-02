@@ -62,36 +62,48 @@
 
     <div class="jumbotron">
         <h2><?php echo Config::get('constants.slogan') ?></h2>
-        <img src="img/launcher.png" alt="" class="pull-right jumbotron-img"/>
+        <img src="img/launcher.png" alt="" class="pull-right jumbotron_img"/>
         <p><strong>拖放您的设计文件到这里。</strong></p>
         <p>支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果。</p>
         <p><a href="#" class="btn btn-primary btn-lg">或者点击这里上传</a></p>
     </div>
 
-    <div class="row index-col">
+    <div class="row row-margin">
         <div class="col-md-4">
-            <img src="img/folder.png" />
-            <p>
-                同时生成iOS和Andriod应用所需的各种尺寸的图标。遵循
-                <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html" target="_blank">
-                    <span class="label label-success">Apple</span></a>
-                和
-                <a href="https://developer.android.com/design/style/iconography.html#launcher" target="_blank">
-                    <span class="label label-success">Google</span></a>
-                官方的最新标准。
-            </p>
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img src="img/folder.png" />
+                </a>
+                <div class="media-body">
+                    同时生成iOS和Andriod应用所需的各种尺寸的图标。遵循
+                    <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html" target="_blank">
+                        <span class="label label-success">Apple</span></a>
+                    和
+                    <a href="https://developer.android.com/design/style/iconography.html#launcher" target="_blank">
+                        <span class="label label-success">Google</span></a>
+                    官方的最新标准。
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
-            <img src="img/eye.png" />
-            <p>
-                快速预览将要在不同设备上显示的应用图标。使您无需部署即可通过预览来调整设计样式。
-            </p>
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img src="img/eye.png" />
+                </a>
+                <div class="media-body">
+                    快速预览将要在不同设备上显示的应用图标。使您无需部署即可通过预览来调整设计样式。
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
-            <img src="img/opt.png" />
-            <p>
-                优化图标，尤其是尺寸较小的图标。保证清晰度，并优化图片内存占用，减小包体积，提高性能。
-            </p>
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img src="img/opt.png" />
+                </a>
+                <div class="media-body">
+                    优化图标，尤其是尺寸较小的图标。保证清晰度，并优化图片内存占用，减小包体积，提高性能。
+                </div>
+            </div>
         </div>
     </div>
 
