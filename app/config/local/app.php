@@ -15,4 +15,12 @@ return array(
 
 	'debug' => true,
 
+    'url' => 'http://192.168.33.11/public/',
+
+    'timezone' => 'Asia/Shanghai',
+
+    'locale' => 'zh-cn',
+
+    'fallback_locale' => 'zh-cn',
+
 );
