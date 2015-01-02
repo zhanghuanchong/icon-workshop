@@ -58,7 +58,7 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container index-page">
 
     <div class="jumbotron">
         <h2><?php echo Config::get('constants.slogan') ?></h2>
@@ -107,17 +107,11 @@
         </div>
     </div>
 
-    <hr>
-
-    <div class="page-header">
-        <h1></h1>
-    </div>
-
-    <footer>
-        <p>&copy; Company 2014</p>
-    </footer>
-
 </div> <!-- /container -->
+
+<footer>
+    <p>睿鸿游戏　版权所有　Copyright(C) 2015　All Rights Reserved　豫ICP备14010348号-1</p>
+</footer>
 
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>

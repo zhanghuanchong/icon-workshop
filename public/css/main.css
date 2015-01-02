@@ -1,7 +1,6 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
      padding-top: 70px;
-     padding-bottom: 30px;
 }
 .jumbotron h2 {
     font-size: 40px;
@@ -12,4 +11,13 @@ body {
 }
 .row-margin {
     margin: 40px -15px;
+}
+.index-page .page-header {
+    text-align: center;
+}
+footer {
+    text-align: center;
+    background-color: #222222;
+    color: white;
+    padding: 20px 0;
 }
