@@ -1,6 +1,6 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
-     padding-top: 70px;
+     padding-top: 80px;
 }
 .jumbotron h2 {
     font-size: 40px;
@@ -10,10 +10,46 @@ body {
     margin-top: -20px;
 }
 .row-margin {
-    margin: 40px -15px;
+    margin: 50px -15px;
 }
-.index-page .page-header {
+.index-section {
+    padding: 50px 0;
+}
+.bg-eee {
+    background-color: #eee;
+}
+.index-section .col-md-3 {
     text-align: center;
+}
+.index-section h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.index-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+.index-section a.col-md-3 {
+    padding-top: 20px;
+    border-radius: 10px;
+}
+.index-section a.col-md-3:hover {
+    background-color: silver;
+    text-decoration: none;
+    -moz-transition: background-color 0.5s ease-in;
+    -web-kittransition: background-color 0.5s ease-in;
+    -o-transition: background-color 0.5s ease-in;
+    -m-stransition: background-color 0.5s ease-in;
+    transition: background-color 0.5s ease-in;
+}
+.index-section a.col-md-3 p {
+    color: #333;
+}
+.index-section a.col-md-3 p.description {
+    min-height: 80px;
 }
 footer {
     text-align: center;
