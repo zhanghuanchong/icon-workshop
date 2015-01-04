@@ -21,7 +21,6 @@
 
 <body>
 
-<!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -50,7 +49,7 @@
                         <li><a href="http://appicontemplate.com/" target="_blank">App Icon Template</a></li>
                     </ul>
                 </li>
-                <li><a href="#about">睿鸿游戏</a></li>
+                <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
                 <li><a href="#about">关于我们</a></li>
                 <li><a href="#contact">联系我们</a></li>
             </ul>
@@ -60,13 +59,22 @@
 
 <div class="container">
 
-    <div class="jumbotron">
+    <form class="jumbotron" action="/icon/upload" method="post" id="if_form">
         <h2><?php echo Config::get('constants.slogan') ?></h2>
-        <img src="img/launcher.png" alt="" class="pull-right jumbotron_img"/>
+        <div id="jumbotron_img_box">
+            <img src="img/launcher.png" alt="" id="jumbotron_img"/>
+            <div id="jumbotron_img_loading">
+                <div class="circle"></div>
+                <div class="circle1"></div>
+            </div>
+        </div>
         <p><strong>拖放您的设计文件到这里。</strong></p>
         <p>支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果。</p>
-        <p><a href="#" class="btn btn-primary btn-lg">或者点击这里上传</a></p>
-    </div>
+        <p>
+            <a href="javascript:;" class="btn btn-primary btn-lg" id="if_btn">或者点击这里上传</a>
+            <input type="file" id="if" style="float:right; visibility: hidden"/>
+        </p>
+    </form>
 
     <div class="row row-margin">
         <div class="col-md-4">
@@ -75,7 +83,7 @@
                     <img src="img/folder.png" />
                 </a>
                 <div class="media-body">
-                    同时生成iOS和Andriod应用所需的各种尺寸的图标。遵循
+                    同时生成 <strong>iOS</strong> 和 <strong>Android</strong> 应用所需的各种尺寸的图标。遵循
                     <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html" target="_blank">
                         <span class="label label-success">Apple</span></a>
                     和
@@ -150,5 +158,6 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="http://v3.bootcss.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
