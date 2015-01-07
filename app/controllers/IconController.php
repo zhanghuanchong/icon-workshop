@@ -4,11 +4,19 @@ class IconController extends BaseController {
 
 	public function postUpload ()
 	{
-        $file = Input::file('file');
-        if (!$file || !$file->isValid()) {
-            return;
+        if (Input::hasFile('file')) {
+            $file = Input::file('file');
+            if ($file->isValid()) {
+                var_dump($file->getRealPath());
+                var_dump($file->getClientOriginalName());
+                var_dump($file->getClientOriginalExtension());
+                var_dump($file->getSize());
+                var_dump($file->getMimeType());
+                $file->move(storage_path('files'));
+
+                echo GUID::generate();
+            }
         }
-        var_dump($file);
 	}
 
 }

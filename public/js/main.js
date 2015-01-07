@@ -20,7 +20,7 @@ $(function(){
         $("#if_submitting").show();
 
         var formData = new FormData();
-        formData.append('form', file);
+        formData.append('file', file);
 
         var oReq = new XMLHttpRequest();
         oReq.open("POST", "/icon/upload", true);
