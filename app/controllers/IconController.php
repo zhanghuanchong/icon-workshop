@@ -7,14 +7,12 @@ class IconController extends BaseController {
         if (Input::hasFile('file')) {
             $file = Input::file('file');
             if ($file->isValid()) {
-                var_dump($file->getRealPath());
-                var_dump($file->getClientOriginalName());
-                var_dump($file->getClientOriginalExtension());
-                var_dump($file->getSize());
                 var_dump($file->getMimeType());
-                $file->move(storage_path('files'));
 
-                echo GUID::generate();
+                $id = GUID::generate();
+                $filename = $id . '.' . $file->getClientOriginalExtension();
+
+                $file->move(storage_path('files'), $filename);
             }
         }
 	}
