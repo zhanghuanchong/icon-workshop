@@ -122,7 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
-        'Nathanmac\GUID\GUIDServiceProvider'
+        'Nathanmac\GUID\GUIDServiceProvider',
+        'Jenssegers\Agent\AgentServiceProvider',
 
 	),
 

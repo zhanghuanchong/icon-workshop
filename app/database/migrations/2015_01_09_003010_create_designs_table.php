@@ -14,6 +14,9 @@ class CreateDesignsTable extends Migration {
 	{
 		Schema::create('designs', function($table){
             $table->string('id', 36);
+            $table->string('file', 100);
+            $table->string('ext', 20);
+            $table->string('mime_type', 200);
             $table->string('user_agent', 200)->nullable();
             $table->string('ip', 20)->nullable();
             $table->timestamps();
