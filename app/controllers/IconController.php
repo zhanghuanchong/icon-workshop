@@ -15,6 +15,7 @@ class IconController extends BaseController {
                 $design->id = $id;
                 $design->file = $filename;
                 $design->ext = $ext;
+                $design->original_name = $file->getClientOriginalName();
                 $design->mime_type = $file->getMimeType();
                 $design->user_agent = Input::server('HTTP_USER_AGENT');
                 $design->ip = Input::getClientIp();
