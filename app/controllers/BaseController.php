@@ -15,4 +15,12 @@ class BaseController extends Controller {
 		}
 	}
 
+    protected function jsonResponse($param, $error = FALSE)
+    {
+        return Response::json(array(
+            'e' => $error,
+            'd' => $param
+        ));
+    }
+
 }

@@ -28,6 +28,14 @@ $(function(){
         oReq.onreadystatechange = function() {
             if (oReq.readyState == 4) {
                 if (oReq.status == 200) {
+                    jsonResponse(oReq.responseText, function(id){
+                        location.href = '/icon/detail/' + id;
+                    }, function(){
+                        enableDropping = true;
+                        $("#if_btn").show();
+                        $("#if_submitting, #jumbotron_img_loading").hide();
+                        $("#jumbotron_img").get(0).src = 'img/launcher.png';
+                    });
                 }
             }
         };
@@ -75,3 +83,24 @@ $(function(){
         }
     }, false);
 });
+
+function jsonResponse(response, successCallback, failCallback) {
+    try {
+        var json = JSON.parse(response);
+        if (json.e) {
+            swal({
+                title : json.d,
+                type : 'error',
+                confirmButtonText : '确定'
+            }, failCallback);
+        } else {
+            if (typeof(successCallback) == 'function') {
+                successCallback(json.d);
+            }
+        }
+    } catch (e) {
+        console.log(response);
+        console.log(e);
+        throw e;
+    }
+}

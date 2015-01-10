@@ -23,8 +23,16 @@ class IconController extends BaseController {
                 $file->move(storage_path('files'), $filename);
 
                 $design->save();
+
+                return $this->jsonResponse($id);
             }
         }
+        return $this->jsonResponse('文件无效！', TRUE);
 	}
+
+    public function getDetail ($id)
+    {
+        return $id;
+    }
 
 }

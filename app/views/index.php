@@ -11,6 +11,7 @@
     <title><?php echo Config::get('constants.site_name') . ' - ' . Config::get('constants.slogan') ?></title>
 
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sweet-alert.css">
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]>
@@ -157,6 +158,7 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="http://v3.bootcss.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="js/sweet-alert.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
