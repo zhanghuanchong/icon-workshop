@@ -32,7 +32,10 @@ class IconController extends BaseController {
 
     public function getDetail ($id)
     {
-        return $id;
+        $design = Design::findOrFail($id);
+        return Response::view('icon/detail', array(
+            'design' => $design
+        ));
     }
 
 }

@@ -22,6 +22,13 @@ App::after(function($request, $response)
 	//
 });
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+App::error(function(ModelNotFoundException $e)
+{
+    return Response::view('error/404', array('e' => $e), 404);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Authentication Filters
