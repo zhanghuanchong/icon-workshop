@@ -9,12 +9,10 @@ class IconController extends BaseController {
             if ($file->isValid()) {
                 $id = GUID::generate();
                 $ext = $file->getClientOriginalExtension();
-                $filename = $id . '.' . $ext;
 
                 $design = new Design;
                 $design->id = $id;
                 $design->folder = date('Ymd');
-                $design->file = $design->folder . '/' . $filename;
                 $design->ext = $ext;
                 $design->original_name = $file->getClientOriginalName();
                 $design->mime_type = $file->getMimeType();
@@ -22,12 +20,12 @@ class IconController extends BaseController {
                 $design->ip = Input::getClientIp();
 
                 $files_folder = public_path('files');
-                $folder = $files_folder . '/' . $design->folder;
+                $folder = $files_folder . '/' . $design->folder . '/' . $id;
                 if (!file_exists($folder)) {
-                    mkdir($folder);
+                    mkdir($folder, 777, TRUE);
                 }
 
-                $file->move($folder, $filename);
+                $file->move($folder, 'origin.' . $ext);
 
                 $design->save();
 

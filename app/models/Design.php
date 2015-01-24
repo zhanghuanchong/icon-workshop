@@ -9,5 +9,7 @@
 class Design extends Eloquent {
     public $incrementing = false;
 
-
+    public function getFilePath($name = 'origin') {
+        return $this->folder . '/' . $this->id . '/' . $name . '.' . $this->ext;
+    }
 } 
