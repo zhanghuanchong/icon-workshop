@@ -3,6 +3,9 @@
 @section('content')
 
 <style type="text/css">
+    #tp_tabs li a {
+        font-size: 16px;
+    }
     #tp_ios .icons-row {
         margin-bottom: 35px;
     }
@@ -36,9 +39,10 @@
 
 <div role="tabpanel" style="font-weight: bold">
 
-    <ul class="nav nav-tabs nav-justified" role="tablist">
+    <ul class="nav nav-tabs nav-justified" role="tablist" id="tp_tabs">
         <li role="presentation" class="active"><a href="#tp_ios" aria-controls="tp_ios" role="tab" data-toggle="tab">iOS</a></li>
         <li role="presentation"><a href="#tp_android" aria-controls="tp_android" role="tab" data-toggle="tab">Android</a></li>
+        <li role="presentation"><a href="#tp_winphone" aria-controls="tp_winphone" role="tab" data-toggle="tab">Windows Phone</a></li>
         <li role="presentation"><a href="#tp_webapp" aria-controls="tp_webapp" role="tab" data-toggle="tab">Web App</a></li>
     </ul>
 
@@ -226,10 +230,26 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row" style="padding-top: 20px">
+                        <div class="col-md-12" style="color: black; font-size:13px">
+                            以及
+                            <a href="#"><span class="label label-info" style="font-size:13px;">iTunesArtwork.png</span></a>
+                            和
+                            <a href="#"><span class="label label-info" style="font-size:13px;">iTunesArtwork@2x.png</span></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="tp_android">
+            <div class="row">
+                <div class="col-md-6" style="background: url('/img/nexus5.png') no-repeat; height:743px;">
+
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tp_winphone">
             <div class="row">
                 <div class="col-md-6" style="background: url('/img/nexus5.png') no-repeat; height:743px;">
 
