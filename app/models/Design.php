@@ -6,6 +6,8 @@
  * Time: 2:42 AM
  */
 
-class Design extends UuidModel {
+class Design extends Eloquent {
+    public $incrementing = false;
+
 
 } 

@@ -1,5 +1,5 @@
 <h1>Icon Detail</h1>
-<img src="/../storage/files/<?php echo $design->file ?>" />
+<img src="/files/<?php echo $design->file ?>" />
 <?php
 /**
  * Created by PhpStorm.

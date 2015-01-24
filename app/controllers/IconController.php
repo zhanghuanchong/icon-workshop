@@ -13,14 +13,21 @@ class IconController extends BaseController {
 
                 $design = new Design;
                 $design->id = $id;
-                $design->file = $filename;
+                $design->folder = date('Ymd');
+                $design->file = $design->folder . '/' . $filename;
                 $design->ext = $ext;
                 $design->original_name = $file->getClientOriginalName();
                 $design->mime_type = $file->getMimeType();
                 $design->user_agent = Input::server('HTTP_USER_AGENT');
                 $design->ip = Input::getClientIp();
 
-                $file->move(storage_path('files'), $filename);
+                $files_folder = public_path('files');
+                $folder = $files_folder . '/' . $design->folder;
+                if (!file_exists($folder)) {
+                    mkdir($folder);
+                }
+
+                $file->move($folder, $filename);
 
                 $design->save();
 
