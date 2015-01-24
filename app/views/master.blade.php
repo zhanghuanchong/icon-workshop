@@ -10,13 +10,13 @@
 
     <title><?php echo Config::get('constants.site_name') . ' - ' . Config::get('constants.slogan') ?></title>
 
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/sweet-alert.css">
     <link rel="stylesheet" href="/css/main.css">
 
     <!--[if lt IE 9]>
-    <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
     <![endif]-->
 </head>
 
@@ -73,9 +73,11 @@
     <p>睿鸿游戏　版权所有　Copyright(C) 2015　All Rights Reserved　豫ICP备14010348号-1</p>
 </footer>
 
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="http://v3.bootcss.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="/js/jquery-1.11.2.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<!--[if IE 10]>
+<script src="/js/ie10-viewport-bug-workaround.js"></script>
+<![endif]-->
 <script src="/js/sweet-alert.min.js"></script>
 <script src="/js/main.js"></script>
 </body>
