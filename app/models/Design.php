@@ -103,6 +103,28 @@ class Design extends Eloquent {
     }
 
     public function generateIcons($formats) {
-
+        $root = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
+        foreach($formats as $format) {
+            if (!isset($this->format_sizes[$format])) {
+                continue;
+            }
+            $format_root = $root . $format . '/';
+            if (!file_exists($format_root)) {
+                mkdir($format_root);
+            }
+            $sizes = $this->format_sizes[$format];
+            foreach($sizes as $s) {
+                $scale = isset($s['scale']) ? $s['scale'] : 1;
+                $length = $s['size'] * $scale;
+                $img = Image::make($root . 'origin.' . $this->ext);
+                $img->resize($length, $length);
+                if ($length <= 30) {
+                    $img->sharpen(5);
+                } else if ($length <= 40) {
+                    $img->sharpen(2);
+                }
+                $img->save($format_root . 'icon_' . $s['size'] . ($scale == 1 ? '' : '@' . $scale . 'x') . '.' . $this->ext);
+            }
+        }
     }
 }
