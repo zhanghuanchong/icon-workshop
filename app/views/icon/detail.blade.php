@@ -262,7 +262,7 @@
             </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="tp_android">
-            <div class="row" style="padding:0 50px">
+            <div class="row">
                 <div class="col-md-6" style="background: url('/img/nexus5.png') no-repeat; height:743px;">
                     <div style="position: absolute; left:50px; top:180px;">
                         <img src="/files/<?php echo $design->getFilePath(); ?>" alt="" style="width:64px; height:64px;" />
@@ -272,7 +272,16 @@
                 <div class="col-md-6 icons-col">
                     <div class="row icons-row">
                         <div class="col-sm-6">
-                            <div style="line-height: 72px; vertical-align: middle">
+                            <div style="line-height: 48px; vertical-align: middle">
+                                <img src="/files/<?php echo $design->getFilePath(); ?>" alt="" style="width:36px; height:36px;" />
+                            </div>
+                            <div class="description">
+                                1x<br/>
+                                LDPI
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div>
                                 <img src="/files/<?php echo $design->getFilePath(); ?>" alt="" style="width:48px; height:48px;" />
                             </div>
                             <div class="description">
@@ -280,8 +289,10 @@
                                 MDPI
                             </div>
                         </div>
+                    </div>
+                    <div class="row icons-row">
                         <div class="col-sm-6">
-                            <div>
+                            <div style="line-height: 96px; vertical-align: middle">
                                 <img src="/files/<?php echo $design->getFilePath(); ?>" alt="" style="width:72px; height:72px;" />
                             </div>
                             <div class="description">
@@ -289,10 +300,8 @@
                                 HDPI
                             </div>
                         </div>
-                    </div>
-                    <div class="row icons-row">
                         <div class="col-sm-6">
-                            <div style="line-height: 144px; vertical-align: middle">
+                            <div>
                                 <img src="/files/<?php echo $design->getFilePath(); ?>" alt="" style="width:96px; height:96px;" />
                             </div>
                             <div class="description">
@@ -300,8 +309,10 @@
                                 XDPI
                             </div>
                         </div>
+                    </div>
+                    <div class="row icons-row">
                         <div class="col-sm-6">
-                            <div>
+                            <div style="line-height: 192px; vertical-align: middle">
                                 <img src="/files/<?php echo $design->getFilePath(); ?>" alt="" style="width:144px; height:144px;" />
                             </div>
                             <div class="description">
@@ -309,9 +320,7 @@
                                 XXDPI
                             </div>
                         </div>
-                    </div>
-                    <div class="row icons-row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div>
                                 <img src="/files/<?php echo $design->getFilePath(); ?>" alt="" style="width:192px; height:192px;" />
                             </div>
