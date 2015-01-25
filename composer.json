@@ -8,7 +8,8 @@
 		"laravel/framework": "4.2.*",
 		"barryvdh/laravel-ide-helper": "~1.11",
         "nathanmac/laravel-guid": "dev-master",
-		"jenssegers/agent": "~2.1"
+		"jenssegers/agent": "~2.1",
+        "intervention/image": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

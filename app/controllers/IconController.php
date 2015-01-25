@@ -28,6 +28,7 @@ class IconController extends BaseController {
                 $file->move($folder, 'origin.' . $ext);
 
                 $design->save();
+                $design->generateAllIcons();
 
                 return $this->jsonResponse($id);
             }

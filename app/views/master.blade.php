@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="keyword" content="应用图标生成工具,批量生成iOS图标,批量生成Android图标,图标,icon,生成,图标模板">
+    <meta name="description" content="一键生成iOS, Android平台的应用图标，并提供PSD模板">
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
 
