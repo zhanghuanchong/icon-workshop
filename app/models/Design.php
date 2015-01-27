@@ -62,11 +62,13 @@ class Design extends Eloquent {
                 'scale' => 2
             ),
             array(
-                'size' => 512
+                'size' => 512,
+                'name' => 'iTunesArtwork'
             ),
             array(
                 'size' => 512,
-                'scale' => 2
+                'scale' => 2,
+                'name' => 'iTunesArtwork@2x'
             ),
         ),
         'android' => array(
@@ -123,7 +125,12 @@ class Design extends Eloquent {
                 } else if ($length <= 40) {
                     $img->sharpen(2);
                 }
-                $img->save($format_root . 'icon_' . $s['size'] . ($scale == 1 ? '' : '@' . $scale . 'x') . '.' . $this->ext);
+                if (isset($s['name'])) {
+                    $name = $s['name'];
+                } else {
+                    $name = 'icon_' . $s['size'] . ($scale == 1 ? '' : '@' . $scale . 'x');
+                }
+                $img->save($format_root . $name . '.png');
             }
         }
     }
