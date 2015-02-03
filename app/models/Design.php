@@ -12,40 +12,113 @@ class Design extends Eloquent {
     public $format_sizes = array(
         'ios' => array(
             array(
-                'size' => 29
+                'size' => 29,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
             ),
             array(
                 'size' => 29,
-                'scale' => 2
-            ),
-            array(
-                'size' => 40
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
             ),
             array(
                 'size' => 40,
-                'scale' => 2
-            ),
-            array(
-                'size' => 50
-            ),
-            array(
-                'size' => 50,
-                'scale' => 2
-            ),
-            array(
-                'size' => 57
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
             ),
             array(
                 'size' => 57,
-                'scale' => 2
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ),
+            array(
+                'size' => 57,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
             ),
             array(
                 'size' => 60,
-                'scale' => 2
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
             ),
             array(
                 'size' => 60,
-                'scale' => 3
+                'scale' => 3,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ),
+            array(
+                'size' => 29,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+                'name' => 'Icon-29-ipad',
+            ),
+            array(
+                'size' => 29,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+                'name' => 'Icon-29@2x-ipad',
+            ),
+            array(
+                'size' => 40,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ),
+            array(
+                'size' => 40,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ),
+            array(
+                'size' => 50,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ),
+            array(
+                'size' => 50,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ),
+            array(
+                'size' => 72,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ),
+            array(
+                'size' => 72,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ),
+            array(
+                'size' => 76,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ),
+            array(
+                'size' => 76,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ),
+            array(
+                'size' => 57,
+                'name' => 'Icon'
+            ),
+            array(
+                'size' => 57,
+                'scale' => 2,
+                'name' => 'Icon@2x'
+            ),
+            array(
+                'size' => 60
             ),
             array(
                 'size' => 72
@@ -55,20 +128,22 @@ class Design extends Eloquent {
                 'scale' => 2
             ),
             array(
-                'size' => 76
+                'size' => 50,
+                'name' => 'Icon-Small-50'
             ),
             array(
-                'size' => 76,
-                'scale' => 2
+                'size' => 50,
+                'scale' => 2,
+                'name' => 'Icon-Small-50@2x'
             ),
             array(
                 'size' => 512,
-                'name' => 'iTunesArtwork'
+                'name' => 'iTunesArtwork',
             ),
             array(
                 'size' => 512,
                 'scale' => 2,
-                'name' => 'iTunesArtwork@2x'
+                'name' => 'iTunesArtwork@2x',
             ),
         ),
         'android' => array(
@@ -115,7 +190,25 @@ class Design extends Eloquent {
                 mkdir($format_root);
             }
             $sizes = $this->format_sizes[$format];
+            $json_folder = '';
+            $json = array();
+            if ($format == 'ios') {
+                $json = array(
+                    'images' => array(),
+                    'info' => array(
+                        'version' => 1,
+                        'author' => 'icon.wuruihong.com'
+                    )
+                );
+            }
             foreach($sizes as $s) {
+                $folder = $format_root;
+                if (isset($s['folder'])) {
+                    $folder = $format_root . $s['folder'] . '/';
+                    if (!file_exists($folder)) {
+                        mkdir($folder);
+                    }
+                }
                 $scale = isset($s['scale']) ? $s['scale'] : 1;
                 $length = $s['size'] * $scale;
                 $img = Image::make($root . 'origin.' . $this->ext);
@@ -128,9 +221,23 @@ class Design extends Eloquent {
                 if (isset($s['name'])) {
                     $name = $s['name'];
                 } else {
-                    $name = 'icon_' . $s['size'] . ($scale == 1 ? '' : '@' . $scale . 'x');
+                    $name = 'icon-' . $s['size'] . ($scale == 1 ? '' : '@' . $scale . 'x');
                 }
-                $img->save($format_root . $name . '.png');
+                $img->save($folder . $name . '.png');
+
+                if (isset($s['idiom'])) {
+                    $json['images'][] = array(
+                        'size' => $s['size'] . 'x' . $s['size'],
+                        'idiom' => $s['idiom'],
+                        'filename' => $name . '.png',
+                        'scale' => $scale . 'x',
+                    );
+                    $json_folder = $folder;
+                }
+            }
+            if ($format == 'ios') {
+                $json_string = json_encode($json, JSON_PRETTY_PRINT);
+                file_put_contents($json_folder . 'Contents.json', $json_string);
             }
         }
     }
