@@ -81,5 +81,6 @@
 <![endif]-->
 <script src="/js/sweet-alert.min.js"></script>
 <script src="/js/main.js"></script>
+@yield('footer')
 </body>
 </html>

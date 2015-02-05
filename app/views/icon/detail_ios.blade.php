@@ -48,7 +48,7 @@ $basePath = $design->folder . '/' . $design->id . '/ios/AppIcon.appiconset/';
         <div class="col-md-6" style="background: url('/img/iphone6.png') no-repeat; height:743px; position: relative">
             <div style="position: absolute; left:235px; top:489px;">
                 <img src="/files/<?php echo $basePath . 'Icon-72.png' ?>" alt="" class="x4"/>
-                <p style="color: #ccc;font-weight: normal;font-size: 12px;text-align: center;padding-top: 4px;">您的应用</p>
+                <p style="color: #ccc;font-weight: normal;font-size: 12px;text-align: center;padding-top: 5px;">您的应用</p>
             </div>
         </div>
         <div class="col-md-6 icons-col">
