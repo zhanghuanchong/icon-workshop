@@ -125,6 +125,7 @@ return array(
         'Nathanmac\GUID\GUIDServiceProvider',
         'Jenssegers\Agent\AgentServiceProvider',
         'Intervention\Image\ImageServiceProvider',
+        'Chumper\Zipper\ZipperServiceProvider'
 
 	),
 
@@ -193,6 +194,7 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
         'Image'             => 'Intervention\Image\Facades\Image',
+        'Zipper'            => 'Chumper\Zipper\Zipper'
 
 	),
 

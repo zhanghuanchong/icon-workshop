@@ -29,7 +29,7 @@
 <div class="alert alert-info" role="alert" style="font-size:16px">
     <div class="row">
         <div class="col-md-6">
-            <strong>生成成功！</strong>在下面预览您的图标并 <button type="button" class="btn btn-primary">下载</button>
+            <strong>生成成功！</strong>在下面预览您的图标并 <a class="btn btn-primary" href="/icon/download/<?php echo $design->id ?>">下载</a>
         </div>
         <div class="col-md-6" style="text-align: right">
             <form class="form-inline" role="form">

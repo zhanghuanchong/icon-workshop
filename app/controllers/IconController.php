@@ -46,4 +46,23 @@ class IconController extends BaseController {
         ));
     }
 
+    public function getDownload ($id, $regenerate = FALSE)
+    {
+        $design = Design::findOrFail($id);
+        $folder = public_path('files') . '/' . $design->folder . '/' . $design->id . '/';
+        $path = $folder . 'icons.zip';
+        if (!file_exists($path) || $regenerate) {
+            $zip = Zipper::make($path);
+            $formats = array(
+                'ios',
+                'android'
+            );
+            foreach($formats as $f) {
+                $zip->folder($f)->add($folder . $f);
+            }
+            $zip->close();
+        }
+        return Response::download($path);
+    }
+
 }

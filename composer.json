@@ -9,7 +9,8 @@
 		"barryvdh/laravel-ide-helper": "~1.11",
         "nathanmac/laravel-guid": "dev-master",
 		"jenssegers/agent": "~2.1",
-        "intervention/image": "dev-master"
+        "intervention/image": "dev-master",
+        "Chumper/Zipper": "0.5.0"
 	},
 	"autoload": {
 		"classmap": [
@@ -38,5 +39,9 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "stable",
+    "repositories": [
+        {"type": "composer", "url": "http://pkg.phpcomposer.com/repo/packagist/"},
+        {"packagist": false}
+    ]
 }
