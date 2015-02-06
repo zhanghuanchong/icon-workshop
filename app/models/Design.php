@@ -188,6 +188,11 @@ class Design extends Eloquent {
         ),
     );
 
+    public function subscribers()
+    {
+        return $this->hasMany('Subscription');
+    }
+
     public function getFilePath($name = 'origin') {
         return $this->folder . '/' . $this->id . '/' . $name . '.' . $this->ext;
     }
@@ -253,5 +258,22 @@ class Design extends Eloquent {
                 file_put_contents($json_folder . 'Contents.json', $json_string);
             }
         }
+    }
+
+    public function package($regenerate = FALSE) {
+        $folder = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
+        $path = $folder . 'icons.zip';
+        if (!file_exists($path) || $regenerate) {
+            $zip = Zipper::make($path);
+            $formats = array(
+                'ios',
+                'android'
+            );
+            foreach($formats as $f) {
+                $zip->folder($f)->add($folder . $f);
+            }
+            $zip->close();
+        }
+        return $path;
     }
 }

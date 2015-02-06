@@ -49,20 +49,21 @@ class IconController extends BaseController {
     public function getDownload ($id, $regenerate = FALSE)
     {
         $design = Design::findOrFail($id);
-        $folder = public_path('files') . '/' . $design->folder . '/' . $design->id . '/';
-        $path = $folder . 'icons.zip';
-        if (!file_exists($path) || $regenerate) {
-            $zip = Zipper::make($path);
-            $formats = array(
-                'ios',
-                'android'
-            );
-            foreach($formats as $f) {
-                $zip->folder($f)->add($folder . $f);
-            }
-            $zip->close();
-        }
+        $path = $design->package($regenerate);
         return Response::download($path);
+    }
+
+    public function postSubscribe()
+    {
+        $subscription = new Subscription;
+        $subscription->mail = Input::get('mail');
+        $subscription->design_id = Input::get('design_id');
+        $subscription->user_agent = Input::server('HTTP_USER_AGENT');
+        $subscription->ip = Input::getClientIp();
+
+        $subscription->save();
+
+        $subscription->sendZip();
     }
 
 }

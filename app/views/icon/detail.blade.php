@@ -32,10 +32,10 @@
             <strong>生成成功！</strong>在下面预览您的图标并 <a class="btn btn-primary" href="/icon/download/<?php echo $design->id ?>">下载</a>
         </div>
         <div class="col-md-6" style="text-align: right">
-            <form class="form-inline" role="form">
+            <form class="form-inline" role="form" onsubmit="return false;">
                 <dif class="form-group">
                     <input type="email" class="form-control" placeholder="发送到邮箱并订阅" style="width:250px">
-                    <button type="button" class="btn btn-primary">发送</button>
+                    <button type="button" class="btn btn-primary" id="subscribe">发送</button>
                 </dif>
             </form>
         </div>
@@ -70,4 +70,32 @@
     </div>
 
 </div>
+@stop
+
+@section('footer')
+<script type="text/javascript">
+    $(function(){
+        var btnSubscribe = $("#subscribe");
+        var form = btnSubscribe.parents('form').eq(0);
+        btnSubscribe.on('click', function(){
+            var t = $(this);
+            var input = form.find('input[type=email]');
+            var v = $.trim(input.val());
+            var reg = /^[a-z0-9-_]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/i;
+            if (!v || !reg.test(v)) {
+                input.focus();
+                return;
+            }
+            form.hide().after('<div style="margin-top: 5px">订阅成功！即将发送到您的邮箱，请随后查收！</div>');
+            $.post('/icon/subscribe', {
+                design_id : '<?php echo $design->id ?>',
+                mail : v
+            });
+        });
+
+        form.on('submit', function(){
+            btnSubscribe.click();
+        });
+    });
+</script>
 @stop
