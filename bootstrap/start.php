@@ -27,6 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	'local' => array('homestead', 'EGN-PC', 'precise64'),
+    'production' => array('wrh')
 
 ));
 
