@@ -58,6 +58,29 @@
         </div>
     </div>
 </div>
+
+<div class="row row-margin">
+    <div class="col-md-8">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-5072970286349933"
+             data-ad-slot="2920908022"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    <div class="col-md-4">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:320px;height:100px"
+             data-ad-client="ca-pub-5072970286349933"
+             data-ad-slot="6330202821"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</div>
 @stop
 
 @section('bottom')
@@ -65,7 +88,7 @@
     <div class="container">
         <h1>使用PSD + Actions模板生成图标</h1>
 
-        <div class="row">
+        <div class="row" style="text-align: center">
             <a class="col-md-3" href="#">
                 <img src="/img/ios8.png" alt=""/>
                 <h2>iOS应用图标</h2>
