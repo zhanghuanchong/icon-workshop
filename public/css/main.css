@@ -127,6 +127,7 @@ body {
 #if_form {
     border: 5px solid white;
     border-radius: 15px;
+    padding: 30px 60px;
 }
 #if_form.dropping {
     border: 5px dashed #666;
