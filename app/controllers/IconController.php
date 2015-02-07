@@ -22,7 +22,7 @@ class IconController extends BaseController {
                 $files_folder = public_path('files');
                 $folder = $files_folder . '/' . $design->folder . '/' . $id;
                 if (!file_exists($folder)) {
-                    mkdir($folder, 777, TRUE);
+                    mkdir($folder, 0777, TRUE);
                 }
 
                 $file->move($folder, 'origin.' . $ext);

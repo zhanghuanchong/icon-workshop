@@ -55,14 +55,14 @@ class Design extends Eloquent {
                 'size' => 29,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'ipad',
-                'name' => 'Icon-29-ipad',
+                'name' => 'icon-29-ipad',
             ),
             array(
                 'size' => 29,
                 'scale' => 2,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'ipad',
-                'name' => 'Icon-29@2x-ipad',
+                'name' => 'icon-29@2x-ipad',
             ),
             array(
                 'size' => 40,
@@ -110,12 +110,12 @@ class Design extends Eloquent {
             ),
             array(
                 'size' => 57,
-                'name' => 'Icon'
+                'name' => 'icon'
             ),
             array(
                 'size' => 57,
                 'scale' => 2,
-                'name' => 'Icon@2x'
+                'name' => 'icon@2x'
             ),
             array(
                 'size' => 60
@@ -129,12 +129,12 @@ class Design extends Eloquent {
             ),
             array(
                 'size' => 50,
-                'name' => 'Icon-Small-50'
+                'name' => 'icon-Small-50'
             ),
             array(
                 'size' => 50,
                 'scale' => 2,
-                'name' => 'Icon-Small-50@2x'
+                'name' => 'icon-Small-50@2x'
             ),
             array(
                 'size' => 512,
