@@ -13,7 +13,10 @@
     <p><strong>拖放您的设计文件到这里。</strong></p>
     <p>支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果。</p>
     <p><a href="javascript:;" class="btn btn-primary btn-lg" id="if_btn">或者点击这里上传</a></p>
-    <div id="if_submitting" class="alert alert-success" role="alert">生成中，请稍候...</div>
+    <div id="if_submitting" class="alert alert-success" role="alert">
+        <img src="/img/loading.gif" />
+        生成中，请稍候...
+    </div>
     <input type="file" id="if" style="float:right; visibility: hidden"/>
 </form>
 
@@ -135,7 +138,9 @@
             oFReader.readAsDataURL(file);
 
             oFReader.onload = function (oFREvent) {
-                $("#jumbotron_img").get(0).src = oFREvent.target.result;
+                if (file.type != '') {
+                    $("#jumbotron_img").get(0).src = oFREvent.target.result;
+                }
                 $("#jumbotron_img_loading").show();
             };
 
