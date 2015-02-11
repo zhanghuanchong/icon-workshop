@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keyword" content="应用图标生成工具,批量生成iOS图标,批量生成Android图标,图标,icon,生成,图标模板">
-    <meta name="description" content="一键生成iOS, Android平台的应用图标，并提供PSD模板">
+    <meta name="keyword" content="app图标缩放,应用图标生成工具,批量生成iOS图标,批量生成Android图标,图标,icon,生成,app图标,图标模板">
+    <meta name="description" content="一键快速生成iOS, Android，Windows Phone, WebApp等移动平台app的应用图标，快速预览，提供丰富选项，可以直接打包发布到应用市场，并提供相应的PSD模板。">
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
 
@@ -56,7 +56,6 @@
                 </li>
                 <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
                 <li><a href="#about">关于我们</a></li>
-                <li><a href="#contact">联系我们</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -71,7 +70,19 @@
 @yield('bottom')
 
 <footer>
-    <p>睿鸿游戏　版权所有　Copyright(C) 2015　All Rights Reserved　豫ICP备14010348号-1</p>
+    <p>
+        <a href="http://wuruihong.com" target="_blank" style="color:white">睿鸿游戏</a>　
+        版权所有　Copyright(C) 2015　All Rights Reserved　豫ICP备14010348号-1
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?692ad0a1a2349a69b58c26d6ee6e2790";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    </p>
 </footer>
 
 <script src="/js/jquery-1.11.2.min.js"></script>
