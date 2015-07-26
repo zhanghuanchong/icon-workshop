@@ -230,6 +230,10 @@ class Design extends Eloquent {
                 $scale = isset($s['scale']) ? $s['scale'] : 1;
                 $length = $s['size'] * $scale;
                 $img = Image::make($root . 'origin.' . $this->ext);
+                if ($format == 'ios') {
+                    $canvas = Image::canvas($img->width(), $img->height(), '#ffffff');
+                    $img = $canvas->insert($img);
+                }
                 $img->resize($length, $length);
                 if ($length <= 30) {
                     $img->sharpen(5);
