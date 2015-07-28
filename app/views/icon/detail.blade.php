@@ -46,6 +46,7 @@
 
     <ul class="nav nav-tabs nav-justified" role="tablist" id="tp_tabs">
         <li role="presentation" class="active"><a href="#tp_ios" aria-controls="tp_ios" role="tab" data-toggle="tab">iOS</a></li>
+        <li role="presentation"><a href="#tp_watch" aria-controls="tp_watch" role="tab" data-toggle="tab">watchOS</a></li>
         <li role="presentation"><a href="#tp_android" aria-controls="tp_android" role="tab" data-toggle="tab">Android</a></li>
         @if (isset($withExtra))
         <li role="presentation"><a href="#tp_winphone" aria-controls="tp_winphone" role="tab" data-toggle="tab">Windows Phone</a></li>
@@ -56,6 +57,8 @@
     <div class="tab-content" id="tp_contents">
 
         @include('icon.detail_ios')
+
+        @include('icon.detail_watch')
 
         @include('icon.detail_android')
 

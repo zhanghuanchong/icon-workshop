@@ -88,9 +88,6 @@ body {
 #tp_android .icons-row {
   margin-bottom: 15px;
 }
-#tp_ios {
-  margin: 0 -30px;
-}
 #tp_ios .icons-row .icon-row {
   vertical-align: middle;
   height: 56px;
@@ -128,6 +125,13 @@ body {
   -webkit-border-radius: 13px;
   -moz-border-radius: 13px;
   border-radius: 13px;
+}
+#tp_ios img.watch {
+  width: 45px;
+  height: 45px;
+  -webkit-border-radius: 22.5px;
+  -moz-border-radius: 22.5px;
+  border-radius: 22.5px;
 }
 footer {
   text-align: center;
