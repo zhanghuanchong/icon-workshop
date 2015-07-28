@@ -95,7 +95,7 @@
     <script src="/js/sweet-alert.min.js"></script>
     <script src="/js/main.js"></script>
 @else
-    <script src="/js/all.js_={{Config::get('constants.version')}}"></script>
+    <script src="/js/all.js?_={{Config::get('constants.version')}}"></script>
 @endif
 <!--[if IE 10]>
 <script src="/js/ie10-viewport-bug-workaround.js"></script>
