@@ -11,7 +11,7 @@
 
     <title>{{ Config::get('constants.site_name') . ' - ' . Config::get('constants.slogan') }}</title>
 
-    @if(App::isLocal())
+    @if(App::environment('local'))
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/sweet-alert.css">
         <link rel="stylesheet" href="/css/main.css">
@@ -89,7 +89,7 @@
     </p>
 </footer>
 
-@if(App::isLocal())
+@if(App::environment('local'))
     <script src="/js/jquery-1.11.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/sweet-alert.min.js"></script>
