@@ -1,4 +1,7 @@
 <style type="text/css">
+    #tp_ios {
+        margin: 0 -30px;
+    }
     #tp_ios .icons-row .icon-row {
         vertical-align: middle;
         height: 56px;

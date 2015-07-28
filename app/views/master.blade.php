@@ -9,11 +9,15 @@
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
 
-    <title><?php echo Config::get('constants.site_name') . ' - ' . Config::get('constants.slogan') ?></title>
+    <title>{{ Config::get('constants.site_name') . ' - ' . Config::get('constants.slogan') }}</title>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/sweet-alert.css">
-    <link rel="stylesheet" href="/css/main.css">
+    @if(App::isLocal())
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/sweet-alert.css">
+        <link rel="stylesheet" href="/css/main.css">
+    @else
+        <link rel="stylesheet" href="/css/all.css?_={{Config::get('constants.version')}}">
+    @endif
 
     <!--[if lt IE 9]>
     <script src="/js/html5shiv.js"></script>
@@ -85,13 +89,17 @@
     </p>
 </footer>
 
-<script src="/js/jquery-1.11.2.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+@if(App::isLocal())
+    <script src="/js/jquery-1.11.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/sweet-alert.min.js"></script>
+    <script src="/js/main.js"></script>
+@else
+    <script src="/js/all.js_={{Config::get('constants.version')}}"></script>
+@endif
 <!--[if IE 10]>
 <script src="/js/ie10-viewport-bug-workaround.js"></script>
 <![endif]-->
-<script src="/js/sweet-alert.min.js"></script>
-<script src="/js/main.js"></script>
 @yield('footer')
 </body>
 </html>
