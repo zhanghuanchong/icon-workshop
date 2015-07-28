@@ -1,14 +1,3 @@
-<style type="text/css">
-    #tp_contents #tp_android .description {
-        border-top-width: 0;
-        line-height: 1.8em;
-        margin-top: 0;
-    }
-    #tp_contents #tp_android .icons-row {
-        margin-bottom: 15px;
-    }
-</style>
-
 <?php
 $basePath = $design->folder . '/' . $design->id . '/android/';
 ?>

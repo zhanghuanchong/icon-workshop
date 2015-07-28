@@ -2,30 +2,6 @@
 
 @section('content')
 
-<style type="text/css">
-    #tp_tabs li a {
-        font-size: 16px;
-    }
-    #tp_contents {
-        padding:30px 70px 0;
-    }
-    #tp_contents .icons-row {
-        margin-bottom: 45px;
-    }
-    #tp_contents .icons-col {
-        font-weight: normal;
-        text-align: center;
-        padding-top:50px;
-        color: #999;
-        font-size:11px;
-    }
-    #tp_contents .description {
-        border-top: 1px solid silver;
-        margin-top: 5px;
-        padding-top: 5px;
-    }
-</style>
-
 <div class="alert alert-info" role="alert" style="font-size:16px">
     <div class="row">
         <div class="col-md-6">
@@ -94,32 +70,4 @@
     </div>
 
 </div>
-@stop
-
-@section('footer')
-<script type="text/javascript">
-    $(function(){
-        var btnSubscribe = $("#subscribe");
-        var form = btnSubscribe.parents('form').eq(0);
-        btnSubscribe.on('click', function(){
-            var t = $(this);
-            var input = form.find('input[type=email]');
-            var v = $.trim(input.val());
-            var reg = /^[a-z0-9-_]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/i;
-            if (!v || !reg.test(v)) {
-                input.focus();
-                return;
-            }
-            form.hide().after('<div style="margin-top: 5px">订阅成功！即将发送到您的邮箱，请随后查收！</div>');
-            $.post('/icon/subscribe', {
-                design_id : '<?php echo $design->id ?>',
-                mail : v
-            });
-        });
-
-        form.on('submit', function(){
-            btnSubscribe.click();
-        });
-    });
-</script>
 @stop
