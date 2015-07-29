@@ -29,7 +29,7 @@ class IconController extends BaseController {
 
                 $design->save();
                 $design->generateIcons(array(
-                    'ios', 'android',/*'windows_phone', 'webapp'*/
+                    'ios', 'android', 'iwatch', /*'windows_phone', 'webapp'*/
                 ));
 
                 return $this->jsonResponse($id);

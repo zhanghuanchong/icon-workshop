@@ -146,6 +146,70 @@ class Design extends Eloquent {
                 'name' => 'iTunesArtwork@2x',
             ),
         ),
+        'iwatch' => array(
+            array(
+                'size' => 24,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'watch',
+                'role' => 'notificationCenter',
+                'subtype' => '38mm'
+            ),
+            array(
+                'size' => 27.5,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'watch',
+                'role' => 'notificationCenter',
+                'subtype' => '42mm'
+            ),
+            array(
+                'size' => 29,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'watch',
+                'role' => 'companionSettings'
+            ),
+            array(
+                'size' => 29,
+                'scale' => 3,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'watch',
+                'role' => 'companionSettings'
+            ),
+            array(
+                'size' => 40,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'watch',
+                'role' => 'appLauncher',
+                'subtype' => '38mm'
+            ),
+            array(
+                'size' => 44,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'watch',
+                'role' => 'longLook',
+                'subtype' => '42mm'
+            ),
+            array(
+                'size' => 86,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'watch',
+                'role' => 'quickLook',
+                'subtype' => '38mm'
+            ),
+            array(
+                'size' => 98,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'watch',
+                'role' => 'quickLook',
+                'subtype' => '42mm'
+            ),
+        ),
         'android' => array(
             array(
                 'size' => 36,
@@ -199,6 +263,8 @@ class Design extends Eloquent {
 
     public function generateIcons($formats) {
         $root = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
+        $appleFormats = array('ios', 'iwatch');
+        $specialKeys = array('role', 'subtype');
         foreach($formats as $format) {
             if (!isset($this->format_sizes[$format])) {
                 continue;
@@ -210,7 +276,7 @@ class Design extends Eloquent {
             $sizes = $this->format_sizes[$format];
             $json_folder = '';
             $json = array();
-            if ($format == 'ios') {
+            if (in_array($format, $appleFormats)) {
                 $json = array(
                     'images' => array(),
                     'info' => array(
@@ -230,7 +296,7 @@ class Design extends Eloquent {
                 $scale = isset($s['scale']) ? $s['scale'] : 1;
                 $length = $s['size'] * $scale;
                 $img = Image::make($root . 'origin.' . $this->ext);
-                if ($format == 'ios') {
+                if (in_array($format, $appleFormats)) {
                     $canvas = Image::canvas($img->width(), $img->height(), '#ffffff');
                     $img = $canvas->insert($img);
                 }
@@ -248,16 +314,22 @@ class Design extends Eloquent {
                 $img->save($folder . $name . '.png');
 
                 if (isset($s['idiom'])) {
-                    $json['images'][] = array(
+                    $item = array(
                         'size' => $s['size'] . 'x' . $s['size'],
                         'idiom' => $s['idiom'],
                         'filename' => $name . '.png',
                         'scale' => $scale . 'x',
                     );
+                    foreach($specialKeys as $key) {
+                        if (isset($s[$key])) {
+                            $item[$key] = $s[$key];
+                        }
+                    }
+                    $json['images'][] = $item;
                     $json_folder = $folder;
                 }
             }
-            if ($format == 'ios') {
+            if (in_array($format, $appleFormats)) {
                 $json_string = json_encode($json, JSON_PRETTY_PRINT);
                 file_put_contents($json_folder . 'Contents.json', $json_string);
             }
@@ -271,7 +343,8 @@ class Design extends Eloquent {
             $zip = Zipper::make($path);
             $formats = array(
                 'ios',
-                'android'
+                'android',
+                'iwatch'
             );
             foreach($formats as $f) {
                 $zip->folder($f)->add($folder . $f);
