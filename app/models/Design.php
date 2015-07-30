@@ -10,6 +10,7 @@ class Design extends Eloquent {
     public $incrementing = false;
 
     public $format_sizes = array(
+        //region iOS
         'ios' => array(
             array(
                 'size' => 29,
@@ -146,6 +147,8 @@ class Design extends Eloquent {
                 'name' => 'iTunesArtwork@2x',
             ),
         ),
+        //endregion
+        //region iWatch
         'iwatch' => array(
             array(
                 'size' => 24,
@@ -210,6 +213,8 @@ class Design extends Eloquent {
                 'subtype' => '42mm'
             ),
         ),
+        //endregion
+        //region Android
         'android' => array(
             array(
                 'size' => 36,
@@ -250,6 +255,41 @@ class Design extends Eloquent {
                 'name' => 'playstore-icon',
             ),
         ),
+        //endregion
+        //region WebApp
+        'webapp' => array(
+            array(
+                'size' => 60,
+                'scale' => 1,
+                'name' => 'apple-touch-icon'
+            ),
+            array(
+                'size' => 76,
+                'scale' => 1,
+                'name' => 'apple-touch-icon-76x76'
+            ),
+            array(
+                'size' => 60,
+                'scale' => 2,
+                'name' => 'apple-touch-icon-120x120'
+            ),
+            array(
+                'size' => 76,
+                'scale' => 2,
+                'name' => 'apple-touch-icon-152x152'
+            ),
+            array(
+                'size' => 60,
+                'scale' => 3,
+                'name' => 'apple-touch-icon-180x180'
+            ),
+            array(
+                'size' => 29,
+                'scale' => 2,
+                'name' => 'android-touch-icon'
+            ),
+        ),
+        //endregion
     );
 
     public function subscribers()
@@ -285,6 +325,7 @@ class Design extends Eloquent {
                     )
                 );
             }
+            $webappLinks = $format == 'webapp' ? array() : NULL;
             foreach($sizes as $s) {
                 $folder = $format_root;
                 if (isset($s['folder'])) {
@@ -296,7 +337,7 @@ class Design extends Eloquent {
                 $scale = isset($s['scale']) ? $s['scale'] : 1;
                 $length = $s['size'] * $scale;
                 $img = Image::make($root . 'origin.' . $this->ext);
-                if (in_array($format, $appleFormats)) {
+                if (in_array($format, $appleFormats) || $format == 'webapp') {
                     $canvas = Image::canvas($img->width(), $img->height(), '#ffffff');
                     $img = $canvas->insert($img);
                 }
@@ -312,6 +353,13 @@ class Design extends Eloquent {
                     $name = 'icon-' . $s['size'] . ($scale == 1 ? '' : '@' . $scale . 'x');
                 }
                 $img->save($folder . $name . '.png');
+
+                if ($format == 'webapp') {
+                    $webappLinks[] = array(
+                        'sizes' => $length . 'x' . $length,
+                        'href' => $name . '.png'
+                    );
+                }
 
                 if (isset($s['idiom'])) {
                     $item = array(
@@ -329,6 +377,18 @@ class Design extends Eloquent {
                     $json_folder = $folder;
                 }
             }
+            if ($webappLinks) {
+                $s = array();
+                foreach($webappLinks as $w) {
+                    $_ = '<link rel="apple-touch-icon-precomposed"';
+                    if ($w['sizes'] != '60x60') {
+                        $_ .= ' sizes="' . $w['sizes'] . '"';
+                    }
+                    $_ .= ' href="' . $w['href'] . '" />';
+                    $s[] = $_;
+                }
+                file_put_contents($format_root . 'readme.txt', implode("\r\n", $s));
+            }
             if (in_array($format, $appleFormats)) {
                 $json_string = json_encode($json, JSON_PRETTY_PRINT);
                 file_put_contents($json_folder . 'Contents.json', $json_string);
@@ -344,7 +404,8 @@ class Design extends Eloquent {
             $formats = array(
                 'ios',
                 'android',
-                'iwatch'
+                'iwatch',
+                'webapp'
             );
             foreach($formats as $f) {
                 $zip->folder($f)->add($folder . $f);
