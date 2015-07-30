@@ -48,9 +48,9 @@
         <li role="presentation" class="active"><a href="#tp_ios" aria-controls="tp_ios" role="tab" data-toggle="tab">iOS</a></li>
         <li role="presentation"><a href="#tp_watch" aria-controls="tp_watch" role="tab" data-toggle="tab">iWatch</a></li>
         <li role="presentation"><a href="#tp_android" aria-controls="tp_android" role="tab" data-toggle="tab">Android</a></li>
+        <li role="presentation"><a href="#tp_webapp" aria-controls="tp_webapp" role="tab" data-toggle="tab">Web App</a></li>
         @if (isset($withExtra))
         <li role="presentation"><a href="#tp_winphone" aria-controls="tp_winphone" role="tab" data-toggle="tab">Windows Phone</a></li>
-        <li role="presentation"><a href="#tp_webapp" aria-controls="tp_webapp" role="tab" data-toggle="tab">Web App</a></li>
         @endif
     </ul>
 
@@ -62,11 +62,10 @@
 
         @include('icon.detail_android')
 
+        @include('icon.detail_webapp')
+
         @if (isset($withExtra))
         <div role="tabpanel" class="tab-pane fade" id="tp_winphone">
-
-        </div>
-        <div role="tabpanel" class="tab-pane fade" id="tp_webapp">
 
         </div>
         @endif
