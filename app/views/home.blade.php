@@ -15,7 +15,7 @@
     <p><a href="javascript:;" class="btn btn-primary btn-lg" id="if_btn">或者点击这里上传</a></p>
     <div id="if_submitting" class="alert alert-success" role="alert">
         <img src="/img/loading.gif" />
-        生成中，请稍候...
+        生成中，请耐心等待(可能需要1-5分钟时间)...
     </div>
     <input type="file" id="if" style="float:right; visibility: hidden"/>
 </form>
