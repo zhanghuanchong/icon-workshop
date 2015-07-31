@@ -7,6 +7,10 @@ $basePath = $design->folder . '/' . $design->id . '/webapp/';
         <div class="col-md-6" style="background: url('/img/webapp.png') no-repeat; height:743px; position: relative">
             <div style="position: absolute; left: 45px; top: 220px;">
                 <img src="/files/<?php echo $basePath . 'apple-touch-icon.png' ?>" alt="" class="x4" style="width:60px; height:60px"/>
+                <div style="position: absolute; left: 80px; top: -13px; line-height: 3em;">
+                    <div>您的应用</div>
+                    <div>http://www.xxx.com</div>
+                </div>
             </div>
         </div>
         <div class="col-md-6 icons-col">
