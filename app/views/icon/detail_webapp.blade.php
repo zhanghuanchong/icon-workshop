@@ -6,10 +6,10 @@ $basePath = $design->folder . '/' . $design->id . '/webapp/';
     <div class="row">
         <div class="col-md-6" style="background: url('/img/webapp.png') no-repeat; height:743px; position: relative">
             <div style="position: absolute; left: 45px; top: 220px;">
-                <img src="/files/<?php echo $basePath . 'apple-touch-icon.png' ?>" alt="" class="x4" style="width:60px; height:60px"/>
+                <img src="/files/<?php echo $basePath . 'apple-touch-icon-120x120.png' ?>" alt="" class="x4" style="width:60px; height:60px"/>
                 <div style="position: absolute; left: 80px; top: -13px; line-height: 3em;">
-                    <div>您的应用</div>
-                    <div>http://www.xxx.com</div>
+                    <div style="color: #666">您的应用</div>
+                    <div style="color: #bbb">{{URL::to('/')}}</div>
                 </div>
             </div>
         </div>
@@ -17,107 +17,86 @@ $basePath = $design->folder . '/' . $design->id . '/webapp/';
             <div class="row icons-row">
                 <div class="col-sm-6">
                     <div class="row icon-row">
-                        <div class="col-xs-6">
-                            <img src="/files/<?php echo $basePath . 'icon-24@2x.png' ?>" alt="" class="x2"/>
-                        </div>
-                        <div class="col-xs-6">
-                            <img src="/files/<?php echo $basePath . 'icon-27.5@2x.png' ?>" alt="" class="x2"/>
-                        </div>
-                    </div>
-                    <div class="row sub-icon">
-                        <div class="col-xs-6">38 mm - 2x</div>
-                        <div class="col-xs-6">42 mm - 2x</div>
-                    </div>
-                    <div class="description">
-                        Apple Watch<br/>
-                        Notification Center<br/>
-                        24pt + 27.5pt
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="row icon-row">
-                        <div class="col-xs-6">
-                            <img src="/files/<?php echo $basePath . 'icon-29@2x.png' ?>" alt="" class="x2"/>
-                        </div>
-                        <div class="col-xs-6">
-                            <img src="/files/<?php echo $basePath . 'icon-29@3x.png' ?>" alt="" class="x3"/>
-                        </div>
-                    </div>
-                    <div class="row sub-icon">
-                        <div class="col-xs-6">2x</div>
-                        <div class="col-xs-6">3x</div>
-                    </div>
-                    <div class="description">
-                        Apple Watch<br/>
-                        Companion Settings<br/>
-                        29pt
-                    </div>
-                </div>
-            </div>
-            <div class="row icons-row">
-                <div class="col-sm-6">
-                    <div class="row icon-row">
                         <div class="col-xs-12">
-                            <img src="/files/<?php echo $basePath . 'icon-40@2x.png' ?>" alt="" class="x2"/>
+                            <img src="/files/<?php echo $basePath . 'apple-touch-icon-120x120.png' ?>" alt="" class="x3"/>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row sub-icon">
                         <div class="col-xs-12">2x</div>
                     </div>
                     <div class="description">
-                        Apple Watch<br/>
-                        Home Screen (All)<br/>
-                        Long Lock (38mm)<br/>
-                        40pt
+                        iPhones with iOS 7 / 8<br/>
+                        For iPhone 4s, 5, 5s and 6<br/>
+                        120pt
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="row icon-row">
                         <div class="col-xs-12">
-                            <img src="/files/<?php echo $basePath . 'icon-44@2x.png' ?>" alt="" class="x2"/>
+                            <img src="/files/<?php echo $basePath . 'apple-touch-icon-180x180.png' ?>" alt="" class="x4"/>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12">42 mm</div>
+                    <div class="row sub-icon">
+                        <div class="col-xs-12">3x</div>
                     </div>
                     <div class="description">
-                        Apple Watch<br/>
-                        Long Lock<br/>
-                        44pt
+                        iPhone with iOS 7 / 8<br/>
+                        For iPhone 6 Plus<br/>
+                        180pt
                     </div>
                 </div>
             </div>
             <div class="row icons-row">
                 <div class="col-sm-6">
                     <div class="row icon-row">
-                        <div class="col-xs-12">
-                            <img src="/files/<?php echo $basePath . 'icon-86@2x.png' ?>" alt="" class="x4"/>
+                        <div class="col-xs-6">
+                            <img src="/files/<?php echo $basePath . 'apple-touch-icon-76x76.png' ?>" alt="" class="x2"/>
+                        </div>
+                        <div class="col-xs-6">
+                            <img src="/files/<?php echo $basePath . 'apple-touch-icon-152x152.png' ?>" alt="" class="x3"/>
                         </div>
                     </div>
-                    <div class="row sub-icon">
-                        <div class="col-xs-12">38 mm</div>
+                    <div class="row">
+                        <div class="col-xs-6">1x</div>
+                        <div class="col-xs-6">2x</div>
                     </div>
                     <div class="description">
-                        Apple Watch<br/>
-                        Quick Look<br/>
-                        86pt
+                        <div class="col-xs-6">
+                            iPads with iOS 7 / 8<br/>
+                            For iPad 2<br/>
+                            76pt
+                        </div>
+                        <div class="col-xs-6">
+                            iPads with iOS 7 / 8<br/>
+                            For iPad 3, 4, Air and Mini<br/>
+                            152pt
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="row icon-row">
                         <div class="col-xs-12">
-                            <img src="/files/<?php echo $basePath . 'icon-98@2x.png' ?>" alt="" class="x4"/>
+                            <img src="/files/<?php echo $basePath . 'android-touch-icon.png' ?>" alt="" class="x1"/>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-12">42 mm</div>
+                        <div class="col-xs-12">1x</div>
                     </div>
                     <div class="description">
-                        Apple Watch<br/>
-                        Quick Look<br/>
-                        98pt
+                        Android Devices<br/>
+                        58pt
                     </div>
                 </div>
+            </div>
+            <div style="text-align: left">
+                <p style="font-size: 16px; color: #333;">在您的网站(WebApp)里面添加如下代码: </p>
+                <pre>
+&lt;<strong>link</strong> rel="<span class="string">apple-touch-icon</span>" sizes="<span class="string">76x76</span>" href="<span class="string">apple-touch-icon-76x76.png</span>" /&gt;
+&lt;<strong>link</strong> rel="<span class="string">apple-touch-icon</span>" sizes="<span class="string">120x120</span>" href="<span class="string">apple-touch-icon-120x120.png</span>" /&gt;
+&lt;<strong>link</strong> rel="<span class="string">apple-touch-icon</span>" sizes="<span class="string">152x152</span>" href="<span class="string">apple-touch-icon-152x152.png</span>" /&gt;
+&lt;<strong>link</strong> rel="<span class="string">apple-touch-icon</span>" sizes="<span class="string">180x180</span>" href="<span class="string">apple-touch-icon-180x180.png</span>" /&gt;
+&lt;<strong>link</strong> rel="<span class="string">apple-touch-icon</span>" sizes="<span class="string">58x58</span>" href="<span class="string">android-touch-icon.png</span>" /&gt;
+                </pre>
             </div>
         </div>
     </div>

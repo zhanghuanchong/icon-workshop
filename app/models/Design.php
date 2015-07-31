@@ -259,11 +259,6 @@ class Design extends Eloquent {
         //region WebApp
         'webapp' => array(
             array(
-                'size' => 60,
-                'scale' => 1,
-                'name' => 'apple-touch-icon'
-            ),
-            array(
                 'size' => 76,
                 'scale' => 1,
                 'name' => 'apple-touch-icon-76x76'
@@ -380,7 +375,7 @@ class Design extends Eloquent {
             if ($webappLinks) {
                 $s = array();
                 foreach($webappLinks as $w) {
-                    $_ = '<link rel="apple-touch-icon-precomposed"';
+                    $_ = '<link rel="apple-touch-icon"';
                     if ($w['sizes'] != '60x60') {
                         $_ .= ' sizes="' . $w['sizes'] . '"';
                     }
