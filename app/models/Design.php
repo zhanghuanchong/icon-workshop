@@ -297,25 +297,29 @@ class Design extends Eloquent {
                 'size' => 57,
                 'scale' => 1,
                 'folder' => 'www/res/icon/ios',
-                'name' => 'icon-57'
+                'name' => 'icon-57',
+                'bg' => true
             ),
             array(
                 'size' => 57,
                 'scale' => 2,
                 'folder' => 'www/res/icon/ios',
-                'name' => 'icon-57-2x'
+                'name' => 'icon-57-2x',
+                'bg' => true
             ),
             array(
                 'size' => 72,
                 'scale' => 1,
                 'folder' => 'www/res/icon/ios',
-                'name' => 'icon-72'
+                'name' => 'icon-72',
+                'bg' => true
             ),
             array(
                 'size' => 72,
                 'scale' => 2,
                 'folder' => 'www/res/icon/ios',
-                'name' => 'icon-72-2x'
+                'name' => 'icon-72-2x',
+                'bg' => true
             ),
             array(
                 'size' => 36,
@@ -345,109 +349,127 @@ class Design extends Eloquent {
                 'size' => 48,
                 'scale' => 1,
                 'folder' => 'www/res/icon/windows-phone',
-                'name' => 'icon-48'
+                'name' => 'icon-48',
+                'bg' => true
             ),
             array(
                 'size' => 62,
                 'scale' => 1,
                 'folder' => 'www/res/icon/windows-phone',
-                'name' => 'icon-62-tile'
+                'name' => 'icon-62-tile',
+                'bg' => true
             ),
             array(
                 'size' => 173,
                 'scale' => 1,
                 'folder' => 'www/res/icon/windows-phone',
-                'name' => 'icon-173-tile'
+                'name' => 'icon-173-tile',
+                'bg' => true
             ),
             array(
                 'size' => 29,
                 'scale' => 1,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-small'
+                'name' => 'icon-small',
+                'bg' => true
             ),
             array(
                 'size' => 29,
                 'scale' => 2,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-small@2x'
+                'name' => 'icon-small@2x',
+                'bg' => true
             ),
             array(
                 'size' => 40,
                 'scale' => 1,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-40'
+                'name' => 'icon-40',
+                'bg' => true
             ),
             array(
                 'size' => 40,
                 'scale' => 2,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-40@2x'
+                'name' => 'icon-40@2x',
+                'bg' => true
             ),
             array(
                 'size' => 50,
                 'scale' => 1,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-50'
+                'name' => 'icon-50',
+                'bg' => true
             ),
             array(
                 'size' => 50,
                 'scale' => 2,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-50@2x'
+                'name' => 'icon-50@2x',
+                'bg' => true
             ),
             array(
                 'size' => 57,
                 'scale' => 1,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon'
+                'name' => 'icon',
+                'bg' => true
             ),
             array(
                 'size' => 57,
                 'scale' => 2,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon@2x'
+                'name' => 'icon@2x',
+                'bg' => true
             ),
             array(
                 'size' => 60,
                 'scale' => 1,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-60'
+                'name' => 'icon-60',
+                'bg' => true
             ),
             array(
                 'size' => 60,
                 'scale' => 2,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-60@2x'
+                'name' => 'icon-60@2x',
+                'bg' => true
             ),
             array(
                 'size' => 60,
                 'scale' => 3,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-60@3x'
+                'name' => 'icon-60@3x',
+                'bg' => true
             ),
             array(
                 'size' => 72,
                 'scale' => 1,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-72'
+                'name' => 'icon-72',
+                'bg' => true
             ),
             array(
                 'size' => 72,
                 'scale' => 2,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-72@2x'
+                'name' => 'icon-72@2x',
+                'bg' => true
             ),
             array(
                 'size' => 76,
                 'scale' => 1,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-76'
+                'name' => 'icon-76',
+                'bg' => true
             ),
             array(
                 'size' => 76,
                 'scale' => 2,
                 'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-76@2x'
+                'name' => 'icon-76@2x',
+                'bg' => true
             ),
             array(
                 'size' => 96,
@@ -489,19 +511,22 @@ class Design extends Eloquent {
                 'size' => 110,
                 'scale' => 1,
                 'folder' => 'platforms/wp8',
-                'name' => 'ApplicationIcon'
+                'name' => 'ApplicationIcon',
+                'bg' => true
             ),
             array(
                 'size' => 202,
                 'scale' => 1,
                 'folder' => 'platforms/wp8',
-                'name' => 'TileMedium'
+                'name' => 'TileMedium',
+                'bg' => true
             ),
             array(
                 'size' => 110,
                 'scale' => 1,
                 'folder' => 'platforms/wp8',
-                'name' => 'TileSmall'
+                'name' => 'TileSmall',
+                'bg' => true
             ),
         ),
         //endregion
@@ -552,7 +577,7 @@ class Design extends Eloquent {
                 $scale = isset($s['scale']) ? $s['scale'] : 1;
                 $length = $s['size'] * $scale;
                 $img = Image::make($root . 'origin.' . $this->ext);
-                if (in_array($format, $appleFormats) || $format == 'webapp') {
+                if (in_array($format, $appleFormats) || isset($s['bg'])) {
                     $canvas = Image::canvas($img->width(), $img->height(), '#ffffff');
                     $img = $canvas->insert($img);
                 }
