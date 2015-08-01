@@ -93,26 +93,30 @@ span.string {
 }
 #tp_ios .icons-row .icon-row,
 #tp_watch .icons-row .icon-row,
-#tp_webapp .icons-row .icon-row {
+#tp_webapp .icons-row .icon-row,
+#tp_phonegap .icons-row .icon-row {
   vertical-align: middle;
   height: 56px;
   line-height: 56px;
 }
 #tp_ios .sub-icon > div,
 #tp_watch .sub-icon > div,
-#tp_webapp .sub-icon > div {
+#tp_webapp .sub-icon > div,
+#tp_phonegap .sub-icon > div {
   padding: 0;
 }
 #tp_ios img,
 #tp_watch img,
-#tp_webapp img {
+#tp_webapp img,
+#tp_phonegap img {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box;
 }
 #tp_ios img.x1,
 #tp_watch img.x1,
-#tp_webapp img.x1 {
+#tp_webapp img.x1,
+#tp_phonegap img.x1 {
   width: 29px;
   height: 29px;
   -webkit-border-radius: 6px;
@@ -121,7 +125,8 @@ span.string {
 }
 #tp_ios img.x2,
 #tp_watch img.x2,
-#tp_webapp img.x2 {
+#tp_webapp img.x2,
+#tp_phonegap img.x2 {
   width: 40px;
   height: 40px;
   -webkit-border-radius: 9px;
@@ -130,7 +135,8 @@ span.string {
 }
 #tp_ios img.x3,
 #tp_watch img.x3,
-#tp_webapp img.x3 {
+#tp_webapp img.x3,
+#tp_phonegap img.x3 {
   width: 56px;
   height: 56px;
   -webkit-border-radius: 12px;
@@ -139,7 +145,8 @@ span.string {
 }
 #tp_ios img.x4,
 #tp_watch img.x4,
-#tp_webapp img.x4 {
+#tp_webapp img.x4,
+#tp_phonegap img.x4 {
   width: 61px;
   height: 61px;
   -webkit-border-radius: 13px;
@@ -148,7 +155,8 @@ span.string {
 }
 #tp_ios img.watch,
 #tp_watch img.watch,
-#tp_webapp img.watch {
+#tp_webapp img.watch,
+#tp_phonegap img.watch {
   width: 45px;
   height: 45px;
   -webkit-border-radius: 22.5px;

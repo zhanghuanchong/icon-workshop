@@ -27,7 +27,7 @@
                 <img src="/img/folder.png" />
             </a>
             <div class="media-body">
-                同时生成 <strong>iOS</strong>、 <strong>Android</strong> 和 <strong>Windows Phone</strong> 应用的图标。遵循
+                同时生成 <strong>iOS</strong>、 <strong>安卓</strong> 和 <strong>Windows Phone</strong> 应用的图标。遵循
                 <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html" target="_blank">
                     <span class="label label-info" style="font-size:12px">Apple</span></a>
                 、

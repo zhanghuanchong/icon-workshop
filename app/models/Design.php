@@ -485,6 +485,24 @@ class Design extends Eloquent {
                 'folder' => 'platforms/android/res/drawable-xxhdpi',
                 'name' => 'icon'
             ),
+            array(
+                'size' => 110,
+                'scale' => 1,
+                'folder' => 'platforms/wp8',
+                'name' => 'ApplicationIcon'
+            ),
+            array(
+                'size' => 202,
+                'scale' => 1,
+                'folder' => 'platforms/wp8',
+                'name' => 'TileMedium'
+            ),
+            array(
+                'size' => 110,
+                'scale' => 1,
+                'folder' => 'platforms/wp8',
+                'name' => 'TileSmall'
+            ),
         ),
         //endregion
     );
