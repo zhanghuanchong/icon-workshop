@@ -285,6 +285,208 @@ class Design extends Eloquent {
             ),
         ),
         //endregion
+        //region PhoneGap
+        'phonegap' => array(
+            array(
+                'size' => 128,
+                'scale' => 1,
+                'folder' => 'www',
+                'name' => 'icon'
+            ),
+            array(
+                'size' => 57,
+                'scale' => 1,
+                'folder' => 'www/res/icon/ios',
+                'name' => 'icon-57'
+            ),
+            array(
+                'size' => 57,
+                'scale' => 2,
+                'folder' => 'www/res/icon/ios',
+                'name' => 'icon-57-2x'
+            ),
+            array(
+                'size' => 72,
+                'scale' => 1,
+                'folder' => 'www/res/icon/ios',
+                'name' => 'icon-72'
+            ),
+            array(
+                'size' => 72,
+                'scale' => 2,
+                'folder' => 'www/res/icon/ios',
+                'name' => 'icon-72-2x'
+            ),
+            array(
+                'size' => 36,
+                'scale' => 1,
+                'folder' => 'www/res/icon/android',
+                'name' => 'icon-36-ldpi'
+            ),
+            array(
+                'size' => 48,
+                'scale' => 1,
+                'folder' => 'www/res/icon/android',
+                'name' => 'icon-48-mdpi'
+            ),
+            array(
+                'size' => 72,
+                'scale' => 1,
+                'folder' => 'www/res/icon/android',
+                'name' => 'icon-72-hdpi'
+            ),
+            array(
+                'size' => 96,
+                'scale' => 1,
+                'folder' => 'www/res/icon/android',
+                'name' => 'icon-96-xhdpi'
+            ),
+            array(
+                'size' => 48,
+                'scale' => 1,
+                'folder' => 'www/res/icon/windows-phone',
+                'name' => 'icon-48'
+            ),
+            array(
+                'size' => 62,
+                'scale' => 1,
+                'folder' => 'www/res/icon/windows-phone',
+                'name' => 'icon-62-tile'
+            ),
+            array(
+                'size' => 173,
+                'scale' => 1,
+                'folder' => 'www/res/icon/windows-phone',
+                'name' => 'icon-173-tile'
+            ),
+            array(
+                'size' => 29,
+                'scale' => 1,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-small'
+            ),
+            array(
+                'size' => 29,
+                'scale' => 2,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-small@2x'
+            ),
+            array(
+                'size' => 40,
+                'scale' => 1,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-40'
+            ),
+            array(
+                'size' => 40,
+                'scale' => 2,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-40@2x'
+            ),
+            array(
+                'size' => 50,
+                'scale' => 1,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-50'
+            ),
+            array(
+                'size' => 50,
+                'scale' => 2,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-50@2x'
+            ),
+            array(
+                'size' => 57,
+                'scale' => 1,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon'
+            ),
+            array(
+                'size' => 57,
+                'scale' => 2,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon@2x'
+            ),
+            array(
+                'size' => 60,
+                'scale' => 1,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-60'
+            ),
+            array(
+                'size' => 60,
+                'scale' => 2,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-60@2x'
+            ),
+            array(
+                'size' => 60,
+                'scale' => 3,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-60@3x'
+            ),
+            array(
+                'size' => 72,
+                'scale' => 1,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-72'
+            ),
+            array(
+                'size' => 72,
+                'scale' => 2,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-72@2x'
+            ),
+            array(
+                'size' => 76,
+                'scale' => 1,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-76'
+            ),
+            array(
+                'size' => 76,
+                'scale' => 2,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-76@2x'
+            ),
+            array(
+                'size' => 96,
+                'scale' => 1,
+                'folder' => 'platforms/android/res/drawable',
+                'name' => 'icon'
+            ),
+            array(
+                'size' => 36,
+                'scale' => 1,
+                'folder' => 'platforms/android/res/drawable-ldpi',
+                'name' => 'icon'
+            ),
+            array(
+                'size' => 48,
+                'scale' => 1,
+                'folder' => 'platforms/android/res/drawable-mdpi',
+                'name' => 'icon'
+            ),
+            array(
+                'size' => 48,
+                'scale' => 1.5,
+                'folder' => 'platforms/android/res/drawable-hdpi',
+                'name' => 'icon'
+            ),
+            array(
+                'size' => 48,
+                'scale' => 2,
+                'folder' => 'platforms/android/res/drawable-xhdpi',
+                'name' => 'icon'
+            ),
+            array(
+                'size' => 48,
+                'scale' => 3,
+                'folder' => 'platforms/android/res/drawable-xxhdpi',
+                'name' => 'icon'
+            ),
+        ),
+        //endregion
     );
 
     public function subscribers()
@@ -326,7 +528,7 @@ class Design extends Eloquent {
                 if (isset($s['folder'])) {
                     $folder = $format_root . $s['folder'] . '/';
                     if (!file_exists($folder)) {
-                        mkdir($folder);
+                        mkdir($folder, 0777, true);
                     }
                 }
                 $scale = isset($s['scale']) ? $s['scale'] : 1;
@@ -339,7 +541,7 @@ class Design extends Eloquent {
                 $img->resize($length, $length);
                 if ($length <= 30) {
                     $img->sharpen(5);
-                } else if ($length <= 40) {
+                } else if ($length <= 50) {
                     $img->sharpen(2);
                 }
                 if (isset($s['name'])) {
@@ -400,7 +602,8 @@ class Design extends Eloquent {
                 'ios',
                 'android',
                 'iwatch',
-                'webapp'
+                'webapp',
+                'phonegap'
             );
             foreach($formats as $f) {
                 $zip->folder($f)->add($folder . $f);
