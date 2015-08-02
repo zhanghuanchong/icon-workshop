@@ -6,7 +6,7 @@ $basePath = $design->folder . '/' . $design->id . '/ios/AppIcon.appiconset/';
     <div class="row">
         <div class="col-md-6" style="background: url('/img/iphone6.png') no-repeat; height:743px; position: relative">
             <div style="position: absolute; left:235px; top:489px;">
-                <img src="/files/<?php echo $basePath . 'icon-72.png' ?>" alt="" class="x4"/>
+                <img src="/files/<?php echo $basePath . 'icon-72.png' ?>" alt="" class="x4" style="margin-top:0"/>
                 <p style="color: #ccc;font-weight: normal;font-size: 12px;text-align: center;padding-top: 5px;">您的应用</p>
             </div>
         </div>
@@ -53,7 +53,7 @@ $basePath = $design->folder . '/' . $design->id . '/ios/AppIcon.appiconset/';
                             <img src="/files/<?php echo $basePath . 'icon-57.png' ?>" alt="" class="x3" />
                         </div>
                         <div class="col-xs-6">
-                            <img src="/files/<?php echo $basePath . 'icon-57@2x.png' ?>" alt="" class="x3" />
+                            <img src="/files/<?php echo $basePath . 'icon-57@2x.png' ?>" alt="" class="x4" />
                         </div>
                     </div>
                     <div class="row">
@@ -74,7 +74,7 @@ $basePath = $design->folder . '/' . $design->id . '/ios/AppIcon.appiconset/';
                             <img src="/files/<?php echo $basePath . 'icon-60@2x.png' ?>" alt="" class="x3" />
                         </div>
                         <div class="col-xs-6">
-                            <img src="/files/<?php echo $basePath . 'icon-60@3x.png' ?>" alt="" class="x3" />
+                            <img src="/files/<?php echo $basePath . 'icon-60@3x.png' ?>" alt="" class="x4" />
                         </div>
                     </div>
                     <div class="row">
@@ -130,10 +130,10 @@ $basePath = $design->folder . '/' . $design->id . '/ios/AppIcon.appiconset/';
                 <div class="col-sm-4">
                     <div class="row icon-row">
                         <div class="col-xs-6">
-                            <img src="/files/<?php echo $basePath . 'icon-50.png' ?>" alt="" class="x3" />
+                            <img src="/files/<?php echo $basePath . 'icon-50.png' ?>" alt="" class="x2" />
                         </div>
                         <div class="col-xs-6">
-                            <img src="/files/<?php echo $basePath . 'icon-50@2x.png' ?>" alt="" class="x3" />
+                            <img src="/files/<?php echo $basePath . 'icon-50@2x.png' ?>" alt="" class="x4" />
                         </div>
                     </div>
                     <div class="row">
@@ -152,7 +152,7 @@ $basePath = $design->folder . '/' . $design->id . '/ios/AppIcon.appiconset/';
                             <img src="/files/<?php echo $basePath . 'icon-72.png' ?>" alt="" class="x3"/>
                         </div>
                         <div class="col-xs-6">
-                            <img src="/files/<?php echo $basePath . 'icon-72@2x.png' ?>" alt="" class="x3"/>
+                            <img src="/files/<?php echo $basePath . 'icon-72@2x.png' ?>" alt="" class="x4"/>
                         </div>
                     </div>
                     <div class="row">
@@ -171,7 +171,7 @@ $basePath = $design->folder . '/' . $design->id . '/ios/AppIcon.appiconset/';
                             <img src="/files/<?php echo $basePath . 'icon-76.png' ?>" alt="" class="x3" />
                         </div>
                         <div class="col-xs-6">
-                            <img src="/files/<?php echo $basePath . 'icon-76@2x.png' ?>" alt="" class="x3" />
+                            <img src="/files/<?php echo $basePath . 'icon-76@2x.png' ?>" alt="" class="x4" />
                         </div>
                     </div>
                     <div class="row">

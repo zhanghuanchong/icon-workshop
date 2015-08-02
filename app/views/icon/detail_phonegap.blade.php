@@ -54,7 +54,7 @@ $basePath = $design->folder . '/' . $design->id . '/phonegap/';
                             </div>
                         </div>
                     </div>
-                    <div class="row icons-row">
+                    <div class="row icons-row no-radius">
                         <div class="col-sm-12">
                             <div class="row icon-row">
                                 <div class="col-xs-3">
@@ -81,7 +81,7 @@ $basePath = $design->folder . '/' . $design->id . '/phonegap/';
                             </div>
                         </div>
                     </div>
-                    <div class="row icons-row">
+                    <div class="row icons-row no-radius">
                         <div class="col-sm-12">
                             <div class="row icon-row">
                                 <div class="col-xs-4">
@@ -303,7 +303,7 @@ $basePath = $design->folder . '/' . $design->id . '/phonegap/';
                 </h4>
             </div>
             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body icons-col icons-row">
+                <div class="panel-body icons-col icons-row no-radius">
                     <div class="row icon-row">
                         <div class="col-xs-2">
                             <img src="/files/<?php echo $basePath . 'platforms/android/res/drawable/icon.png' ?>" alt="" class="x3" />
@@ -344,7 +344,7 @@ $basePath = $design->folder . '/' . $design->id . '/phonegap/';
                 </h4>
             </div>
             <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                <div class="panel-body icons-col icons-row">
+                <div class="panel-body icons-col icons-row no-radius">
                     <div class="row icon-row">
                         <div class="col-xs-4">
                             <img src="/files/<?php echo $basePath . 'platforms/wp8/ApplicationIcon.png' ?>" alt="" class="x2" />

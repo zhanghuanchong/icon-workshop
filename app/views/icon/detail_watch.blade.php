@@ -5,7 +5,7 @@ $basePath = $design->folder . '/' . $design->id . '/iwatch/AppIcon.appiconset/';
 <div role="tabpanel" class="tab-pane fade in" id="tp_watch">
     <div class="row">
         <div class="col-md-6" style="background: url('/img/watch.png') no-repeat; height:743px; position: relative">
-            <div style="position: absolute; left: 195px; top: 275px;">
+            <div style="position: absolute; left: 194px; top: 274px;">
                 <img src="/files/<?php echo $basePath . 'icon-24@2x.png' ?>" alt="" class="watch"/>
             </div>
         </div>

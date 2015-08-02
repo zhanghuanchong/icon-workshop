@@ -73,7 +73,7 @@ $basePath = $design->folder . '/' . $design->id . '/webapp/';
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 no-radius">
                     <div class="row icon-row">
                         <div class="col-xs-12">
                             <img src="/files/<?php echo $basePath . 'android-touch-icon.png' ?>" alt="" class="x1"/>

@@ -566,7 +566,7 @@ class Design extends Eloquent {
             ),
             array(
                 'size' => 106,
-                'name' => 'SmallLogo106x104'
+                'name' => 'SmallLogo106x106'
             ),
             array(
                 'size' => 50,

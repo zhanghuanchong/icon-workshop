@@ -63,6 +63,12 @@ body {
 span.string {
     color: #800;
 }
+.no-radius {
+    border-radius: 0 !important;
+    img {
+        border-radius: 0 !important;
+    }
+}
 #tp_tabs {
     li a {
         font-size: 16px;
@@ -96,7 +102,7 @@ span.string {
         margin-bottom: 15px;
     }
 }
-#tp_ios, #tp_watch, #tp_webapp, #tp_phonegap {
+#tp_ios, #tp_watch, #tp_webapp, #tp_phonegap, #tp_windowsphone {
     .icons-row .icon-row {
         vertical-align: middle;
         height: 56px;
@@ -106,43 +112,65 @@ span.string {
         padding: 0;
     }
     img {
-        -webkit-background-clip: padding-box;
-        -moz-background-clip: padding-box;
         background-clip: padding-box;
         &.x1 {
             width: 29px;
             height: 29px;
-            -webkit-border-radius: 6px;
-            -moz-border-radius: 6px;
             border-radius: 6px;
         }
         &.x2 {
             width: 40px;
             height: 40px;
-            -webkit-border-radius: 9px;
-            -moz-border-radius: 9px;
             border-radius: 9px;
         }
         &.x3 {
             width: 56px;
             height: 56px;
-            -webkit-border-radius: 12px;
-            -moz-border-radius: 12px;
             border-radius: 12px;
         }
         &.x4 {
             width: 61px;
             height: 61px;
-            -webkit-border-radius: 13px;
-            -moz-border-radius: 13px;
             border-radius: 13px;
         }
+    }
+}
+#tp_watch {
+    img {
+        &.x1 {
+            border-radius: 14px;
+        }
+        &.x2 {
+            border-radius: 20px;
+        }
+        &.x3 {
+            border-radius: 28px;
+        }
+        &.x4 {
+            border-radius: 30px;
+        }
         &.watch {
-            width: 45px;
-            height: 45px;
-            -webkit-border-radius: 22.5px;
-            -moz-border-radius: 22.5px;
+            width: 47px;
+            height: 47px;
             border-radius: 22.5px;
+        }
+    }
+}
+#tp_windowsphone, #tp_phonegap {
+    img {
+        &.x4 {
+            margin-top: -6px;
+        }
+    }
+}
+#tp_windowsphone {
+    img {
+        border-radius: 0 !important;
+        &.x5 {
+            width: 75px;
+            height: 75px;
+            border-radius: 14px;
+            margin-top: -20px;
         }
     }
 }
