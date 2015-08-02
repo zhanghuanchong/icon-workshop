@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keyword" content="app图标缩放,应用图标生成工具,批量生成iOS图标,批量生成Android图标,app图标,iwatch图标,phonegap图标,图标模板">
-    <meta name="description" content="一键快速生成iOS, Android，Windows Phone, WebApp, iWatch(watchOS), PhoneGap(Cordova)等移动平台app不同大小(规格尺寸)的应用图标，快速预览，提供丰富选项，可以直接打包发布到应用市场，并提供相应的PSD模板。">
+    <meta name="keyword" content="app图标缩放,应用图标生成工具,批量生成iOS图标,批量生成Android图标,app图标,图标缩放,iwatch图标,phonegap图标,图标模板">
+    <meta name="description" content="一键快速生成iOS, Android，Windows Phone, WebApp, iWatch(watchOS), PhoneGap(Cordova)等移动平台不同大小(规格尺寸)的App图标，快速预览，提供丰富选项，可以直接打包发布到应用市场，并提供相应的PSD模板。">
     <meta name="author" content="睿鸿游戏">
     <link rel="icon" href="/favicon.ico">
 
