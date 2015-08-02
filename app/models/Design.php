@@ -530,6 +530,58 @@ class Design extends Eloquent {
             ),
         ),
         //endregion
+        //region Windows Phone
+        'windowsphone' => array(
+            array(
+                'size' => 71,
+                'name' => 'Square71x71Logo'
+            ),
+            array(
+                'size' => 99,
+                'name' => 'Square99x99Logo'
+            ),
+            array(
+                'size' => 170,
+                'name' => 'Square170x170Logo'
+            ),
+            array(
+                'size' => 150,
+                'name' => 'Logo'
+            ),
+            array(
+                'size' => 210,
+                'name' => 'Logo210x210'
+            ),
+            array(
+                'size' => 360,
+                'name' => 'Logo360x360'
+            ),
+            array(
+                'size' => 44,
+                'name' => 'SmallLogo'
+            ),
+            array(
+                'size' => 62,
+                'name' => 'SmallLogo62x62'
+            ),
+            array(
+                'size' => 106,
+                'name' => 'SmallLogo106x104'
+            ),
+            array(
+                'size' => 50,
+                'name' => 'StoreLogo'
+            ),
+            array(
+                'size' => 70,
+                'name' => 'StoreLogo70x70'
+            ),
+            array(
+                'size' => 120,
+                'name' => 'StoreLogo120x120'
+            ),
+        ),
+        //endregion
     );
 
     public function subscribers()
@@ -577,7 +629,7 @@ class Design extends Eloquent {
                 $scale = isset($s['scale']) ? $s['scale'] : 1;
                 $length = $s['size'] * $scale;
                 $img = Image::make($root . 'origin.' . $this->ext);
-                if (in_array($format, $appleFormats) || isset($s['bg'])) {
+                if (in_array($format, $appleFormats) || isset($s['bg']) || $format == 'windowsphone') {
                     $canvas = Image::canvas($img->width(), $img->height(), '#ffffff');
                     $img = $canvas->insert($img);
                 }
@@ -646,7 +698,8 @@ class Design extends Eloquent {
                 'android',
                 'iwatch',
                 'webapp',
-                'phonegap'
+                'phonegap',
+                'windowsphone'
             );
             foreach($formats as $f) {
                 $zip->folder($f)->add($folder . $f);
