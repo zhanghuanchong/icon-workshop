@@ -4,18 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keyword" content="app图标缩放,应用图标生成工具,批量生成iOS图标,批量生成Android图标,app图标,图标缩放,iwatch图标,phonegap图标,图标模板">
-    <meta name="description" content="一键快速生成iOS, Android, Windows Phone, WebApp, iWatch(watchOS), PhoneGap(Cordova)等移动平台不同大小(规格尺寸)的App图标，快速预览，提供丰富选项，可以直接打包发布到应用市场，并提供相应的PSD模板。">
+    <meta name="keyword" content="Launch Image,Splash screen,iOS launchimage,启动画面,启动屏幕,缩放,批量,生成工具">
+    <meta name="description" content="一键快速生成iOS不同尺寸, 不同大小的启动图片(Launch Image), 并提供预览.">
     <meta name="author" content="睿鸿游戏">
     <link rel="icon" href="/favicon.ico">
 
-    <title>{{ Config::get('constants.site_name') . ' - ' . Config::get('constants.slogan') }}</title>
+    <title>Launch Image 批量生成工具 - 一键生成iOS不同尺寸的启动图片</title>
 
     @if(App::environment('local'))
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/helpers.css">
         <link rel="stylesheet" href="/css/sweet-alert.css">
+        <link rel="stylesheet" href="/css/colpick.css">
         <link rel="stylesheet" href="/css/main.css">
     @else
         <link rel="stylesheet" href="/css/all.css?_={{Config::get('constants.version')}}">
@@ -38,31 +39,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/" style="color: white">
+            <a class="navbar-brand" href="/splash" style="color: white">
                 <img src="/img/rh_site_icon_20.png" alt="" style="display: inline; vertical-align: top"/>
-                <?php echo Config::get('constants.site_name') ?>
+                Launch Image 批量生成工具
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">首页</a></li>
+                <li class="active"><a href="/splash">首页</a></li>
                 <li>
-                    <a href="/splash">Launch Image批量生成工具</a>
+                    <a href="/">{{Config::get('constants.site_name')}}</a>
                     <i class="fa fa-circle dot-rt"></i>
-                </li>
-                <li><a href="#">iOS 8图标</a></li>
-                <li><a href="#">WebApp图标</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">PSD模板 <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">iOS图标模板</a></li>
-                        <li><a href="#">Andriod图标模板</a></li>
-                        <li><a href="#">OS X图标模板</a></li>
-                        <li><a href="#">截屏模板</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">来源</li>
-                        <li><a href="http://appicontemplate.com/" target="_blank">App Icon Template</a></li>
-                    </ul>
                 </li>
                 <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
                 <li><a href="#about">关于我们</a></li>
@@ -99,7 +86,8 @@
     <script src="/js/jquery-1.11.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/sweet-alert.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/js/colpick.js"></script>
+    <script src="/js/splash.js"></script>
 @else
     <script src="/js/all.js?_={{Config::get('constants.version')}}"></script>
 @endif

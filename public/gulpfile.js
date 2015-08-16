@@ -12,10 +12,13 @@ var path = {
         'js/jquery-1.11.2.min.js',
         'js/bootstrap.min.js',
         'js/sweet-alert.min.js',
-        'js/main.js '
+        'js/main.js ',
+        'js/splash.js '
     ],
     css_src: [
         'css/bootstrap.min.css',
+        'css/font-awesome.min.css',
+        'css/helpers.css',
         'css/sweet-alert.css',
         'css/main.css'
     ]

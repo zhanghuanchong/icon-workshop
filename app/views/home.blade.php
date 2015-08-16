@@ -10,7 +10,7 @@
             <div class="circle1"></div>
         </div>
     </div>
-    <p><strong>拖放您的设计文件到这里。</strong></p>
+    <p><strong>请拖放您的设计文件到这里。</strong></p>
     <p>支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果。</p>
     <p><a href="javascript:;" class="btn btn-primary btn-lg" id="if_btn">或者点击这里上传</a></p>
     <div id="if_submitting" class="alert alert-success" role="alert">
@@ -27,15 +27,12 @@
                 <img src="/img/folder.png" />
             </a>
             <div class="media-body">
-                同时生成 <strong>iOS</strong>、 <strong>安卓</strong> 和 <strong>Windows Phone</strong> 应用的图标。遵循
-                <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html" target="_blank">
-                    <span class="label label-info" style="font-size:12px">Apple</span></a>
-                、
-                <a href="https://developer.android.com/design/style/iconography.html#launcher" target="_blank">
-                    <span class="label label-info" style="font-size:12px">Google</span></a>
-                、
-                <a href="https://msdn.microsoft.com/en-us/library/windows/apps/jj662924(v=vs.105).aspx" target="_blank">
-                    <span class="label label-info" style="font-size:12px">Microsoft</span></a>
+                同时生成
+                <strong class="label label-info">iOS</strong>、<strong class="label label-info">安卓</strong>、
+                <strong class="label label-info">PhoneGap</strong> 和 <strong class="label label-info">Windows Phone</strong> 应用的图标。遵循
+                <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html" target="_blank">Apple</a>、
+                <a href="https://developer.android.com/design/style/iconography.html#launcher" target="_blank">Google</a>、
+                <a href="https://msdn.microsoft.com/en-us/library/windows/apps/jj662924(v=vs.105).aspx" target="_blank">Microsoft</a>
                 官方标准。
             </div>
         </div>
