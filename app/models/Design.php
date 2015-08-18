@@ -696,10 +696,10 @@ class Design extends Eloquent {
             $formats = array(
                 'ios',
                 'android',
-                'iwatch',
-                'webapp',
-                'phonegap',
-                'windowsphone'
+//                'iwatch',
+//                'webapp',
+//                'phonegap',
+//                'windowsphone'
             );
             foreach($formats as $f) {
                 $zip->folder($f)->add($folder . $f);
