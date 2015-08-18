@@ -597,6 +597,13 @@ class Design extends Eloquent {
         $root = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
         $appleFormats = array('ios', 'iwatch');
         $specialKeys = array('role', 'subtype');
+        $img = Image::make($root . 'origin.' . $this->ext);
+        $img->backup();
+
+        $canvas = Image::canvas($img->width(), $img->height(), '#ffffff');
+        $imgBg = $canvas->insert($img);
+        $imgBg->backup();
+
         foreach($formats as $format) {
             if (!isset($this->format_sizes[$format])) {
                 continue;
@@ -628,23 +635,24 @@ class Design extends Eloquent {
                 }
                 $scale = isset($s['scale']) ? $s['scale'] : 1;
                 $length = $s['size'] * $scale;
-                $img = Image::make($root . 'origin.' . $this->ext);
                 if (in_array($format, $appleFormats) || isset($s['bg']) || $format == 'windowsphone') {
-                    $canvas = Image::canvas($img->width(), $img->height(), '#ffffff');
-                    $img = $canvas->insert($img);
+                    $_img = &$imgBg;
+                } else {
+                    $_img = &$img;
                 }
-                $img->resize($length, $length);
+                $_img->reset();
+                $_img->resize($length, $length);
                 if ($length <= 30) {
-                    $img->sharpen(5);
+                    $_img->sharpen(5);
                 } else if ($length <= 50) {
-                    $img->sharpen(2);
+                    $_img->sharpen(2);
                 }
                 if (isset($s['name'])) {
                     $name = $s['name'];
                 } else {
                     $name = 'icon-' . $s['size'] . ($scale == 1 ? '' : '@' . $scale . 'x');
                 }
-                $img->save($folder . $name . '.png');
+                $_img->save($folder . $name . '.png');
 
                 if ($format == 'webapp') {
                     $webappLinks[] = array(
