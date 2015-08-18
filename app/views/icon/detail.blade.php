@@ -47,10 +47,10 @@
     <ul class="nav nav-tabs nav-justified" role="tablist" id="tp_tabs">
         <li role="presentation" class="active"><a href="#tp_ios" aria-controls="tp_ios" role="tab" data-toggle="tab">iOS</a></li>
         <li role="presentation"><a href="#tp_android" aria-controls="tp_android" role="tab" data-toggle="tab">Android</a></li>
-        <li role="presentation"><a href="#tp_windowsphone" aria-controls="tp_windowsphone" role="tab" data-toggle="tab">Windows Phone</a></li>
-        <li role="presentation"><a href="#tp_watch" aria-controls="tp_watch" role="tab" data-toggle="tab">iWatch</a></li>
-        <li role="presentation"><a href="#tp_webapp" aria-controls="tp_webapp" role="tab" data-toggle="tab">Web App</a></li>
-        <li role="presentation"><a href="#tp_phonegap" aria-controls="tp_phonegap" role="tab" data-toggle="tab">PhoneGap</a></li>
+        {{--<li role="presentation"><a href="#tp_windowsphone" aria-controls="tp_windowsphone" role="tab" data-toggle="tab">Windows Phone</a></li>--}}
+        {{--<li role="presentation"><a href="#tp_watch" aria-controls="tp_watch" role="tab" data-toggle="tab">iWatch</a></li>--}}
+        {{--<li role="presentation"><a href="#tp_webapp" aria-controls="tp_webapp" role="tab" data-toggle="tab">Web App</a></li>--}}
+        {{--<li role="presentation"><a href="#tp_phonegap" aria-controls="tp_phonegap" role="tab" data-toggle="tab">PhoneGap</a></li>--}}
     </ul>
 
     <div class="tab-content" id="tp_contents">
@@ -59,13 +59,13 @@
 
         @include('icon.detail_android')
 
-        @include('icon.detail_windowsphone')
+        {{--@include('icon.detail_windowsphone')--}}
 
-        @include('icon.detail_watch')
+        {{--@include('icon.detail_watch')--}}
 
-        @include('icon.detail_webapp')
+        {{--@include('icon.detail_webapp')--}}
 
-        @include('icon.detail_phonegap')
+        {{--@include('icon.detail_phonegap')--}}
     </div>
 
 </div>
