@@ -701,7 +701,7 @@ class Design extends Eloquent {
         $path = $folder . 'icons.zip';
         if (!file_exists($path) || $regenerate) {
             $zip = Zipper::make($path);
-            $formats = explode('_', $this->platform);
+            $formats = explode(',', $this->platform);
             foreach($formats as $f) {
                 $zip->folder($f)->add($folder . $f);
             }

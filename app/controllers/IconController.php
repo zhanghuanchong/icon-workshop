@@ -30,7 +30,7 @@ class IconController extends BaseController {
 
                 $design->save();
 
-                $platforms = explode('_', $design->platform);
+                $platforms = explode(',', $design->platform);
                 $design->generateIcons($platforms);
 
                 return $this->jsonResponse($id);
@@ -42,7 +42,7 @@ class IconController extends BaseController {
     public function getDetail ($id)
     {
         $design = Design::findOrFail($id);
-        $platforms = explode('_', $design->platform);
+        $platforms = explode(',', $design->platform);
         return Response::view('icon/detail', array(
             'design' => $design,
             'platforms' => $platforms

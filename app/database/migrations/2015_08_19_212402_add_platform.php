@@ -13,7 +13,7 @@ class AddPlatform extends Migration {
 	public function up()
 	{
 		Schema::table('designs', function($table){
-			$table->string('platform', 255)->default('ios_android')->after('mime_type');
+			$table->string('platform', 255)->default('ios,android')->after('mime_type');
 		});
 	}
 
