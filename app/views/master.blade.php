@@ -14,6 +14,7 @@
     @if(App::environment('local'))
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/sweet-alert.css">
+        <link rel="stylesheet" href="/css/select2.min.css">
         <link rel="stylesheet" href="/css/main.css">
     @else
         <link rel="stylesheet" href="/css/all.css?_={{Config::get('constants.version')}}">
@@ -93,6 +94,8 @@
     <script src="/js/jquery-1.11.2.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/sweet-alert.min.js"></script>
+    <script src="/js/select2.min.js"></script>
+    <script src="/js/select2.zh-CN.js"></script>
     <script src="/js/main.js"></script>
 @else
     <script src="/js/all.js?_={{Config::get('constants.version')}}"></script>
