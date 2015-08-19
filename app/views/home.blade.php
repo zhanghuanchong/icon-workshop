@@ -12,7 +12,18 @@
     </div>
     <p><strong>请拖放您的设计文件到这里。</strong></p>
     <p>支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果。</p>
-    <p><a href="javascript:;" class="btn btn-primary btn-lg" id="if_btn">或者点击这里上传</a></p>
+    <div id="if_btn_box">
+        <a href="javascript:;" class="btn btn-primary btn-lg" id="if_btn">或者点击这里上传</a>
+        <label for="platform" style="margin-left: 20px">选择平台:</label>
+        <select name="platform" id="platform" multiple style="width: 400px; height: 30px">
+            <option value="ios" selected>iOS</option>
+            <option value="android" selected>Android</option>
+            <option value="windowsphone">Windows Phone</option>
+            <option value="phonegap">PhoneGap</option>
+            <option value="iwatch">iWatch</option>
+            <option value="webapp">Web App</option>
+        </select>
+    </div>
     <div id="if_submitting" class="alert alert-success" role="alert">
         <img src="/img/loading.gif" />
         生成中，请耐心等待(可能需要1-5分钟时间)...

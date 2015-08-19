@@ -12,6 +12,8 @@ var path = {
         'js/jquery-1.11.2.min.js',
         'js/bootstrap.min.js',
         'js/sweet-alert.min.js',
+        'js/select2.min.js',
+        'js/select2.zh-CN.js',
         'js/main.js ',
         'js/splash.js '
     ],
@@ -20,6 +22,7 @@ var path = {
         'css/font-awesome.min.css',
         'css/helpers.css',
         'css/sweet-alert.css',
+        'css/select2.min.css',
         'css/main.css'
     ]
 };

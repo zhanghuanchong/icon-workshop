@@ -45,27 +45,46 @@
 <div role="tabpanel" style="font-weight: bold">
 
     <ul class="nav nav-tabs nav-justified" role="tablist" id="tp_tabs">
-        <li role="presentation" class="active"><a href="#tp_ios" aria-controls="tp_ios" role="tab" data-toggle="tab">iOS</a></li>
-        <li role="presentation"><a href="#tp_android" aria-controls="tp_android" role="tab" data-toggle="tab">Android</a></li>
-        {{--<li role="presentation"><a href="#tp_windowsphone" aria-controls="tp_windowsphone" role="tab" data-toggle="tab">Windows Phone</a></li>--}}
-        {{--<li role="presentation"><a href="#tp_watch" aria-controls="tp_watch" role="tab" data-toggle="tab">iWatch</a></li>--}}
-        {{--<li role="presentation"><a href="#tp_webapp" aria-controls="tp_webapp" role="tab" data-toggle="tab">Web App</a></li>--}}
-        {{--<li role="presentation"><a href="#tp_phonegap" aria-controls="tp_phonegap" role="tab" data-toggle="tab">PhoneGap</a></li>--}}
+        <?php $first = FALSE; ?>
+        @if (in_array('ios', $platforms))
+            <li role="presentation"><a href="#tp_ios" aria-controls="tp_ios" role="tab" data-toggle="tab">iOS</a></li>
+        @endif
+        @if (in_array('android', $platforms))
+            <li role="presentation"><a href="#tp_android" aria-controls="tp_android" role="tab" data-toggle="tab">Android</a></li>
+        @endif
+        @if (in_array('windowsphone', $platforms))
+            <li role="presentation"><a href="#tp_windowsphone" aria-controls="tp_windowsphone" role="tab" data-toggle="tab">Windows Phone</a></li>
+        @endif
+        @if (in_array('iwatch', $platforms))
+            <li role="presentation"><a href="#tp_watch" aria-controls="tp_watch" role="tab" data-toggle="tab">iWatch</a></li>
+        @endif
+        @if (in_array('webapp', $platforms))
+            <li role="presentation"><a href="#tp_webapp" aria-controls="tp_webapp" role="tab" data-toggle="tab">Web App</a></li>
+        @endif
+        @if (in_array('phonegap', $platforms))
+            <li role="presentation"><a href="#tp_phonegap" aria-controls="tp_phonegap" role="tab" data-toggle="tab">PhoneGap</a></li>
+        @endif
     </ul>
 
     <div class="tab-content" id="tp_contents">
-
-        @include('icon.detail_ios')
-
-        @include('icon.detail_android')
-
-        {{--@include('icon.detail_windowsphone')--}}
-
-        {{--@include('icon.detail_watch')--}}
-
-        {{--@include('icon.detail_webapp')--}}
-
-        {{--@include('icon.detail_phonegap')--}}
+        @if (in_array('ios', $platforms))
+            @include('icon.detail_ios')
+        @endif
+        @if (in_array('android', $platforms))
+            @include('icon.detail_android')
+        @endif
+        @if (in_array('windowsphone', $platforms))
+            @include('icon.detail_windowsphone')
+        @endif
+        @if (in_array('iwatch', $platforms))
+            @include('icon.detail_watch')
+        @endif
+        @if (in_array('webapp', $platforms))
+            @include('icon.detail_webapp')
+        @endif
+        @if (in_array('phonegap', $platforms))
+            @include('icon.detail_phonegap')
+        @endif
     </div>
 
 </div>
