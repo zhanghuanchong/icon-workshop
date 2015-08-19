@@ -16,6 +16,7 @@ class IconController extends BaseController {
                 $design->ext = $ext;
                 $design->original_name = $file->getClientOriginalName();
                 $design->mime_type = $file->getMimeType();
+                $design->platform = Input::get('platform') ? Input::get('platform') : 'ios_android';
                 $design->user_agent = Input::server('HTTP_USER_AGENT');
                 $design->ip = Input::getClientIp();
 
@@ -28,9 +29,9 @@ class IconController extends BaseController {
                 $file->move($folder, 'origin.' . $ext);
 
                 $design->save();
-                $design->generateIcons(array(
-                    'ios', 'android' //, 'iwatch', 'webapp', 'phonegap', 'windowsphone'
-                ));
+
+                $platforms = explode('_', $design->platform);
+                $design->generateIcons($platforms);
 
                 return $this->jsonResponse($id);
             }
@@ -41,8 +42,10 @@ class IconController extends BaseController {
     public function getDetail ($id)
     {
         $design = Design::findOrFail($id);
+        $platforms = explode('_', $design->platform);
         return Response::view('icon/detail', array(
-            'design' => $design
+            'design' => $design,
+            'platforms' => $platforms
         ));
     }
 

@@ -2,7 +2,7 @@
 $basePath = $design->folder . '/' . $design->id . '/ios/AppIcon.appiconset/';
 ?>
 
-<div role="tabpanel" class="tab-pane fade in active" id="tp_ios">
+<div role="tabpanel" class="tab-pane fade" id="tp_ios">
     <div class="row">
         <div class="col-md-6" style="background: url('/img/iphone6.png') no-repeat; height:743px; position: relative">
             <div style="position: absolute; left:235px; top:489px;">

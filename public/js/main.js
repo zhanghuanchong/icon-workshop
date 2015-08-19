@@ -26,6 +26,10 @@ $(function(){
             $("#if").click();
         });
 
+        $("#platform").select2({
+            minimumResultsForSearch: Infinity
+        });
+
         var enableDropping = true;
 
         function startUploading(file) {
@@ -41,11 +45,12 @@ $(function(){
                 $("#jumbotron_img_loading").show();
             };
 
-            if_btn.hide();
+            $("#if_btn_box").hide();
             $("#if_submitting").show();
 
             var formData = new FormData();
             formData.append('file', file);
+            formData.append('platform', $("#platform").val());
 
             var oReq = new XMLHttpRequest();
             oReq.open("POST", "/icon/upload", true);
@@ -57,7 +62,7 @@ $(function(){
                             location.href = '/icon/detail/' + id;
                         }, function(){
                             enableDropping = true;
-                            if_btn.show();
+                            $("#if_btn_box").show();
                             $("#if_submitting, #jumbotron_img_loading").hide();
                             $("#jumbotron_img").get(0).src = 'img/launcher.png';
                         });
@@ -131,5 +136,10 @@ $(function(){
         form.on('submit', function(){
             btnSubscribe.click();
         });
+    }
+
+    var tp_tabs = $("#tp_tabs");
+    if (tp_tabs.length) {
+        $("#tp_tabs li a").first().click();
     }
 });
