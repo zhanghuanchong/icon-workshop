@@ -190,6 +190,16 @@ footer {
     float: right;
     width: 128px;
     height: 128px;
+    &.splash {
+        margin-top:0;
+        margin-right: 40px;
+        width: auto;
+        height: auto;
+        transition: transform .3s ease;
+        &.landscape {
+            transform: rotate(-90deg) translateY(-20px);
+        }
+    }
 }
 #jumbotron_img {
     width: 128px;

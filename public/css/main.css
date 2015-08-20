@@ -2,14 +2,6 @@ body {
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
   padding-top: 80px;
 }
-.dot-rt {
-  position: absolute;
-  color: red;
-  font-size: 12px;
-  right: 8px;
-  top: 12px;
-  transform: scale(0.8);
-}
 #if_submitting {
   display: none;
   max-width: 70%;
@@ -80,7 +72,7 @@ span.string {
   font-size: 16px;
 }
 #tp_contents {
-  padding: 30px 0;
+  padding: 30px 70px 0;
 }
 #tp_contents .icons-row {
   margin-bottom: 45px;
@@ -210,6 +202,16 @@ footer {
   float: right;
   width: 128px;
   height: 128px;
+}
+#jumbotron_img_box.splash {
+  margin-top: 0;
+  margin-right: 40px;
+  width: auto;
+  height: auto;
+  transition: transform .3s ease;
+}
+#jumbotron_img_box.splash.landscape {
+  transform: rotate(-90deg) translateY(-20px);
 }
 #jumbotron_img {
   width: 128px;
