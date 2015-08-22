@@ -7,6 +7,13 @@ class SplashController extends BaseController {
 	}
 	public function postUpload ()
 	{
+		$input = Input::all();
+		dd($input);
+		$logo = 'img/ruihong.png';
+		if (Input::hasFile('logo')) {
+			$logo = Input::file('logo');
+		}
+		Input::file('logo');
 		if (Input::hasFile('file')) {
 			$file = Input::file('file');
 			if ($file->isValid()) {
