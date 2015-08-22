@@ -18,7 +18,7 @@ body {
 #if_form {
   border: 5px solid white;
   border-radius: 15px;
-  padding: 30px 60px;
+  padding: 30px 60px 40px;
 }
 #if_form.dropping {
   border: 5px dashed #666;
@@ -194,6 +194,20 @@ span.string {
   border-radius: 14px;
   margin-top: -20px;
 }
+#splash_preview_bg {
+  position: absolute;
+  background-color: #0088cb;
+  width: 139px;
+  height: 248px;
+  top: 37px;
+  left: 11px;
+  text-align: center;
+}
+#splash_preview_logo {
+  width: 70%;
+  padding-top: 48%;
+  transition: transform .3s ease;
+}
 footer {
   text-align: center;
   background-color: #222222;
@@ -213,13 +227,16 @@ footer {
 }
 #jumbotron_img_box.splash {
   margin-top: 0;
-  margin-right: 40px;
+  margin-right: 60px;
   width: auto;
   height: auto;
   transition: transform .3s ease;
 }
 #jumbotron_img_box.splash.landscape {
-  transform: rotate(-90deg) translateY(-20px);
+  transform: rotate(-90deg);
+}
+#jumbotron_img_box.splash.landscape #splash_preview_logo {
+  transform: rotate(90deg) translate(75px, -35px) scale(1.2);
 }
 #jumbotron_img {
   width: 128px;

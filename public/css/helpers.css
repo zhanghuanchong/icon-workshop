@@ -97,6 +97,12 @@
 .alert {
   color: #e74c3c; }
 
+.alert.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
 .red {
   color: red;
 }

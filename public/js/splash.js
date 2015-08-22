@@ -9,7 +9,7 @@ $(function(){
         inputBgColor.colpick({
             layout: 'rgbhex',
             submit: false,
-            color: '#0073d1',
+            color: '#0088cb',
             onChange:function(hsb, hex, rgb, el, bySetColor) {
                 if(!bySetColor) {
                     $(el).val('#' + hex);

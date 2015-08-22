@@ -1,14 +1,14 @@
 @extends('splash/master')
 
 @section('content')
-<form class="jumbotron form-horizontal" action="/icon/upload" method="post">
+<form class="jumbotron form-horizontal" id="if_form" action="/splash/upload" method="post">
     <div class="row">
         <div class="col-md-8">
             <h2 style="margin-bottom: 40px; margin-top: 0;">一键生成iOS不同尺寸的启动图片</h2>
             <div class="form-group">
                 <label for="inputLogoFile" class="col-sm-2 control-label text-left">Logo: </label>
                 <div class="col-sm-10">
-                    <input type="file" class="form-control" id="inputLogoFile">
+                    <input type="file" name="logo" class="form-control" id="inputLogoFile">
                 </div>
             </div>
             <div class="form-group">
@@ -16,20 +16,20 @@
                 <div class="col-sm-10">
                     <div class="form-group">
                         <label class="col-sm-2 control-label text-left">
-                            <input type="radio" id="inputBgRadioColor" name="bgRadio" checked>
+                            <input type="radio" id="inputBgRadioColor" name="bgRadio" value="color" checked>
                             <label for="inputBgRadioColor">纯色</label>
                         </label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputBgColor" value="#0073d1" style="max-width: 120px">
+                            <input type="text" class="form-control" id="inputBgColor" name="color" value="#0088cb" style="max-width: 120px">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label text-left">
-                            <input type="radio" id="inputBgRadioImage" name="bgRadio">
+                            <input type="radio" id="inputBgRadioImage" name="bgRadio" value="file">
                             <label for="inputBgRadioImage">图片</label>
                         </label>
                         <div class="col-sm-10">
-                            <input type="file" class="form-control" id="inputBgFile" disabled>
+                            <input type="file" class="form-control" id="inputBgFile" name="bg" disabled>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
             </div>
             <div style="margin-top: 30px">
                 <a href="javascript:;" class="btn btn-primary btn-lg" id="generate_splash">开始生成!</a>
-                <div id="if_submitting" class="alert alert-success" role="alert">
+                <div id="if_submitting" class="alert alert-success" role="alert" style="max-width: 100%">
                     <img src="/img/loading.gif" />
                     生成中，请耐心等待(可能需要1-5分钟时间)...
                 </div>
@@ -58,7 +58,9 @@
         <div class="col-md-4">
             <div id="jumbotron_img_box" class="splash">
                 <img src="/img/iphone_xs.png" alt="" id="splash_preview_phone"/>
-                <div id="splash_preview_bg" style="position: absolute; background-color: #0073d1; width: 139px; height: 248px; top: 37px; left: 11px;"></div>
+                <div id="splash_preview_bg">
+                    <img id="splash_preview_logo" src="img/ruihong.sm.png" />
+                </div>
                 <div id="jumbotron_img_loading">
                     <div class="circle"></div>
                     <div class="circle1"></div>
@@ -68,6 +70,7 @@
     </div>
 </form>
 
+@if(!App::environment('local'))
 <div class="row row-margin">
     <div class="col-md-8">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -90,7 +93,18 @@
         </script>
     </div>
 </div>
+@endif
 @stop
 
-@section('bottom')
+@section('footer')
+    @parent
+    <script>
+        $(function(){
+            $("#generate_splash").on('click', function(){
+                $(this).hide();
+                $("#if_submitting").show();
+                $("#if_form")[0].submit();
+            });
+        });
+    </script>
 @stop
