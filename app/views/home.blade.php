@@ -34,7 +34,7 @@
 <div class="row row-margin">
     <div class="col-md-4">
         <div class="media">
-            <a class="media-left" href="#">
+            <a class="media-left" href="javascript:;">
                 <img src="/img/folder.png" />
             </a>
             <div class="media-body">
@@ -50,7 +50,7 @@
     </div>
     <div class="col-md-4">
         <div class="media">
-            <a class="media-left" href="#">
+            <a class="media-left" href="javascript:;">
                 <img src="/img/eye.png" />
             </a>
             <div class="media-body">
@@ -60,7 +60,7 @@
     </div>
     <div class="col-md-4">
         <div class="media">
-            <a class="media-left" href="#">
+            <a class="media-left" href="javascript:;">
                 <img src="/img/opt.png" />
             </a>
             <div class="media-body">
