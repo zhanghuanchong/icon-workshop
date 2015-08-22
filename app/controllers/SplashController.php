@@ -7,8 +7,10 @@ class SplashController extends BaseController {
 	}
 	public function postUpload ()
 	{
+		$id = str_random(8);
+		$files_folder = public_path('files');
+
 		$input = Input::all();
-		dd($input);
 		$logo = 'img/ruihong.png';
 		if (Input::hasFile('logo')) {
 			$logo = Input::file('logo');
@@ -17,12 +19,11 @@ class SplashController extends BaseController {
 		if (Input::hasFile('file')) {
 			$file = Input::file('file');
 			if ($file->isValid()) {
-				$id = GUID::generate();
 				$ext = $file->getClientOriginalExtension();
 
 				$design = new Design;
 				$design->id = $id;
-				$design->folder = date('Ymd');
+				$design->folder = date('Ym');
 				$design->ext = $ext;
 				$design->original_name = $file->getClientOriginalName();
 				$design->mime_type = $file->getMimeType();
@@ -30,7 +31,6 @@ class SplashController extends BaseController {
 				$design->user_agent = Input::server('HTTP_USER_AGENT');
 				$design->ip = Input::getClientIp();
 
-				$files_folder = public_path('files');
 				$folder = $files_folder . '/' . $design->folder . '/' . $id;
 				if (!file_exists($folder)) {
 					mkdir($folder, 0777, TRUE);

@@ -7,12 +7,12 @@ class IconController extends BaseController {
         if (Input::hasFile('file')) {
             $file = Input::file('file');
             if ($file->isValid()) {
-                $id = GUID::generate();
+                $id = str_random(8);
                 $ext = $file->getClientOriginalExtension();
 
                 $design = new Design;
                 $design->id = $id;
-                $design->folder = date('Ymd');
+                $design->folder = date('Ym');
                 $design->ext = $ext;
                 $design->original_name = $file->getClientOriginalName();
                 $design->mime_type = $file->getMimeType();
