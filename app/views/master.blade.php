@@ -34,7 +34,7 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -84,6 +84,7 @@
     <p>
         <a href="http://wuruihong.com" target="_blank" style="color:white">睿鸿游戏</a>　
         版权所有　Copyright(C) 2015　All Rights Reserved　豫ICP备14010348号-1
+        @if(!App::environment('local'))
         <script>
             var _hmt = _hmt || [];
             (function() {
@@ -93,6 +94,7 @@
                 s.parentNode.insertBefore(hm, s);
             })();
         </script>
+        @endif
     </p>
 </footer>
 

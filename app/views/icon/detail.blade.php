@@ -19,6 +19,7 @@
     </div>
 </div>
 
+@if(!App::environment('local'))
 <div class="row">
     <div class="col-md-8">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -41,6 +42,7 @@
         </script>
     </div>
 </div>
+@endif
 
 <div role="tabpanel" style="font-weight: bold">
 
