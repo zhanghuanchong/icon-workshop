@@ -32,47 +32,33 @@
 </form>
 
 <div class="row row-margin">
-    <div class="col-md-4">
-        <div class="media">
-            <a class="media-left" href="#">
-                <img src="/img/folder.png" />
-            </a>
-            <div class="media-body">
-                同时生成 <strong>iOS</strong>、 <strong>安卓</strong> 和 <strong>Windows Phone</strong> 应用的图标。遵循
-                <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html" target="_blank">
-                    <span class="label label-info" style="font-size:12px">Apple</span></a>
-                、
-                <a href="https://developer.android.com/design/style/iconography.html#launcher" target="_blank">
-                    <span class="label label-info" style="font-size:12px">Google</span></a>
-                、
-                <a href="https://msdn.microsoft.com/en-us/library/windows/apps/jj662924(v=vs.105).aspx" target="_blank">
-                    <span class="label label-info" style="font-size:12px">Microsoft</span></a>
-                官方标准。
-            </div>
-        </div>
+    <div class="col-md-1">
+        <img src="/img/folder.png" />
     </div>
-    <div class="col-md-4">
-        <div class="media">
-            <a class="media-left" href="#">
-                <img src="/img/eye.png" />
-            </a>
-            <div class="media-body">
-                快速预览将要在不同设备上显示的应用图标。使您无需部署即可通过预览来调整设计样式。
-            </div>
-        </div>
+    <div class="col-md-3">
+        同时生成
+        <strong class="label label-info">iOS</strong>、<strong class="label label-info">安卓</strong>、
+        <strong class="label label-info">PhoneGap</strong> 和 <strong class="label label-info">Windows Phone</strong> 应用的图标。遵循
+        <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html" target="_blank">Apple</a>、
+        <a href="https://developer.android.com/design/style/iconography.html#launcher" target="_blank">Google</a>、
+        <a href="https://msdn.microsoft.com/en-us/library/windows/apps/jj662924(v=vs.105).aspx" target="_blank">Microsoft</a>
+        官方标准。
     </div>
-    <div class="col-md-4">
-        <div class="media">
-            <a class="media-left" href="#">
-                <img src="/img/opt.png" />
-            </a>
-            <div class="media-body">
-                优化图标，尤其是尺寸较小的图标。保证清晰度，并优化图片内存占用，减小包体积，提高性能。
-            </div>
-        </div>
+    <div class="col-md-1">
+        <img src="/img/eye.png" />
+    </div>
+    <div class="col-md-3">
+        快速预览将要在不同设备上显示的应用图标。使您无需部署即可通过预览来调整设计样式。
+    </div>
+    <div class="col-md-1">
+        <img src="/img/opt.png" />
+    </div>
+    <div class="col-md-3">
+        优化图标，尤其是尺寸较小的图标。保证清晰度，并优化图片内存占用，减小包体积，提高性能。
     </div>
 </div>
 
+@if(!App::environment('local'))
 <div class="row row-margin">
     <div class="col-md-8">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -95,6 +81,7 @@
         </script>
     </div>
 </div>
+@endif
 @stop
 
 @section('bottom')
