@@ -31,7 +31,7 @@ class IconController extends BaseController {
                 $design->save();
 
                 $platforms = explode(',', $design->platform);
-                $design->generateIcons($platforms);
+                $design->generate($platforms);
 
                 return $this->jsonResponse($id);
             }

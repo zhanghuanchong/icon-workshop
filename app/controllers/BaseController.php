@@ -23,4 +23,18 @@ class BaseController extends Controller {
         ));
     }
 
+	protected function getInputFilePath($folder, $key)
+	{
+		$logo = NULL;
+		if (Input::hasFile($key)) {
+			$logo = Input::file($key);
+			if ($logo->isValid()) {
+				$original_name = $logo->getClientOriginalName();
+				$logo->move($folder, $original_name);
+				$logo = $original_name;
+			}
+		}
+		return $logo;
+	}
+
 }

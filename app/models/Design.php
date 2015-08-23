@@ -593,7 +593,7 @@ class Design extends Eloquent {
         return $this->folder . '/' . $this->id . '/' . $name . '.' . $this->ext;
     }
 
-    public function generateIcons($formats) {
+    public function generate($formats) {
         $root = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
         $appleFormats = array('ios', 'iwatch');
         $specialKeys = array('role', 'subtype');

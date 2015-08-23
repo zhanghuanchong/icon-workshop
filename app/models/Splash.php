@@ -3,12 +3,117 @@
 class Splash extends Eloquent {
     public $incrementing = false;
 
-    public function getFilePath($name = 'origin') {
-        return $this->folder . '/' . $this->id . '/' . $name . '.' . $this->ext;
+    public $sizes = array(
+        array(
+            "extent" => "full-screen",
+            "idiom" => "iphone",
+            "subtype" => "736h",
+            "minimum-system-version" => "8.0",
+            "scale" => "3x",
+            'width' => 1242,
+            'height' => 2208,
+        ),
+        array(
+            "extent" => "full-screen",
+            "idiom" => "iphone",
+            "subtype" => "667h",
+            "minimum-system-version" => "8.0",
+            "scale" => "2x",
+            'width' => 750,
+            'height' => 1334,
+        ),
+        array(
+            "idiom" => "iphone",
+            "extent" => "full-screen",
+            "minimum-system-version" => "7.0",
+            "filename" => "Default@2x.png",
+            "scale" => "2x",
+            'skip' => TRUE,
+        ),
+        array(
+            "extent" => "full-screen",
+            "idiom" => "iphone",
+            "subtype" => "retina4",
+            "filename" => "Default-568h@2x.png",
+            "minimum-system-version" => "7.0",
+            "scale" => "2x",
+            'skip' => TRUE,
+        ),
+        array(
+            "idiom" => "ipad",
+            "extent" => "full-screen",
+            "minimum-system-version" => "7.0",
+            "scale" => "1x",
+            'width' => 768,
+            'height' => 1024,
+        ),
+        array(
+            "idiom" => "ipad",
+            "extent" => "full-screen",
+            "minimum-system-version" => "7.0",
+            "scale" => "2x",
+            'width' => 1536,
+            'height' => 2048,
+        ),
+        array(
+            "idiom" => "iphone",
+            "extent" => "full-screen",
+            "filename" => "Default.png",
+            "scale" => "1x",
+            'width' => 320,
+            'height' => 480,
+        ),
+        array(
+            "idiom" => "iphone",
+            "extent" => "full-screen",
+            "scale" => "2x",
+            "filename" => "Default@2x.png",
+            'width' => 640,
+            'height' => 960,
+        ),
+        array(
+            "idiom" => "iphone",
+            "extent" => "full-screen",
+            "subtype" => "retina4",
+            "filename" => "Default-568h@2x.png",
+            "scale" => "2x",
+            'width' => 640,
+            'height' => 1136,
+        ),
+        array(
+            "idiom" => "ipad",
+            "extent" => "to-status-bar",
+            "scale" => "1x",
+            'width' => 768,
+            'height' => 1004,
+        ),
+        array(
+            "idiom" => "ipad",
+            "extent" => "to-status-bar",
+            "scale" => "2x",
+            'width' => 1536,
+            'height' => 2008,
+        )
+    );
+
+    public function getFolderPath() {
+        return $this->folder . '/' . $this->id . '/';
+    }
+
+    public function getLogoPath() {
+        if ($this->logo) {
+            return 'img/ruihong.png';
+        }
+        return $this->folder . '/' . $this->id . '/' . $this->logo;
     }
 
     public function generate() {
-        $root = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
+        $root = public_path('files') . '/' . $this->getFolderPath();
+
+        if ($this->color) {
+
+        }
+
         $appleFormats = array('ios', 'iwatch');
         $specialKeys = array('role', 'subtype');
         $img = Image::make($root . 'origin.' . $this->ext);
@@ -38,7 +143,7 @@ class Splash extends Eloquent {
                     )
                 );
             }
-            $webappLinks = $format == 'webapp' ? array() : NULL;
+            $webappLinks = $format == 'webapp' ? array() => NULL;
             foreach($sizes as $s) {
                 $folder = $format_root;
                 if (isset($s['folder'])) {
@@ -47,7 +152,7 @@ class Splash extends Eloquent {
                         mkdir($folder, 0777, true);
                     }
                 }
-                $scale = isset($s['scale']) ? $s['scale'] : 1;
+                $scale = isset($s['scale']) ? $s['scale'] => 1;
                 $length = $s['size'] * $scale;
                 if (in_array($format, $appleFormats) || isset($s['bg']) || $format == 'windowsphone') {
                     $_img = &$imgBg;
@@ -64,7 +169,7 @@ class Splash extends Eloquent {
                 if (isset($s['name'])) {
                     $name = $s['name'];
                 } else {
-                    $name = 'icon-' . $s['size'] . ($scale == 1 ? '' : '@' . $scale . 'x');
+                    $name = 'icon-' . $s['size'] . ($scale == 1 ? '' => '@' . $scale . 'x');
                 }
                 $_img->save($folder . $name . '.png');
 
@@ -112,13 +217,10 @@ class Splash extends Eloquent {
 
     public function package($regenerate = FALSE) {
         $folder = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
-        $path = $folder . 'icons.zip';
+        $path = $folder . 'splash.zip';
         if (!file_exists($path) || $regenerate) {
             $zip = Zipper::make($path);
-            $formats = explode(',', $this->platform);
-            foreach($formats as $f) {
-                $zip->folder($f)->add($folder . $f);
-            }
+            $zip->folder('LaunchImage.launchimage')->add($folder . 'LaunchImage.launchimage');
             $zip->close();
         }
         return $path;

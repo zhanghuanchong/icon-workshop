@@ -49,5 +49,9 @@ $(function(){
         orientation_landscape.on('click', function(){
             jumbotron_img_box.addClass('landscape');
         });
+
+        $("#platform").select2({
+            minimumResultsForSearch: Infinity
+        });
     }
 });

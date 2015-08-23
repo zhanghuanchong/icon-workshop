@@ -1,7 +1,7 @@
 @extends('splash/master')
 
 @section('content')
-<form class="jumbotron form-horizontal" id="if_form" action="/splash/upload" method="post">
+<form class="jumbotron form-horizontal" id="if_form" action="/splash/upload" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md-8">
             <h2 style="margin-bottom: 40px; margin-top: 0;">一键生成iOS不同尺寸的启动图片</h2>
@@ -45,6 +45,15 @@
                         <input type="radio" name="orientation" id="orientation_landscape" value="landscape"/>
                         <label for="orientation_landscape">横屏</label>
                     </labe>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label text-left" for="platform">设备:</label>
+                <div class="col-sm-10">
+                    <select name="platform[]" id="platform" multiple style="width: 400px; height: 30px">
+                        <option value="iphone" selected>iPhone</option>
+                        <option value="ipad" selected>iPad</option>
+                    </select>
                 </div>
             </div>
             <div style="margin-top: 30px">
