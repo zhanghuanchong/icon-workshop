@@ -143,7 +143,8 @@ class Splash extends Eloquent {
 
             $img = Image::canvas($s['width'], $s['height'], $this->color ? $this->color : '#ffffff');
             $logo->reset();
-            $img = $img->insert($logo);
+            $logo->widen(round($s['width'] * .7));
+            $img->insert($logo, 'top', 0, round($s['height'] * .45 - $logo->height() / 2));
             $img->save($folder . $s['filename']);
         }
         $json_string = json_encode($json, JSON_PRETTY_PRINT);
