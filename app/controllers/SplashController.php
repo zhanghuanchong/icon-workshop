@@ -37,32 +37,6 @@ class SplashController extends BaseController {
 		$splash->generate();
 
 		return Redirect::to('/splash/detail/' . $id);
-
-		Input::file('logo');
-		if (Input::hasFile('file')) {
-			$file = Input::file('file');
-			if ($file->isValid()) {
-				$ext = $file->getClientOriginalExtension();
-
-				$design = new Design;
-				$design->id = $id;
-				$design->folder = date('Ym');
-				$design->ext = $ext;
-				$design->original_name = $file->getClientOriginalName();
-				$design->mime_type = $file->getMimeType();
-				$design->platform = Input::get('platform') ? Input::get('platform') : 'ios_android';
-
-				$file->move($folder, 'origin.' . $ext);
-
-				$design->save();
-
-				$platforms = explode(',', $design->platform);
-				$design->generateIcons($platforms);
-
-				return $this->jsonResponse($id);
-			}
-		}
-		return $this->jsonResponse('文件无效！', TRUE);
 	}
 
 	public function getDetail ($id)

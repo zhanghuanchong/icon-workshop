@@ -12,7 +12,7 @@ class SplashFolder extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('splashs', function($table){
+		Schema::table('splashes', function($table){
 			$table->char('folder', 8)->after('id');
 			$table->char('platform', 255)->after('folder');
 		});
@@ -25,7 +25,7 @@ class SplashFolder extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('splashs', function($table){
+		Schema::table('splashes', function($table){
 			$table->dropColumn('folder');
 			$table->dropColumn('platform');
 		});

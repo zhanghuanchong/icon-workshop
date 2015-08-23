@@ -12,7 +12,7 @@ class Splash extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('splashs', function($table) {
+		Schema::create('splashes', function($table) {
 			$table->string('id', 36);
 			$table->string('logo', 255)->nullable();
 			$table->string('color', 6)->nullable();
@@ -34,7 +34,7 @@ class Splash extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('splash');
+		Schema::dropIfExists('splashes');
 	}
 
 }
