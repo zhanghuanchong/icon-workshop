@@ -104,16 +104,3 @@
 </div>
 @endif
 @stop
-
-@section('footer')
-    @parent
-    <script>
-        $(function(){
-            $("#generate_splash").on('click', function(){
-                $(this).hide();
-                $("#if_submitting").show();
-                $("#if_form")[0].submit();
-            });
-        });
-    </script>
-@stop
