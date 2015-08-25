@@ -115,6 +115,15 @@ class Splash extends Eloquent {
         $logo = Image::make(public_path() . '/' . $this->getLogoPath());
         $logo->backup();
 
+        $bg = NULL;
+        $bgRatio = 1.0;
+        if ($this->bg) {
+            $bg = Image::make($root . $this->bg);
+            $bg->backup();
+
+            $bgRatio = $bg->height() * 1.0 / $bg->width();
+        }
+
         $folder = $root . '/LaunchImage.launchimage/';
         if (!file_exists($folder)) {
             mkdir($folder, 0777, true);
@@ -142,6 +151,16 @@ class Splash extends Eloquent {
             }
 
             $img = Image::canvas($s['width'], $s['height'], $this->color ? $this->color : '#ffffff');
+            if ($bg) {
+                $bg->reset();
+                $ratio = $s['height'] * 1.0 / $s['width'];
+                if ($ratio > $bgRatio) {
+                    $bg->heighten($s['height']);
+                } else {
+                    $bg->widen($s['width']);
+                }
+                $img->insert($bg, 'center');
+            }
             $logo->reset();
             $logo->widen(round($s['width'] * .7));
             $img->insert($logo, 'top', 0, round($s['height'] * .45 - $logo->height() / 2));
