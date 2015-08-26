@@ -210,7 +210,6 @@ span.string {
     width: 65%;
     top: 92.6px;
     left: 24.5px;
-    transition: transform .3s ease, top .3s ease, left .3s ease;
 }
 
 footer {
@@ -234,12 +233,19 @@ footer {
         margin-right: 60px;
         width: auto;
         height: auto;
-        transition: transform .3s ease;
         &.landscape {
-            transform: rotate(-90deg);
+            > img {
+                transform: rotate(-90deg);
+                margin-top: 30px;
+            }
+            #splash_preview_box {
+                width: 248px;
+                height: 139px;
+                top: 121px;
+                left: -45px;
+            }
             #splash_preview_logo {
-                transform: rotate(90deg) scale(1.1);
-                transform-origin: left top;
+                width: 45%;
             }
         }
     }

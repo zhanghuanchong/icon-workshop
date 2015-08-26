@@ -89,21 +89,12 @@ $(function(){
         });
 
         function movePreviewLogo() {
-            var top = 0,
-                left = 0,
-                width = bg.width(),
+            var width = bg.width(),
                 height = bg.height(),
                 w = splash_preview_logo.width(),
-                h = splash_preview_logo.height();
-            if (jumbotron_img_box.hasClass('landscape')) {
-                w = w * 1.1;
-                h = h * 1.1;
-                left = (width + h) / 2;
-                top = (height - w) / 2;
-            } else {
-                left = (width - w) / 2;
+                h = splash_preview_logo.height(),
+                left = (width - w) / 2,
                 top = height * .45 - h / 2;
-            }
             splash_preview_logo.css({
                 left: left,
                 top: top
