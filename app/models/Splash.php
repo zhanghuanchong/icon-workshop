@@ -162,7 +162,7 @@ class Splash extends Eloquent {
                 $img->insert($bg, 'center');
             }
             $logo->reset();
-            $logo->widen(round($s['width'] * .7));
+            $logo->widen(round($s['width'] * .65));
             $img->insert($logo, 'top', 0, round($s['height'] * .45 - $logo->height() / 2));
             $img->save($folder . $s['filename']);
         }

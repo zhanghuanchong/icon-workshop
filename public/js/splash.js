@@ -50,10 +50,12 @@ $(function(){
 
         orientation_portrait.on('click', function(){
             jumbotron_img_box.removeClass('landscape');
+            movePreviewLogo();
         });
 
         orientation_landscape.on('click', function(){
             jumbotron_img_box.addClass('landscape');
+            movePreviewLogo();
         });
 
         $("#platform").select2({
@@ -87,9 +89,25 @@ $(function(){
         });
 
         function movePreviewLogo() {
-            var height = bg.height(),
-                top = height * 0.45 - splash_preview_logo.height() / 2;
-            splash_preview_logo.css('padding-top', top);
+            var top = 0,
+                left = 0,
+                width = bg.width(),
+                height = bg.height(),
+                w = splash_preview_logo.width(),
+                h = splash_preview_logo.height();
+            if (jumbotron_img_box.hasClass('landscape')) {
+                w = w * 1.1;
+                h = h * 1.1;
+                left = (width + h) / 2;
+                top = (height - w) / 2;
+            } else {
+                left = (width - w) / 2;
+                top = height * .45 - h / 2;
+            }
+            splash_preview_logo.css({
+                left: left,
+                top: top
+            });
         }
 
         setTimeout(function(){

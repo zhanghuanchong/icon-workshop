@@ -67,7 +67,8 @@
         <div class="col-md-4">
             <div id="jumbotron_img_box" class="splash">
                 <img src="/img/iphone_xs.png" alt="" id="splash_preview_phone"/>
-                <div id="splash_preview_bg">
+                <div id="splash_preview_box">
+                    <div id="splash_preview_bg"></div>
                     <img id="splash_preview_logo" src="img/ruihong.sm.png" />
                 </div>
                 <div id="jumbotron_img_loading">
