@@ -119,8 +119,8 @@ class Splash extends Eloquent {
     public function generate() {
         $root = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
 
-        $logo = Image::make(public_path() . '/' . $this->getLogoPath());
-        $logo->backup();
+//        $logo = Image::make(public_path() . '/' . $this->getLogoPath());
+//        $logo->backup();
 
         $bg = NULL;
         $bgRatio = 1.0;
@@ -143,7 +143,8 @@ class Splash extends Eloquent {
             )
         );
         $platforms = explode(',', $this->platform);
-        foreach($this->sizes as $s) {
+        $sizes = $this->sizes['portrait'];
+        foreach($sizes as $s) {
             if (!in_array($s['idiom'], $platforms)) {
                 continue;
             }
@@ -168,9 +169,9 @@ class Splash extends Eloquent {
                 }
                 $img->insert($bg, 'center');
             }
-            $logo->reset();
-            $logo->widen(round($s['width'] * .65));
-            $img->insert($logo, 'top', 0, round($s['height'] * .45 - $logo->height() / 2));
+//            $logo->reset();
+//            $logo->widen(round($s['width'] * .65));
+//            $img->insert($logo, 'top', 0, round($s['height'] * .45 - $logo->height() / 2));
             $img->save($folder . $s['filename']);
         }
         $json_string = json_encode($json, JSON_PRETTY_PRINT);

@@ -24,8 +24,20 @@ class Design extends Eloquent {
                 'idiom' => 'iphone',
             ),
             array(
+                'size' => 29,
+                'scale' => 3,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ),
+            array(
                 'size' => 40,
                 'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ),
+            array(
+                'size' => 40,
+                'scale' => 3,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'iphone',
             ),
