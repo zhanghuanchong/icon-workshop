@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="/css/helpers.css">
         <link rel="stylesheet" href="/css/sweet-alert.css">
         <link rel="stylesheet" href="/css/select2.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/main.css">
     @else
         <link rel="stylesheet" href="/css/all.css?_={{Config::get('constants.version')}}">
