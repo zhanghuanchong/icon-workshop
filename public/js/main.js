@@ -39,7 +39,7 @@ $(function(){
             oFReader.readAsDataURL(file);
 
             oFReader.onload = function (oFREvent) {
-                if (file.type != '') {
+                if (file.type != '' && file.type != 'image/vnd.adobe.photoshop') {
                     $("#jumbotron_img").get(0).src = oFREvent.target.result;
                 }
                 $("#jumbotron_img_loading").show();
