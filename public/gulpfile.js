@@ -20,6 +20,7 @@ var path = {
         'css/bootstrap.min.css',
         'css/sweet-alert.css',
         'css/select2.min.css',
+        'css/font-awesome.min.css',
         'css/main.css'
     ]
 };
