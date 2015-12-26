@@ -60,7 +60,7 @@
                     </ul>
                 </li>
                 <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
-                <li><a href="#about">关于我们</a></li>
+                <li><a href="/about">关于我们</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
