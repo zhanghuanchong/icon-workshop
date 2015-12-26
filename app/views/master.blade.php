@@ -66,7 +66,7 @@
                     </ul>
                 </li>
                 <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
-                <li><a href="#about">关于我们</a></li>
+                <li><a href="/about">关于我们</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -97,6 +97,13 @@
         @endif
     </p>
 </footer>
+
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript">
+    var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?btn=r3.gif&uid=1351577434153337" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
 @if(App::environment('local'))
     <script src="/js/jquery-1.11.2.min.js"></script>

@@ -18,4 +18,6 @@ Route::get('/', function()
 
 Route::controller('icon', 'IconController');
 
+Route::controller('about', 'AboutController');
+
 Route::controller('splash', 'SplashController');
