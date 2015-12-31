@@ -11,15 +11,18 @@
 
     <title>{{ Config::get('constants.site_name') . ' - ' . Config::get('constants.slogan') }}</title>
 
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/select2/4.0.1/css/select2.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
     @if(App::environment('local'))
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/sweet-alert.css">
-        <link rel="stylesheet" href="/css/select2.min.css">
-        <link rel="stylesheet" href="/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/main.css">
     @else
         <link rel="stylesheet" href="/css/all.css?_={{Config::get('constants.version')}}">
     @endif
+    <link href="//cdn.bootcss.com/bootstrap-material-design/0.5.7/css/bootstrap-material-design.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap-material-design/0.5.7/css/ripples.min.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="/js/html5shiv.js"></script>
@@ -29,7 +32,7 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -75,7 +78,7 @@
 
 @yield('bottom')
 
-<footer>
+<footer class="navbar navbar-default">
     <p>
         <a href="http://wuruihong.com" target="_blank" style="color:white">睿鸿游戏</a>　
         版权所有　Copyright(C) 2015　All Rights Reserved　豫ICP备14010348号-1
@@ -93,6 +96,22 @@
     </p>
 </footer>
 
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src="//cdn.bootcss.com/select2/4.0.1/js/select2.min.js"></script>
+<script src="//cdn.bootcss.com/select2/4.0.1/js/i18n/zh-CN.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-material-design/0.5.7/js/material.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-material-design/0.5.7/js/ripples.min.js"></script>
+<!--[if IE 10]>
+<script src="/js/ie10-viewport-bug-workaround.js"></script>
+<![endif]-->
+@if(App::environment('local'))
+    <script src="/js/main.js"></script>
+@else
+    <script src="/js/all.js?_={{Config::get('constants.version')}}"></script>
+@endif
+
 <!-- JiaThis Button BEGIN -->
 <script type="text/javascript">
     var jiathis_config = {data_track_clickback:'true'};
@@ -100,19 +119,6 @@
 <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?btn=r3.gif&uid=1351577434153337" charset="utf-8"></script>
 <!-- JiaThis Button END -->
 
-@if(App::environment('local'))
-    <script src="/js/jquery-1.11.2.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/sweet-alert.min.js"></script>
-    <script src="/js/select2.min.js"></script>
-    <script src="/js/select2.zh-CN.js"></script>
-    <script src="/js/main.js"></script>
-@else
-    <script src="/js/all.js?_={{Config::get('constants.version')}}"></script>
-@endif
-<!--[if IE 10]>
-<script src="/js/ie10-viewport-bug-workaround.js"></script>
-<![endif]-->
 @yield('footer')
 </body>
 </html>

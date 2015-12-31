@@ -6,17 +6,17 @@
     <div class="row">
         <div class="col-md-6">
             <strong>生成成功！</strong>在下面预览您的图标并
-            <a class="btn btn-success" style="padding: 6px 40px; margin-left: 10px;" href="/icon/download/<?php echo $design->id ?>">
+            <a class="btn btn-raised btn-success" style="padding: 6px 40px; margin-left: 10px;" href="/icon/download/<?php echo $design->id ?>">
                 <i class="fa fa-download" style="margin-right: 10px"></i>
                 点击下载所有图标
             </a>
         </div>
         <div class="col-md-6" style="text-align: right">
             <form class="form-inline" role="form" onsubmit="return false;">
-                <dif class="form-group">
+                <div class="form-group no-margin no-padding">
                     <input type="email" class="form-control" placeholder="发送到邮箱并订阅" style="width:250px">
-                    <button type="button" class="btn btn-primary" id="subscribe">发送</button>
-                </dif>
+                    <button type="button" class="btn btn-raised btn-success" id="subscribe">发送</button>
+                </div>
             </form>
         </div>
     </div>
