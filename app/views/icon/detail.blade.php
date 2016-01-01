@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="alert alert-info" role="alert" style="font-size:16px">
+<div class="well" role="alert" style="font-size:16px">
     <div class="row">
         <div class="col-md-6">
             <strong>生成成功！</strong>在下面预览您的图标并
@@ -49,7 +49,7 @@
 
 <div role="tabpanel" style="font-weight: bold">
 
-    <ul class="nav nav-tabs nav-justified" role="tablist" id="tp_tabs">
+    <ul class="nav nav-pills nav-justified" role="tablist" id="tp_tabs">
         <?php $first = FALSE; ?>
         @if (in_array('ios', $platforms))
             <li role="presentation"><a href="#tp_ios" aria-controls="tp_ios" role="tab" data-toggle="tab">iOS</a></li>
