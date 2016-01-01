@@ -17,8 +17,7 @@ body {
 }
 #if_form {
   border: 5px solid white;
-  border-radius: 15px;
-  padding: 30px 60px 40px;
+  padding: 30px 60px;
 }
 #if_form.dropping {
   border: 5px dashed #666;
@@ -27,6 +26,12 @@ body {
 }
 .row-margin {
   margin: 60px -15px;
+}
+.no-margin {
+  margin: 0 !important;
+}
+.no-padding {
+  padding: 0 !important;
 }
 .bg-eee {
   background-color: #eee;
@@ -221,7 +226,6 @@ span.string {
 }
 footer {
   text-align: center;
-  background-color: #222222;
   color: white;
   padding: 20px 0;
 }

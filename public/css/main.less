@@ -19,8 +19,7 @@ body {
 }
 #if_form {
     border: 5px solid white;
-    border-radius: 15px;
-    padding: 30px 60px 40px;
+    padding: 30px 60px;
     &.dropping {
         border: 5px dashed #666;
         border-radius: 15px;
@@ -29,6 +28,12 @@ body {
 }
 .row-margin {
     margin: 60px -15px;
+}
+.no-margin {
+    margin: 0 !important;
+}
+.no-padding {
+    padding: 0 !important;
 }
 .bg-eee {
     background-color: #eee;
@@ -214,7 +219,6 @@ span.string {
 
 footer {
     text-align: center;
-    background-color: #222222;
     color: white;
     padding: 20px 0;
 }
@@ -313,7 +317,7 @@ footer {
     100% {
         -moz-transform: rotate(-320deg);
         opacity: 0;
-    };
+    }
 }
 
 @-moz-keyframes spinoffPulse {
@@ -323,7 +327,7 @@ footer {
 
     100% {
         -moz-transform: rotate(360deg);
-    };
+    }
 }
 
 @-webkit-keyframes spinPulse {
@@ -341,7 +345,7 @@ footer {
     100% {
         -webkit-transform: rotate(-320deg);
         opacity: 0;
-    };
+    }
 }
 
 @-webkit-keyframes spinoffPulse {
@@ -351,5 +355,5 @@ footer {
 
     100% {
         -webkit-transform: rotate(360deg);
-    };
+    }
 }
