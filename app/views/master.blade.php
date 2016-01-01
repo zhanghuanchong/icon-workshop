@@ -21,7 +21,7 @@
     @else
         <link rel="stylesheet" href="/css/all.css?_={{Config::get('constants.version')}}">
     @endif
-    <link href="//cdn.bootcss.com/bootstrap-material-design/0.5.7/css/bootstrap-material-design.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-material-design.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/bootstrap-material-design/0.5.7/css/ripples.min.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -101,7 +101,7 @@
 <script src="//cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="//cdn.bootcss.com/select2/4.0.1/js/select2.min.js"></script>
 <script src="//cdn.bootcss.com/select2/4.0.1/js/i18n/zh-CN.js"></script>
-<script src="//cdn.bootcss.com/bootstrap-material-design/0.5.7/js/material.min.js"></script>
+<script src="/js/material.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.7/js/ripples.min.js"></script>
 <!--[if IE 10]>
 <script src="/js/ie10-viewport-bug-workaround.js"></script>
