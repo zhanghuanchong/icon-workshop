@@ -56,18 +56,6 @@
                 </li>
                 <li><a href="#">iOS 8图标</a></li>
                 <li><a href="#">WebApp图标</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">PSD模板 <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">iOS图标模板</a></li>
-                        <li><a href="#">Andriod图标模板</a></li>
-                        <li><a href="#">OS X图标模板</a></li>
-                        <li><a href="#">截屏模板</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">来源</li>
-                        <li><a href="http://appicontemplate.com/" target="_blank">App Icon Template</a></li>
-                    </ul>
-                </li>
                 <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
                 <li><a href="/about">关于我们</a></li>
             </ul>
