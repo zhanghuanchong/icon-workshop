@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-6">
             <strong>生成成功！</strong>在下面预览您的图标并
-            <a class="btn btn-raised btn-success" style="padding: 6px 40px; margin-left: 10px;" href="/icon/download/<?php echo $design->id ?>">
+            <a class="btn btn-raised btn-lg btn-success" style="padding: 6px 40px; margin-left: 10px;" href="/icon/download/<?php echo $design->id ?>">
                 <i class="fa fa-download" style="margin-right: 10px"></i>
                 点击下载所有图标
             </a>

@@ -42,7 +42,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/" style="color: white">
-                <img src="/img/rh_site_icon_20.png" alt="" style="display: inline; vertical-align: top"/>
+                <img src="/img/rh_site_icon_20.png" alt="" style="display: inline; vertical-align: middle"/>
                 <?php echo Config::get('constants.site_name') ?>
             </a>
         </div>
