@@ -83,39 +83,3 @@
 </div>
 @endif
 @stop
-
-@section('bottom')
-<div class="index-section bg-eee">
-    <div class="container">
-        <h1>使用PSD + Actions模板生成图标</h1>
-
-        <div class="row" style="text-align: center">
-            <a class="col-md-3" href="#">
-                <img src="/img/ios8.png" alt=""/>
-                <h2>iOS应用图标</h2>
-                <p class="description">从具有纹理，iOS渐变和颜色的单一大小图片快速渲染生成所有iOS 5, 6, 7 & 8的图标。预览图标在Wish list，App Store和Home屏上的效果，用Actions一键导出。</p>
-                <p><strong>版本：4.0，更新于2014-09</strong></p>
-            </a>
-            <a class="col-md-3" href="#">
-                <img src="/img/android.png" alt=""/>
-                <h2>Android启动器图标</h2>
-                <p class="description">该模板可以快速渲染生成不同尺寸的Android启动器图标。包含纹理，以及Ice Cream Sandwich屏幕预览。可以使用Actions一键导出。</p>
-                <p><strong>版本：1.1，更新于2014-03</strong></p>
-            </a>
-            <a class="col-md-3" href="#">
-                <img src="/img/osx.png" alt=""/>
-                <h2>OS X桌面图标</h2>
-                <p class="description">如果您正在为OS X桌面应用程序创建图标，这个模板可以帮助您生成不同尺寸的图标，并快速预览在Dock、Finder和App Store中的效果。</p>
-                <p><strong>版本：1.0，更新于2014-06</strong></p>
-            </a>
-            <a class="col-md-3" href="#">
-                <img src="/img/iphonescreenshot.png" alt=""/>
-                <h2>iPhone截屏</h2>
-                <p class="description">从最大尺寸的截图快速生成4种尺寸的图片。通过内置的Actions，一键生成最多20张截屏！</p>
-                <p><strong>版本：1.0，更新于2014-12</strong></p>
-            </a>
-        </div>
-
-    </div>
-</div>
-@stop
