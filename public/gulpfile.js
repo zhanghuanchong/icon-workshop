@@ -9,18 +9,9 @@ var gulp = require('gulp'),
 var path = {
     dest: './',
     js_src: [
-        'js/jquery-1.11.2.min.js',
-        'js/bootstrap.min.js',
-        'js/sweet-alert.min.js',
-        'js/select2.min.js',
-        'js/select2.zh-CN.js',
         'js/main.js '
     ],
     css_src: [
-        'css/bootstrap.min.css',
-        'css/sweet-alert.css',
-        'css/select2.min.css',
-        'css/font-awesome.min.css',
         'css/main.css'
     ]
 };

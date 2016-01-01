@@ -19,6 +19,8 @@ function jsonResponse(response, successCallback, failCallback) {
     }
 }
 
+$.material.init();
+
 $(function(){
     var if_btn = $("#if_btn");
     if (if_btn.length) {
