@@ -1,3 +1,5 @@
+angular.module('rhIcon', []);
+
 function jsonResponse(response, successCallback, failCallback) {
     try {
         var json = JSON.parse(response);

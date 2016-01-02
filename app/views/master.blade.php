@@ -30,7 +30,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body ng-app="rhIcon" ng-controller="RootCtrl">
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -91,11 +91,13 @@
 <script src="//cdn.bootcss.com/select2/4.0.1/js/i18n/zh-CN.js"></script>
 <script src="/js/material.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.7/js/ripples.min.js"></script>
+<script src="http://cdn.bootcss.com/angular.js/1.4.8/angular.min.js"></script>
 <!--[if IE 10]>
 <script src="/js/ie10-viewport-bug-workaround.js"></script>
 <![endif]-->
 @if(App::environment('local'))
     <script src="/js/main.js"></script>
+    <script src="/js/ctrl/root.ctrl.js"></script>
 @else
     <script src="/js/all.js?_={{Config::get('constants.version')}}"></script>
 @endif
