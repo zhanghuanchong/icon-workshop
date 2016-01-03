@@ -2,10 +2,13 @@ body {
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
   padding-top: 80px;
 }
-#if_submitting {
-  display: none;
-  max-width: 70%;
-  margin-bottom: 8px;
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
 }
 #if_form {
   border: 5px solid white;
@@ -17,7 +20,7 @@ body {
   background: #FFC;
 }
 .row-margin {
-  margin: 50px -15px 40px;
+  margin: 40px -15px 30px;
 }
 .row-margin > div {
   padding-top: 10px;
@@ -225,7 +228,6 @@ footer {
   left: 0;
   top: 0;
   z-index: 10;
-  display: none;
 }
 #jumbotron_img_loading .circle {
   background-color: rgba(0, 0, 0, 0);

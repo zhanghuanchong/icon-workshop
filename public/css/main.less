@@ -3,11 +3,10 @@ body {
      padding-top: 80px;
 }
 
-#if_submitting {
-    display: none;
-    max-width: 70%;
-    margin-bottom: 8px;
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
 }
+
 #if_form {
     border: 5px solid white;
     padding: 30px 60px;
@@ -18,7 +17,7 @@ body {
     }
 }
 .row-margin {
-    margin: 50px -15px 40px;
+    margin: 40px -15px 30px;
     > div {
         padding-top: 10px;
     }
@@ -213,7 +212,6 @@ footer {
     left: 0;
     top: 0;
     z-index: 10;
-    display: none;
     .circle {
         background-color: rgba(0,0,0,0);
         border: 10px solid rgba(0,183,229,0.9);

@@ -1,19 +1,19 @@
 @extends('master')
 
 @section('content')
-<form class="jumbotron" action="/icon/upload" method="post" id="if_form">
+<form class="jumbotron" action="/icon/upload" method="post" id="if_form" ng-controller="HomeCtrl">
     <h2><?php echo Config::get('constants.slogan') ?></h2>
     <div id="jumbotron_img_box">
         <img src="/img/launcher.png" alt="" id="jumbotron_img"/>
-        <div id="jumbotron_img_loading">
+        <div id="jumbotron_img_loading" ng-show="generating">
             <div class="circle"></div>
             <div class="circle1"></div>
         </div>
     </div>
     <p><strong>拖放您的设计文件到这里。</strong></p>
     <p>支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果。</p>
-    <div id="if_btn_box">
-        <a href="javascript:;" class="btn btn-primary btn-raised btn-lg" id="if_btn">或者点击这里上传</a>
+    <div ng-show="!generating">
+        <a href="javascript:;" class="btn btn-primary btn-raised btn-lg" ng-click="uploadFromBtn();">或者点击这里上传</a>
         <label for="platform" style="margin-left: 20px">选择平台:</label>
         <select name="platform" id="platform" multiple style="width: 300px; height: 30px">
             <option value="ios" selected>iOS</option>
@@ -24,11 +24,11 @@
             <option value="webapp">Web App</option>
         </select>
     </div>
-    <div id="if_submitting" class="alert alert-success" role="alert">
-        <img src="/img/loading.gif" />
+    <div ng-show="generating" class="alert alert-success" role="alert" style="max-width: 70%; margin-bottom: 8px;">
+        <i class="fa fa-spinner fa-spin"></i>
         生成中，请耐心等待(可能需要1-5分钟时间)...
     </div>
-    <input type="file" id="if" style="float:right; visibility: hidden"/>
+    <input type="file" id="if" style="float:right; visibility: hidden" onchange="$('#if_form').scope().selectedFile(this);"/>
 </form>
 
 <div class="row row-margin">

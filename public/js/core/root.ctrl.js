@@ -1,5 +1,6 @@
 (function(){
-    angular.module('rhIcon')
+    'use strict';
+    angular.module('rhIcon.core')
         .controller('RootCtrl', function($scope){
 
         });
