@@ -32,10 +32,8 @@
 </form>
 
 <div class="row row-margin">
-    <div class="col-md-1">
-        <img src="/img/folder.png" />
-    </div>
-    <div class="col-md-3">
+    <div class="col-md-4 text-center">
+        <img src="/img/folder.png" /><br><br>
         同时生成
         <strong class="label label-info">iOS</strong>、<strong class="label label-info">安卓</strong>、
         <strong class="label label-info">PhoneGap</strong> 和 <strong class="label label-info">Windows Phone</strong> 应用的图标。遵循
@@ -44,16 +42,12 @@
         <a href="https://msdn.microsoft.com/en-us/library/windows/apps/jj662924(v=vs.105).aspx" target="_blank">Microsoft</a>
         官方标准。
     </div>
-    <div class="col-md-1">
-        <img src="/img/eye.png" />
-    </div>
-    <div class="col-md-3">
+    <div class="col-md-4 text-center">
+        <img src="/img/eye.png" /><br><br>
         快速预览将要在不同设备上显示的应用图标。使您无需部署即可通过预览来调整设计样式。
     </div>
-    <div class="col-md-1">
-        <img src="/img/opt.png" />
-    </div>
-    <div class="col-md-3">
+    <div class="col-md-4 text-center">
+        <img src="/img/opt.png" /><br><br>
         优化图标，尤其是尺寸较小的图标。保证清晰度，并优化图片内存占用，减小包体积，提高性能。
     </div>
 </div>

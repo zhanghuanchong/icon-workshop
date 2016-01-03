@@ -17,7 +17,10 @@ body {
   background: #FFC;
 }
 .row-margin {
-  margin: 60px -15px;
+  margin: 50px -15px 40px;
+}
+.row-margin > div {
+  padding-top: 10px;
 }
 .no-margin {
   margin: 0 !important;
