@@ -1,6 +1,4 @@
-@extends('master')
-
-@section('content')
+<div ng-controller="AboutCtrl">
     <h1>关于我们</h1>
     <p>
         睿鸿游戏, 教育类移动游戏专家.
@@ -9,7 +7,7 @@
         欢迎您对本工具提出宝贵的意见和建议!
     </p>
     <ul>
-        <li>Mail: <a href="#" id="mail_link"></a></li>
+        <li>Mail: <a href="mailto:admin@wuruihong.com">admin@wuruihong.com</a></li>
     </ul>
 
     <div style="margin-top: 40px">
@@ -18,13 +16,4 @@
         <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1724540"></script>
         <!-- UY END -->
     </div>
-@stop
-
-@section('footer')
-    <script>
-        $(function(){
-            var mail = 'admin' + '@' + 'wuruihong.com';
-            $("#mail_link").attr('href', 'mailto:' + mail).html(mail);
-        });
-    </script>
-@stop
+</div>

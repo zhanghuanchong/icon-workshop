@@ -1,8 +1,10 @@
 (function(){
     'use strict';
     angular.module('rhIcon', [
-        'ui.router'
-    ]).config(function($stateProvider, $urlRouterProvider){
+        'ui.router',
+        'angular-loading-bar',
+        'ngAnimate'
+    ]).config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvider){
         $stateProvider
             .state('home', {
                 url: '/home',
@@ -16,8 +18,23 @@
                 url: '/icon',
                 templateUrl: 'views/icon/index.html',
                 controller: 'IconCtrl'
+            })
+            .state('about', {
+                url: '/about',
+                templateUrl: 'views/about/index.html',
+                controller: 'AboutCtrl'
             });
         $urlRouterProvider.otherwise('/home');
+
+        cfpLoadingBarProvider.lightTheme = true;
+    }).run(function($rootScope, cfpLoadingBar){
+        $rootScope.$on('$stateChangeStart', function() {
+            cfpLoadingBar.start();
+        });
+
+        $rootScope.$on('$stateChangeSuccess', function() {
+            cfpLoadingBar.complete();
+        });
     });
 
     $.material.init();
