@@ -1,6 +1,3 @@
-@extends('master')
-
-@section('content')
 <form class="jumbotron" action="/icon/upload" method="post" id="if_form" ng-controller="HomeCtrl">
     <h2><?php echo Config::get('constants.slogan') ?></h2>
     <div id="jumbotron_img_box">
@@ -52,28 +49,4 @@
     </div>
 </div>
 
-@if(!App::environment('local'))
-<div class="row row-margin">
-    <div class="col-md-8">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:728px;height:90px"
-             data-ad-client="ca-pub-5072970286349933"
-             data-ad-slot="2920908022"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-    <div class="col-md-4">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:320px;height:100px"
-             data-ad-client="ca-pub-5072970286349933"
-             data-ad-slot="6330202821"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-</div>
-@endif
-@stop
+<div ui-view></div>

@@ -1,8 +1,59 @@
 (function(){
-    angular.module('rhIcon.home')
-        .controller('HomeCtrl', function($rootScope, $scope, CoreService){
-            $rootScope.enableDropping = true;
+    angular.module('rhIcon')
+        .controller('HomeCtrl', function($scope, CoreService, $state, showAd, $timeout) {
             $scope.generating = false;
+
+            if (showAd) {
+                $state.transitionTo('home.ad');
+            }
+
+            $("#platform").select2({
+                minimumResultsForSearch: Infinity
+            });
+
+            $timeout(function(){
+                $state.go('icon');
+            }, 2000);
+
+            var if_form = $("#if_form"),
+                dom = if_form.get(0),
+                enableDropping = true;
+            dom.addEventListener("dragover", function(e){
+                e.stopPropagation();
+                e.preventDefault();
+
+                if (!enableDropping) {
+                    return;
+                }
+
+                if_form.addClass('dropping');
+            }, false);
+            dom.addEventListener("dragleave", function(e){
+                e.stopPropagation();
+                e.preventDefault();
+
+                if (!enableDropping) {
+                    return;
+                }
+
+                if_form.removeClass('dropping');
+            }, false);
+            dom.addEventListener("drop", function(e){
+                e.stopPropagation();
+                e.preventDefault();
+
+                if (!enableDropping) {
+                    return;
+                }
+
+                if_form.removeClass('dropping');
+
+                if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) {
+                    $scope.$apply(function(){
+                        $scope.startUploading(e.dataTransfer.files[0]);
+                    });
+                }
+            }, false);
 
             $scope.uploadFromBtn = function () {
                 $("#if").click();
@@ -17,7 +68,7 @@
             };
 
             $scope.startUploading = function (file) {
-                $rootScope.enableDropping = false;
+                enableDropping = false;
                 $scope.generating = true;
 
                 var oFReader = new FileReader();
@@ -40,9 +91,9 @@
                     if (oReq.readyState == 4) {
                         if (oReq.status == 200) {
                             CoreService.resCallback(oReq.responseText, function(id){
-                                location.href = '/icon/detail/' + id;
+                                $state.go('icon');
                             }, function(){
-                                $rootScope.enableDropping = true;
+                                enableDropping = true;
                                 $scope.generating = false;
 
                                 $("#jumbotron_img").get(0).src = 'img/launcher.png';

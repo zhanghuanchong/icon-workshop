@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('home');
+	return View::make('master');
 });
 
 Route::controller('icon', 'IconController');

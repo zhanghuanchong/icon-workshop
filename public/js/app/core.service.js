@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    angular.module('rhIcon.core')
+    angular.module('rhIcon')
         .service('CoreService', function(){
             this.resCallback = function(response, successCallback, failCallback){
                 try {

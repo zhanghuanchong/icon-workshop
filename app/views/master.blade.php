@@ -52,19 +52,13 @@
                 <li><a href="#">iOS 8图标</a></li>
                 <li><a href="#">WebApp图标</a></li>
                 <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
-                <li><a href="/about">关于我们</a></li>
+                <li><a ui-sref="about">关于我们</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
 
-<div class="container">
-
-    @yield('content')
-
-</div> <!-- /container -->
-
-@yield('bottom')
+<div class="container" ui-view></div>
 
 <footer class="navbar navbar-default">
     <p>
@@ -91,23 +85,25 @@
 <script src="//cdn.bootcss.com/select2/4.0.1/js/i18n/zh-CN.js"></script>
 <script src="/js/lib/material.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.7/js/ripples.min.js"></script>
-<script src="http://cdn.bootcss.com/angular.js/1.4.8/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.4.8/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 <!--[if IE 10]>
 <script src="/js/lib/ie10-viewport-bug-workaround.js"></script>
 <![endif]-->
 @if(App::environment('local'))
     <script src="/js/main.js"></script>
-    <script src="/js/core/core.js"></script>
-    <script src="/js/core/core.service.js"></script>
-    <script src="/js/core/root.ctrl.js"></script>
-    <script src="/js/home/home.js"></script>
-    <script src="/js/home/home.config.js"></script>
-    <script src="/js/home/home.ctrl.js"></script>
-    <script src="/js/icon/icon.js"></script>
-    <script src="/js/icon/icon.ctrl.js"></script>
+    <script src="/js/app/core.service.js"></script>
+    <script src="/js/app/root.ctrl.js"></script>
+    <script src="/js/app/home.ctrl.js"></script>
+    <script src="/js/app/icon.ctrl.js"></script>
 @else
     <script src="/js/all.js?_={{Config::get('constants.version')}}"></script>
 @endif
+
+<script>
+    angular.module('rhIcon')
+            .value('showAd', <?php echo App::environment('local') ? 'false' : 'true' ?>);
+</script>
 
 <!-- JiaThis Button BEGIN -->
 <script type="text/javascript">
@@ -116,6 +112,5 @@
 <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?btn=r3.gif&uid=1351577434153337" charset="utf-8"></script>
 <!-- JiaThis Button END -->
 
-@yield('footer')
 </body>
 </html>

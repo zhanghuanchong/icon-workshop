@@ -1,5 +1,5 @@
 (function(){
-    angular.module('rhIcon.icon')
+    angular.module('rhIcon')
         .controller('IconCtrl', function($scope){
             var btnSubscribe = $("#subscribe");
             if (btnSubscribe.length) {
