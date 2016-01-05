@@ -11,10 +11,6 @@
                 minimumResultsForSearch: Infinity
             });
 
-            $timeout(function(){
-                $state.go('icon');
-            }, 2000);
-
             var if_form = $("#if_form"),
                 dom = if_form.get(0),
                 enableDropping = true;
@@ -91,7 +87,9 @@
                     if (oReq.readyState == 4) {
                         if (oReq.status == 200) {
                             CoreService.resCallback(oReq.responseText, function(id){
-                                $state.go('icon');
+                                $state.go('icon', {
+                                    id: id
+                                });
                             }, function(){
                                 enableDropping = true;
                                 $scope.generating = false;

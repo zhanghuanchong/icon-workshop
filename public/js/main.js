@@ -15,9 +15,12 @@
                 templateUrl: 'views/home/ad.html'
             })
             .state('icon', {
-                url: '/icon',
+                url: '/icon/:id',
                 templateUrl: 'views/icon/index.html',
                 controller: 'IconCtrl'
+            })
+            .state('icon.ad', {
+                templateUrl: 'views/icon/ad.html'
             })
             .state('about', {
                 url: '/about',

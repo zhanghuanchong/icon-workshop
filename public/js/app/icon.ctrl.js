@@ -1,6 +1,8 @@
 (function(){
     angular.module('rhIcon')
-        .controller('IconCtrl', function($scope){
+        .controller('IconCtrl', function($scope, $stateParams){
+            console.log($stateParams);
+
             var btnSubscribe = $("#subscribe");
             if (btnSubscribe.length) {
                 var form = btnSubscribe.parents('form').eq(0);
