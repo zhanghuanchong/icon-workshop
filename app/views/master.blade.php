@@ -79,6 +79,10 @@
     </p>
 </footer>
 
+<script>
+    window.showAd = <?php echo App::environment('local') ? 'false' : 'true' ?>;
+</script>
+
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="//cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
@@ -103,11 +107,6 @@
 @else
     <script src="/js/all.js?_={{Config::get('constants.version')}}"></script>
 @endif
-
-<script>
-    angular.module('rhIcon')
-            .value('showAd', <?php echo App::environment('local') ? 'false' : 'true' ?>);
-</script>
 
 <!-- JiaThis Button BEGIN -->
 <script type="text/javascript">

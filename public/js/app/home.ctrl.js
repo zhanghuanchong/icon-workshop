@@ -1,10 +1,10 @@
 (function(){
     angular.module('rhIcon')
-        .controller('HomeCtrl', function($scope, CoreService, $state, showAd, $timeout) {
+        .controller('HomeCtrl', function($scope, CoreService, $state, $timeout) {
             $scope.generating = false;
 
-            if (showAd) {
-                $state.transitionTo('home.ad');
+            if (window.showAd) {
+                $state.go('home.ad');
             }
 
             $("#platform").select2({

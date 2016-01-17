@@ -15,12 +15,26 @@
                 templateUrl: 'views/home/ad.html'
             })
             .state('icon', {
-                url: '/icon/:id',
+                url: '/icon/:id/:type',
                 templateUrl: 'views/icon/index.html',
                 controller: 'IconCtrl'
             })
-            .state('icon.ad', {
-                templateUrl: 'views/icon/ad.html'
+            .state('icon.detail', {
+                views: {
+                    ad: {
+                        templateUrl: function ($stateParams){
+                            if (window.showAd) {
+                                return 'views/icon/ad.html';
+                            }
+                            return null;
+                        }
+                    },
+                    detail: {
+                        templateUrl: function ($stateParams){
+                            return 'views/icon/detail.' + $stateParams['type'] + '.html';
+                        }
+                    }
+                }
             })
             .state('about', {
                 url: '/about',

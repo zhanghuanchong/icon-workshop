@@ -1,35 +1,20 @@
 (function(){
     angular.module('rhIcon')
-        .controller('IconCtrl', function($scope, $stateParams){
-            console.log($stateParams);
+        .controller('IconCtrl', function($scope, $stateParams, CoreService, $state, $timeout){
+            $state.go('icon.detail', $stateParams);
 
-            var btnSubscribe = $("#subscribe");
-            if (btnSubscribe.length) {
-                var form = btnSubscribe.parents('form').eq(0);
-                btnSubscribe.on('click', function(){
-                    var t = $(this);
-                    var input = form.find('input[type=email]');
-                    var v = $.trim(input.val());
-                    var reg = /^[a-z0-9-_]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/i;
-                    if (!v || !reg.test(v)) {
-                        input.focus();
-                        return;
-                    }
-                    form.hide().after('<div style="margin-top: 5px">订阅成功！即将发送到您的邮箱，请随后查收！</div>');
-                    $.post('/icon/subscribe', {
-                        design_id : '<?php echo $design->id ?>',
-                        mail : v
-                    });
+            $scope.subscribe = function () {
+                var v = $.trim($scope.email);
+                var reg = /^[a-z0-9-_]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/i;
+                if (!v || !reg.test(v)) {
+                    $('input[ng-model=email]').focus();
+                    return;
+                }
+                $scope.subscribed = true;
+                $.post('/icon/subscribe', {
+                    design_id : $stateParams.id,
+                    mail : v
                 });
-
-                form.on('submit', function(){
-                    btnSubscribe.click();
-                });
-            }
-
-            var tp_tabs = $("#tp_tabs");
-            if (tp_tabs.length) {
-                $("#tp_tabs li a").first().click();
-            }
+            };
         });
 })();
