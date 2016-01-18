@@ -7,16 +7,21 @@
                     $scope.design = data.design;
                     $scope.platforms = data.platforms;
 
-                    var type = $state.params.type;
-                    if (type && _.indexOf(data.platforms, type) >= 0) {
-                        $scope.switchDetail(type);
-                    } else if ($scope.platforms.length) {
-                        $scope.switchDetail($scope.platforms[0]);
-                    }
-
                     $timeout(function(){
                         $.material.ripples();
                     });
+
+                    var type = $state.params.type;
+                    if (type && _.indexOf(data.platforms, type) >= 0) {
+                        // Do nothing
+                    } else if ($scope.platforms.length) {
+                        type = $scope.platforms[0];
+                        $scope.switchDetail(type);
+                    }
+
+                    if (type) {
+                        $scope.updateBasePath(type);
+                    }
                 });
             };
             $scope.init();
@@ -26,8 +31,26 @@
                 $state.go('icon.detail', $stateParams);
             };
 
+            $scope.$on('$stateChangeSuccess', function (event, toState, toParams) {
+                if (toState.name == 'icon.detail' && $scope.design) {
+                    $scope.updateBasePath(toParams.type);
+                }
+            });
+
+            $scope.updateBasePath = function (type) {
+                var platform = $platforms[type];
+                $scope.basePath = [
+                    '',
+                    'files',
+                    $scope.design.folder,
+                    $scope.design.id,
+                    platform.folder,
+                    ''
+                ].join('/');
+            };
+
             $scope.tabCls = function (p) {
-                return p == $stateParams.type ? 'active' : '';
+                return p == $state.params.type ? 'active' : '';
             };
 
             $scope.subscribe = function () {

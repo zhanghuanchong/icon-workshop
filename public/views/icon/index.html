@@ -27,11 +27,11 @@
     <ul class="nav nav-pills nav-justified" role="tablist" id="tp_tabs">
         <li ng-repeat="p in platforms" ng-class="tabCls(p);">
             <a href="javascript:;" ng-click="switchDetail(p);" data-ripple-color="white">
-                {{ $platforms[p] }}
+                {{ $platforms[p].name }}
             </a>
         </li>
     </ul>
 
-    <div class="tab-content" id="tp_contents" ui-view="detail"></div>
+    <div class="tab-content" id="tp_contents" ng-if="basePath" ui-view="detail"></div>
 
 </div>

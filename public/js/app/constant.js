@@ -2,11 +2,29 @@
     'use strict';
     angular.module('rhIcon')
         .constant('$platforms', {
-            ios: 'iOS',
-            android: 'Android',
-            windowsphone: 'Windows Phone',
-            iwatch: 'iWatch',
-            webapp: 'Web App',
-            phonegap: 'PhoneGap'
+            ios: {
+                name: 'iOS',
+                folder: 'ios/AppIcon.appiconset'
+            },
+            android: {
+                name: 'Android',
+                folder: 'android'
+            },
+            windowsphone: {
+                name: 'Windows Phone',
+                folder: 'windowsphone'
+            },
+            iwatch: {
+                name: 'iWatch',
+                folder: 'iwatch/AppIcon.appiconset'
+            },
+            webapp: {
+                name: 'Web App',
+                folder: 'webapp'
+            },
+            phonegap: {
+                name: 'PhoneGap',
+                folder: 'phonegap'
+            }
         });
 })();
