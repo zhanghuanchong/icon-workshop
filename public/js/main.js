@@ -31,7 +31,9 @@
                     },
                     detail: {
                         templateUrl: function ($stateParams){
-                            return 'views/icon/detail.' + $stateParams['type'] + '.html';
+                            if ($stateParams.type) {
+                                return 'views/icon/detail.' + _.toLower($stateParams.type) + '.html';
+                            }
                         }
                     }
                 }

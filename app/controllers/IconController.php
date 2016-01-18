@@ -39,14 +39,18 @@ class IconController extends BaseController {
         return $this->jsonResponse('文件无效！', TRUE);
 	}
 
-    public function getDetail ($id)
+    public function getDetail ($id, $dataOnly = FALSE)
     {
         $design = Design::findOrFail($id);
         $platforms = explode(',', $design->platform);
-        return Response::view('icon/detail', array(
+        $data = array(
             'design' => $design,
             'platforms' => $platforms
-        ));
+        );
+        if ($dataOnly) {
+            return Response::json($data);
+        }
+        return Response::view('icon/detail', $data);
     }
 
     public function getDownload ($id, $regenerate = FALSE)

@@ -94,11 +94,13 @@
 <script src="//cdn.bootcss.com/angular.js/1.4.8/angular-animate.min.js"></script>
 <script src="//cdn.bootcss.com/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 <script src="/js/lib/loading-bar.min.js"></script>
+<script src="//cdn.bootcss.com/lodash.js/4.0.0/lodash.min.js"></script>
 <!--[if IE 10]>
 <script src="/js/lib/ie10-viewport-bug-workaround.js"></script>
 <![endif]-->
 @if(App::environment('local'))
     <script src="/js/main.js"></script>
+    <script src="/js/app/constant.js"></script>
     <script src="/js/app/core.service.js"></script>
     <script src="/js/app/root.ctrl.js"></script>
     <script src="/js/app/home.ctrl.js"></script>

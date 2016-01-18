@@ -1,0 +1,19 @@
+{
+  "name": "rhIcon",
+  "authors": [
+    "Hans Zhang <ezburg@gmail.com>"
+  ],
+  "description": "App icon generator",
+  "keywords": [
+    "Icon",
+    "App"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

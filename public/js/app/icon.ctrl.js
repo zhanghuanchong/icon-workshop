@@ -1,7 +1,16 @@
 (function(){
     angular.module('rhIcon')
-        .controller('IconCtrl', function($scope, $stateParams, CoreService, $state, $timeout){
+        .controller('IconCtrl', function($scope, $stateParams, CoreService, $state, $http, $platforms){
             $state.go('icon.detail', $stateParams);
+
+            $scope.init = function () {
+                $scope.$platforms = $platforms;
+                $http.get('/icon/detail/' + $stateParams.id + '/api').success(function(data){
+                    $scope.design = data.design;
+                    $scope.platforms = data.platforms;
+                });
+            };
+            $scope.init();
 
             $scope.subscribe = function () {
                 var v = $.trim($scope.email);

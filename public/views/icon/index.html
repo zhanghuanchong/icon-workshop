@@ -1,28 +1,37 @@
-<div ng-controller="IconCtrl">
-    <div class="well" role="alert" style="font-size:16px">
-        <div class="row">
-            <div class="col-md-7">
-                <strong>生成成功！</strong>在下面预览您的图标并
-                <a class="btn btn-raised btn-lg btn-success" style="padding: 6px 40px; margin-left: 10px;">
-                    <i class="fa fa-download" style="margin-right: 10px"></i>
-                    点击下载所有图标
-                </a>
-            </div>
-            <div class="col-md-5" style="text-align: right">
-                <form class="form-inline" role="form" onsubmit="return false;" ng-submit="subscribe();" ng-hide="subscribed">
-                    <div class="form-group no-margin no-padding">
-                        <input type="email" class="form-control" placeholder="发送到邮箱并订阅" ng-model="email"
-                               style="width:250px; display: inline-block">
-                        <button type="button" class="btn btn-raised btn-success" ng-click="subscribe();">发送</button>
-                    </div>
-                </form>
-                <div style="margin-top: 15px" ng-show="subscribed">订阅成功！即将发送到您的邮箱，请随后查收！</div>
-            </div>
+<div class="well" role="alert" style="font-size:16px">
+    <div class="row">
+        <div class="col-md-7">
+            <strong>生成成功！</strong>在下面预览您的图标并
+            <a class="btn btn-raised btn-lg btn-success" style="padding: 6px 40px; margin-left: 10px;">
+                <i class="fa fa-download" style="margin-right: 10px"></i>
+                点击下载所有图标
+            </a>
+        </div>
+        <div class="col-md-5" style="text-align: right">
+            <form class="form-inline" role="form" onsubmit="return false;" ng-submit="subscribe();" ng-hide="subscribed">
+                <div class="form-group no-margin no-padding">
+                    <input type="email" class="form-control" placeholder="发送到邮箱并订阅" ng-model="email"
+                           style="width:250px; display: inline-block">
+                    <button type="button" class="btn btn-raised btn-success" ng-click="subscribe();">发送</button>
+                </div>
+            </form>
+            <div style="margin-top: 15px" ng-show="subscribed">订阅成功！即将发送到您的邮箱，请随后查收！</div>
         </div>
     </div>
+</div>
 
-    <div ui-view="ad"></div>
+<div ui-view="ad"></div>
 
-    <div ui-view="detail"></div>
+<div role="tabpanel" style="font-weight: bold">
+
+    <ul class="nav nav-pills nav-justified" role="tablist" id="tp_tabs">
+        <li role="presentation" ng-repeat="p in platforms">
+            <a role="tab" href="javascript:;" ng-click="">
+                {{ $platforms[p] }}
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="tp_contents" ui-view="detail"></div>
 
 </div>
