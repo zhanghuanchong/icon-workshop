@@ -1,18 +1,23 @@
 'use strict';
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
     minifyCss = require('gulp-minify-css'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     del = require('del');
 
 var path = {
-    dest: './',
+    dest: './public/',
     js_src: [
-        'js/main.js '
+        'public/js/app/constant.js',
+        'public/js/app/core.service.js',
+        'public/js/app/root.ctrl.js',
+        'public/js/app/home.ctrl.js',
+        'public/js/app/icon.ctrl.js',
+        'public/js/app/about.ctrl.js',
+        'public/js/main.js '
     ],
     css_src: [
-        'css/main.css'
+        'public/css/main.css'
     ]
 };
 
