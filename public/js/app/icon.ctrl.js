@@ -54,6 +54,10 @@
                 return p == $state.params.type ? 'active' : '';
             };
 
+            $scope.downloadLink = function () {
+                return '/icon/download/' + $state.params.id;
+            };
+
             $scope.subscribe = function () {
                 var v = $.trim($scope.email);
                 var reg = /^[a-z0-9-_]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/i;
