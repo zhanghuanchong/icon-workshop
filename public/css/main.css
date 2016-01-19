@@ -92,7 +92,7 @@ span.string {
   font-size: 16px;
 }
 #tp_contents {
-  padding: 30px 70px 0;
+  padding: 30px 10px 0 10px;
 }
 #tp_contents .icons-row {
   margin-bottom: 45px;
@@ -108,6 +108,12 @@ span.string {
   border-top: 1px solid silver;
   margin-top: 5px;
   padding-top: 5px;
+}
+#tp_contents .mobile_preview {
+  position: relative;
+  margin: 0 auto;
+  width: 444px;
+  height: 743px;
 }
 #tp_android .description {
   border-top-width: 0;
