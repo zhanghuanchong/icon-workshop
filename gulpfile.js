@@ -2,7 +2,7 @@
 var gulp = require('gulp'),
     minifyCss = require('gulp-minify-css'),
     uglify = require('gulp-uglify'),
-    ngmin = require('gulp-ngmin'),
+    ngAnnotate = require('gulp-ng-annotate'),
     concat = require('gulp-concat'),
     del = require('del');
 
@@ -31,7 +31,7 @@ gulp.task('css', function() {
 
 gulp.task('js', function () {
     return gulp.src(path.js_src)
-        .pipe(ngmin())
+        .pipe(ngAnnotate())
         .pipe(uglify())
         .pipe(concat('all.js'))
         .pipe(gulp.dest(path.dest + 'js/'));
