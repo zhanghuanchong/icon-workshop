@@ -3,6 +3,7 @@
         .controller('IconCtrl', function($scope, $stateParams, CoreService, $state, $http, $platforms, $timeout){
             $scope.init = function () {
                 $scope.$platforms = $platforms;
+                $scope.url = window.location.origin;
                 $http.get('/icon/detail/' + $stateParams.id + '/api').success(function(data){
                     $scope.design = data.design;
                     $scope.platforms = data.platforms;
