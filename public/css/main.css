@@ -10,6 +10,12 @@ body {
 .x-ng-cloak {
   display: none !important;
 }
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
+}
 #if_form {
   border: 5px solid white;
   padding: 30px 60px;
@@ -73,6 +79,9 @@ body {
 span.string {
   color: #800;
 }
+.panel-heading {
+  cursor: pointer;
+}
 .no-radius {
   border-radius: 0 !important;
 }
@@ -91,7 +100,7 @@ span.string {
 #tp_contents .icons-col {
   font-weight: normal;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
   color: #999;
   font-size: 11px;
 }

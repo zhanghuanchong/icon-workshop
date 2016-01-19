@@ -2,6 +2,7 @@
     'use strict';
     angular.module('rhIcon', [
         'ui.router',
+        'ui.bootstrap',
         'angular-loading-bar',
         'ngAnimate'
     ]).config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvider){
