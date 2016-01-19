@@ -1,29 +1,53 @@
-<form class="jumbotron" action="/icon/upload" method="post" id="if_form">
+<form class="jumbotron form-horizontal" action="/icon/upload" method="post" id="if_form">
     <h2><?php echo Config::get('constants.slogan') ?></h2>
     <div id="jumbotron_img_box">
         <img src="/img/launcher.png" alt="" id="jumbotron_img"/>
-        <div id="jumbotron_img_loading" ng-show="generating">
+        <div id="jumbotron_img_loading" ng-show="status == 'generating'">
             <div class="circle"></div>
             <div class="circle1"></div>
         </div>
     </div>
     <p><strong>拖放您的设计文件到这里。</strong></p>
     <p>支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果。</p>
-    <div ng-show="!generating">
+    <div ng-show="!status">
         <a href="javascript:;" class="btn btn-primary btn-raised btn-lg" ng-click="uploadFromBtn();">或者点击这里上传</a>
-        <label for="platform" style="margin-left: 20px">选择平台:</label>
-        <select name="platform" id="platform" multiple style="width: 300px; height: 30px">
-            <option value="ios" selected>iOS</option>
-            <option value="android" selected>Android</option>
-            <option value="windowsphone">Windows Phone</option>
-            <option value="phonegap">PhoneGap</option>
-            <option value="iwatch">iWatch</option>
-            <option value="webapp">Web App</option>
-        </select>
     </div>
-    <div ng-show="generating" class="alert alert-success" role="alert" style="max-width: 70%; margin-bottom: 8px;">
+    <div ng-show="status == 'setting'" class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">上传图片中，请先设置生成参数：</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group margin-top-0">
+                <label class="control-label col-md-2">上传进度：</label>
+                <div class="col-md-10">
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-success" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2 no-margin" for="platform">选择平台：</label>
+                <div class="col-md-10">
+                    <select name="platform" id="platform" multiple style="width: 70%; height: 30px">
+                        <option value="ios" selected>iOS</option>
+                        <option value="android" selected>Android</option>
+                        <option value="windowsphone">Windows Phone</option>
+                        <option value="phonegap">PhoneGap</option>
+                        <option value="iwatch">iWatch</option>
+                        <option value="webapp">Web App</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 text-right">
+                    <a href='javascript:;' class="btn btn-primary btn-raised btn-lg no-margin">开始生成</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="status == 'generating'" class="alert alert-success" role="alert" style="margin-bottom: 8px;">
         <i class="fa fa-spinner fa-spin"></i>
-        生成中，请耐心等待(可能需要1-5分钟时间)...
+        生成中，请耐心等待（可能需要1-5分钟时间）...
     </div>
     <input type="file" id="if" style="float:right; visibility: hidden" onchange="$('#if_form').scope().selectedFile(this);"/>
 </form>

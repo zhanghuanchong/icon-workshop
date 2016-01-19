@@ -2,7 +2,9 @@
     'use strict';
     angular.module('rhIcon')
         .controller('HomeCtrl', function($scope, CoreService, $state, $timeout) {
-            $scope.generating = false;
+            $.material.ripples();
+
+            $scope.status = 'setting';
 
             if (window.showAd) {
                 $state.go('home.ad');
@@ -66,7 +68,7 @@
 
             $scope.startUploading = function (file) {
                 enableDropping = false;
-                $scope.generating = true;
+                $scope.status = 'generating';
 
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(file);
@@ -93,7 +95,7 @@
                                 });
                             }, function(){
                                 enableDropping = true;
-                                $scope.generating = false;
+                                $scope.status = false;
 
                                 $("#jumbotron_img").get(0).src = 'img/launcher.png';
                             });
