@@ -41,16 +41,16 @@ class IconController extends BaseController {
 
     public function getDetail ($id, $dataOnly = FALSE)
     {
-        $design = Design::findOrFail($id);
-        $platforms = explode(',', $design->platform);
-        $data = array(
-            'design' => $design,
-            'platforms' => $platforms
-        );
         if ($dataOnly) {
+            $design = Design::findOrFail($id);
+            $platforms = explode(',', $design->platform);
+            $data = array(
+                'design' => $design,
+                'platforms' => $platforms
+            );
             return Response::json($data);
         }
-        return Response::view('icon/detail', $data);
+        return Redirect::to('/#/icon/' . $id);
     }
 
     public function getDownload ($id, $regenerate = FALSE)
