@@ -19,7 +19,7 @@
     <link href="//cdn.bootcss.com/bootstrap-material-design/0.5.7/css/ripples.min.css" rel="stylesheet">
     <link href="/css/loading-bar.min.css" rel="stylesheet">
 
-    @if(App::environment('local'))
+    @if(App::environment('production'))
         <link rel="stylesheet" href="/css/main.css">
     @else
         <link rel="stylesheet" href="/css/all.css?_={{Config::get('constants.version')}}">
@@ -65,7 +65,7 @@
     <p>
         <a href="http://wuruihong.com" target="_blank" style="color:white">睿鸿游戏</a>　
         版权所有　Copyright(C) 2015　All Rights Reserved　豫ICP备14010348号-1
-        @if(!App::environment('local'))
+        @if(!App::environment('production'))
         <script>
             var _hmt = _hmt || [];
             (function() {
@@ -80,7 +80,7 @@
 </footer>
 
 <script>
-    window.showAd = <?php echo App::environment('local') ? 'false' : 'true' ?>;
+    window.showAd = <?php echo App::environment('production') ? 'false' : 'true' ?>;
 </script>
 
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
@@ -99,7 +99,7 @@
 <!--[if IE 10]>
 <script src="/js/lib/ie10-viewport-bug-workaround.js"></script>
 <![endif]-->
-@if(App::environment('local'))
+@if(App::environment('production'))
     <script src="/js/main.js"></script>
     <script src="/js/app/constant.js"></script>
     <script src="/js/app/core.service.js"></script>

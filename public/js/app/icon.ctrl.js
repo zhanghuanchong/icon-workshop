@@ -1,4 +1,5 @@
 (function(){
+    'use strict';
     angular.module('rhIcon')
         .controller('IconCtrl', function($scope, $stateParams, CoreService, $state, $http, $platforms, $timeout){
             $scope.init = function () {

@@ -1,4 +1,5 @@
 (function(){
+    'use strict';
     angular.module('rhIcon')
         .controller('HomeCtrl', function($scope, CoreService, $state, $timeout) {
             $scope.generating = false;
