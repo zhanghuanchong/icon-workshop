@@ -17,6 +17,7 @@
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/bootstrap-material-design.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/bootstrap-material-design/0.5.7/css/ripples.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/hint.css/1.3.6/hint.min.css" rel="stylesheet">
     <link href="/css/loading-bar.min.css" rel="stylesheet">
 
     @if(App::environment('local'))
@@ -113,12 +114,14 @@
     <script src="/js/all.js?_={{Config::get('constants.version')}}"></script>
 @endif
 
+@if(!App::environment('local'))
 <!-- JiaThis Button BEGIN -->
 <script type="text/javascript">
-//    var jiathis_config = {data_track_clickback:'true'};
+    var jiathis_config = {data_track_clickback:'true'};
 </script>
-{{--<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?btn=r3.gif&uid=1351577434153337" charset="utf-8"></script>--}}
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?btn=r3.gif&uid=1351577434153337" charset="utf-8"></script>
 <!-- JiaThis Button END -->
+@endif
 
 </body>
 </html>

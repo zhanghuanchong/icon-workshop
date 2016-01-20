@@ -32,6 +32,12 @@ body {
 }
 #if_form .progress {
   margin-top: 23px;
+  position: relative;
+  overflow: visible;
+}
+#if_form .progress .progress-tip {
+  position: absolute;
+  top: 0;
 }
 #if_form .control-label {
   font-size: 16px;

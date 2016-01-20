@@ -1,10 +1,16 @@
 (function(){
     'use strict';
     angular.module('rhIcon')
-        .controller('HomeCtrl', function($scope, CoreService, $state, $timeout) {
+        .controller('HomeCtrl', function($scope, CoreService, $state, $http, $timeout) {
             $.material.ripples();
 
-            $scope.status = 'setting';
+            $scope.init = function () {
+                $scope.status = false;
+                $scope.progress = 0;
+                $scope.id = null;
+                $scope.ready = false;
+            };
+            $scope.init();
 
             if (window.showAd) {
                 $state.go('home.ad');
@@ -15,13 +21,12 @@
             });
 
             var if_form = $("#if_form"),
-                dom = if_form.get(0),
-                enableDropping = true;
+                dom = if_form.get(0);
             dom.addEventListener("dragover", function(e){
                 e.stopPropagation();
                 e.preventDefault();
 
-                if (!enableDropping) {
+                if ($scope.status) {
                     return;
                 }
 
@@ -31,7 +36,7 @@
                 e.stopPropagation();
                 e.preventDefault();
 
-                if (!enableDropping) {
+                if ($scope.status) {
                     return;
                 }
 
@@ -41,7 +46,7 @@
                 e.stopPropagation();
                 e.preventDefault();
 
-                if (!enableDropping) {
+                if ($scope.status) {
                     return;
                 }
 
@@ -67,8 +72,8 @@
             };
 
             $scope.startUploading = function (file) {
-                enableDropping = false;
-                $scope.status = 'generating';
+                $scope.init();
+                $scope.status = 'setting';
 
                 var oFReader = new FileReader();
                 oFReader.readAsDataURL(file);
@@ -81,7 +86,6 @@
 
                 var formData = new FormData();
                 formData.append('file', file);
-                formData.append('platform', $("#platform").val());
 
                 var oReq = new XMLHttpRequest();
                 oReq.open("POST", "/icon/upload", true);
@@ -90,19 +94,60 @@
                     if (oReq.readyState == 4) {
                         if (oReq.status == 200) {
                             CoreService.resCallback(oReq.responseText, function(id){
-                                $state.go('icon', {
-                                    id: id
+                                $scope.$apply(function () {
+                                    $scope.id = id;
+                                    if ($scope.ready) {
+                                        $scope.doGenerate();
+                                    }
                                 });
-                            }, function(){
-                                enableDropping = true;
-                                $scope.status = false;
+                            }, function() {
+                                $scope.$apply(function () {
+                                    $scope.init();
+                                });
 
                                 $("#jumbotron_img").get(0).src = 'img/launcher.png';
                             });
                         }
                     }
                 };
+                oReq.onprogress = function(e) {
+                    $scope.$apply(function () {
+                        $scope.progress = Math.round(e.loaded / e.total * 100);
+                    });
+                };
                 oReq.send(formData);
+            };
+
+            $scope.progressStyle = function () {
+                return {
+                    width: $scope.progress + '%'
+                };
+            };
+
+            $scope.progressTipStyle = function () {
+                return {
+                    left: ($scope.progress - 1) + '%'
+                };
+            };
+
+            $scope.generate = function () {
+                if ($scope.id) {
+                    $scope.doGenerate();
+                } else {
+                    $scope.ready = true;
+                }
+            };
+
+            $scope.doGenerate = function () {
+                $scope.status = 'generating';
+                $http.post('/icon/generate', {
+                    id: $scope.id,
+                    platforms: $("#platform").val()
+                }).success(function(){
+                    $state.go('icon', {
+                        id: $scope.id
+                    });
+                });
             };
         });
 })();
