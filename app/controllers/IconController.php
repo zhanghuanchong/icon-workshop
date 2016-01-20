@@ -16,7 +16,6 @@ class IconController extends BaseController {
                 $design->ext = $ext;
                 $design->original_name = $file->getClientOriginalName();
                 $design->mime_type = $file->getMimeType();
-                $design->platform = Input::get('platform') ? Input::get('platform') : 'ios_android';
                 $design->user_agent = Input::server('HTTP_USER_AGENT');
                 $design->ip = Input::getClientIp();
 
@@ -30,14 +29,24 @@ class IconController extends BaseController {
 
                 $design->save();
 
-                $platforms = explode(',', $design->platform);
-                $design->generateIcons($platforms);
-
                 return $this->jsonResponse($id);
             }
         }
         return $this->jsonResponse('文件无效！', TRUE);
 	}
+
+    public function postGenerate()
+    {
+        $platforms = Input::get('platforms');
+
+        $design = Design::find(Input::get('id'));
+        $design->platform = implode(',', $platforms);
+        $design->save();
+
+        $design->generateIcons();
+
+        return $this->jsonResponse(NULL);
+    }
 
     public function getDetail ($id, $dataOnly = FALSE)
     {
