@@ -49,11 +49,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="javascript:;" ui-sref="home">首页</a></li>
-                <li><a href="#">iOS 8图标</a></li>
-                <li><a href="#">WebApp图标</a></li>
+                <li ng-class="stateCls('home')"><a href="#/home">首页</a></li>
+                <li ng-class="stateCls('ios8')"><a href="#">iOS 8图标</a></li>
+                <li ng-class="stateCls('webapp')"><a href="#">WebApp图标</a></li>
                 <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
-                <li><a href="javascript:;" ui-sref="about">关于我们</a></li>
+                <li ng-class="stateCls('about')"><a href="#/about">关于我们</a></li>
             </ul>
         </div>
     </div>
