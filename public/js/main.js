@@ -60,6 +60,9 @@
         $rootScope.$on('$stateChangeSuccess', function() {
             cfpLoadingBar.complete();
         });
+    }).run(function ($rootScope, $state, $stateParams) {
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
     });
 
     $.material.init();
