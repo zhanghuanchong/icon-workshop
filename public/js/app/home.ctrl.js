@@ -110,7 +110,7 @@
                         }
                     }
                 };
-                oReq.onprogress = function(e) {
+                oReq.upload.onprogress = function(e) {
                     $scope.$apply(function () {
                         console.log(e);
                         $scope.progress = Math.round(e.loaded / e.total * 100);
