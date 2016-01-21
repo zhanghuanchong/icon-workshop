@@ -1,7 +1,7 @@
 (function(){
     'use strict';
     angular.module('rhIcon')
-        .controller('IconCtrl', function($scope, $stateParams, CoreService, $state, $http, $platforms, $timeout){
+        .controller('IconCtrl', function($scope, $stateParams, CoreService, $state, $http, $platforms, $timeout, ngDialog){
             $scope.init = function () {
                 $scope.$platforms = $platforms;
                 $scope.url = window.location.origin;
@@ -57,6 +57,13 @@
 
             $scope.downloadLink = function () {
                 return '/icon/download/' + $state.params.id;
+            };
+
+            $scope.showDownloadPopup = function () {
+                ngDialog.open({
+                    template: '/views/icon/download.html',
+                    scope: $scope
+                });
             };
 
             $scope.subscribe = function () {

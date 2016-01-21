@@ -10,3 +10,4 @@ Thumbs.db
 Vagrantfile
 .idea
 node_modules
+/public/bower

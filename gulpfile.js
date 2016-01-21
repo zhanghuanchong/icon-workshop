@@ -9,6 +9,9 @@ var gulp = require('gulp'),
 var path = {
     dest: './public/',
     js_src: [
+        'public/js/lib/material.min.js',
+        'public/js/lib/loading-bar.min.js',
+        'public/bower/ng-dialog/js/ngDialog.min.js',
         'public/js/main.js',
         'public/js/app/constant.js',
         'public/js/app/core.service.js',
@@ -18,6 +21,10 @@ var path = {
         'public/js/app/about.ctrl.js'
     ],
     css_src: [
+        'public/css/bootstrap-material-design.min.css',
+        'public/css/loading-bar.min.css" rel="stylesheet',
+        'public/bower/ng-dialog/css/ngDialog.min.css',
+        'public/bower/ng-dialog/css/ngDialog-theme-default.min.css',
         'public/css/main.css'
     ]
 };

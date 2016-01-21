@@ -15,12 +15,14 @@
     <link href="//cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/select2/4.0.1/css/select2.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-material-design.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/bootstrap-material-design/0.5.7/css/ripples.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/hint.css/1.3.6/hint.min.css" rel="stylesheet">
-    <link href="/css/loading-bar.min.css" rel="stylesheet">
 
     @if(App::environment('local'))
+        <link href="/css/bootstrap-material-design.min.css" rel="stylesheet">
+        <link href="/css/loading-bar.min.css" rel="stylesheet">
+        <link href="/bower/ng-dialog/css/ngDialog.min.css" rel="stylesheet">
+        <link href="/bower/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/main.css">
     @else
         <link rel="stylesheet" href="/css/all.css?_={{Config::get('constants.version')}}">
@@ -91,18 +93,20 @@
 <script src="//cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="//cdn.bootcss.com/select2/4.0.1/js/select2.min.js"></script>
 <script src="//cdn.bootcss.com/select2/4.0.1/js/i18n/zh-CN.js"></script>
-<script src="/js/lib/material.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-material-design/0.5.7/js/ripples.min.js"></script>
 <script src="//cdn.bootcss.com/angular.js/1.4.8/angular.min.js"></script>
 <script src="//cdn.bootcss.com/angular.js/1.4.8/angular-animate.min.js"></script>
 <script src="//cdn.bootcss.com/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 <script src="//cdn.bootcss.com/angular-ui-bootstrap/1.0.3/ui-bootstrap-tpls.min.js"></script>
-<script src="/js/lib/loading-bar.min.js"></script>
 <script src="//cdn.bootcss.com/lodash.js/4.0.0/lodash.min.js"></script>
 <!--[if IE 10]>
 <script src="/js/lib/ie10-viewport-bug-workaround.js"></script>
 <![endif]-->
 @if(App::environment('local'))
+    <script src="/js/lib/material.min.js"></script>
+    <script src="/js/lib/loading-bar.min.js"></script>
+    <script src="/bower/ng-dialog/js/ngDialog.min.js"></script>
+
     <script src="/js/main.js"></script>
     <script src="/js/app/constant.js"></script>
     <script src="/js/app/core.service.js"></script>

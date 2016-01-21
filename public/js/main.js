@@ -4,7 +4,8 @@
         'ui.router',
         'ui.bootstrap',
         'angular-loading-bar',
-        'ngAnimate'
+        'ngAnimate',
+        'ngDialog'
     ]).config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvider){
         $stateProvider
             .state('home', {
