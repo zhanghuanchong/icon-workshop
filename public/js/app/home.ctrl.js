@@ -9,6 +9,7 @@
                 $scope.progress = 0;
                 $scope.id = null;
                 $scope.ready = false;
+                $scope.sizes = [];
             };
             $scope.init();
 
@@ -142,11 +143,18 @@
                 $scope.status = 'generating';
                 $http.post('/icon/generate', {
                     id: $scope.id,
-                    platforms: $("#platform").val()
+                    platforms: $("#platform").val(),
+                    sizes: $scope.sizes
                 }).success(function(){
                     $state.go('icon', {
                         id: $scope.id
                     });
+                });
+            };
+
+            $scope.addCustomSize = function () {
+                $scope.sizes.push({
+                    length: 0
                 });
             };
         });

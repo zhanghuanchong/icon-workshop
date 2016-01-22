@@ -109,6 +109,7 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/app/constant.js"></script>
+    <script src="/js/app/directive.js"></script>
     <script src="/js/app/core.service.js"></script>
     <script src="/js/app/root.ctrl.js"></script>
     <script src="/js/app/home.ctrl.js"></script>

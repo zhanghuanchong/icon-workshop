@@ -16,10 +16,10 @@
         <div class="panel-heading">
             <h3 class="panel-title">生成参数：</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="padding-right: 40px;">
             <div class="form-group margin-top-0">
-                <label class="control-label col-md-2">上传进度:</label>
-                <div class="col-md-10">
+                <label class="control-label col-md-3">上传进度:</label>
+                <div class="col-md-9">
                     <div class="progress progress-striped active">
                         <div class="progress-bar progress-bar-success" ng-style="progressStyle();"></div>
                         <div class="progress-tip hint--top hint--always hint--success" data-hint="{{ progress + '%' }}"
@@ -28,8 +28,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-md-2 no-margin" for="platform">选择平台:</label>
-                <div class="col-md-10">
+                <label class="control-label col-md-3 no-margin" for="platform">选择平台:</label>
+                <div class="col-md-9">
                     <select name="platform" id="platform" multiple style="width: 70%; height: 30px">
                         <option value="ios" selected>iOS</option>
                         <option value="android" selected>Android</option>
@@ -38,6 +38,20 @@
                         <option value="iwatch">iWatch</option>
                         <option value="webapp">Web App</option>
                     </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3 no-margin">
+                    自定义大小:<br/>
+                    <a href='javascript:;' class="inline-block margin-top-10" ng-click="addCustomSize()">
+                        <i class="fa fa-plus"></i>
+                        添加
+                    </a>
+                </label>
+                <div class="col-md-9 padding-top-5">
+                    <input type="number" min="0" max="1024" step="1" class="width-50 margin-right-10 text-center"
+                           ng-model="s.length" ng-repeat="s in sizes" focus-last/>
+                    <span ng-show="sizes.length <= 0">无</span>
                 </div>
             </div>
             <div class="form-group">
