@@ -14,6 +14,7 @@ var path = {
         'public/bower/ng-dialog/js/ngDialog.min.js',
         'public/js/main.js',
         'public/js/app/constant.js',
+        'public/js/app/directive.js',
         'public/js/app/core.service.js',
         'public/js/app/root.ctrl.js',
         'public/js/app/home.ctrl.js',
