@@ -1,5 +1,9 @@
 <div class="tab-pane active" id="tp_custom">
 
-
+    <div class="inline-block text-center" ng-repeat="s in sizes">
+        <img class="img-responsive img-thumbnail"
+             ng-src="{{ basePath + s.length + 'x' + s.length + '.png' }}" alt=""/><br>
+        <span ng-bind="s.length + ' x ' + s.length"></span>
+    </div>
 
 </div>

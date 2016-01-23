@@ -8,6 +8,7 @@
                 $http.get('/icon/detail/' + $stateParams.id + '/api').success(function(data){
                     $scope.design = data.design;
                     $scope.platforms = data.platforms;
+                    $scope.sizes = data.sizes;
 
                     $timeout(function(){
                         $.material.ripples();
