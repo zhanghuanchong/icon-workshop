@@ -25,6 +25,10 @@
             phonegap: {
                 name: 'PhoneGap',
                 folder: 'phonegap'
+            },
+            custom: {
+                name: '自定义',
+                folder: 'custom'
             }
         });
 })();

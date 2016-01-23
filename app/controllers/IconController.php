@@ -58,6 +58,12 @@ class IconController extends BaseController {
                 'design' => $design,
                 'platforms' => $platforms
             );
+
+            $sizes = $design->sizes;
+            if ($sizes) {
+                $data['platforms'][] = Design::CUSTOM_FOLDER;
+                $data['sizes'] = $sizes;
+            }
             return Response::json($data);
         }
         return Redirect::to('/#/icon/' . $id);

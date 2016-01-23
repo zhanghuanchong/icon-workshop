@@ -597,6 +597,30 @@ class Design extends Eloquent {
         //endregion
     );
 
+    public function setSizesAttribute($value)
+    {
+        $sizes = json_decode($value, TRUE);
+        $result = [];
+        $lengths = [];
+        foreach($sizes as $size) {
+            if (isset($size['length'])) {
+                $length = $size['length'];
+                if ($length && !in_array($length, $lengths)) {
+                    $result[] = $size;
+
+                    $lengths[] = $length;
+                }
+            }
+        }
+
+        $this->attributes['sizes'] = json_encode($result);
+    }
+
+    public function getSizesAttribute($value)
+    {
+        return json_decode($value, TRUE);
+    }
+
     public function subscribers()
     {
         return $this->hasMany('Subscription');
@@ -709,15 +733,11 @@ class Design extends Eloquent {
             }
         }
 
-        if ($alsoSizes && $this->sizes) {
-            $sizes = json_decode($this->sizes, TRUE);
-            $generatedSizes = [];
+        $sizes = $this->sizes;
+        if ($alsoSizes && $sizes) {
             foreach($sizes as $size) {
                 if (isset($size['length'])) {
                     $length = $size['length'];
-                    if (!$length || in_array($length, $generatedSizes)) {
-                        continue;
-                    }
 
                     $folder = $root . static::CUSTOM_FOLDER . '/';
                     if (!file_exists($folder)) {
@@ -729,8 +749,6 @@ class Design extends Eloquent {
                     $this->optimize($_img, $length);
 
                     $_img->save($folder . $length . 'x' . $length . '.png');
-
-                    $generatedSizes[] = $length;
                 }
             }
         }
