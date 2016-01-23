@@ -10,6 +10,15 @@
                 $scope.id = null;
                 $scope.ready = false;
                 $scope.sizes = [];
+                $scope.presets = [{
+                    length: 28,
+                    icon: 'wechat',
+                    selected: false
+                }, {
+                    length: 108,
+                    icon: 'wechat',
+                    selected: false
+                }];
             };
             $scope.init();
 
@@ -141,10 +150,19 @@
 
             $scope.doGenerate = function () {
                 $scope.status = 'generating';
+                var sizes = $scope.sizes;
+                angular.forEach($scope.presets, function (value, key) {
+                    if (value.selected) {
+                        sizes.push({
+                            length: value.length
+                        });
+                    }
+                });
+
                 $http.post('/icon/generate', {
                     id: $scope.id,
                     platforms: $("#platform").val(),
-                    sizes: $scope.sizes
+                    sizes: sizes
                 }).success(function(){
                     $state.go('icon', {
                         id: $scope.id

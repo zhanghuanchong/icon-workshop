@@ -47,6 +47,31 @@ body {
 #if_form .form-group {
   margin-top: 15px;
 }
+#if_form .toggle-input {
+  display: inline-block;
+  padding: 1px 8px;
+  border: 1px solid silver;
+  color: silver;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+#if_form .toggle-input:hover,
+#if_form .toggle-input:focus,
+#if_form .toggle-input:active {
+  text-decoration: none;
+}
+#if_form .toggle-input.active {
+  border-color: #2187e7;
+  color: #2187e7;
+}
+#if_form input[type=number] {
+  border: 1px solid silver;
+  margin-bottom: 5px;
+}
+#if_form input[type=number]:focus,
+#if_form input[type=number]:active {
+  border-color: #2187e7;
+}
 .row-margin {
   margin: 40px -15px 30px;
 }
