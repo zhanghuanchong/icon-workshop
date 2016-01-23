@@ -7,10 +7,9 @@
  */
 
 class Design extends Eloquent {
-    public $incrementing = false;
-
     const CUSTOM_FOLDER = 'custom';
-    const FORMAT_SIZES = array(
+    
+    public static $format_sizes = array(
         //region iOS
         'ios' => array(
             array(
@@ -597,6 +596,8 @@ class Design extends Eloquent {
         //endregion
     );
 
+    public $incrementing = false;
+
     public function setSizesAttribute($value)
     {
         $sizes = json_decode($value, TRUE);
@@ -646,14 +647,14 @@ class Design extends Eloquent {
         $imgBg->backup();
 
         foreach($formats as $format) {
-            if (!array_key_exists($format, static::FORMAT_SIZES)) {
+            if (!array_key_exists($format, static::$format_sizes)) {
                 continue;
             }
             $format_root = $root . $format . '/';
             if (!file_exists($format_root)) {
                 mkdir($format_root);
             }
-            $sizes = static::FORMAT_SIZES[$format];
+            $sizes = static::$format_sizes[$format];
             $json_folder = '';
             $json = array();
             if (in_array($format, $appleFormats)) {
