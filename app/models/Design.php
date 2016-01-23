@@ -9,7 +9,8 @@
 class Design extends Eloquent {
     public $incrementing = false;
 
-    public $format_sizes = array(
+    const CUSTOM_FOLDER = 'custom';
+    const FORMAT_SIZES = array(
         //region iOS
         'ios' => array(
             array(
@@ -605,7 +606,7 @@ class Design extends Eloquent {
         return $this->folder . '/' . $this->id . '/' . $name . '.' . $this->ext;
     }
 
-    public function generateIcons($formats = NULL) {
+    public function generateIcons($formats = NULL, $alsoSizes = TRUE) {
         if (!$formats) {
             $formats = explode(',', $this->platform);
         }
@@ -621,14 +622,14 @@ class Design extends Eloquent {
         $imgBg->backup();
 
         foreach($formats as $format) {
-            if (!isset($this->format_sizes[$format])) {
+            if (!array_key_exists($format, static::FORMAT_SIZES)) {
                 continue;
             }
             $format_root = $root . $format . '/';
             if (!file_exists($format_root)) {
                 mkdir($format_root);
             }
-            $sizes = $this->format_sizes[$format];
+            $sizes = static::FORMAT_SIZES[$format];
             $json_folder = '';
             $json = array();
             if (in_array($format, $appleFormats)) {
@@ -658,11 +659,8 @@ class Design extends Eloquent {
                 }
                 $_img->reset();
                 $_img->resize($length, $length);
-                if ($length <= 30) {
-                    $_img->sharpen(5);
-                } else if ($length <= 50) {
-                    $_img->sharpen(2);
-                }
+                $this->optimize($_img, $length);
+
                 if (isset($s['name'])) {
                     $name = $s['name'];
                 } else {
@@ -710,6 +708,40 @@ class Design extends Eloquent {
                 file_put_contents($json_folder . 'Contents.json', $json_string);
             }
         }
+
+        if ($alsoSizes && $this->sizes) {
+            $sizes = json_decode($this->sizes, TRUE);
+            $generatedSizes = [];
+            foreach($sizes as $size) {
+                if (isset($size['length'])) {
+                    $length = $size['length'];
+                    if (!$length || in_array($length, $generatedSizes)) {
+                        continue;
+                    }
+
+                    $folder = $root . static::CUSTOM_FOLDER . '/';
+                    if (!file_exists($folder)) {
+                        mkdir($folder, 0777, true);
+                    }
+                    $_img = &$img;
+                    $_img->reset();
+                    $_img->resize($length, $length);
+                    $this->optimize($_img, $length);
+
+                    $_img->save($folder . $length . 'x' . $length . '.png');
+
+                    $generatedSizes[] = $length;
+                }
+            }
+        }
+    }
+
+    protected function optimize(\Intervention\Image\Image &$_img, $length) {
+        if ($length <= 30) {
+            $_img->sharpen(5);
+        } else if ($length <= 50) {
+            $_img->sharpen(2);
+        }
     }
 
     public function package($regenerate = FALSE) {
@@ -721,6 +753,12 @@ class Design extends Eloquent {
             foreach($formats as $f) {
                 $zip->folder($f)->add($folder . $f);
             }
+
+            $custom_folder = $folder . static::CUSTOM_FOLDER;
+            if (file_exists($custom_folder)) {
+                $zip->folder(static::CUSTOM_FOLDER)->add($custom_folder);
+            }
+
             $zip->close();
         }
         return $path;
