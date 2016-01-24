@@ -3,6 +3,7 @@
     angular.module('rhIcon')
         .controller('HomeCtrl', function($scope, CoreService, $state, $http, $timeout) {
             $.material.ripples();
+            $scope.slogan = $("meta[name=slogan]").attr('content');
 
             $scope.init = function () {
                 $scope.status = false;
@@ -19,6 +20,7 @@
                     icon: 'wechat',
                     selected: false
                 }];
+                $("#jumbotron_img").attr('src', '/img/launcher.png');
             };
             $scope.init();
 

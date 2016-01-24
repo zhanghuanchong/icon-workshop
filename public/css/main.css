@@ -16,6 +16,13 @@ body {
 .panel-title a {
   cursor: pointer;
 }
+#navbar_logo {
+  display: inline;
+  vertical-align: middle;
+  border: 1px solid white;
+  border-radius: 3px;
+  margin-right: 10px;
+}
 #if_form {
   border: 5px solid white;
   padding: 30px 60px;
@@ -78,6 +85,9 @@ body {
 .row-margin > div {
   padding-top: 10px;
 }
+.silver {
+  color: silver;
+}
 .width-50 {
   width: 50px;
 }
@@ -90,11 +100,17 @@ body {
 .margin-right-10 {
   margin-right: 10px;
 }
+.margin-right-20 {
+  margin-right: 20px;
+}
 .margin-top-0 {
   margin-top: 0;
 }
 .margin-top-10 {
   margin-top: 10px;
+}
+.margin-top-20 {
+  margin-top: 20px;
 }
 .padding-top-5 {
   padding-top: 5px;
@@ -304,7 +320,7 @@ footer {
   margin-bottom: 20px;
 }
 #jumbotron_img_box {
-  margin-top: -20px;
+  margin-top: -30px;
   position: relative;
   float: right;
   width: 128px;
