@@ -122,6 +122,25 @@ class Design extends Eloquent {
                 'idiom' => 'ipad',
             ),
             array(
+                'size' => 83.5,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ),
+            array(
+                'size' => 512,
+                'name' => 'iTunesArtwork',
+            ),
+            array(
+                'size' => 512,
+                'scale' => 2,
+                'name' => 'iTunesArtwork@2x',
+            ),
+        ),
+        //endregion
+        //region iOS-old
+        'ios_old' => array(
+            array(
                 'size' => 57,
                 'name' => 'icon'
             ),
@@ -677,7 +696,9 @@ class Design extends Eloquent {
                 }
                 $scale = isset($s['scale']) ? $s['scale'] : 1;
                 $length = $s['size'] * $scale;
-                if (in_array($format, $appleFormats) || isset($s['bg']) || $format == 'windowsphone') {
+                if (in_array($format, $appleFormats) || isset($s['bg'])
+                    || $format == 'windowsphone' || $format == 'ios_old')
+                {
                     $_img = &$imgBg;
                 } else {
                     $_img = &$img;
