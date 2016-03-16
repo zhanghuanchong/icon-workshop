@@ -83,7 +83,34 @@
                 }
             };
 
+            $scope.checkFile = function (file) {
+                if (!file || !file.type) {
+                    return false;
+                }
+                var list = [
+                    'image/jpeg',
+                    'image/jpg',
+                    'image/png',
+                    'image/gif',
+                    'image/vnd.adobe.photoshop'
+                ];
+                if ($.inArray(file.type, list) >= 0) {
+                    return true;
+                }
+
+                swal({
+                    title : '不支持的文件格式.',
+                    type : 'error',
+                    confirmButtonText : '确定'
+                });
+
+                return false;
+            };
+
             $scope.startUploading = function (file) {
+                if (!$scope.checkFile(file)) {
+                    return;
+                }
                 $scope.init();
                 $scope.status = 'setting';
 
