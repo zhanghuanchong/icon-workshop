@@ -106,9 +106,14 @@ body {
   width: 8px;
   height: 8px;
   right: 10px;
-  top: 14px;
+  top: 30%;
   border-radius: 4px;
   z-index: -1;
+}
+@media (max-width: 768px) {
+  .red-dot {
+    right: auto;
+  }
 }
 .panel .panel-body {
   padding: 20px 40px;
