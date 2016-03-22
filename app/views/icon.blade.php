@@ -53,9 +53,8 @@
 
             <ul class="nav nav-pills nav-justified" role="tablist" id="tp_tabs">
                 <li ng-repeat="p in platforms" ng-class="tabCls(p);">
-                    <a href="javascript:;" ng-click="switchDetail(p);" data-ripple-color="white">
-                        @{{ $platforms[p].name }}
-                    </a>
+                    <a href="javascript:;" ng-click="switchDetail(p);" data-ripple-color="white"
+                       ng-bind="$platforms[p].name"></a>
                 </li>
             </ul>
 
