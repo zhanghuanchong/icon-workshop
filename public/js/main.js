@@ -6,7 +6,9 @@
         'angular-loading-bar',
         'ngAnimate',
         'ngDialog'
-    ]).run(function($rootScope, cfpLoadingBar){
+    ]).config(function( cfpLoadingBarProvider){
+        cfpLoadingBarProvider.lightTheme = true;
+    }).run(function($rootScope, cfpLoadingBar){
         $rootScope.$on('$stateChangeStart', function() {
             cfpLoadingBar.start();
         });

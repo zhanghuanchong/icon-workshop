@@ -17,7 +17,14 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('index');
+		return View::make('home');
+	}
+
+	public function icon($id)
+	{
+		return View::make('icon', [
+			'id' => $id
+		]);
 	}
 
 	public function changeLog()

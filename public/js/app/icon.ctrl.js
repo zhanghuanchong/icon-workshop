@@ -1,11 +1,25 @@
 (function(){
     'use strict';
+    angular.module('rhIcon').config(function($stateProvider){
+        $stateProvider
+            .state('detail', {
+                url: '/:type',
+                templateUrl: function ($stateParams){
+                    if ($stateParams.type) {
+                        return '../views/icon/detail.' + _.toLower($stateParams.type) + '.html';
+                    }
+                }
+            });
+    });
+
     angular.module('rhIcon')
-        .controller('IconCtrl', function($scope, $stateParams, CoreService, $state, $http, $platforms, $timeout, ngDialog){
+        .controller('IconCtrl', function($scope, $stateParams, CoreService, $state, $http, $platforms, $timeout, ngDialog) {
+            $scope.id = window.designId;
+
             $scope.init = function () {
                 $scope.$platforms = $platforms;
                 $scope.url = window.location.origin;
-                $http.get('/icon/detail/' + $stateParams.id + '/api').success(function(data){
+                $http.get('/icon/detail/' + $scope.id + '/api').success(function(data){
                     $scope.design = data.design;
                     $scope.platforms = data.platforms;
                     $scope.sizes = data.sizes;
@@ -31,11 +45,11 @@
 
             $scope.switchDetail = function (p) {
                 $stateParams.type = p;
-                $state.go('icon.detail', $stateParams);
+                $state.go('detail', $stateParams);
             };
 
             $scope.$on('$stateChangeSuccess', function (event, toState, toParams) {
-                if (toState.name == 'icon.detail' && $scope.design) {
+                if (toState.name == 'detail' && $scope.design) {
                     $scope.updateBasePath(toParams.type);
                 }
             });
@@ -57,7 +71,7 @@
             };
 
             $scope.downloadLink = function () {
-                return '/icon/download/' + $state.params.id;
+                return '/icon/download/' + $scope.id;
             };
 
             $scope.showDownloadPopup = function () {
@@ -76,7 +90,7 @@
                 }
                 $scope.subscribed = true;
                 $.post('/icon/subscribe', {
-                    design_id : $stateParams.id,
+                    design_id : $scope.id,
                     mail : v
                 });
             };

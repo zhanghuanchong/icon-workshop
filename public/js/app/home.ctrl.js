@@ -1,8 +1,21 @@
 (function(){
     'use strict';
     angular.module('rhIcon')
-        .controller('HomeCtrl', function($scope, CoreService, $state, $http, $timeout) {
+        .controller('HomeCtrl', function($scope, CoreService, $http, $timeout, $location) {
             $.material.ripples();
+
+            var path = $location.path();
+            if (path) {
+                var paths = path.split('/');
+                if (paths.length > 2 && paths[0] == '' && paths[1] == 'icon') {
+                    path  = '/icon/' + paths[2];
+                    if (paths.length > 3) {
+                        path += '#/' + paths[3];
+                    }
+                    location.href = path;
+                }
+            }
+
             $scope.slogan = $("meta[name=slogan]").attr('content');
 
             $scope.init = function () {
@@ -23,10 +36,6 @@
                 $("#jumbotron_img").attr('src', '/img/launcher.png');
             };
             $scope.init();
-
-            if (window.showAd) {
-                $state.go('home.ad');
-            }
 
             $("#platform").select2({
                 minimumResultsForSearch: Infinity
@@ -193,9 +202,7 @@
                     platforms: $("#platform").val(),
                     sizes: sizes
                 }).success(function(){
-                    $state.go('icon', {
-                        id: $scope.id
-                    });
+                    location.href = '/icon/' + $scope.id;
                 });
             };
 

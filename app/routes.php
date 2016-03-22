@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('/changelog', 'HomeController@changeLog');
 Route::get('/guide/{platform}', 'HomeController@guide');
+Route::get('/icon/{id}', 'HomeController@icon');
 Route::get('/about', 'HomeController@about');
 
 Route::controller('icon', 'IconController');
