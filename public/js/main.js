@@ -45,6 +45,23 @@
                     }
                 }
             })
+            .state('guide', {
+                url: '/guide/:platform',
+                views: {
+                    "": {
+                        templateUrl: 'views/guide/index.html',
+                        controller: 'GuideCtrl'
+                    },
+                    "ad@guide": {
+                        templateUrl: function (){
+                            if (window.showAd) {
+                                return 'views/guide/ad.html';
+                            }
+                            return null;
+                        }
+                    }
+                }
+            })
             .state('about', {
                 url: '/about',
                 templateUrl: 'views/about/index.html',

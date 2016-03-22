@@ -85,6 +85,15 @@ body {
 .row-margin > div {
   padding-top: 10px;
 }
+.row.row-article {
+  margin: 0 -15px 40px -15px;
+}
+.row.row-article h1 {
+  margin-bottom: 35px;
+}
+.row.row-article p {
+  padding-bottom: 25px;
+}
 .silver {
   color: silver;
 }
