@@ -29,10 +29,10 @@ class IconController extends BaseController {
 
                 $design->save();
 
-                return $this->jsonResponse($id);
+                return $this->json($id);
             }
         }
-        return $this->jsonResponse('文件无效！', TRUE);
+        return $this->json('文件无效！', TRUE);
 	}
 
     public function postGenerate()
@@ -46,7 +46,7 @@ class IconController extends BaseController {
 
         $design->generateIcons();
 
-        return $this->jsonResponse(NULL);
+        return $this->json(NULL);
     }
 
     public function getDetail ($id, $dataOnly = FALSE)

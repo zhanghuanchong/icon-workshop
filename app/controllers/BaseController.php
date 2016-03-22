@@ -1,6 +1,18 @@
 <?php
 
+use Illuminate\Filesystem;
+
 class BaseController extends Controller {
+
+	public function __construct()
+	{
+		$path = base_path() . '/.git/index';
+		$version = time();
+		if (File::exists($path)) {
+			$version = File::lastModified($path);
+		}
+		$GLOBALS['_VER_'] = $version;
+	}
 
 	/**
 	 * Setup the layout used by the controller.
@@ -15,7 +27,7 @@ class BaseController extends Controller {
 		}
 	}
 
-    protected function jsonResponse($param, $error = FALSE)
+    protected function json($param, $error = FALSE)
     {
         return Response::json(array(
             'e' => $error,

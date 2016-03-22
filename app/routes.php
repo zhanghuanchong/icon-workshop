@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('master');
-});
+Route::get('/', 'HomeController@index');
 
 Route::controller('icon', 'IconController');
 

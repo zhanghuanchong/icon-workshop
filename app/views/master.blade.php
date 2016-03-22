@@ -26,7 +26,7 @@
         <link href="/bower/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/main.css">
     @else
-        <link rel="stylesheet" href="/css/all.css?_={{Config::get('constants.version')}}">
+        <link rel="stylesheet" href="/css/all.css?_={{ $GLOBALS['_VER_'] }}">
     @endif
 
     <!--[if lt IE 9]>
@@ -92,7 +92,7 @@
 </footer>
 
 <script>
-    window.showAd = true;// <?php echo App::environment('local') ? 'false' : 'true' ?>;
+    window.showAd = <?php echo App::environment('local') ? 'false' : 'true' ?>;
 </script>
 
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
@@ -124,7 +124,7 @@
     <script src="/js/app/guide.ctrl.js"></script>
     <script src="/js/app/about.ctrl.js"></script>
 @else
-    <script src="/js/all.js?_={{Config::get('constants.version')}}"></script>
+    <script src="/js/all.js?_={{ $GLOBALS['_VER_'] }}"></script>
 @endif
 
 @if(!App::environment('local'))
