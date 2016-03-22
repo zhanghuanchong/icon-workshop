@@ -663,6 +663,8 @@ class Design extends Eloquent {
 
         $canvas = Image::canvas($img->width(), $img->height(), '#ffffff');
         $imgBg = $canvas->insert($img);
+        $imgBgCore = $imgBg->getCore();
+        $imgBgCore->setImageAlphaChannel(imagick::ALPHACHANNEL_DEACTIVATE);
         $imgBg->backup();
 
         foreach($formats as $format) {
