@@ -66,7 +66,14 @@
                         ?>
                     </ul>
                 </li>
-                <li ng-class="stateCls('changelog')"><a href="/changelog">更新日志</a></li>
+                <li ng-class="stateCls('changelog')">
+                    <a href="/changelog">
+                        更新日志
+                        <?php if (time() - $GLOBALS['_VER_'] <= 1296000) { // 15天 ?>
+                            <span class="red-dot"></span>
+                        <?php } ?>
+                    </a>
+                </li>
                 <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
                 <li ng-class="stateCls('about')"><a href="/about">关于我们</a></li>
             </ul>

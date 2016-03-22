@@ -663,18 +663,9 @@ class Design extends Eloquent {
 
         $canvas = Image::canvas($img->width(), $img->height(), '#ffffff');
         $imgBg = $canvas->insert($img);
-
-        $ss = $this->sizes;
-        if ($alsoSizes && $ss) {
-            foreach($ss as $s) {
-                if ($s['length'] == 111) {
-                    $imgBgCore = $imgBg->getCore();
-                    if ($imgBgCore->getImageAlphaChannel()) {
-                        $imgBgCore->setImageAlphaChannel(imagick::ALPHACHANNEL_DEACTIVATE);
-                    }
-                    break;
-                }
-            }
+        $imgBgCore = $imgBg->getCore();
+        if ($imgBgCore->getImageAlphaChannel()) {
+            $imgBgCore->setImageAlphaChannel(imagick::ALPHACHANNEL_DEACTIVATE);
         }
         $imgBg->backup();
 

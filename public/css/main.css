@@ -96,6 +96,20 @@ body {
 .container.container-article p {
   padding-bottom: 25px;
 }
+.container.container-article dl dt {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.red-dot {
+  background-color: #ff3333;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  right: 10px;
+  top: 14px;
+  border-radius: 4px;
+  z-index: -1;
+}
 .panel .panel-body {
   padding: 20px 40px;
 }
