@@ -87,14 +87,17 @@ body {
 .row-margin > div {
   padding-top: 10px;
 }
-.row.row-article {
+.container.container-article {
   margin: 0 -15px 40px -15px;
 }
-.row.row-article h1 {
+.container.container-article h1 {
   margin-bottom: 35px;
 }
-.row.row-article p {
+.container.container-article p {
   padding-bottom: 25px;
+}
+.panel .panel-body {
+  padding: 20px 40px;
 }
 .silver {
   color: silver;

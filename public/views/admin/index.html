@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <h1>管理后台</h1>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputPwd" class="col-sm-2 control-label">密码</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" ng-model="password" id="inputPwd" placeholder="密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div id="captcha-box"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary btn-raised" ng-disabled="!validated" ng-click="login()">登录</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="http://api.geetest.com/get.php?callback=initCaptcha"></script>
+<script>
+    var initCaptcha = function () {
+        $.get('/admin/verify-code', function(config) {
+            var captchaObj = new Geetest(config);
+            captchaObj.appendTo("#captcha-box");
+            captchaObj.onSuccess(function () {
+                var result = captchaObj.getValidate();
+                var scope = $("#captcha-box").scope();
+                scope.$apply(function() {
+                    scope.validated = result;
+                });
+            });
+            captchaObj.getValidate();
+        }, 'JSON');
+    };
+</script>

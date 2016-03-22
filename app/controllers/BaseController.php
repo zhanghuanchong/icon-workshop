@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Filesystem;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class BaseController extends Controller {
 

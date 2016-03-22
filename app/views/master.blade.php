@@ -122,6 +122,7 @@
     <script src="/js/app/home.ctrl.js"></script>
     <script src="/js/app/icon.ctrl.js"></script>
     <script src="/js/app/guide.ctrl.js"></script>
+    <script src="/js/app/admin.ctrl.js"></script>
     <script src="/js/app/about.ctrl.js"></script>
 @else
     <script src="/js/all.js?_={{ $GLOBALS['_VER_'] }}"></script>

@@ -4,7 +4,10 @@
         .service('CoreService', function(){
             this.resCallback = function(response, successCallback, failCallback){
                 try {
-                    var json = JSON.parse(response);
+                    var json = response;
+                    if (typeof(response) == 'string') {
+                        json = JSON.parse(response);
+                    }
                     if (json.e) {
                         swal({
                             title : json.d,

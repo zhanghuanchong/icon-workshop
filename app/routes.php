@@ -14,5 +14,5 @@
 Route::get('/', 'HomeController@index');
 
 Route::controller('icon', 'IconController');
-
 Route::controller('about', 'AboutController');
+Route::controller('admin', 'AdminController');

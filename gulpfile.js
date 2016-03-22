@@ -20,6 +20,7 @@ var path = {
         'public/js/app/home.ctrl.js',
         'public/js/app/icon.ctrl.js',
         'public/js/app/guide.ctrl.js',
+        'public/js/app/admin.ctrl.js',
         'public/js/app/about.ctrl.js'
     ],
     css_src: [

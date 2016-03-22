@@ -62,6 +62,11 @@
                     }
                 }
             })
+            .state('admin', {
+                url: '/admin',
+                templateUrl: 'views/admin/index.html',
+                controller: 'AdminCtrl'
+            })
             .state('about', {
                 url: '/about',
                 templateUrl: 'views/about/index.html',
