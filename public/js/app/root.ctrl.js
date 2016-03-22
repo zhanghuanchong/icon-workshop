@@ -5,6 +5,9 @@
             $scope.$platforms = $platforms;
 
             $scope.stateCls = function (state) {
+                if (window.state == state) {
+                    return 'active';
+                }
                 return $state.is(state) ? 'active' : '';
             };
         });

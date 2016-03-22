@@ -17,7 +17,25 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('master');
+		return View::make('index');
+	}
+
+	public function changeLog()
+	{
+		return View::make('changelog');
+	}
+
+	public function about()
+	{
+		return View::make('about');
+	}
+
+	public function guide($platform)
+	{
+		$platforms = Config::get('constants.platforms');
+		return View::make('guides/ios', [
+			'platform' => $platforms[$platform]
+		]);
 	}
 
 }

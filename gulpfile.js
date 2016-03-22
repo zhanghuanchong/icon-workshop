@@ -16,12 +16,13 @@ var path = {
         'public/js/app/constant.js',
         'public/js/app/directive.js',
         'public/js/app/core.service.js',
-        'public/js/app/root.ctrl.js',
+        'public/js/app/root.ctrl.js'
+    ],
+    js_routes_src: [
+        'public/js/app/routes.js',
         'public/js/app/home.ctrl.js',
         'public/js/app/icon.ctrl.js',
-        'public/js/app/guide.ctrl.js',
-        'public/js/app/admin.ctrl.js',
-        'public/js/app/about.ctrl.js'
+        'public/js/app/admin.ctrl.js'
     ],
     css_src: [
         'public/css/bootstrap-material-design.min.css',
@@ -47,6 +48,14 @@ gulp.task('js', function () {
         .pipe(gulp.dest(path.dest + 'js/'));
 });
 
+gulp.task('js_routes', function () {
+    return gulp.src(path.js_routes_src)
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(concat('routes.js'))
+        .pipe(gulp.dest(path.dest + 'js/'));
+});
+
 gulp.task('clean', function(){
     del.bind(null, [
         path.dest
@@ -54,7 +63,7 @@ gulp.task('clean', function(){
 });
 
 gulp.task('build', ['clean'], function () {
-    gulp.start(['css', 'js']);
+    gulp.start(['css', 'js', 'js_routes']);
 });
 
 gulp.task('default', function () {

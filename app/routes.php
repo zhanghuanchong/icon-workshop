@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/changelog', 'HomeController@changeLog');
+Route::get('/guide/{platform}', 'HomeController@guide');
+Route::get('/about', 'HomeController@about');
 
 Route::controller('icon', 'IconController');
-Route::controller('about', 'AboutController');
 Route::controller('admin', 'AdminController');

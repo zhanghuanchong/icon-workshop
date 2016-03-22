@@ -53,29 +53,34 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li ng-class="stateCls('home')"><a href="#/home">首页</a></li>
+                <li ng-class="stateCls('home')"><a href="/">首页</a></li>
                 <li ng-class="stateCls('guide')">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true" aria-expanded="false">
                         使用教程 <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li ng-repeat="(k, v) in $platforms"><a ng-href="@{{ '#/guide/' + k }}" ng-bind="v.name" target="_blank"></a></li>
+                        <?php
+                            foreach(Config::get('constants.platforms') as $k => $v) {
+                                echo '<li><a href="/guide/' . $k . '">' . $v . '</a></li>';
+                            }
+                        ?>
                     </ul>
                 </li>
+                <li ng-class="stateCls('changelog')"><a href="/changelog">更新日志</a></li>
                 <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
-                <li ng-class="stateCls('about')"><a href="#/about" target="_blank">关于我们</a></li>
+                <li ng-class="stateCls('about')"><a href="/about">关于我们</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="container" ui-view></div>
+@yield('container')
 
 <footer class="navbar navbar-default">
     <p>
         <a href="http://wuruihong.com" target="_blank" style="color:white">睿鸿游戏</a>　
         <a href="mailto:admin@wuruihong.com" style="color:white">邮件反馈</a>　
-        <a href="#/about"  target="_blank" style="color:white">留言</a>　
+        <a href="/#/about"  target="_blank" style="color:white">留言</a>　
         版权所有　Copyright(C) 2015　All Rights Reserved　豫ICP备14010348号-1
         @if(!App::environment('local'))
         <script>
@@ -119,14 +124,11 @@
     <script src="/js/app/directive.js"></script>
     <script src="/js/app/core.service.js"></script>
     <script src="/js/app/root.ctrl.js"></script>
-    <script src="/js/app/home.ctrl.js"></script>
-    <script src="/js/app/icon.ctrl.js"></script>
-    <script src="/js/app/guide.ctrl.js"></script>
-    <script src="/js/app/admin.ctrl.js"></script>
-    <script src="/js/app/about.ctrl.js"></script>
 @else
     <script src="/js/all.js?_={{ $GLOBALS['_VER_'] }}"></script>
 @endif
+
+@yield('scripts')
 
 @if(!App::environment('local'))
 <!-- JiaThis Button BEGIN -->
