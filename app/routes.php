@@ -19,3 +19,4 @@ Route::get('/about', 'HomeController@about');
 
 Route::controller('icon', 'IconController');
 Route::controller('admin', 'AdminController');
+Route::controller('job', 'JobController');
