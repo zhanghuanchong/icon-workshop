@@ -1,4 +1,5 @@
 <?php
+use Carbon\Carbon;
 
 /**
  * Created by PhpStorm.
@@ -10,24 +11,21 @@ class JobController extends Controller
 {
     public function getDeleteExpiredFiles()
     {
-        $folders = File::directories(public_path('files'));
-        $thisMonth = (int)date('Ym');
-        foreach($folders as $folder) {
-            $month = (int)File::name($folder);
-            if ($month >= $thisMonth) {
-                continue;
+        $date = Carbon::today()->subDays(15);
+        $fileFolder = public_path('files');
+        Design::whereDate('created_at', '<', $date)->get()->each(function ($design) use ($fileFolder) {
+            $dir = $fileFolder . '/' . $design->folder . '/' . $design->id;
+            if (!File::exists($dir)) {
+                return;
             }
-            $designs = File::directories($folder);
-            foreach($designs as $design) {
-                $platforms = File::directories($design);
-                foreach($platforms as $platform) {
-                    File::deleteDirectory($platform);
-                }
-                $zip = $design . '/icons.zip';
-                if (File::exists($zip)) {
-                    File::delete($zip);
-                }
+            $platforms = File::directories($dir);
+            foreach($platforms as $platform) {
+                File::deleteDirectory($platform);
             }
-        }
+            $zip = $dir . '/icons.zip';
+            if (File::exists($zip)) {
+                File::delete($zip);
+            }
+        });
     }
 }
