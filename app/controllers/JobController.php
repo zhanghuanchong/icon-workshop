@@ -13,7 +13,7 @@ class JobController extends Controller
     {
         $date = Carbon::today()->subDays(15);
         $fileFolder = public_path('files');
-        Design::whereDate('created_at', '<', $date)->get()->each(function ($design) use ($fileFolder) {
+        Design::where('created_at', '<', $date)->get()->each(function ($design) use ($fileFolder) {
             $dir = $fileFolder . '/' . $design->folder . '/' . $design->id;
             if (!File::exists($dir)) {
                 return;
