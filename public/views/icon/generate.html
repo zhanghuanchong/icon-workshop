@@ -1,7 +1,11 @@
 <div class="margin-bottom-30 text-center">
     该图标尚未生成或者已经过期. 点击下面的按钮重新生成: <br/>
-    <a class="btn btn-raised btn-lg btn-primary" href="javascript:;" ng-disabled="generating" ng-click="generate();">
+    <a class="btn btn-raised btn-lg btn-primary" href="javascript:;" ng-hide="generating" ng-click="generate();">
         <i class="fa fa-rocket" style="margin-right: 10px"></i>
         重新生成
     </a>
+    <div ng-show="generating" class="alert alert-success" role="alert" style="margin-top: 8px;">
+        <i class="fa fa-spinner fa-spin"></i>
+        生成中，请耐心等待（可能需要1-5分钟时间）...
+    </div>
 </div>
