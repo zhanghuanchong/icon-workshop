@@ -646,8 +646,12 @@ class Design extends Eloquent {
         return $this->hasMany('Subscription');
     }
 
+    public function getFolder() {
+        return $this->folder . '/' . $this->id;
+    }
+
     public function getFilePath($name = 'origin') {
-        return $this->folder . '/' . $this->id . '/' . $name . '.' . $this->ext;
+        return $this->getFolder() . '/' . $name . '.' . $this->ext;
     }
 
     public function generateIcons($formats = NULL, $alsoSizes = TRUE) {
@@ -806,5 +810,11 @@ class Design extends Eloquent {
             $zip->close();
         }
         return $path;
+    }
+
+    public function isGenerated()
+    {
+        $dirs = File::directories(public_path('files') . '/' . $this->getFolder());
+        return count($dirs) > 0;
     }
 }

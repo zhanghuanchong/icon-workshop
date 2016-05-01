@@ -49,24 +49,39 @@ class IconController extends BaseController {
         return $this->json(NULL);
     }
 
-    public function getDetail ($id, $dataOnly = FALSE)
+    public function getDetail ($id)
     {
-        if ($dataOnly) {
-            $design = Design::findOrFail($id);
-            $platforms = explode(',', $design->platform);
-            $data = array(
-                'design' => $design,
-                'platforms' => $platforms
-            );
-
-            $sizes = $design->sizes;
-            if ($sizes) {
-                $data['platforms'][] = Design::CUSTOM_FOLDER;
-                $data['sizes'] = $sizes;
-            }
-            return Response::json($data);
-        }
         return Redirect::to('/#/icon/' . $id);
+    }
+
+    public function getApiDetail($id)
+    {
+        /**
+         * @var $design Design
+         */
+        $design = Design::findOrFail($id);
+        $platforms = explode(',', $design->platform);
+        $data = array(
+            'generated' => $design->isGenerated(),
+            'design' => $design,
+            'platforms' => $platforms
+        );
+
+        $sizes = $design->sizes;
+        if ($sizes) {
+            $data['platforms'][] = Design::CUSTOM_FOLDER;
+            $data['sizes'] = $sizes;
+        }
+        return Response::json($data);
+    }
+
+    public function getApiGenerate($id)
+    {
+        /**
+         * @var $design Design
+         */
+        $design = Design::findOrFail($id);
+        $design->generateIcons();
     }
 
     public function getDownload ($id, $regenerate = FALSE)

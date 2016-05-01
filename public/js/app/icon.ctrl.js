@@ -2,6 +2,10 @@
     'use strict';
     angular.module('rhIcon').config(function($stateProvider){
         $stateProvider
+            .state('generate', {
+                url: '/generate',
+                templateUrl: '../views/icon/generate.html'
+            })
             .state('detail', {
                 url: '/:type',
                 templateUrl: function ($stateParams){
@@ -19,14 +23,21 @@
             $scope.init = function () {
                 $scope.$platforms = $platforms;
                 $scope.url = window.location.origin;
-                $http.get('/icon/detail/' + $scope.id + '/api').success(function(data){
+                $http.get('/icon/api-detail/' + $scope.id).success(function(data){
                     $scope.design = data.design;
-                    $scope.platforms = data.platforms;
-                    $scope.sizes = data.sizes;
 
                     $timeout(function(){
                         $.material.ripples();
                     });
+
+                    if (data.generated === false) {
+                        $scope.basePath = '/';
+                        $state.go('generate');
+                        return;
+                    }
+
+                    $scope.platforms = data.platforms;
+                    $scope.sizes = data.sizes;
 
                     var type = $state.params.type;
                     if (type && _.indexOf(data.platforms, type) >= 0) {
@@ -92,6 +103,16 @@
                 $.post('/icon/subscribe', {
                     design_id : $scope.id,
                     mail : v
+                });
+            };
+
+            $scope.generate = function () {
+                if ($scope.generating) {
+                    return;
+                }
+                $scope.generating = true;
+                $http.get('/icon/api-generate/' + $scope.design.id).success(function(){
+                    $scope.init();
                 });
             };
         });
