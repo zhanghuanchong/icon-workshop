@@ -42,6 +42,7 @@ class IconController extends BaseController {
         $design = Design::find(Input::get('id'));
         $design->platform = implode(',', $platforms);
         $design->sizes = json_encode(Input::get('sizes'));
+        $design->bg_color = Input::get('bgColor');
         $design->save();
 
         $design->generateIcons();

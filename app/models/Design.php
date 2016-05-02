@@ -665,11 +665,12 @@ class Design extends Eloquent {
         $img = Image::make($root . 'origin.' . $this->ext);
         $img->backup();
 
-        $canvas = Image::canvas($img->width(), $img->height(), '#ffffff');
+        $bgColor = $this->bg_color ? $this->bg_color : '#ffffff';
+        $canvas = Image::canvas($img->width(), $img->height(), $bgColor);
         $imgBg = $canvas->insert($img);
         $imgBgCore = $imgBg->getCore();
         if ($imgBgCore->getImageAlphaChannel()) {
-            $imgBgCore->setImageAlphaChannel(imagick::ALPHACHANNEL_DEACTIVATE);
+            $imgBgCore->setImageAlphaChannel(Imagick::ALPHACHANNEL_DEACTIVATE);
         }
         $imgBg->backup();
 
@@ -773,7 +774,7 @@ class Design extends Eloquent {
                     if (!file_exists($folder)) {
                         mkdir($folder, 0777, true);
                     }
-                    $_img = &$imgBg;
+                    $_img = &$img;
                     $_img->reset();
                     $_img->resize($length, $length);
                     $this->optimize($_img, $length);

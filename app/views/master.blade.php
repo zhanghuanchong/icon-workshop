@@ -24,6 +24,8 @@
         <link href="/css/loading-bar.min.css" rel="stylesheet">
         <link href="/bower/ng-dialog/css/ngDialog.min.css" rel="stylesheet">
         <link href="/bower/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
+        <link href="/bower/angular-material/angular-material.min.css" rel="stylesheet">
+        <link href="/bower/md-color-picker/dist/mdColorPicker.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="/css/main.css">
     @else
         <link rel="stylesheet" href="/css/all.css?_={{ $GLOBALS['_VER_'] }}">
@@ -124,7 +126,12 @@
 @if(App::environment('local'))
     <script src="/js/lib/material.min.js"></script>
     <script src="/js/lib/loading-bar.min.js"></script>
+    <script src="/bower/angular-aria/angular-aria.min.js"></script>
+    <script src="/bower/angular-cookies/angular-cookies.min.js"></script>
     <script src="/bower/ng-dialog/js/ngDialog.min.js"></script>
+    <script src="/bower/tinycolor/dist/tinycolor-min.js"></script>
+    <script src="/bower/angular-material/angular-material.min.js"></script>
+    <script src="/bower/md-color-picker/dist/mdColorPicker.min.js"></script>
 
     <script src="/js/main.js"></script>
     <script src="/js/app/constant.js"></script>

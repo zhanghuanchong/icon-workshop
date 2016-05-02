@@ -47,6 +47,17 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="control-label col-md-3 no-margin"></label>
+                        <div md-color-picker
+                             ng-model="bgColor"
+                             type="0"
+                             label="背景颜色"
+                             open-on-input="true"
+                             md-color-alpha-channel="false"
+                             click-outside-to-close="true"></div>
+                        <div class="col-md-offset-3 col-md-9" style="margin-top: -25px; color: silver">适用于iOS 及 Windows Phone。 默认是白色。</div>
+                    </div>
+                    <div class="form-group">
                         <label class="control-label col-md-3 no-margin">
                             自定义大小:<br/>
                             <a href='javascript:;' class="inline-block margin-top-10" ng-click="addCustomSize()">

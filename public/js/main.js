@@ -5,7 +5,10 @@
         'ui.bootstrap',
         'angular-loading-bar',
         'ngAnimate',
-        'ngDialog'
+        'ngDialog',
+        'ngMaterial',
+        'ngCookies',
+        'mdColorPicker'
     ]).config(function( cfpLoadingBarProvider){
         cfpLoadingBarProvider.lightTheme = true;
     }).run(function($rootScope, cfpLoadingBar){

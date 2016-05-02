@@ -24,6 +24,7 @@
                 $scope.id = null;
                 $scope.ready = false;
                 $scope.sizes = [];
+                $scope.bgColor = null;
                 $scope.presets = [{
                     length: 28,
                     icon: 'wechat',
@@ -200,7 +201,8 @@
                 $http.post('/icon/generate', {
                     id: $scope.id,
                     platforms: $("#platform").val(),
-                    sizes: sizes
+                    sizes: sizes,
+                    bgColor: $scope.bgColor
                 }).success(function(){
                     location.href = '/icon/' + $scope.id;
                 });

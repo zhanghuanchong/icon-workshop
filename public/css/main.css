@@ -411,6 +411,10 @@ footer {
   -moz-animation: spinoffPulse 1s infinite linear;
   -webkit-animation: spinoffPulse 1s infinite linear;
 }
+/* Material Design */
+.md-dialog-container {
+  z-index: 1000009;
+}
 @-moz-keyframes spinPulse {
   0% {
     -moz-transform: rotate(160deg);
