@@ -4,14 +4,22 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     ngAnnotate = require('gulp-ng-annotate'),
     concat = require('gulp-concat'),
-    del = require('del');
+    del = require('del'),
+    merge = require('merge2');
 
 var path = {
     dest: './public/',
-    js_src: [
+    js_min: [
         'public/js/lib/material.min.js',
         'public/js/lib/loading-bar.min.js',
         'public/bower/ng-dialog/js/ngDialog.min.js',
+        'public/bower/angular-aria/angular-aria.min.js',
+        'public/bower/angular-cookies/angular-cookies.min.js',
+        'public/bower/tinycolor/dist/tinycolor-min.js',
+        'public/bower/angular-material/angular-material.min.js',
+        'public/bower/md-color-picker/dist/mdColorPicker.min.js'
+    ],
+    js_src: [
         'public/js/main.js',
         'public/js/app/constant.js',
         'public/js/app/directive.js',
@@ -23,6 +31,8 @@ var path = {
         'public/css/loading-bar.min.css" rel="stylesheet',
         'public/bower/ng-dialog/css/ngDialog.min.css',
         'public/bower/ng-dialog/css/ngDialog-theme-default.min.css',
+        'public/bower/angular-material/angular-material.min.css',
+        'public/bower/md-color-picker/dist/mdColorPicker.min.css',
         'public/css/main.css'
     ]
 };
@@ -35,9 +45,12 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function () {
-    return gulp.src(path.js_src)
-        .pipe(ngAnnotate())
-        .pipe(uglify())
+    return merge(
+        gulp.src(path.js_min),
+        gulp.src(path.js_src)
+            .pipe(ngAnnotate())
+            .pipe(uglify())
+    )
         .pipe(concat('all.js'))
         .pipe(gulp.dest(path.dest + 'js/'));
 });

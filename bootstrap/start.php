@@ -26,8 +26,8 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('homestead', 'EGN-PC', 'precise64', 'vagrant', 'hans-mac.local', 'hans-mac.lan', 'hans-mac', 'bogon'),
-    'production' => array('wrh')
+	'production' => array('homestead', 'EGN-PC', 'precise64', 'vagrant', 'hans-mac.local', 'hans-mac.lan', 'hans-mac', 'bogon'),
+    'local' => array('wrh')
 
 ));
 

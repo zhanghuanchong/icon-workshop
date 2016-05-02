@@ -3,7 +3,7 @@
     <div class="container container-article">
         <h1>更新日志</h1>
         <dl>
-            <dt>2016-05-02</dt>
+            <dt>2016-05-01</dt>
             <dd>
                 <ul>
                     <li>为iOS和Windows Phone平台添加背景颜色的选项. 调整自定义大小的背景颜色为透明</li>
