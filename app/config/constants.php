@@ -9,8 +9,8 @@ return array(
         'ios' => 'iOS',
         'android' => 'Android',
         'webapp' => 'Web App',
-        'phonegap' => 'iOS',
-        'iwatch' => 'PhoneGap(Cordova)',
+        'phonegap' => 'PhoneGap',
+        'iwatch' => 'iWatch',
         'ios_old' => 'iOS(旧格式)',
     ],
 
