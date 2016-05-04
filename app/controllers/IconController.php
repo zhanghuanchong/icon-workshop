@@ -61,7 +61,10 @@ class IconController extends BaseController {
          * @var $design Design
          */
         $design = Design::findOrFail($id);
-        $platforms = explode(',', $design->platform);
+        $platforms = array();
+        if ($design->platform) {
+            $platforms = explode(',', $design->platform);
+        }
         $data = array(
             'generated' => $design->isGenerated(),
             'design' => $design,

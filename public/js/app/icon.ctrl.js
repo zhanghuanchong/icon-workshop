@@ -30,7 +30,7 @@
                         $.material.ripples();
                     });
 
-                    if (data.generated === false) {
+                    if (data.generated === false && (data.platforms.length || data.sizes)) {
                         $scope.basePath = '/';
                         $state.go('generate');
                         return;
@@ -115,5 +115,11 @@
                     $scope.init();
                 });
             };
+
+            $scope.$on('$stateChangeSuccess', function (event, data) {
+                if (data && data.name == 'generate') {
+                    $scope.generate();
+                }
+            });
         });
 })();
