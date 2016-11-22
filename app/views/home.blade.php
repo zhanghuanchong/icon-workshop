@@ -168,5 +168,5 @@
     <script>
         window.state = 'home';
     </script>
-    <script src="/js/app/home.ctrl.js"></script>
+    <script src="/js/app/home.ctrl.js?_={{ $GLOBALS['_VER_'] }}"></script>
 @endsection
