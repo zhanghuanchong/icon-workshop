@@ -7,6 +7,7 @@
             <dd>
                 <ul>
                     <li>更新: 添加对iOS 10新图标尺寸的支持</li>
+                    <li>更新: Android文件夹默认使用mipmap, 保留对drawable的支持。</li>
                 </ul>
             </dd>
         </dl>
