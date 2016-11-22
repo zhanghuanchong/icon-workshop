@@ -57,7 +57,7 @@
                              click-outside-to-close="true"></div>
                         <div class="col-md-offset-3 col-md-9" style="margin-top: -25px; color: silver">适用于iOS 及 Windows Phone。 默认是白色。</div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-show="hasAndroid">
                         <label class="control-label col-md-3 no-margin">Android:</label>
                         <div class="col-md-9">
                             <div class="row">
