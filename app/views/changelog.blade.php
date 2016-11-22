@@ -3,11 +3,19 @@
     <div class="container container-article">
         <h1>更新日志</h1>
         <dl>
+            <dt>2016-11-22</dt>
+            <dd>
+                <ul>
+                    <li>更新: 添加对iOS 10新图标尺寸的支持</li>
+                </ul>
+            </dd>
+        </dl>
+        <dl>
             <dt>2016-05-01</dt>
             <dd>
                 <ul>
-                    <li>为iOS和Windows Phone平台添加背景颜色的选项. 调整自定义大小的背景颜色为透明</li>
-                    <li>自动删除15天前生成的图标. 支持自动重新生成</li>
+                    <li>更新: 为iOS和Windows Phone平台添加背景颜色的选项. 调整自定义大小的背景颜色为透明</li>
+                    <li>更新: 自动删除15天前生成的图标. 支持自动重新生成</li>
                 </ul>
             </dd>
         </dl>

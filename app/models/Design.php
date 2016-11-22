@@ -13,6 +13,18 @@ class Design extends Eloquent {
         //region iOS
         'ios' => array(
             array(
+                'size' => 20,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ),
+            array(
+                'size' => 20,
+                'scale' => 3,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ),
+            array(
                 'size' => 29,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'iphone',
@@ -63,6 +75,19 @@ class Design extends Eloquent {
                 'scale' => 3,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'iphone',
+            ),
+            array(
+                'size' => 20,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+                'name' => 'icon-20-ipad',
+            ),
+            array(
+                'size' => 20,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+                'name' => 'icon-20@2x-ipad',
             ),
             array(
                 'size' => 29,
