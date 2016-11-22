@@ -25,6 +25,7 @@
                 $scope.ready = false;
                 $scope.sizes = [];
                 $scope.bgColor = null;
+                $scope.androidFolder = 'mipmap';
                 $scope.presets = [{
                     length: 28,
                     icon: 'wechat',
@@ -202,7 +203,8 @@
                     id: $scope.id,
                     platforms: $("#platform").val(),
                     sizes: sizes,
-                    bgColor: $scope.bgColor
+                    bgColor: $scope.bgColor,
+                    androidFolder: $scope.androidFolder
                 }).success(function(){
                     location.href = '/icon/' + $scope.id;
                 });

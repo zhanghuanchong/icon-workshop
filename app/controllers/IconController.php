@@ -43,6 +43,7 @@ class IconController extends BaseController {
         $design->platform = implode(',', $platforms);
         $design->sizes = json_encode(Input::get('sizes'));
         $design->bg_color = Input::get('bgColor');
+        $design->android_folder = Input::get('androidFolder');
         $design->save();
 
         $design->generateIcons();

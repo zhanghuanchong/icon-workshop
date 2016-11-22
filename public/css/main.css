@@ -52,6 +52,7 @@ body {
 #if_form .control-label {
   font-size: 16px;
   margin-top: 10px;
+  color: #999;
 }
 #if_form .form-group {
   margin-top: 15px;
@@ -80,6 +81,10 @@ body {
 #if_form input[type=number]:focus,
 #if_form input[type=number]:active {
   border-color: #2187e7;
+}
+#if_form .radio label {
+  padding-left: 35px;
+  line-height: 1.2em;
 }
 .row-margin {
   margin: 40px -15px 30px;

@@ -723,6 +723,10 @@ class Design extends Eloquent {
             foreach($sizes as $s) {
                 $folder = $format_root;
                 if (isset($s['folder'])) {
+                    if ($format == 'android' && $this->android_folder) {
+                        $s['folder'] = str_replace('drawable', $this->android_folder, $s['folder']);
+                    }
+
                     $folder = $format_root . $s['folder'] . '/';
                     if (!file_exists($folder)) {
                         mkdir($folder, 0777, true);
