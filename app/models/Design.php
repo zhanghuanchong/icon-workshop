@@ -847,4 +847,34 @@ class Design extends Eloquent {
         $dirs = File::directories(public_path('files') . '/' . $this->getFolder());
         return count($dirs) > 0;
     }
+
+    public function deleteCache()
+    {
+        $dir = public_path('files') . '/' . $this->folder . '/' . $this->id;
+        if (!File::exists($dir)) {
+            return;
+        }
+        $platforms = File::directories($dir);
+        foreach($platforms as $platform) {
+            File::deleteDirectory($platform);
+        }
+        $zip = $dir . '/icons.zip';
+        if (File::exists($zip)) {
+            File::delete($zip);
+        }
+    }
+
+    public function deleteFolder()
+    {
+        $dir = public_path('files') . '/' . $this->folder . '/' . $this->id;
+        if (File::exists($dir)) {
+            File::deleteDirectory($dir);
+        }
+    }
+
+    public function delete()
+    {
+        $this->deleteFolder();
+        parent::delete();
+    }
 }

@@ -11,21 +11,14 @@ class JobController extends Controller
 {
     public function getDeleteExpiredFiles()
     {
-        $date = Carbon::today()->subDays(15);
-        $fileFolder = public_path('files');
-        Design::where('created_at', '<', $date)->get()->each(function ($design) use ($fileFolder) {
-            $dir = $fileFolder . '/' . $design->folder . '/' . $design->id;
-            if (!File::exists($dir)) {
-                return;
-            }
-            $platforms = File::directories($dir);
-            foreach($platforms as $platform) {
-                File::deleteDirectory($platform);
-            }
-            $zip = $dir . '/icons.zip';
-            if (File::exists($zip)) {
-                File::delete($zip);
-            }
+        // 删除1个月前的所有数据
+        Design::where('created_at', '<', Carbon::today()->subMonth())->get()->each(function (Design $design) {
+            $design->delete();
+        });
+
+        // 删除7天前的Cache
+        Design::where('created_at', '<', Carbon::today()->subDays(7))->get()->each(function (Design $design) {
+            $design->deleteCache();
         });
     }
 }
