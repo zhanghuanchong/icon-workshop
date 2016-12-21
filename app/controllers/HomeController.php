@@ -22,6 +22,10 @@ class HomeController extends BaseController {
 
 	public function icon($id)
 	{
+	    $design = Design::find($id);
+	    if (!$design) {
+	        return Redirect::to('/');
+        }
 		return View::make('icon', [
 			'id' => $id
 		]);
