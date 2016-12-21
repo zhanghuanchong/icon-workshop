@@ -3,6 +3,14 @@
     <div class="container container-article">
         <h1>更新日志</h1>
         <dl>
+            <dt>2016-12-21</dt>
+            <dd>
+                <ul>
+                    <li>修复：优化缓存策略，删除不必要的缓存，增加系统稳定性。
+                </ul>
+            </dd>
+        </dl>
+        <dl>
             <dt>2016-11-22</dt>
             <dd>
                 <ul>
