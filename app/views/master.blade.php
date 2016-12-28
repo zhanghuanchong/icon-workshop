@@ -96,7 +96,7 @@
             var _hmt = _hmt || [];
             (function() {
                 var hm = document.createElement("script");
-                hm.src = "//hm.baidu.com/hm.js?692ad0a1a2349a69b58c26d6ee6e2790";
+                hm.src = "https://hm.baidu.com/hm.js?eaef3d108dc9fdbadae588b43951721d";
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(hm, s);
             })();
