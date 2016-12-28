@@ -76,7 +76,7 @@
                         <?php } ?>
                     </a>
                 </li>
-                <li><a href="http://wuruihong.com" target="_blank">睿鸿游戏</a></li>
+                <li><a href="http://blog.wuruihong.com" target="_blank">博客</a></li>
                 <li ng-class="stateCls('about')"><a href="/about">关于我们</a></li>
             </ul>
         </div>
@@ -87,7 +87,7 @@
 
 <footer class="navbar navbar-default">
     <p>
-        <a href="http://wuruihong.com" target="_blank" style="color:white">睿鸿游戏</a>　
+        <a href="http://blog.wuruihong.com" target="_blank" style="color:white">博客</a>　
         <a href="mailto:admin@wuruihong.com" style="color:white">邮件反馈</a>　
         <a href="/about" style="color:white">留言</a>　
         版权所有　Copyright(C) 2015　All Rights Reserved　豫ICP备14010348号-1
