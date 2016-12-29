@@ -28,6 +28,8 @@
                 $scope.androidFolder = 'mipmap';
                 $scope.hasAndroid = true;
                 $scope.platforms = ['ios', 'android'];
+                $scope.radius_type = '0';
+                $scope.radius = 0;
                 $scope.presets = [{
                     length: 28,
                     icon: 'wechat',
@@ -212,6 +214,7 @@
                     id: $scope.id,
                     platforms: $("#platform").val(),
                     sizes: sizes,
+                    radius: $scope.radius,
                     bgColor: $scope.bgColor,
                     androidFolder: $scope.androidFolder
                 }).success(function(){
@@ -223,6 +226,10 @@
                 $scope.sizes.push({
                     length: 0
                 });
+            };
+
+            $scope.setRadius = function (radius) {
+                $scope.radius = radius;
             };
         });
 })();

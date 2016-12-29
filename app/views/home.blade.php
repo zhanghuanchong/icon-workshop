@@ -58,7 +58,7 @@
                         <div class="col-md-offset-3 col-md-9" style="margin-top: -25px; color: silver">适用于iOS 及 Windows Phone。 默认是白色。</div>
                     </div>
                     <div class="form-group" ng-show="hasAndroid">
-                        <label class="control-label col-md-3 no-margin">Android:</label>
+                        <label class="control-label col-md-3 no-margin">Android目录:</label>
                         <div class="col-md-9">
                             <div class="row">
                                 <div class="col-md-4">
@@ -75,6 +75,33 @@
                                             <input type="radio" name="androidFolder" ng-model="androidFolder" value="drawable">
                                             drawable
                                         </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 no-margin">自动圆角:</label>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="radio radio-primary">
+                                        <label ng-click="setRadius(0)">
+                                            <input type="radio" name="radius_type" ng-model="radius_type" value="0">
+                                            无
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="radio radio-primary">
+                                        <label ng-click="setRadius(17.54)">
+                                            <input type="radio" name="radius_type" ng-model="radius_type" value="1">
+                                            有
+                                        </label>
+                                        <input type="number" name="android_radius" ng-model="radius" step="0.01" min="0" max="50"
+                                               ng-hide="radius_type == '0'" style="margin-top:-5px"
+                                               class="width-60 margin-left-10" />
+                                        <span ng-hide="radius_type == '0'">%</span>
                                     </div>
                                 </div>
                             </div>
