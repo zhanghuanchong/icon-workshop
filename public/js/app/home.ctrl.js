@@ -27,6 +27,7 @@
                 $scope.bgColor = null;
                 $scope.androidFolder = 'mipmap';
                 $scope.hasAndroid = true;
+                $scope.platforms = ['ios', 'android'];
                 $scope.presets = [{
                     length: 28,
                     icon: 'wechat',
@@ -46,6 +47,8 @@
                 $scope.$apply(function () {
                     var platforms = $("#platform").val();
                     $scope.hasAndroid = $.inArray('android', platforms) >= 0;
+                    $scope.platforms = platforms ? platforms : [];
+                    console.log(platforms);
                 });
             });
 

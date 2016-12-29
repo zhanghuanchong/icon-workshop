@@ -101,8 +101,9 @@
                     <div class="form-group">
                         <div class="col-md-12 text-right">
                             <a href='javascript:;' class="silver margin-right-20" ng-click="init()">取消</a>
-                            <a href='javascript:;' class="btn btn-primary btn-raised btn-lg no-margin"
-                               ng-click="generate();" ng-hide="ready">开始生成</a>
+                            <a href="javascript:;" class="btn btn-primary btn-raised btn-lg no-margin"
+                               ng-disabled="platforms.length <= 0"
+                               ng-click="platforms.length ? generate() : null;" ng-hide="ready">开始生成</a>
                             <a href='javascript:;' class="btn btn-default btn-raised btn-lg no-margin" disabled="disabled"
                                ng-show="ready">上传完后将立即开始</a>
                         </div>
