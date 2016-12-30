@@ -3,6 +3,14 @@
     <div class="container container-article">
         <h1>更新日志</h1>
         <dl>
+            <dt>2016-12-30</dt>
+            <dd>
+                <ul>
+                    <li>更新：为 Android 和 Web App 平台添加自动圆角支持。
+                </ul>
+            </dd>
+        </dl>
+        <dl>
             <dt>2016-12-21</dt>
             <dd>
                 <ul>
@@ -14,8 +22,8 @@
             <dt>2016-11-22</dt>
             <dd>
                 <ul>
-                    <li>更新: 添加对iOS 10新图标尺寸的支持</li>
-                    <li>更新: Android文件夹默认使用mipmap, 保留对drawable的支持。</li>
+                    <li>更新: 添加对 iOS 10 新图标尺寸的支持</li>
+                    <li>更新: Android 文件夹默认使用 mipmap, 保留对 drawable 的支持。</li>
                 </ul>
             </dd>
         </dl>
@@ -23,8 +31,8 @@
             <dt>2016-05-01</dt>
             <dd>
                 <ul>
-                    <li>更新: 为iOS和Windows Phone平台添加背景颜色的选项. 调整自定义大小的背景颜色为透明</li>
-                    <li>更新: 自动删除15天前生成的图标. 支持自动重新生成</li>
+                    <li>更新: 为 iOS 和 Windows Phone 平台添加背景颜色的选项. 调整自定义大小的背景颜色为透明</li>
+                    <li>更新: 自动删除 15 天前生成的图标. 支持自动重新生成</li>
                 </ul>
             </dd>
         </dl>
@@ -32,7 +40,7 @@
             <dt>2016-03-22</dt>
             <dd>
                 <ul>
-                    <li>修复: 去除iOS及Windows Phone平台的Alpha通道</li>
+                    <li>修复: 去除 iOS 及 Windows Phone 平台的 Alpha 通道</li>
                     <li>更新: 优化菜单结构, 添加使用教程(待完善)及更新日志菜单</li>
                 </ul>
             </dd>
@@ -41,7 +49,7 @@
             <dt>2016-02-20</dt>
             <dd>
                 <ul>
-                    <li>更新: 添加对iOS 9新图标尺寸的支持</li>
+                    <li>更新: 添加对 iOS 9 新图标尺寸的支持</li>
                 </ul>
             </dd>
         </dl>

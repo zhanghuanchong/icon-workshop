@@ -690,6 +690,25 @@ class Design extends Eloquent {
         $img = Image::make($root . 'origin.' . $this->ext);
         $img->backup();
 
+        // 自动圆角
+        $imgRound = null;
+        if (array_intersect($formats, ['android', 'webapp']) && $this->radius) {
+            $imagickDraw = new ImagickDraw();
+            $round = $this->radius / 100 * 1024;
+            $imagickDraw->setFillColor(new ImagickPixel('white'));
+            $imagickDraw->roundRectangle(0, 0, 1024, 1024, $round, $round);
+
+            $imagick = new Imagick();
+            $imagick->newImage(1024, 1024, new ImagickPixel('black'));
+            $imagick->drawImage($imagickDraw);
+            $imagick->setImageFormat('png');
+
+            $imgRound = Image::make($root . 'origin.' . $this->ext);
+            $imgRound->resize(1024, 1024);
+            $imgRound->mask($imagick, false);
+            $imgRound->backup();
+        }
+
         $bgColor = $this->bg_color ? $this->bg_color : '#ffffff';
         $canvas = Image::canvas($img->width(), $img->height(), $bgColor);
         $imgBg = $canvas->insert($img);
@@ -738,6 +757,8 @@ class Design extends Eloquent {
                     || $format == 'windowsphone' || $format == 'ios_old')
                 {
                     $_img = &$imgBg;
+                } else if ($imgRound) {
+                    $_img = &$imgRound;
                 } else {
                     $_img = &$img;
                 }

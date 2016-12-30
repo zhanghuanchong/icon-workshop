@@ -94,7 +94,10 @@
             }, false);
 
             $scope.uploadFromBtn = function () {
-                $("#if").click();
+                var t = $("#if");
+                t[0].type = '';
+                t[0].type = 'file';
+                t.click();
             };
 
             $scope.selectedFile = function (that) {

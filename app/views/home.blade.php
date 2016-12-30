@@ -83,7 +83,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-3 no-margin">自动圆角:</label>
                         <div class="col-md-9">
-                            <div class="row">
+                            <div class="row" style="height: 45px">
                                 <div class="col-md-4">
                                     <div class="radio radio-primary">
                                         <label ng-click="setRadius(0)">
@@ -105,6 +105,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div style="color: silver">适用于Android 及 Web App。</div>
                         </div>
                     </div>
                     <div class="form-group">
