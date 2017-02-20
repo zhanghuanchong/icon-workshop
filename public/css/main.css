@@ -123,6 +123,9 @@ body {
 .panel .panel-body {
   padding: 20px 40px;
 }
+.grey {
+  color: grey;
+}
 .silver {
   color: silver;
 }

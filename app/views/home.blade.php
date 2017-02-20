@@ -15,9 +15,9 @@
             <p class="margin-top-20">支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果</p>
             <div ng-show="!status">
                 <a href="javascript:;" class="btn btn-primary btn-raised btn-lg" ng-click="uploadFromBtn();">点击这里上传</a>
-                <span class="silver margin-left-10 font-16">或者拖放您的设计文件到这里</span>
+                <span class="grey margin-left-10 font-16">或者拖放您的设计文件到这里</span>
             </div>
-            <div ng-show="status == 'setting'" class="panel panel-primary">
+            <div ng-show="status == 'setting' || true" class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">生成参数：</h3>
                 </div>
@@ -46,7 +46,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
+
+                    <div class="text-center" style="margin-top: 10px;">
+                        <a href='javascript:;' ng-click="showOptional = !showOptional;">
+                            可选参数 <i class="fa" ng-class="showOptional ? 'fa-caret-up' : 'fa-caret-down'"></i></a>
+                    </div>
+
+                    <div class="form-group" ng-show="showOptional">
                         <label class="control-label col-md-3 no-margin"></label>
                         <div md-color-picker
                              ng-model="bgColor"
@@ -57,7 +63,7 @@
                              click-outside-to-close="true"></div>
                         <div class="col-md-offset-3 col-md-9" style="margin-top: -25px; color: silver">适用于iOS 及 Windows Phone。 默认是白色。</div>
                     </div>
-                    <div class="form-group" ng-show="hasAndroid">
+                    <div class="form-group" ng-show="hasAndroid && showOptional">
                         <label class="control-label col-md-3 no-margin">Android目录:</label>
                         <div class="col-md-9">
                             <div class="row">
@@ -80,7 +86,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-show="showOptional">
                         <label class="control-label col-md-3 no-margin">自动圆角:</label>
                         <div class="col-md-9">
                             <div class="row" style="height: 45px">
@@ -108,7 +114,7 @@
                             <div style="color: silver">适用于Android 及 Web App。</div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-show="showOptional">
                         <label class="control-label col-md-3 no-margin">
                             自定义大小:<br/>
                             <a href='javascript:;' class="inline-block margin-top-10" ng-click="addCustomSize()">
