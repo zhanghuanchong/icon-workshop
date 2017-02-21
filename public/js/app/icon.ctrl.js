@@ -26,6 +26,7 @@
                 $http.get('/icon/api-detail/' + $scope.id).success(function(data){
                     $scope.design = data.design;
                     $scope.androidFolder = $scope.design.android_folder ? $scope.design.android_folder : 'drawable';
+                    $scope.androidName = $scope.design.sanitized_android_name;
 
                     $timeout(function(){
                         $.material.ripples();

@@ -26,10 +26,12 @@
                 $scope.sizes = [];
                 $scope.bgColor = null;
                 $scope.androidFolder = 'mipmap';
+                $scope.androidName = 'ic_launcher';
                 $scope.hasAndroid = true;
                 $scope.platforms = ['ios', 'android'];
                 $scope.radius_type = '0';
                 $scope.radius = 0;
+                $scope.file = null;
                 $scope.presets = [{
                     length: 28,
                     icon: 'wechat',
@@ -137,6 +139,8 @@
                     return;
                 }
                 $scope.init();
+
+                $scope.file = file;
                 $scope.status = 'setting';
 
                 var oFReader = new FileReader();
@@ -219,7 +223,8 @@
                     sizes: sizes,
                     radius: $scope.radius,
                     bgColor: $scope.bgColor,
-                    androidFolder: $scope.androidFolder
+                    androidFolder: $scope.androidFolder,
+                    androidName: $.trim($scope.androidName)
                 }).success(function(){
                     location.href = '/icon/' + $scope.id;
                 });
@@ -233,6 +238,13 @@
 
             $scope.setRadius = function (radius) {
                 $scope.radius = radius;
+            };
+
+            $scope.fileName = function () {
+                if (!$scope.file) {
+                    return 'icon';
+                }
+                return _.join(_.initial(_.split($scope.file.name, '.')), '.');
             };
         });
 })();

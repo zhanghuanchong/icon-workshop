@@ -17,7 +17,7 @@
                 <a href="javascript:;" class="btn btn-primary btn-raised btn-lg" ng-click="uploadFromBtn();">点击这里上传</a>
                 <span class="grey margin-left-10 font-16">或者拖放您的设计文件到这里</span>
             </div>
-            <div ng-show="status == 'setting'" class="panel panel-primary">
+            <div ng-show="status == 'setting' || true" class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">生成参数：</h3>
                 </div>
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="text-center" style="margin-top: 10px;">
-                        <a href='javascript:;' ng-click="showOptional = !showOptional;">
+                        <a href='javascript:;' class="withripple" ng-click="showOptional = !showOptional;">
                             可选参数 <i class="fa" ng-class="showOptional ? 'fa-caret-up' : 'fa-caret-down'"></i></a>
                     </div>
 
@@ -86,10 +86,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group" ng-show="hasAndroid && showOptional">
+                        <label class="control-label col-md-3 no-margin">Android文件名:</label>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" ng-model="androidName" name="androidName">
+                                </div>
+                                <div class="col-sm-4">
+                                    <a href='javascript:;' ng-click="androidName=fileName();" class="withripple" style="margin-right:10px">上传的文件名</a>
+                                    <a href='javascript:;' ng-click="androidName='ic_launcher';" class="withripple">默认</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-group" ng-show="showOptional">
                         <label class="control-label col-md-3 no-margin">自动圆角:</label>
                         <div class="col-md-9">
-                            <div class="row" style="height: 45px">
+                            <div class="row" style="min-height: 45px">
                                 <div class="col-md-4">
                                     <div class="radio radio-primary">
                                         <label ng-click="setRadius(0)">
@@ -111,13 +125,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="color: silver">适用于Android 及 Web App。</div>
+                            <div class="row" style="color: silver">
+                                <div class="col-md-12">适用于Android 及 Web App。</div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group" ng-show="showOptional">
                         <label class="control-label col-md-3 no-margin">
                             自定义大小:<br/>
-                            <a href='javascript:;' class="inline-block margin-top-10" ng-click="addCustomSize()">
+                            <a href='javascript:;' class="inline-block margin-top-10 withripple" ng-click="addCustomSize()">
                                 <i class="fa fa-plus"></i>
                                 添加
                             </a>

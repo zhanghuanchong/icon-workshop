@@ -642,6 +642,10 @@ class Design extends Eloquent {
 
     public $incrementing = false;
 
+    protected $appends = [
+        'sanitized_android_name',
+    ];
+
     public function setSizesAttribute($value)
     {
         $sizes = json_decode($value, TRUE);
@@ -766,7 +770,9 @@ class Design extends Eloquent {
                 $_img->resize($length, $length);
                 $this->optimize($_img, $length);
 
-                if (isset($s['name'])) {
+                if ($format === 'android' && $this->android_name) {
+                    $name = $this->sanitized_android_name;
+                } else if (isset($s['name'])) {
                     $name = $s['name'];
                 } else {
                     $name = 'icon-' . $s['size'] . ($scale == 1 ? '' : '@' . $scale . 'x');
@@ -897,5 +903,20 @@ class Design extends Eloquent {
     {
         $this->deleteFolder();
         parent::delete();
+    }
+
+    public function getSanitizedAndroidNameAttribute()
+    {
+        if (!$this->android_name) {
+            return 'ic_launcher';
+        }
+        // Remove anything which isn't a word, whitespace, number
+        // or any of the following caracters -_~,;[]().
+        // If you don't need to handle multi-byte characters
+        // you can use preg_replace rather than mb_ereg_replace
+        // Thanks @Łukasz Rysiak!
+        $file = mb_ereg_replace('([^\w\s\d\-_~,;\[\]\(\).])', '', $this->android_name);
+        // Remove any runs of periods (thanks falstro!)
+        return mb_ereg_replace('([\.]{2,})', '', $file);
     }
 }

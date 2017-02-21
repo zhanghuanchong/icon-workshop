@@ -3,10 +3,19 @@
     <div class="container container-article">
         <h1>更新日志</h1>
         <dl>
+            <dt>2017-02-21</dt>
+            <dd>
+                <ul>
+                    <li>更新：为 Android 平台添加设置文件名的支持。</li>
+                    <li>更新：站点字体使用微软雅黑。</li>
+                </ul>
+            </dd>
+        </dl>
+        <dl>
             <dt>2016-12-30</dt>
             <dd>
                 <ul>
-                    <li>更新：为 Android 和 Web App 平台添加自动圆角支持。
+                    <li>更新：为 Android 和 Web App 平台添加自动圆角支持。</li>
                 </ul>
             </dd>
         </dl>
@@ -14,7 +23,7 @@
             <dt>2016-12-21</dt>
             <dd>
                 <ul>
-                    <li>修复：优化缓存策略，删除不必要的缓存，增加系统稳定性。
+                    <li>修复：优化缓存策略，删除不必要的缓存，增加系统稳定性。</li>
                 </ul>
             </dd>
         </dl>
