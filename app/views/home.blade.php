@@ -17,7 +17,7 @@
                 <a href="javascript:;" class="btn btn-primary btn-raised btn-lg" ng-click="uploadFromBtn();">点击这里上传</a>
                 <span class="grey margin-left-10 font-16">或者拖放您的设计文件到这里</span>
             </div>
-            <div ng-show="status == 'setting' || true" class="panel panel-primary">
+            <div ng-show="status == 'setting'" class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">生成参数：</h3>
                 </div>
