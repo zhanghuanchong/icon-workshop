@@ -44,7 +44,7 @@ class HomeController extends BaseController {
 	public function guide($platform)
 	{
 		$platforms = Config::get('constants.platforms');
-		return View::make('guides/ios', [
+		return View::make('guides/' . $platform, [
 			'platform' => $platforms[$platform]
 		]);
 	}
