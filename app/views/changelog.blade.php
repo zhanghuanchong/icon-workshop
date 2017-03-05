@@ -5,6 +5,14 @@
             <div class="col-sm-9">
                 <h1>更新日志</h1>
                 <dl>
+                    <dt>2017-03-06</dt>
+                    <dd>
+                        <ul>
+                            <li>更新：添加 iOS 和 Android 的平台的使用教程。</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
                     <dt>2017-02-21</dt>
                     <dd>
                         <ul>
