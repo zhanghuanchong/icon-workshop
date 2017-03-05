@@ -3,10 +3,9 @@
     <div class="container container-article">
         <div class="row">
             <div class="col-sm-9">
-                <h1>使用教程 - {{ $platform }}</h1>
-                <p>程序猿正在拼(wo)命(niu)写教程，请稍候...</p>
+                <h1 style="margin-bottom: 20px;">需求投票</h1>
+                <p>为你最想要的需求投上一票(每人3票)！你也可以添加新的需求。</p>
             </div>
-
             <div class="col-sm-3">
                 @if(!App::environment('local'))
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -21,8 +20,7 @@
             </div>
         </div>
     </div>
-
     <script>
-        window.state = 'guide';
+        window.state = 'vote';
     </script>
 @endsection

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keyword" content="app图标缩放,应用图标生成工具,批量生成iOS图标,批量生成Android图标,app图标,图标缩放,iwatch图标,phonegap图标,图标模板">
     <meta name="description" content="一键快速生成iOS, Android，Windows Phone, WebApp, iWatch(watchOS), PhoneGap(Cordova)等移动平台不同大小(规格尺寸)的App图标，快速预览，提供丰富选项，可以直接打包发布到应用市场，并提供相应的PSD模板。">
@@ -68,6 +68,7 @@
                         ?>
                     </ul>
                 </li>
+                {{--<li ng-class="stateCls('vote')"><a href='/vote'>需求投票<span class="red-dot"></span></a></li>--}}
                 <li ng-class="stateCls('changelog')">
                     <a href="/changelog">
                         更新日志
@@ -86,7 +87,7 @@
 @yield('container')
 
 <footer class="navbar navbar-default">
-    <p>
+    <p style="margin-bottom: 0">
         <a href="http://blog.wuruihong.com" target="_blank" style="color:white">博客</a>　
         <a href="mailto:admin@wuruihong.com" style="color:white">邮件反馈</a>　
         <a href="/about" style="color:white">留言</a>　
