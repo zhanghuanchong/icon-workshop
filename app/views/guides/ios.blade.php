@@ -4,7 +4,14 @@
         <div class="row">
             <div class="col-sm-9">
                 <h1>使用教程 - {{ $platform }}</h1>
-                <p>程序猿正在拼(wo)命(niu)写教程，请稍候...</p>
+                <h3>第一步：上传并生成图片</h3>
+                <img class="normal-image" src="/img/guide/ios_1.png" alt="">
+                <h3>第二步：下载图标</h3>
+                <img class="normal-image" src="/img/guide/ios_2.png" alt="">
+                <h3>第三步：集成到Xcode</h3>
+                <img class="normal-image" src="/img/guide/ios_3.png" alt="">
+                <h3>第四步：编译完成</h3>
+                <img class="normal-image" src="/img/guide/ios_4.png" alt="">
             </div>
 
             <div class="col-sm-3">

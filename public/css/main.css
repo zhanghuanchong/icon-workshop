@@ -10,6 +10,9 @@ body {
 .x-ng-cloak {
   display: none !important;
 }
+.normal-image {
+  max-width: 100%;
+}
 .nav,
 .pagination,
 .carousel,
