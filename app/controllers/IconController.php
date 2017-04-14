@@ -100,7 +100,7 @@ class IconController extends BaseController {
 
     public function postSubscribe()
     {
-        $subscription = new Subscription;
+        /*$subscription = new Subscription;
         $subscription->mail = Input::get('mail');
         $subscription->design_id = Input::get('design_id');
         $subscription->user_agent = Input::server('HTTP_USER_AGENT');
@@ -108,7 +108,7 @@ class IconController extends BaseController {
 
         $subscription->save();
 
-        $subscription->sendZip();
+        $subscription->sendZip();*/
     }
 
 }

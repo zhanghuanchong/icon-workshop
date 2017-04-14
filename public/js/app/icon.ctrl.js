@@ -23,6 +23,7 @@
             $scope.init = function () {
                 $scope.$platforms = $platforms;
                 $scope.url = window.location.origin;
+                $scope.code = '';
                 $http.get('/icon/api-detail/' + $scope.id).success(function(data){
                     $scope.design = data.design;
                     $scope.androidFolder = $scope.design.android_folder ? $scope.design.android_folder : 'drawable';
@@ -94,19 +95,24 @@
                 });
             };
 
-            $scope.subscribe = function () {
+            /*$scope.subscribe = function () {
                 var v = $.trim($scope.email);
                 var reg = /^[a-z0-9-_]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/i;
                 if (!v || !reg.test(v)) {
                     $('input[ng-model=email]').focus();
                     return;
                 }
+                if (!$scope.code) {
+                    $('input[ng-model=code]').focus();
+                    return;
+                }
                 $scope.subscribed = true;
                 $.post('/icon/subscribe', {
                     design_id : $scope.id,
+                    code: $scope.code,
                     mail : v
                 });
-            };
+            };*/
 
             $scope.generate = function () {
                 if ($scope.generating) {

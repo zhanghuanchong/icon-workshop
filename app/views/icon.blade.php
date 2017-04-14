@@ -1,25 +1,29 @@
 @extends('master')
 @section('container')
     <div class="container" ng-controller="IconCtrl">
-        <div class="well" role="alert" style="font-size:16px">
+        <div class="well" role="alert" style="font-size:16px; padding: 6px 20px;">
             <div class="row">
-                <div class="col-md-7">
-                    <strong>生成成功！</strong>在下面预览您的图标并
-                    <a class="btn btn-raised btn-lg btn-success" href="javascript:;" ng-click="showDownloadPopup();"
-                       style="padding: 6px 40px; margin-left: 10px;">
-                        <i class="fa fa-download" style="margin-right: 10px"></i>
-                        点击下载所有图标
-                    </a>
+                <div class="col-md-7" style="padding-top: 20px;">
+                    生成成功, 在下面预览您的所有图标！
                 </div>
                 <div class="col-md-5" style="text-align: right">
-                    <form class="form-inline" role="form" onsubmit="return false;" ng-submit="subscribe();" ng-hide="subscribed">
+                    <!--form class="form-inline" role="form" onsubmit="return false;" ng-submit="subscribe();" ng-hide="subscribed">
                         <div class="form-group no-margin no-padding">
                             <input type="email" class="form-control" placeholder="发送到邮箱并订阅" ng-model="email"
                                    style="width:250px; display: inline-block">
-                            <button type="button" class="btn btn-raised btn-success" ng-click="subscribe();">发送</button>
                         </div>
+                        <div class="form-group no-margin no-padding">
+                            <input type="text" class="form-control" placeholder="验证码" ng-model="code"
+                                   style="width:50px; display: inline-block">
+                        </div>
+                        <button type="button" class="btn btn-raised btn-success" ng-click="subscribe();">发送</button>
                     </form>
-                    <div style="margin-top: 15px" ng-show="subscribed">订阅成功！即将发送到您的邮箱，请随后查收！</div>
+                    <div style="margin-top: 15px" ng-show="subscribed">订阅成功！即将发送到您的邮箱，请随后查收！</div-->
+                    <a class="btn btn-raised btn-lg btn-success" href="javascript:;" ng-click="showDownloadPopup();"
+                       style="padding: 12px 40px;">
+                        <i class="fa fa-download" style="margin-right: 10px"></i>
+                        点击下载所有图标
+                    </a>
                 </div>
             </div>
         </div>
