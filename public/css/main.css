@@ -2,6 +2,18 @@ body {
   font-family: '微软雅黑', 'Microsoft YaHei', '黑体', Roboto, Helvetica, Arial, sans-serif;
   padding-top: 80px;
 }
+.h1,
+.h2,
+.h3,
+.h4,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: '微软雅黑', 'Microsoft YaHei', '黑体', Roboto, Helvetica, Arial, sans-serif;
+}
 [ng\:cloak],
 [ng-cloak],
 [data-ng-cloak],
@@ -12,6 +24,9 @@ body {
 }
 .normal-image {
   max-width: 100%;
+}
+.va-m {
+  vertical-align: middle;
 }
 .nav,
 .pagination,
@@ -113,6 +128,11 @@ body {
 .container.container-article dl dt {
   margin-bottom: 10px;
   font-size: 16px;
+}
+.container.container-single img {
+  border: 15px solid #ddd;
+  border-radius: 15px;
+  margin: 5px 0 10px;
 }
 .red-dot {
   background-color: #ff3333;

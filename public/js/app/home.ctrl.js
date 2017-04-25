@@ -28,6 +28,9 @@
                 $scope.androidFolder = 'mipmap';
                 $scope.androidName = 'ic_launcher';
                 $scope.hasAndroid = true;
+                $scope.hasIOS = true;
+                $scope.hasWinPhone = false;
+                $scope.hasWebApp = false;
                 $scope.platforms = ['ios', 'android'];
                 $scope.radius_type = '0';
                 $scope.radius = 0;
@@ -50,7 +53,11 @@
             }).on('change', function () {
                 $scope.$apply(function () {
                     var platforms = $("#platform").val();
+                    $scope.hasIOS = $.inArray('ios', platforms) >= 0;
                     $scope.hasAndroid = $.inArray('android', platforms) >= 0;
+                    $scope.hasWinPhone = $.inArray('windowsphone', platforms) >= 0;
+                    $scope.hasWebApp = $.inArray('webapp', platforms) >= 0;
+
                     $scope.platforms = platforms ? platforms : [];
                     console.log(platforms);
                 });

@@ -15,7 +15,7 @@
             <p class="margin-top-20">支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果</p>
             <div ng-show="!status">
                 <a href="javascript:;" class="btn btn-primary btn-raised btn-lg" ng-click="uploadFromBtn();">点击这里上传</a>
-                <span class="grey margin-left-10 font-16">或者拖放您的设计文件到这里</span>
+                <span class="grey margin-left-10 font-16 va-m">或者拖放您的设计文件到这里</span>
             </div>
             <div ng-show="status == 'setting'" class="panel panel-primary">
                 <div class="panel-heading">
@@ -52,7 +52,7 @@
                             可选参数 <i class="fa" ng-class="showOptional ? 'fa-caret-up' : 'fa-caret-down'"></i></a>
                     </div>
 
-                    <div class="form-group" ng-show="showOptional">
+                    <div class="form-group" ng-show="(hasIOS || hasWinPhone) && showOptional">
                         <label class="control-label col-md-3 no-margin"></label>
                         <div md-color-picker
                              ng-model="bgColor"
@@ -100,7 +100,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" ng-show="showOptional">
+                    <div class="form-group" ng-show="(hasAndroid || hasWebApp) && showOptional">
                         <label class="control-label col-md-3 no-margin">自动圆角:</label>
                         <div class="col-md-9">
                             <div class="row" style="min-height: 45px">

@@ -1,6 +1,6 @@
 @extends('master')
 @section('container')
-    <div class="container container-article">
+    <div class="container container-article container-single">
         <div class="row">
             <div class="col-sm-9">
                 <h1>使用教程 - {{ $platform }}</h1>

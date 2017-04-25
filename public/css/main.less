@@ -1,6 +1,12 @@
+@fontFamily: '微软雅黑', 'Microsoft YaHei', '黑体', Roboto,Helvetica,Arial,sans-serif;
+
 body {
-    font-family:  '微软雅黑', 'Microsoft YaHei', '黑体', Roboto,Helvetica,Arial,sans-serif;
+    font-family: @fontFamily;
     padding-top: 80px;
+}
+
+.h1, .h2, .h3, .h4, h1, h2, h3, h4, h5, h6 {
+    font-family: @fontFamily;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -10,6 +16,10 @@ body {
 // ui bootstrap
 .normal-image {
     max-width: 100%;
+}
+
+.va-m {
+    vertical-align: middle;
 }
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
@@ -110,6 +120,13 @@ body {
             margin-bottom: 10px;
             font-size: 16px;
         }
+    }
+}
+.container.container-single {
+    img {
+        border: 15px solid #ddd;
+        border-radius: 15px;
+        margin: 5px 0 10px;
     }
 }
 .red-dot {
