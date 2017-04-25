@@ -143,8 +143,7 @@
                                ng-class="s.selected ? 'active' : ''" ng-click="s.selected = !s.selected;">
                                 <span ng-bind="s.length"></span>
                                 <i class="fa" ng-if="s.icon" ng-class="'fa-' + s.icon"></i>
-                            </a>
-                            <input type="number" min="0" max="1024" step="1" class="width-50 margin-right-10 text-center"
+                            </a><input type="number" min="0" max="1024" step="1"
                                    ng-model="s.length" ng-repeat="s in sizes" focus-last/>
                         </div>
                     </div>

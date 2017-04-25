@@ -1,6 +1,7 @@
 body {
   font-family: '微软雅黑', 'Microsoft YaHei', '黑体', Roboto, Helvetica, Arial, sans-serif;
   padding-top: 80px;
+  -webkit-font-smoothing: antialiased;
 }
 .h1,
 .h2,
@@ -12,6 +13,13 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: '微软雅黑', 'Microsoft YaHei', '黑体', Roboto, Helvetica, Arial, sans-serif;
+}
+button,
+html,
+input,
+select,
+textarea {
   font-family: '微软雅黑', 'Microsoft YaHei', '黑体', Roboto, Helvetica, Arial, sans-serif;
 }
 [ng\:cloak],
@@ -77,11 +85,13 @@ h6 {
 }
 #if_form .toggle-input {
   display: inline-block;
-  padding: 1px 8px;
+  padding: 1px;
   border: 1px solid silver;
   color: silver;
   margin-right: 10px;
   margin-bottom: 5px;
+  width: 60px;
+  text-align: center;
 }
 #if_form .toggle-input:hover,
 #if_form .toggle-input:focus,
@@ -93,12 +103,16 @@ h6 {
   color: #2187e7;
 }
 #if_form input[type=number] {
-  border: 1px solid silver;
+  border: 1px solid #2187e7;
   margin-bottom: 5px;
+  margin-right: 10px;
+  width: 60px;
+  text-align: center;
+  color: #2187e7;
 }
 #if_form input[type=number]:focus,
 #if_form input[type=number]:active {
-  border-color: #2187e7;
+  border-color: #2066b8;
 }
 #if_form .radio label {
   padding-left: 35px;

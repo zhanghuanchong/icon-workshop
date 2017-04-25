@@ -3,9 +3,14 @@
 body {
     font-family: @fontFamily;
     padding-top: 80px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .h1, .h2, .h3, .h4, h1, h2, h3, h4, h5, h6 {
+    font-family: @fontFamily;
+}
+
+button, html, input, select, textarea {
     font-family: @fontFamily;
 }
 
@@ -66,11 +71,13 @@ body {
     }
     .toggle-input {
         display: inline-block;
-        padding: 1px 8px;
+        padding: 1px;
         border: 1px solid silver;
         color: silver;
         margin-right: 10px;
         margin-bottom: 5px;
+        width: 60px;
+        text-align: center;
 
         &:hover, &:focus, &:active {
             text-decoration: none;
@@ -82,11 +89,15 @@ body {
         }
     }
     input[type=number] {
-        border: 1px solid silver;
+        border: 1px solid #2187e7;
         margin-bottom: 5px;
+        margin-right: 10px;
+        width: 60px;
+        text-align: center;
+        color: #2187e7;
 
         &:focus, &:active {
-            border-color: #2187e7;
+            border-color: #2066b8;
         }
     }
     .radio label {

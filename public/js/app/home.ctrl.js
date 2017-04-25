@@ -19,10 +19,11 @@
             $scope.slogan = $("meta[name=slogan]").attr('content');
 
             $scope.init = function () {
-                $scope.status = false;
+                $scope.status = false; //'setting';
                 $scope.progress = 0;
                 $scope.id = null;
                 $scope.ready = false;
+                $scope.showOptional = false; //true;
                 $scope.sizes = [];
                 $scope.bgColor = null;
                 $scope.androidFolder = 'mipmap';
