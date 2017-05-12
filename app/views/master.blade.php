@@ -145,14 +145,5 @@
 
 @yield('scripts')
 
-@if(!App::environment('local'))
-<!-- JiaThis Button BEGIN -->
-<script type="text/javascript">
-    var jiathis_config = {data_track_clickback:'true'};
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?btn=r3.gif&uid=1351577434153337" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-@endif
-
 </body>
 </html>

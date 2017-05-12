@@ -12,12 +12,7 @@
             <li><i class="fa fa-envelope-o"></i>: <a href="mailto:admin@wuruihong.com">admin@wuruihong.com</a></li>
         </ul>
 
-        <div style="margin-top: 40px">
-            <!-- UY BEGIN -->
-            <div id="uyan_frame"></div>
-            <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1724540"></script>
-            <!-- UY END -->
-        </div>
+        @include('ad')
     </div>
     <script>
         window.state = 'about';
