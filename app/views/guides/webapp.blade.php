@@ -20,7 +20,7 @@
                 @endif
             </div>
         </div>
-        @include('ad')
+        @include('comment', ['name' => 'webapp'])
     </div>
 
     <script>

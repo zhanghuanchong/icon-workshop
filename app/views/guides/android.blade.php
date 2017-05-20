@@ -29,7 +29,7 @@
                 @endif
             </div>
         </div>
-        @include('ad')
+        @include('comment', ['name' => 'android'])
     </div>
 
     <script>
