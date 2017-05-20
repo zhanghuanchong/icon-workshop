@@ -12,7 +12,7 @@
             <li><i class="fa fa-envelope-o"></i>: <a href="mailto:admin@wuruihong.com">admin@wuruihong.com</a></li>
         </ul>
 
-        @include('comment', ['name' => 'about'])
+        @include('comment', ['name' => '1'])
     </div>
     <script>
         window.state = 'about';
