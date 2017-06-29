@@ -121,6 +121,7 @@
 <script src="//cdn.bootcss.com/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 <script src="//cdn.bootcss.com/angular-ui-bootstrap/1.0.3/ui-bootstrap-tpls.min.js"></script>
 <script src="//cdn.bootcss.com/lodash.js/4.0.0/lodash.min.js"></script>
+<script src="//cdn.bootcss.com/js-cookie/latest/js.cookie.min.js"></script>
 <!--[if IE 10]>
 <script src="/js/lib/ie10-viewport-bug-workaround.js"></script>
 <![endif]-->

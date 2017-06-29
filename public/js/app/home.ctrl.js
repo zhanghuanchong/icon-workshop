@@ -18,6 +18,14 @@
 
             $scope.slogan = $("meta[name=slogan]").attr('content');
 
+            $scope.getOldCustomSizes = function () {
+                var oldSizes = [];
+                try {
+                    oldSizes = JSON.parse(Cookies.get('sizes'));
+                } catch (e) {}
+                return oldSizes;
+            };
+
             $scope.init = function () {
                 $scope.status = false; //'setting';
                 $scope.progress = 0;
@@ -45,6 +53,14 @@
                     icon: 'wechat',
                     selected: false
                 }];
+                var oldSizes = $scope.getOldCustomSizes();
+                _.forEach(oldSizes, function (v, k) {
+                    $scope.presets.push({
+                        length: v,
+                        selected: false
+                    });
+                });
+
                 $("#jumbotron_img").attr('src', '/img/launcher.png');
             };
             $scope.init();
@@ -207,6 +223,7 @@
             };
 
             $scope.generate = function () {
+                $scope.saveCustomSizes();
                 if ($scope.id) {
                     $scope.doGenerate();
                 } else {
@@ -240,8 +257,20 @@
 
             $scope.addCustomSize = function () {
                 $scope.sizes.push({
-                    length: 0
+                    length: 0,
+                    selected: true
                 });
+            };
+
+            $scope.saveCustomSizes = function () {
+                var sizes = $scope.getOldCustomSizes();
+                _.forEach($scope.sizes, function (v, k) {
+                    if (v.selected && v.length) {
+                        sizes.push(v.length);
+                    }
+                });
+                sizes = _.uniq(sizes);
+                Cookies.set('sizes', _.sortBy(sizes));
             };
 
             $scope.setRadius = function (radius) {
