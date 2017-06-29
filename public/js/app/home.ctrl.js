@@ -273,6 +273,15 @@
                 Cookies.set('sizes', _.sortBy(sizes));
             };
 
+            $scope.clearCustomSizes = function () {
+                $scope.sizes.length = 0;
+                $scope.presets = _.filter($scope.presets, function (v) {
+                    v.selected = false;
+                    return v.icon;
+                });
+                Cookies.remove('sizes');
+            };
+
             $scope.setRadius = function (radius) {
                 $scope.radius = radius;
             };

@@ -132,11 +132,7 @@
                     </div>
                     <div class="form-group" ng-show="showOptional">
                         <label class="control-label col-md-3 no-margin">
-                            自定义大小:<br/>
-                            <a href='javascript:;' class="inline-block margin-top-10 withripple" ng-click="addCustomSize()">
-                                <i class="fa fa-plus"></i>
-                                添加
-                            </a>
+                            自定义大小:
                         </label>
                         <div class="col-md-9 padding-top-5">
                             <a href='javascript:;' class="toggle-input" ng-repeat="s in presets"
@@ -145,6 +141,11 @@
                                 <i class="fa" ng-if="s.icon" ng-class="'fa-' + s.icon"></i>
                             </a><input type="number" min="0" max="1024" step="1"
                                    ng-model="s.length" ng-repeat="s in sizes" focus-last/>
+                            <div style="color: silver">点击选中。
+                                <a href='javascript:;' class="withripple" ng-click="addCustomSize()">
+                                    <i class="fa fa-plus"></i> 添加</a>
+                                <a href='javascript:;' class="withripple" style="margin-left: 10px;" ng-click="clearCustomSizes()">
+                                    <i class="fa fa-remove"></i> 清空</a></div>
                         </div>
                     </div>
                     <div class="form-group">
