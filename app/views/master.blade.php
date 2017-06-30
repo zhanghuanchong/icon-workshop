@@ -68,6 +68,7 @@
                         ?>
                     </ul>
                 </li>
+                <li><a href='/vote' target="_blank">投票 <span class="red-dot"></span></a></li>
                 {{--<li ng-class="stateCls('vote')"><a href='/vote'>需求投票<span class="red-dot"></span></a></li>--}}
                 <li ng-class="stateCls('changelog')">
                     <a href="/changelog">
