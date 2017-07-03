@@ -1,6 +1,6 @@
 @extends('master')
 @section('container')
-    <div class="container container-article">
+    <div class="container container-article" ng-controller="VoteCtrl">
         <div class="row">
             <div class="col-sm-9">
                 <h1 style="margin-bottom: 20px;">需求投票</h1>
@@ -14,9 +14,11 @@
                         <div class="form-group label-floating">
                             <div class="input-group">
                                 <label class="control-label" for="new_requirement">您有新的需求？</label>
-                                <input type="text" id="new_requirement" class="form-control" name="new_requirement">
+                                <input type="text" id="new_requirement" class="form-control"
+                                       name="new_requirement" v-model="newRequirement">
                                 <span class="input-group-btn">
-                                <button class="btn btn-primary btn-raised">提交</button>
+                                <button class="btn btn-primary btn-raised" :disabled="!newRequirement"
+                                        @click="submit()">提交</button>
                             </span>
                             </div>
                         </div>
@@ -37,7 +39,11 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
     <script>
         window.state = 'vote';
     </script>
+    <script src="/js/app/vote.ctrl.js?_={{ $GLOBALS['_VER_'] }}"></script>
 @endsection
