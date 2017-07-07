@@ -8,5 +8,12 @@
  */
 class Requirement extends Eloquent
 {
+    const STATUS_NEW = 'new';
+    const STATUS_VOTING = 'voting';
+    const STATUS_WORKING = 'working';
+    const STATUS_DONE = 'done';
 
+    public $fillable = [
+        'title', 'vote', 'status',
+    ];
 }

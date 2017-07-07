@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-9">
                 <h1 style="margin-bottom: 20px;">需求投票</h1>
-                <p>为你最想要的需求投上一票(每人3票)！你也可以提交新的需求。我们将优先开发票数得最多的需求。</p>
+                <p>为你最想要的需求投上一票（每人3票）！你也可以提交一个新的需求。我们将优先开发票数得最多的需求。</p>
                 <div class="row">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-10"></div>
