@@ -194,7 +194,7 @@
                                 });
                             }, function(confirm, e) {
                                 if (e) {
-                                    swal.error('', '上传失败！可能是文件大小过大，请压缩至10M以下再试。');
+                                    swal('', '上传失败！可能是文件大小过大，请压缩至10M以下再试。', 'error');
                                 }
                                 $scope.$apply(function () {
                                     $scope.init();
@@ -203,7 +203,7 @@
                                 $("#jumbotron_img").get(0).src = 'img/launcher.png';
                             });
                         } else if (oReq.status === 0) {
-                            swal.error('', '上传失败！可能是文件大小过大，请压缩至10M以下再试。');
+                            swal('', '上传失败！可能是文件大小过大，请压缩至10M以下再试。', 'error');
                             $scope.init();
                         }
                     }
