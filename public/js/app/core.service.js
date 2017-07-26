@@ -20,6 +20,7 @@
                         }
                     }
                 } catch (e) {
+                    failCallback(true, e);
                     console.log(response);
                     console.log(e);
                     throw e;
