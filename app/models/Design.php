@@ -8,7 +8,7 @@
 
 class Design extends Eloquent {
     const CUSTOM_FOLDER = 'custom';
-    
+
     public static $format_sizes = array(
         //region iOS
         'ios' => array(
@@ -151,6 +151,11 @@ class Design extends Eloquent {
                 'scale' => 2,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'ipad',
+            ),
+            array(
+                'size' => 1024,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ios-marketing',
             ),
             array(
                 'size' => 512,

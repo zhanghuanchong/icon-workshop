@@ -11,3 +11,4 @@ Vagrantfile
 .idea
 node_modules
 /public/bower
+/public/pi.php

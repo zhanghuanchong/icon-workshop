@@ -5,6 +5,14 @@
             <div class="col-sm-9">
                 <h1>更新日志</h1>
                 <dl>
+                    <dt>2017-11-12</dt>
+                    <dd>
+                        <ul>
+                            <li>更新：iOS appiconset 添加 1024x1024 尺寸。</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
                     <dt>2017-06-30</dt>
                     <dd>
                         <ul>
