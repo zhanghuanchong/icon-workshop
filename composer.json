@@ -13,7 +13,8 @@
         "jenssegers/agent": "^2.6",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
-        "nathanmac/laravel-guid": "dev-master"
+        "nathanmac/laravel-guid": "dev-master",
+        "doctrine/dbal": "~2.3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
