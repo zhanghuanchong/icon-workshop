@@ -6,11 +6,38 @@
  * Time: 2:42 AM
  */
 
-class Subscription extends Eloquent {
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Mail;
+
+/**
+ * App\Subscription
+ *
+ * @property int $id
+ * @property string $mail
+ * @property string $design_id
+ * @property string|null $user_agent
+ * @property string|null $ip
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string|null $deleted_at
+ * @property-read \App\Design $design
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Subscription whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Subscription whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Subscription whereDesignId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Subscription whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Subscription whereIp($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Subscription whereMail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Subscription whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Subscription whereUserAgent($value)
+ * @mixin \Eloquent
+ */
+class Subscription extends Model {
 
     public function design()
     {
-        return $this->belongsTo('Design');
+        return $this->belongsTo(Design::class);
     }
 
     public function sendZip()

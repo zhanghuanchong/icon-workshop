@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Input;
+
 class VoteController extends BaseController
 {
     public function getIndex() {

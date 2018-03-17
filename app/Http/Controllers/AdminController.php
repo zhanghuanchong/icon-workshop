@@ -1,8 +1,10 @@
 <?php
 
 
-require_once app_path() . '/library/class.geetestlib.php';
-require_once app_path() . '/config/geetest.php';
+use Illuminate\Support\Facades\Input;
+
+require_once __DIR__ . '/../../library/class.geetestlib.php';
+require_once __DIR__ . '/../../../config/geetest.php';
 
 class AdminController extends \BaseController {
 
@@ -17,7 +19,7 @@ class AdminController extends \BaseController {
 	{
 		$GtSdk = new GeetestLib(CAPTCHA_ID, PRIVATE_KEY);
 		$status = $GtSdk->pre_process(static::USER_ID);
-		Session::set('gtserver', $status);
+		Session::put('gtserver', $status);
 		echo $GtSdk->get_response_str();
 	}
 
@@ -38,8 +40,9 @@ class AdminController extends \BaseController {
 	{
 		$pwd = Input::get('password');
 		if ($pwd != '880714') {
-			return $this->json('密码错误!', TRUE);
-		} else if (!$this->verifyCode()) {
+            return $this->json('密码错误!', TRUE);
+        }
+        if (!$this->verifyCode()) {
 			return $this->json('验证失败!', TRUE);
 		}
 		return $this->json(TRUE);

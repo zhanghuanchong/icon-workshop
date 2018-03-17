@@ -1,7 +1,9 @@
 <?php
+namespace App\Http\Controllers;
 
-use Illuminate\Filesystem;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use App\Http\Controllers\Controller;
+use File;
+use Response;
 
 class BaseController extends Controller {
 
@@ -13,19 +15,6 @@ class BaseController extends Controller {
 			$version = File::lastModified($path);
 		}
 		$GLOBALS['_VER_'] = $version;
-	}
-
-	/**
-	 * Setup the layout used by the controller.
-	 *
-	 * @return void
-	 */
-	protected function setupLayout()
-	{
-		if ( ! is_null($this->layout))
-		{
-			$this->layout = View::make($this->layout);
-		}
 	}
 
     protected function json($param, $error = FALSE)

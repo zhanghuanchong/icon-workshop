@@ -11,15 +11,22 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
+Route::get('/', 'HomeController@index');
+Route::get('/changelog', 'HomeController@changeLog');
+Route::get('/guide/{platform}', 'HomeController@guide');
+Route::get('/icon/{id}', 'HomeController@icon');
+Route::get('/about', 'HomeController@about');
 
-//Route::get('/', 'HomeController@index');
-//Route::get('/changelog', 'HomeController@changeLog');
-//Route::get('/guide/{platform}', 'HomeController@guide');
-//Route::get('/icon/{id}', 'HomeController@icon');
-//Route::get('/about', 'HomeController@about');
-//
-//Route::controller('icon', 'IconController');
-//Route::controller('admin', 'AdminController');
-//Route::controller('job', 'JobController');
-//Route::controller('vote', 'VoteController');
+Route::post('/icon/upload', 'IconController@postUpload');
+Route::post('/icon/generate', 'IconController@postGenerate');
+Route::get('/icon/detail', 'IconController@getDetail');
+Route::get('/icon/api-detail', 'IconController@getApiDetail');
+Route::get('/icon/api-generate', 'IconController@getApiGenerate');
+Route::get('/icon/download', 'IconController@getDownload');
+Route::post('/icon/post-subscribe', 'IconController@postSubscribe');
+Route::get('/admin', 'AdminController@getIndex');
+Route::get('/admin/verify-code', 'AdminController@getVerifyCode');
+Route::post('/admin/login', 'AdminController@postLogin');
+Route::get('/job/delete-expired-files', 'JobController@getDeleteExpiredFiles');
+Route::get('/vote', 'VoteController@getIndex');
+Route::post('/vote', 'VoteController@postIndex');

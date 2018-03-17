@@ -7,7 +7,7 @@ use Carbon\Carbon;
  * Date: 16/4/30
  * Time: 下午10:34
  */
-class JobController extends Controller
+class JobController extends BaseController
 {
     public function getDeleteExpiredFiles()
     {

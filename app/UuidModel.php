@@ -6,7 +6,12 @@
  * Time: 4:56 PM
  */
 
-class UuidModel extends Eloquent {
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Nathanmac\GUID\Facades\GUID;
+
+class UuidModel extends Model {
 
     /**
      * Indicates if the IDs are auto-incrementing.
@@ -43,4 +48,4 @@ class UuidModel extends Eloquent {
         return GUID::generate();
     }
 
-} 
+}

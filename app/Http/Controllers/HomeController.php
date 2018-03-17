@@ -1,5 +1,12 @@
 <?php
 
+namespace App\Http\Controllers;
+
+use App\Design;
+use Config;
+use Redirect;
+use View;
+
 class HomeController extends BaseController {
 
 	/*

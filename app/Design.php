@@ -5,8 +5,55 @@
  * Date: 1/9/15
  * Time: 2:42 AM
  */
+namespace App;
 
-class Design extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+use Imagick;
+use File;
+use Image;
+use ImagickDraw;
+use ImagickPixel;
+
+/**
+ * App\Design
+ *
+ * @property string $id
+ * @property string $folder
+ * @property string $ext
+ * @property string $original_name
+ * @property string $mime_type
+ * @property string|null $platform
+ * @property string|null $sizes
+ * @property string|null $bg_color
+ * @property string|null $android_folder
+ * @property string|null $android_name
+ * @property float|null $radius
+ * @property string|null $user_agent
+ * @property string|null $ip
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string|null $deleted_at
+ * @property-read mixed $sanitized_android_name
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Subscription[] $subscribers
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereAndroidFolder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereAndroidName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereBgColor($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereExt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereFolder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereIp($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereMimeType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereOriginalName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design wherePlatform($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereRadius($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereSizes($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereUserAgent($value)
+ * @mixin \Eloquent
+ */
+class Design extends Model {
     const CUSTOM_FOLDER = 'custom';
 
     public static $format_sizes = array(
@@ -677,7 +724,7 @@ class Design extends Eloquent {
 
     public function subscribers()
     {
-        return $this->hasMany('Subscription');
+        return $this->hasMany(Subscription::class);
     }
 
     public function getFolder() {
