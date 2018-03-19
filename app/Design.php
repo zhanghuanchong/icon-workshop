@@ -7,6 +7,7 @@
  */
 namespace App;
 
+use Chumper\Zipper\Facades\Zipper;
 use Illuminate\Database\Eloquent\Model;
 use Imagick;
 use File;
@@ -912,6 +913,7 @@ class Design extends Model {
         $folder = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
         $path = $folder . 'icons.zip';
         if (!file_exists($path) || $regenerate) {
+            /** @var \Chumper\Zipper\Zipper $zip */
             $zip = Zipper::make($path);
             $formats = explode(',', $this->platform);
             foreach($formats as $f) {
