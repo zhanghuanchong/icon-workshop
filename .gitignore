@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/bower
 /storage/*.key
 /vendor
 /.idea

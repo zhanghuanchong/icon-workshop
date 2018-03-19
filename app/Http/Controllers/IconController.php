@@ -1,7 +1,12 @@
 <?php
 
+namespace App\Http\Controllers;
+
+use App\Design;
 use Illuminate\Support\Facades\Input;
 use \Illuminate\Http\Request;
+use Redirect;
+use Response;
 
 class IconController extends BaseController {
 

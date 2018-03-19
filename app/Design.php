@@ -54,6 +54,13 @@ use ImagickPixel;
  * @mixin \Eloquent
  */
 class Design extends Model {
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        Image::configure(array('driver' => 'imagick'));
+    }
+
     const CUSTOM_FOLDER = 'custom';
 
     public static $format_sizes = array(
