@@ -1,4 +1,8 @@
 <?php
+
+namespace App\Http\Controllers;
+
+use App\Design;
 use Carbon\Carbon;
 
 /**
