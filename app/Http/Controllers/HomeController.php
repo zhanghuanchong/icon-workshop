@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Design;
 use Config;
+use Illuminate\Support\Facades\Input;
 use Redirect;
 use View;
 
@@ -27,8 +28,9 @@ class HomeController extends BaseController {
 		return View::make('home');
 	}
 
-	public function icon($id)
+	public function icon()
 	{
+	    $id = Input::get('utm_source');
 	    $design = Design::find($id);
 	    if (!$design) {
 	        return Redirect::to('/');

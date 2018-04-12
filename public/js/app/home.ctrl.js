@@ -8,7 +8,7 @@
             if (path) {
                 var paths = path.split('/');
                 if (paths.length > 2 && paths[0] == '' && paths[1] == 'icon') {
-                    path  = '/icon/' + paths[2];
+                    path  = '/icon?utm_source=' + paths[2];
                     if (paths.length > 3) {
                         path += '#/' + paths[3];
                     }
@@ -257,7 +257,7 @@
                     androidFolder: $scope.androidFolder,
                     androidName: $.trim($scope.androidName)
                 }).success(function(){
-                    location.href = '/icon/' + $scope.id;
+                    location.href = '/icon?utm_source=' + $scope.id;
                 });
             };
 
