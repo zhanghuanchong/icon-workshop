@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/changelog', 'HomeController@changeLog');
 Route::get('/guide/{platform}', 'HomeController@guide');
 Route::get('/icon', 'HomeController@icon');
+Route::get('/icon/{id}', 'HomeController@iconWithID');
 Route::get('/about', 'HomeController@about');
 
 Route::post('/icon/upload', 'IconController@postUpload');

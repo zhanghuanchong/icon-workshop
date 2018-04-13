@@ -40,6 +40,11 @@ class HomeController extends BaseController {
 		]);
 	}
 
+	public function iconWithID($id)
+    {
+        return Redirect::to('/icon?utm_source=' . $id);
+    }
+
 	public function changeLog()
 	{
 		return View::make('changelog');
