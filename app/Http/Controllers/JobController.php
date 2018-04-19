@@ -15,13 +15,13 @@ class JobController extends BaseController
 {
     public function getDeleteExpiredFiles()
     {
-        // 删除1个月前的所有数据
-        Design::where('created_at', '<', Carbon::today()->subMonth())->get()->each(function (Design $design) {
+        // 删除1天前的所有数据
+        Design::where('created_at', '<', Carbon::today()->subDay())->get()->each(function (Design $design) {
             $design->delete();
         });
 
-        // 删除7天前的Cache
-        Design::where('created_at', '<', Carbon::today()->subDays(7))->get()->each(function (Design $design) {
+        // 删除1小时前的Cache
+        Design::where('created_at', '<', Carbon::today()->subHour())->get()->each(function (Design $design) {
             $design->deleteCache();
         });
     }
