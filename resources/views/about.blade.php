@@ -37,7 +37,9 @@
                      data-ad-slot="6004594517"
                      data-ad-format="auto"></ins>
                 <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
+                    window.onload = function () {
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    };
                 </script>
             </div>
         </div>
