@@ -40,7 +40,7 @@
 <body ng-app="rhIcon" ng-controller="RootCtrl" ng-cloak>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container" style="position: relative">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only"></span>
@@ -68,7 +68,6 @@
                         ?>
                     </ul>
                 </li>
-                {{--<li ng-class="stateCls('vote')"><a href='/vote'>需求投票<span class="red-dot"></span></a></li>--}}
                 <li ng-class="stateCls('changelog')">
                     <a href="/changelog">
                         更新日志
@@ -80,6 +79,11 @@
                 <li><a href="http://blog.wuruihong.com" target="_blank">博客</a></li>
                 <li ng-class="stateCls('about')"><a href="/about">关于我们</a></li>
             </ul>
+        </div>
+        <div id="gh-star">
+            <a class="github-button" href="https://github.com/zhanghuanchong/icon-workshop"
+               data-size="large" data-show-count="true"
+               aria-label="Star zhanghuanchong/icon-workshop on GitHub">Star</a>
         </div>
     </div>
 </nav>
@@ -146,5 +150,6 @@
 
 @yield('scripts')
 
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
