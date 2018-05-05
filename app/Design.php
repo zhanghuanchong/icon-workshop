@@ -752,6 +752,10 @@ class Design extends Model {
         $appleFormats = array('ios', 'iwatch');
         $specialKeys = array('role', 'subtype');
         $img = Image::make($root . 'origin.' . $this->ext);
+        $maxLength = 1024;
+        if ($img->getWidth() > $maxLength || $img->getHeight() > $maxLength) {
+            $img->resize($maxLength, $maxLength);
+        }
         $img->backup();
 
         // 自动圆角
