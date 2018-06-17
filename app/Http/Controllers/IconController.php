@@ -15,6 +15,11 @@ class IconController extends BaseController {
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             if ($file->isValid()) {
+                $size = $file->getClientSize();
+                if ($size > 2097152 /* 1024 * 1024 * 2 */) {
+                    return $this->json('请压缩文件至 2M 以下后重试.', TRUE);
+                }
+
                 $id = str_random(8);
                 $ext = $file->getClientOriginalExtension();
 
@@ -37,6 +42,11 @@ class IconController extends BaseController {
                 $file->move($folder, 'origin.' . $ext);
 
                 $design->save();
+
+                $size = $design->getSize();
+                if ($size['width'] > 1024 || $size['height'] > 1024) {
+                    return $this->json('图片的宽高不能超过1024像素，请缩小后重试。', true);
+                }
 
                 return $this->json($id);
             }

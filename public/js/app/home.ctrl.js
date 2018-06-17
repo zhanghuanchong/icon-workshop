@@ -145,17 +145,25 @@
                     'image/gif',
                     'image/vnd.adobe.photoshop'
                 ];
-                if ($.inArray(file.type, list) >= 0) {
-                    return true;
-                }
-
-                swal({
+                if ($.inArray(file.type, list) < 0) {
+                  swal({
                     title : '不支持的文件格式.',
                     type : 'error',
                     confirmButtonText : '确定'
-                });
+                  });
+                  return false;
+                }
 
-                return false;
+                if (file.size > 2097152 /* 1024 * 1024 * 2 */) {
+                  swal({
+                    title : '请压缩文件至 2M 以下后重试.',
+                    type : 'error',
+                    confirmButtonText : '确定'
+                  });
+                  return false;
+                }
+
+                return true;
             };
 
             $scope.startUploading = function (file) {
@@ -258,6 +266,13 @@
                     androidName: $.trim($scope.androidName)
                 }).success(function(){
                     location.href = '/icon?utm_source=' + $scope.id;
+                }, function(){
+                  swal({
+                    title : '生成失败，请压缩文件大小后重试.',
+                    type : 'error',
+                    confirmButtonText : '确定'
+                  });
+                  $scope.init();
                 });
             };
 

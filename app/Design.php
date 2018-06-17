@@ -743,6 +743,15 @@ class Design extends Model {
         return $this->getFolder() . '/' . $name . '.' . $this->ext;
     }
 
+    public function getSize() {
+        $root = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
+        $img = Image::make($root . 'origin.' . $this->ext);
+        return [
+            'width' => $img->getWidth(),
+            'height' => $img->getHeight(),
+        ];
+    }
+
     public function generateIcons($formats = NULL, $alsoSizes = TRUE) {
         if (!$formats) {
             $formats = explode(',', $this->platform);
