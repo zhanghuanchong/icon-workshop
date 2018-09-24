@@ -317,6 +317,9 @@ span.string {
   width: 444px;
   height: 743px;
 }
+#tp_contents .mobile_preview.iphonex_mobile_preview {
+  height: 910px;
+}
 #tp_android .description {
   border-top-width: 0;
   line-height: 1.8em;
@@ -383,6 +386,15 @@ span.string {
   width: 61px;
   height: 61px;
   border-radius: 13px;
+}
+#tp_ios img.x5,
+#tp_watch img.x5,
+#tp_webapp img.x5,
+#tp_phonegap img.x5,
+#tp_windowsphone img.x5 {
+  width: 80px;
+  height: 80px;
+  border-radius: 17px;
 }
 #tp_watch img.x1 {
   border-radius: 14px;
