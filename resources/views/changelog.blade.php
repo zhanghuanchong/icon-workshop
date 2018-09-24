@@ -9,7 +9,8 @@
                     <dd>
                         <ul>
                             <li>更新：删除旧 iOS 格式支持。</li>
-                            <li>更新：更新对 PhoneGap (Cordova) 中 Android 图标的支持。</li>
+                            <li>更新：更新 iOS 预览图。</li>
+                            <li>更新：更新 PhoneGap (Cordova) 中对 Android 图标的支持。</li>
                         </ul>
                     </dd>
                 </dl>
