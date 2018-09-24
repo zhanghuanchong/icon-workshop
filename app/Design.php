@@ -223,47 +223,6 @@ class Design extends Model {
             ),
         ),
         //endregion
-        //region iOS-old
-        'ios_old' => array(
-            array(
-                'size' => 57,
-                'name' => 'icon'
-            ),
-            array(
-                'size' => 57,
-                'scale' => 2,
-                'name' => 'icon@2x'
-            ),
-            array(
-                'size' => 60
-            ),
-            array(
-                'size' => 72
-            ),
-            array(
-                'size' => 72,
-                'scale' => 2
-            ),
-            array(
-                'size' => 50,
-                'name' => 'icon-Small-50'
-            ),
-            array(
-                'size' => 50,
-                'scale' => 2,
-                'name' => 'icon-Small-50@2x'
-            ),
-            array(
-                'size' => 512,
-                'name' => 'iTunesArtwork',
-            ),
-            array(
-                'size' => 512,
-                'scale' => 2,
-                'name' => 'iTunesArtwork@2x',
-            ),
-        ),
-        //endregion
         //region iWatch
         'iwatch' => array(
             array(
@@ -698,6 +657,12 @@ class Design extends Model {
             ),
         ),
         //endregion
+        //region Windows ico
+//        'win_ico' => [],
+        //endregion
+        //region Mac icns
+//        'mac_icns' => [],
+        //endregion
     );
 
     public $incrementing = false;
@@ -831,7 +796,7 @@ class Design extends Model {
                 $scale = isset($s['scale']) ? $s['scale'] : 1;
                 $length = $s['size'] * $scale;
                 if (in_array($format, $appleFormats) || isset($s['bg'])
-                    || $format == 'windowsphone' || $format == 'ios_old')
+                    || $format == 'windowsphone')
                 {
                     $_img = &$imgBg;
                 } else if ($imgRound) {
@@ -895,14 +860,15 @@ class Design extends Model {
 
         $sizes = $this->sizes;
         if ($alsoSizes && $sizes) {
+            $folder = $root . static::CUSTOM_FOLDER . '/';
+            if (!file_exists($folder)) {
+                mkdir($folder, 0777, true);
+            }
+
             foreach($sizes as $size) {
                 if (isset($size['length'])) {
                     $length = $size['length'];
 
-                    $folder = $root . static::CUSTOM_FOLDER . '/';
-                    if (!file_exists($folder)) {
-                        mkdir($folder, 0777, true);
-                    }
                     $_img = &$img;
                     $_img->reset();
                     $_img->resize($length, $length);
@@ -910,6 +876,14 @@ class Design extends Model {
 
                     $_img->save($folder . $length . 'x' . $length . '.png');
                 }
+            }
+
+            if (in_array('win_ico', $formats)) {
+                // TODO
+            }
+
+            if (in_array('mac_icns', $formats)) {
+                // TODO
             }
         }
     }

@@ -42,7 +42,8 @@
                                 <option value="phonegap">PhoneGap</option>
                                 <option value="iwatch">iWatch</option>
                                 <option value="webapp">Web App</option>
-                                <option value="ios_old">iOS(旧格式)</option>
+                                {{--<option value="win_ico">Windows ico</option>--}}
+                                {{--<option value="mac_icns">Mac icns</option>--}}
                             </select>
                         </div>
                     </div>

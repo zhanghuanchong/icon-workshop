@@ -11,7 +11,6 @@ return array(
         'webapp' => 'Web App',
         'phonegap' => 'PhoneGap',
         'iwatch' => 'iWatch',
-        'ios_old' => 'iOS(旧格式)',
     ],
 
 );

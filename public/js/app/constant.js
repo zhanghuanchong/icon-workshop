@@ -29,10 +29,6 @@
             custom: {
                 name: '自定义',
                 folder: 'custom'
-            },
-            ios_old: {
-                name: 'iOS(旧格式)',
-                folder: 'ios_old'
             }
         });
 })();
