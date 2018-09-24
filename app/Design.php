@@ -109,17 +109,6 @@ class Design extends Model {
                 'idiom' => 'iphone',
             ),
             array(
-                'size' => 57,
-                'folder' => 'AppIcon.appiconset',
-                'idiom' => 'iphone',
-            ),
-            array(
-                'size' => 57,
-                'scale' => 2,
-                'folder' => 'AppIcon.appiconset',
-                'idiom' => 'iphone',
-            ),
-            array(
                 'size' => 60,
                 'scale' => 2,
                 'folder' => 'AppIcon.appiconset',
@@ -169,28 +158,6 @@ class Design extends Model {
                 'idiom' => 'ipad',
             ),
             array(
-                'size' => 50,
-                'folder' => 'AppIcon.appiconset',
-                'idiom' => 'ipad',
-            ),
-            array(
-                'size' => 50,
-                'scale' => 2,
-                'folder' => 'AppIcon.appiconset',
-                'idiom' => 'ipad',
-            ),
-            array(
-                'size' => 72,
-                'folder' => 'AppIcon.appiconset',
-                'idiom' => 'ipad',
-            ),
-            array(
-                'size' => 72,
-                'scale' => 2,
-                'folder' => 'AppIcon.appiconset',
-                'idiom' => 'ipad',
-            ),
-            array(
                 'size' => 76,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'ipad',
@@ -211,15 +178,6 @@ class Design extends Model {
                 'size' => 1024,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'ios-marketing',
-            ),
-            array(
-                'size' => 512,
-                'name' => 'iTunesArtwork',
-            ),
-            array(
-                'size' => 512,
-                'scale' => 2,
-                'name' => 'iTunesArtwork@2x',
             ),
         ),
         //endregion
