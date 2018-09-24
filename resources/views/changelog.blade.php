@@ -5,6 +5,15 @@
             <div class="col-sm-9">
                 <h1>更新日志</h1>
                 <dl>
+                    <dt>2018-09-24</dt>
+                    <dd>
+                        <ul>
+                            <li>更新：删除旧 iOS 格式支持。</li>
+                            <li>更新：更新对 PhoneGap (Cordova) 中 Android 图标的支持。</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
                     <dt>2018-05-05</dt>
                     <dd>
                         <ul>

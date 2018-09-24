@@ -23,7 +23,7 @@
                 folder: 'webapp'
             },
             phonegap: {
-                name: 'PhoneGap',
+                name: 'PhoneGap (Cordova)',
                 folder: 'phonegap'
             },
             custom: {

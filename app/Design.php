@@ -362,85 +362,60 @@ class Design extends Model {
         //endregion
         //region PhoneGap
         'phonegap' => array(
-            array(
-                'size' => 128,
-                'scale' => 1,
-                'folder' => 'www',
-                'name' => 'icon'
-            ),
+            // res icons: useless now though
             array(
                 'size' => 57,
                 'scale' => 1,
-                'folder' => 'www/res/icon/ios',
+                'folder' => 'res/icon/ios',
                 'name' => 'icon-57',
                 'bg' => true
             ),
             array(
                 'size' => 57,
                 'scale' => 2,
-                'folder' => 'www/res/icon/ios',
+                'folder' => 'res/icon/ios',
                 'name' => 'icon-57-2x',
                 'bg' => true
             ),
             array(
                 'size' => 72,
                 'scale' => 1,
-                'folder' => 'www/res/icon/ios',
+                'folder' => 'res/icon/ios',
                 'name' => 'icon-72',
                 'bg' => true
             ),
             array(
                 'size' => 72,
                 'scale' => 2,
-                'folder' => 'www/res/icon/ios',
+                'folder' => 'res/icon/ios',
                 'name' => 'icon-72-2x',
                 'bg' => true
             ),
             array(
                 'size' => 36,
                 'scale' => 1,
-                'folder' => 'www/res/icon/android',
+                'folder' => 'res/icon/android',
                 'name' => 'icon-36-ldpi'
             ),
             array(
                 'size' => 48,
                 'scale' => 1,
-                'folder' => 'www/res/icon/android',
+                'folder' => 'res/icon/android',
                 'name' => 'icon-48-mdpi'
             ),
             array(
                 'size' => 72,
                 'scale' => 1,
-                'folder' => 'www/res/icon/android',
+                'folder' => 'res/icon/android',
                 'name' => 'icon-72-hdpi'
             ),
             array(
                 'size' => 96,
                 'scale' => 1,
-                'folder' => 'www/res/icon/android',
+                'folder' => 'res/icon/android',
                 'name' => 'icon-96-xhdpi'
             ),
-            array(
-                'size' => 48,
-                'scale' => 1,
-                'folder' => 'www/res/icon/windows-phone',
-                'name' => 'icon-48',
-                'bg' => true
-            ),
-            array(
-                'size' => 62,
-                'scale' => 1,
-                'folder' => 'www/res/icon/windows-phone',
-                'name' => 'icon-62-tile',
-                'bg' => true
-            ),
-            array(
-                'size' => 173,
-                'scale' => 1,
-                'folder' => 'www/res/icon/windows-phone',
-                'name' => 'icon-173-tile',
-                'bg' => true
-            ),
+            // iOS
             array(
                 'size' => 29,
                 'scale' => 1,
@@ -546,62 +521,42 @@ class Design extends Model {
                 'name' => 'icon-76@2x',
                 'bg' => true
             ),
-            array(
-                'size' => 96,
-                'scale' => 1,
-                'folder' => 'platforms/android/res/drawable',
-                'name' => 'icon'
-            ),
+            // Android
             array(
                 'size' => 36,
                 'scale' => 1,
-                'folder' => 'platforms/android/res/drawable-ldpi',
+                'folder' => 'platforms/android/app/src/main/res/mipmap-ldpi',
                 'name' => 'icon'
             ),
             array(
                 'size' => 48,
                 'scale' => 1,
-                'folder' => 'platforms/android/res/drawable-mdpi',
+                'folder' => 'platforms/android/app/src/main/res/mipmap-mdpi',
                 'name' => 'icon'
             ),
             array(
                 'size' => 48,
                 'scale' => 1.5,
-                'folder' => 'platforms/android/res/drawable-hdpi',
+                'folder' => 'platforms/android/app/src/main/res/mipmap-hdpi',
                 'name' => 'icon'
             ),
             array(
                 'size' => 48,
                 'scale' => 2,
-                'folder' => 'platforms/android/res/drawable-xhdpi',
+                'folder' => 'platforms/android/app/src/main/res/mipmap-xhdpi',
                 'name' => 'icon'
             ),
             array(
                 'size' => 48,
                 'scale' => 3,
-                'folder' => 'platforms/android/res/drawable-xxhdpi',
+                'folder' => 'platforms/android/app/src/main/res/mipmap-xxhdpi',
                 'name' => 'icon'
             ),
             array(
-                'size' => 110,
-                'scale' => 1,
-                'folder' => 'platforms/wp8',
-                'name' => 'ApplicationIcon',
-                'bg' => true
-            ),
-            array(
-                'size' => 202,
-                'scale' => 1,
-                'folder' => 'platforms/wp8',
-                'name' => 'TileMedium',
-                'bg' => true
-            ),
-            array(
-                'size' => 110,
-                'scale' => 1,
-                'folder' => 'platforms/wp8',
-                'name' => 'TileSmall',
-                'bg' => true
+                'size' => 48,
+                'scale' => 4,
+                'folder' => 'platforms/android/app/src/main/res/mipmap-xxxhdpi',
+                'name' => 'icon'
             ),
         ),
         //endregion

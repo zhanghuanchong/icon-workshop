@@ -9,7 +9,7 @@ return array(
         'ios' => 'iOS',
         'android' => 'Android',
         'webapp' => 'Web App',
-        'phonegap' => 'PhoneGap',
+        'phonegap' => 'PhoneGap (Cordova)',
         'iwatch' => 'iWatch',
     ],
 

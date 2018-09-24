@@ -38,10 +38,10 @@
                             <select name="platform" id="platform" multiple style="width: 70%; height: 30px">
                                 <option value="ios" selected>iOS</option>
                                 <option value="android" selected>Android</option>
-                                <option value="windowsphone">Windows Phone</option>
-                                <option value="phonegap">PhoneGap</option>
-                                <option value="iwatch">iWatch</option>
+                                <option value="phonegap">PhoneGap (Cordova)</option>
                                 <option value="webapp">Web App</option>
+                                <option value="iwatch">iWatch</option>
+                                <option value="windowsphone">Windows Phone</option>
                                 {{--<option value="win_ico">Windows ico</option>--}}
                                 {{--<option value="mac_icns">Mac icns</option>--}}
                             </select>
