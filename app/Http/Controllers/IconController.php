@@ -115,7 +115,13 @@ class IconController extends BaseController {
     {
         /** @var Design $design */
         $design = Design::findOrFail($id);
+        if (!$design) {
+            return '原设计图已过期！';
+        }
         $path = $design->package($regenerate);
+        if (!$path) {
+            return '文件未找到！';
+        }
         return Response::download($path);
     }
 
