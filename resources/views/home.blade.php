@@ -16,6 +16,12 @@
             <div ng-show="!status">
                 <a href="javascript:;" class="btn btn-primary btn-raised btn-lg" ng-click="uploadFromBtn();">点击这里上传</a>
                 <span class="grey margin-left-10 font-16 va-m">或者拖放您的设计文件到这里 (<=10MB)</span>
+
+                <button type="button" class="btn btn-primary btn-lg"
+                        style="font-size: 14px; margin: 0;"
+                        data-toggle="modal" data-target="#customizeDialog">
+                    自定义...
+                </button>
             </div>
             <div ng-show="status == 'setting'" class="panel panel-primary">
                 <div class="panel-heading">
@@ -46,7 +52,11 @@
                                 {{--<option value="mac_icns">Mac icns</option>--}}
                             </select>
 
-                            <a href="javascript:" style="margin-left: 20px;">自定义...</a>
+                            <button type="button" class="btn btn-primary btn-lg"
+                                    style="font-size: 14px; margin: 0;"
+                                    data-toggle="modal" data-target="#customizeDialog">
+                                自定义...
+                            </button>
                         </div>
                     </div>
 
@@ -215,6 +225,57 @@
                 </div>
             </div>
         @endif
+    </div>
+
+    <div class="modal fade" id="customizeDialog" tabindex="-1" data-keyboard="false" data-backdrop="static" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">自定义平台规则</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation"><a href="#settings" role="tab" data-toggle="tab">新规则</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active">
+                            <form action="" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">名称：</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">平台：</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control" id="platform">
+                                            <option value="ios" selected>iOS</option>
+                                            <option value="android" selected>Android</option>
+                                            <option value="phonegap">PhoneGap (Cordova)</option>
+                                            <option value="webapp">Web App</option>
+                                            <option value="iwatch">iWatch</option>
+                                            <option value="windowsphone">Windows Phone</option>
+                                            {{--<option value="win_ico">Windows ico</option>--}}
+                                            {{--<option value="mac_icns">Mac icns</option>--}}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">格式：</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary pull-left" style="margin-left: 15px;">添加新规则</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">保存并关闭</button>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 

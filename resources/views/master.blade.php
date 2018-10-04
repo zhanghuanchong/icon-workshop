@@ -26,7 +26,7 @@
         <link href="/bower/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
         <link href="/bower/angular-material/angular-material.min.css" rel="stylesheet">
         <link href="/bower/md-color-picker/dist/mdColorPicker.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/main.css?_={{ time() }}">
     @else
         <link rel="stylesheet" href="/css/all.css?_={{ $GLOBALS['_VER_'] }}">
     @endif

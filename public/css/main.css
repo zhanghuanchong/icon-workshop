@@ -496,6 +496,15 @@ footer {
   -moz-animation: spinoffPulse 1s infinite linear;
   -webkit-animation: spinoffPulse 1s infinite linear;
 }
+#customizeDialog .control-label {
+  padding-top: 2px;
+}
+#customizeDialog .form-group {
+  margin-top: 5px;
+}
+#customizeDialog .modal-footer {
+  margin-top: 20px;
+}
 /* Material Design */
 .md-dialog-container {
   z-index: 1000009;
@@ -546,3 +555,4 @@ footer {
     -webkit-transform: rotate(360deg);
   }
 }
+/*# sourceMappingURL=main.css.map */
