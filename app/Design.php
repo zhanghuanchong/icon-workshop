@@ -320,7 +320,11 @@ class Design extends Model {
 
     public function isGenerated()
     {
-        $dirs = File::directories(public_path('files') . '/' . $this->getFolder());
+        $path = public_path('files') . '/' . $this->getFolder();
+        if (!file_exists($path)) {
+            return null;
+        }
+        $dirs = File::directories($path);
         return count($dirs) > 0;
     }
 
