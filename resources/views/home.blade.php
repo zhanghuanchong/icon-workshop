@@ -12,7 +12,7 @@
                     <div class="circle1"></div>
                 </div>
             </div>
-            <p class="margin-top-20">支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果</p>
+            <p class="margin-top-20">支持 jpg, png, psd 文件。上传 1024 x 1024 像素的图片以获得最佳效果</p>
             <div ng-show="!status">
                 <a href="javascript:;" class="btn btn-primary btn-raised btn-lg" ng-click="uploadFromBtn();">点击这里上传</a>
                 <span class="grey margin-left-10 font-16 va-m">或者拖放您的设计文件到这里 (<=10MB)</span>
@@ -62,7 +62,7 @@
                              open-on-input="true"
                              md-color-alpha-channel="false"
                              click-outside-to-close="true"></div>
-                        <div class="col-md-offset-3 col-md-9" style="margin-top: -25px; color: silver">适用于iOS 及 Windows Phone。 默认是白色。</div>
+                        <div class="col-md-offset-3 col-md-9" style="margin-top: -5px; color: silver">适用于iOS 及 Windows Phone。 默认是白色。</div>
                     </div>
                     <div class="form-group" ng-show="hasAndroid && showOptional">
                         <label class="control-label col-md-3 no-margin">Android目录:</label>
