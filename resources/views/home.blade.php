@@ -12,7 +12,7 @@
                     <div class="circle1"></div>
                 </div>
             </div>
-            <p class="margin-top-20">支持jpg, png, psd文件。上传1024x1024像素的图片以获得最佳效果</p>
+            <p class="margin-top-20">支持 jpg, png, psd 文件。上传 1024 x 1024 像素的图片以获得最佳效果</p>
             <div ng-show="!status">
                 <a href="javascript:;" class="btn btn-primary btn-raised btn-lg" ng-click="uploadFromBtn();">点击这里上传</a>
                 <span class="grey margin-left-10 font-16 va-m">或者拖放您的设计文件到这里 (<=10MB)</span>
@@ -45,6 +45,8 @@
                                 {{--<option value="win_ico">Windows ico</option>--}}
                                 {{--<option value="mac_icns">Mac icns</option>--}}
                             </select>
+
+                            <a href="javascript:" style="margin-left: 20px;">自定义...</a>
                         </div>
                     </div>
 
@@ -62,7 +64,7 @@
                              open-on-input="true"
                              md-color-alpha-channel="false"
                              click-outside-to-close="true"></div>
-                        <div class="col-md-offset-3 col-md-9" style="margin-top: -25px; color: silver">适用于iOS 及 Windows Phone。 默认是白色。</div>
+                        <div class="col-md-offset-3 col-md-9" style="margin-top: -5px; color: silver">适用于iOS 及 Windows Phone。 默认是白色。</div>
                     </div>
                     <div class="form-group" ng-show="hasAndroid && showOptional">
                         <label class="control-label col-md-3 no-margin">Android目录:</label>
@@ -214,6 +216,10 @@
             </div>
         @endif
     </div>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@^3.5.2/animate.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.16/dist/umd/quasar.mat.min.css" rel="stylesheet" type="text/css">
 @endsection
 
 @section('scripts')
@@ -221,4 +227,7 @@
         window.state = 'home';
     </script>
     <script src="/js/app/home.ctrl.js?_={{ $GLOBALS['_VER_'] }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.16/dist/umd/quasar.mat.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.16/dist/umd/i18n.zh-hans.umd.min.js"></script>
 @endsection
