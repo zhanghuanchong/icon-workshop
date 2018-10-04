@@ -216,10 +216,6 @@
             </div>
         @endif
     </div>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/animate.css@^3.5.2/animate.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.16/dist/umd/quasar.mat.min.css" rel="stylesheet" type="text/css">
 @endsection
 
 @section('scripts')
@@ -227,7 +223,4 @@
         window.state = 'home';
     </script>
     <script src="/js/app/home.ctrl.js?_={{ $GLOBALS['_VER_'] }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.16/dist/umd/quasar.mat.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@0.17.16/dist/umd/i18n.zh-hans.umd.min.js"></script>
 @endsection
