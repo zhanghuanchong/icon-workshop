@@ -154,7 +154,7 @@
                   return false;
                 }
 
-                if (file.size > 2097152 /* 1024 * 1024 * 2 */) {
+                if (file.size > 10485760 /* 1024 * 1024 * 10 */) {
                   swal({
                     title : '请压缩文件至 2M 以下后重试.',
                     type : 'error',

@@ -15,6 +15,7 @@ use File;
 use Image;
 use ImagickDraw;
 use ImagickPixel;
+use Intervention\Image\Constraint;
 
 /**
  * App\Design
@@ -371,5 +372,29 @@ class Design extends Model {
         $file = mb_ereg_replace('([^\w\s\d\-_~,;\[\]\(\).])', '', $this->android_name);
         // Remove any runs of periods (thanks falstro!)
         return mb_ereg_replace('([\.]{2,})', '', $file);
+    }
+
+    public function prepare()
+    {
+        $root = public_path('files') . '/' . $this->folder . '/' . $this->id . '/';
+        $path = $root . 'origin.' . $this->ext;
+        $img = Image::make($path);
+        $width = $img->getWidth();
+        $height = $img->getHeight();
+        if ($width <= 1024 && $height <= 1024 && strtolower($this->ext) !== 'psd') {
+            return;
+        }
+        $img->heighten(1024);
+        if ($img->getWidth() > 1024) {
+            $img->widen(1024);
+        }
+
+        if ($this->ext === 'psd') {
+            $this->ext = 'png';
+            $this->mime_type = 'image/png';
+            $this->save();
+            $path = $root . 'origin.' . $this->ext;
+        }
+        $img->save($path);
     }
 }

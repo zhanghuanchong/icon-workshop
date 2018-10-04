@@ -61,5 +61,5 @@
     <script>
         window.designId = '{{ $id }}';
     </script>
-    <script src="/js/app/icon.ctrl.js?v=1"></script>
+    <script src="/js/app/icon.ctrl.js?_={{ $GLOBALS['_VER_'] }}"></script>
 @endsection
