@@ -59,6 +59,17 @@ class Icon extends BaseIcon
                 'idiom' => 'iphone',
             ],
             [
+                'size' => 57,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ],
+            [
+                'size' => 57,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ],
+            [
                 'size' => 60,
                 'scale' => 2,
                 'folder' => 'AppIcon.appiconset',
@@ -103,6 +114,28 @@ class Icon extends BaseIcon
             ],
             [
                 'size' => 40,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ],
+            [
+                'size' => 50,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ],
+            [
+                'size' => 50,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ],
+            [
+                'size' => 72,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ],
+            [
+                'size' => 72,
                 'scale' => 2,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'ipad',
