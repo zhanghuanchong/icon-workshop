@@ -86,6 +86,13 @@ class Icon extends BaseIcon
                 'bg' => true
             ],
             [
+                'size' => 29,
+                'scale' => 3,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-small@3x',
+                'bg' => true
+            ],
+            [
                 'size' => 40,
                 'scale' => 1,
                 'folder' => 'platforms/ios/Resources/icons',
@@ -129,13 +136,6 @@ class Icon extends BaseIcon
             ],
             [
                 'size' => 60,
-                'scale' => 1,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-60',
-                'bg' => true
-            ],
-            [
-                'size' => 60,
                 'scale' => 2,
                 'folder' => 'platforms/ios/Resources/icons',
                 'name' => 'icon-60@2x',
@@ -174,6 +174,13 @@ class Icon extends BaseIcon
                 'scale' => 2,
                 'folder' => 'platforms/ios/Resources/icons',
                 'name' => 'icon-76@2x',
+                'bg' => true
+            ],
+            [
+                'size' => 83.5,
+                'scale' => 2,
+                'folder' => 'platforms/ios/Resources/icons',
+                'name' => 'icon-83.5@2x',
                 'bg' => true
             ],
             // Android
