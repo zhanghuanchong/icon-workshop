@@ -5,6 +5,14 @@
             <div class="col-sm-9">
                 <h1>更新日志</h1>
                 <dl>
+                    <dt>2018-10-30</dt>
+                    <dd>
+                        <ul>
+                            <li>更新：Phonegap / Cordova 平台生成的 iOS 图标使用标准尺寸。</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
                     <dt>2018-10-28</dt>
                     <dd>
                         <ul>
