@@ -42,6 +42,7 @@
                                 <option value="webapp">Web App</option>
                                 <option value="iwatch">iWatch</option>
                                 <option value="windowsphone">Windows Phone</option>
+                                <option value="quasar">Quasar</option>
                                 {{--<option value="win_ico">Windows ico</option>--}}
                                 {{--<option value="mac_icns">Mac icns</option>--}}
                             </select>

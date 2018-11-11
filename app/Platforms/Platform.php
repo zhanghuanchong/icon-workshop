@@ -19,6 +19,7 @@ class Platform
     const WINDOWS_PHONE = 'windowsphone';
     const WIN_ICO = 'win_ico';
     const MAC_ICNS = 'mac_icns';
+    const QUASAR = 'quasar';
 
     const NAMES = [
         'ios' => 'iOS',
@@ -29,5 +30,6 @@ class Platform
         'windowsphone' => 'WindowsPhone',
         'win_ico' => 'Windows',
         'mac_icns' => 'macOS',
+        'quasar' => 'Quasar',
     ];
 }
