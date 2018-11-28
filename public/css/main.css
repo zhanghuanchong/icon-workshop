@@ -332,7 +332,8 @@ span.string {
 #tp_watch .icons-row .icon-row,
 #tp_webapp .icons-row .icon-row,
 #tp_phonegap .icons-row .icon-row,
-#tp_windowsphone .icons-row .icon-row {
+#tp_windowsphone .icons-row .icon-row,
+#tp_quasar .icons-row .icon-row {
   vertical-align: middle;
   height: 56px;
   line-height: 56px;
@@ -341,21 +342,24 @@ span.string {
 #tp_watch .sub-icon > div,
 #tp_webapp .sub-icon > div,
 #tp_phonegap .sub-icon > div,
-#tp_windowsphone .sub-icon > div {
+#tp_windowsphone .sub-icon > div,
+#tp_quasar .sub-icon > div {
   padding: 0;
 }
 #tp_ios img,
 #tp_watch img,
 #tp_webapp img,
 #tp_phonegap img,
-#tp_windowsphone img {
+#tp_windowsphone img,
+#tp_quasar img {
   background-clip: padding-box;
 }
 #tp_ios img.x1,
 #tp_watch img.x1,
 #tp_webapp img.x1,
 #tp_phonegap img.x1,
-#tp_windowsphone img.x1 {
+#tp_windowsphone img.x1,
+#tp_quasar img.x1 {
   width: 29px;
   height: 29px;
   border-radius: 6px;
@@ -364,7 +368,8 @@ span.string {
 #tp_watch img.x2,
 #tp_webapp img.x2,
 #tp_phonegap img.x2,
-#tp_windowsphone img.x2 {
+#tp_windowsphone img.x2,
+#tp_quasar img.x2 {
   width: 40px;
   height: 40px;
   border-radius: 9px;
@@ -373,7 +378,8 @@ span.string {
 #tp_watch img.x3,
 #tp_webapp img.x3,
 #tp_phonegap img.x3,
-#tp_windowsphone img.x3 {
+#tp_windowsphone img.x3,
+#tp_quasar img.x3 {
   width: 56px;
   height: 56px;
   border-radius: 12px;
@@ -382,7 +388,8 @@ span.string {
 #tp_watch img.x4,
 #tp_webapp img.x4,
 #tp_phonegap img.x4,
-#tp_windowsphone img.x4 {
+#tp_windowsphone img.x4,
+#tp_quasar img.x4 {
   width: 61px;
   height: 61px;
   border-radius: 13px;
@@ -391,7 +398,8 @@ span.string {
 #tp_watch img.x5,
 #tp_webapp img.x5,
 #tp_phonegap img.x5,
-#tp_windowsphone img.x5 {
+#tp_windowsphone img.x5,
+#tp_quasar img.x5 {
   width: 80px;
   height: 80px;
   border-radius: 17px;

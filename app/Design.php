@@ -136,7 +136,7 @@ class Design extends Model {
 
         // 自动圆角
         $imgRound = null;
-        if (array_intersect($formats, ['android', 'webapp']) && $this->radius) {
+        if (array_intersect($formats, ['android', 'webapp', 'quasar']) && $this->radius) {
             $imagickDraw = new ImagickDraw();
             $round = $this->radius / 100 * 1024;
             $imagickDraw->setFillColor(new ImagickPixel('white'));

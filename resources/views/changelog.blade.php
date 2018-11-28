@@ -5,6 +5,14 @@
             <div class="col-sm-9">
                 <h1>更新日志</h1>
                 <dl>
+                    <dt>2018-11-28</dt>
+                    <dd>
+                        <ul>
+                            <li>更新：添加 Quasar 平台支持（仅生成默认 PWA 图标）。</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
                     <dt>2018-10-30</dt>
                     <dd>
                         <ul>

@@ -26,6 +26,10 @@
                 name: 'PhoneGap (Cordova)',
                 folder: 'phonegap'
             },
+            quasar: {
+                name: 'Quasar',
+                folder: 'quasar'
+            },
             custom: {
                 name: '自定义',
                 folder: 'custom'
