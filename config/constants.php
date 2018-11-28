@@ -8,9 +8,6 @@ return array(
     'platforms' => [
         'ios' => 'iOS',
         'android' => 'Android',
-        'webapp' => 'Web App',
-        'phonegap' => 'PhoneGap (Cordova)',
-        'iwatch' => 'iWatch',
     ],
 
 );
