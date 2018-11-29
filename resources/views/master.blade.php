@@ -68,6 +68,7 @@
                         ?>
                     </ul>
                 </li>
+                <li ng-class="stateCls('faq')"><a href="/faq">常见问题</a></li>
                 <li ng-class="stateCls('changelog')">
                     <a href="/changelog">
                         更新日志
