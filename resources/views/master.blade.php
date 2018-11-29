@@ -77,6 +77,9 @@
                         <?php } ?>
                     </a>
                 </li>
+                <li ng-class="stateCls('splash')">
+                    <a href="/splash">启动图<span class="red-dot"></span></a>
+                </li>
                 <li><a href="http://blog.wuruihong.com" target="_blank">博客</a></li>
                 <li ng-class="stateCls('about')"><a href="/about">关于我们</a></li>
             </ul>
