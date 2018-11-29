@@ -55,6 +55,11 @@ class HomeController extends BaseController {
 		return View::make('about');
 	}
 
+    public function faq()
+    {
+        return View::make('faq');
+    }
+
 	public function guide($platform)
 	{
 		$platforms = Config::get('constants.platforms');

@@ -48,6 +48,7 @@
                                 <option value="webapp">Web App</option>
                                 <option value="iwatch">iWatch</option>
                                 <option value="windowsphone">Windows Phone</option>
+                                <option value="quasar">Quasar</option>
                                 {{--<option value="win_ico">Windows ico</option>--}}
                                 {{--<option value="mac_icns">Mac icns</option>--}}
                             </select>
@@ -113,7 +114,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" ng-show="(hasAndroid || hasWebApp) && showOptional">
+                    <div class="form-group" ng-show="(hasAndroid || hasWebApp || hasQuasar) && showOptional">
                         <label class="control-label col-md-3 no-margin">自动圆角:</label>
                         <div class="col-md-9">
                             <div class="row" style="min-height: 45px">
@@ -139,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="row" style="color: silver">
-                                <div class="col-md-12">适用于Android 及 Web App。</div>
+                                <div class="col-md-12">适用于Android、Quasar 及 Web App。</div>
                             </div>
                         </div>
                     </div>

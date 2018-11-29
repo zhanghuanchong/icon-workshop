@@ -8,6 +8,7 @@
 namespace App;
 
 use App\Platforms\BaseIcon;
+use App\Platforms\Platform;
 use Chumper\Zipper\Facades\Zipper;
 use Illuminate\Database\Eloquent\Model;
 use Imagick;
@@ -135,7 +136,7 @@ class Design extends Model {
 
         // 自动圆角
         $imgRound = null;
-        if (array_intersect($formats, ['android', 'webapp']) && $this->radius) {
+        if (array_intersect($formats, ['android', 'webapp', 'quasar']) && $this->radius) {
             $imagickDraw = new ImagickDraw();
             $round = $this->radius / 100 * 1024;
             $imagickDraw->setFillColor(new ImagickPixel('white'));
@@ -254,7 +255,7 @@ class Design extends Model {
                 }
                 file_put_contents($format_root . 'readme.txt', implode("\r\n", $s));
             }
-            if (in_array($format, $appleFormats)) {
+            if (in_array($format, $appleFormats) || $format === Platform::PHONEGAP) {
                 $json_string = json_encode($json, JSON_PRETTY_PRINT);
                 file_put_contents($json_folder . 'Contents.json', $json_string);
             }

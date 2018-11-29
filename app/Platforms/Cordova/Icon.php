@@ -72,109 +72,149 @@ class Icon extends BaseIcon
             ],
             // iOS
             [
+                'size' => 20,
+                'scale' => 2,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ],
+            [
+                'size' => 20,
+                'scale' => 3,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ],
+            [
                 'size' => 29,
-                'scale' => 1,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-small',
-                'bg' => true
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
             ],
             [
                 'size' => 29,
                 'scale' => 2,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-small@2x',
-                'bg' => true
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ],
+            [
+                'size' => 29,
+                'scale' => 3,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
             ],
             [
                 'size' => 40,
-                'scale' => 1,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-40',
-                'bg' => true
+                'scale' => 2,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
             ],
             [
                 'size' => 40,
-                'scale' => 2,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-40@2x',
-                'bg' => true
-            ],
-            [
-                'size' => 50,
-                'scale' => 1,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-50',
-                'bg' => true
-            ],
-            [
-                'size' => 50,
-                'scale' => 2,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-50@2x',
-                'bg' => true
+                'scale' => 3,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
             ],
             [
                 'size' => 57,
-                'scale' => 1,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon',
-                'bg' => true
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
             ],
             [
                 'size' => 57,
                 'scale' => 2,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon@2x',
-                'bg' => true
-            ],
-            [
-                'size' => 60,
-                'scale' => 1,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-60',
-                'bg' => true
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
             ],
             [
                 'size' => 60,
                 'scale' => 2,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-60@2x',
-                'bg' => true
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
             ],
             [
                 'size' => 60,
                 'scale' => 3,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-60@3x',
-                'bg' => true
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'iphone',
+            ],
+            [
+                'size' => 20,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
+                'name' => 'icon-20-ipad',
+            ],
+            [
+                'size' => 20,
+                'scale' => 2,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
+                'name' => 'icon-20@2x-ipad',
+            ],
+            [
+                'size' => 29,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
+                'name' => 'icon-29-ipad',
+            ],
+            [
+                'size' => 29,
+                'scale' => 2,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
+                'name' => 'icon-29@2x-ipad',
+            ],
+            [
+                'size' => 40,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ],
+            [
+                'size' => 40,
+                'scale' => 2,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ],
+            [
+                'size' => 50,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ],
+            [
+                'size' => 50,
+                'scale' => 2,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
             ],
             [
                 'size' => 72,
-                'scale' => 1,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-72',
-                'bg' => true
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
             ],
             [
                 'size' => 72,
                 'scale' => 2,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-72@2x',
-                'bg' => true
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
             ],
             [
                 'size' => 76,
-                'scale' => 1,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-76',
-                'bg' => true
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
             ],
             [
                 'size' => 76,
                 'scale' => 2,
-                'folder' => 'platforms/ios/Resources/icons',
-                'name' => 'icon-76@2x',
-                'bg' => true
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ],
+            [
+                'size' => 83.5,
+                'scale' => 2,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ipad',
+            ],
+            [
+                'size' => 1024,
+                'folder' => 'platforms/ios/YouApp/Images.xcassets/AppIcon.appiconset',
+                'idiom' => 'ios-marketing',
             ],
             // Android
             [
