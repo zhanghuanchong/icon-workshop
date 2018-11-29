@@ -1,11 +1,15 @@
 
 const routes = [
   {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    path: '/splash',
+    component: () => import('layouts/SplashLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '', component: () => import('pages/Splash/Index.vue') }
     ]
+  },
+  {
+    path: '/',
+    redirect: '/splash'
   }
 ]
 
