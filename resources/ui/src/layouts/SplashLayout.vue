@@ -1,22 +1,8 @@
 <template>
   <q-layout view="lHr LpR lff">
-    <q-layout-header>
-      <q-toolbar color="white"></q-toolbar>
-    </q-layout-header>
-
-    <q-layout-drawer
-      behavior="desktop"
-      :width="80"
-      v-model="leftDrawer"
-    >
-    </q-layout-drawer>
-
-    <q-layout-drawer
-      side="right"
-      behavior="desktop"
-      v-model="rightDrawer"
-    >
-    </q-layout-drawer>
+    <Header></Header>
+    <LeftDrawer></LeftDrawer>
+    <RightDrawer></RightDrawer>
 
     <q-page-container>
       <router-view />
@@ -25,8 +11,17 @@
 </template>
 
 <script>
+import Header from './SplashLayout/Header'
+import LeftDrawer from './SplashLayout/LeftDrawer'
+import RightDrawer from './SplashLayout/RightDrawer'
+
 export default {
   name: 'MainLayout',
+  components: {
+    Header,
+    LeftDrawer,
+    RightDrawer
+  },
   data () {
     return {
       leftDrawer: true,
