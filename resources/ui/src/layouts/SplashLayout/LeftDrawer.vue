@@ -4,6 +4,13 @@
     :width="160"
     v-model="visible"
   >
+    <q-tabs align="justify">
+      <q-tab slot="title" name="preview" icon="mdi-tablet-cellphone" label="预览" default />
+
+      <q-tab-pane name="preview">
+
+      </q-tab-pane>
+    </q-tabs>
   </q-layout-drawer>
 </template>
 

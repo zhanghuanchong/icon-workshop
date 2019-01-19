@@ -1,6 +1,7 @@
 <template>
   <q-layout-drawer
     side="right"
+    :width="240"
     behavior="desktop"
     v-model="visible"
   >

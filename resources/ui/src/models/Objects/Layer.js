@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import BaseObject from '../BaseObject'
+import BaseObject from './BaseObject'
 
 /**
  * @extends BaseObject

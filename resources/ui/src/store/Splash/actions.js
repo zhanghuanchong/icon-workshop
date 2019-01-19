@@ -1,4 +1,8 @@
-/*
-export function someAction (context) {
+import Scene from '../../models/Scene'
+
+export function init (context) {
+  const scene = new Scene()
+  context.commit('update', {
+    scene
+  })
 }
-*/

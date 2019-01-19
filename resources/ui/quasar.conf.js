@@ -42,24 +42,27 @@ module.exports = function (ctx) {
     // framework: 'all' --- includes everything; for dev only!
     framework: {
       components: [
-        'QLayout',
-        'QLayoutHeader',
-        'QLayoutDrawer',
-        'QPageContainer',
-        'QPage',
-        'QToolbar',
-        'QToolbarTitle',
         'QBtn',
+        'QChipsInput',
+        'QField',
         'QIcon',
-        'QList',
-        'QListHeader',
         'QItem',
         'QItemMain',
         'QItemSide',
-        'QTabs',
+        'QLayout',
+        'QLayoutHeader',
+        'QLayoutDrawer',
+        'QList',
+        'QListHeader',
+        'QPage',
+        'QPageContainer',
+        'QRouteTab',
+        'QSelect',
         'QTab',
         'QTabPane',
-        'QRouteTab'
+        'QTabs',
+        'QToolbar',
+        'QToolbarTitle',
       ],
       directives: [
         'Ripple'

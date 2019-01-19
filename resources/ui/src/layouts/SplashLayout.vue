@@ -28,7 +28,8 @@ export default {
       rightDrawer: true
     }
   },
-  methods: {
+  mounted () {
+    this.$store.dispatch('Splash/init')
   }
 }
 </script>
