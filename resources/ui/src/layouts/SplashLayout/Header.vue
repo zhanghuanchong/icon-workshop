@@ -46,14 +46,12 @@
 </template>
 
 <script>
+import { bindStateChild } from '../../common'
+
 export default {
   name: 'SplashLayoutHeader',
-  data () {
-    return {
-      backgroundColor: '#ffffff',
-      platforms: ['ios', 'android'],
-      orientations: ['portrait', 'landscape']
-    }
+  computed: {
+    ...bindStateChild('Splash', 'scene')
   }
 }
 </script>

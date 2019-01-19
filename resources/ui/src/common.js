@@ -1,9 +1,8 @@
-import { Dialog, Platform } from 'quasar'
+import { Dialog } from 'quasar'
 import axios from 'axios'
 import to from 'await-to-js'
 import qs from 'qs'
 import store from './store'
-import router from './router'
 import _ from 'lodash'
 
 async function request (url, method = 'get', data = {}, silent = false, responseType = 'json') {
@@ -32,7 +31,7 @@ async function request (url, method = 'get', data = {}, silent = false, response
     responseType,
     headers: {
       'X-Requested-With': 'XMLHttpRequest',
-      'Content-type': contentType,
+      'Content-type': contentType
     },
     params: params
   }))
