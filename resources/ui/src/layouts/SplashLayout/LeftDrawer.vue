@@ -21,6 +21,11 @@ export default {
     return {
       visible: true
     }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      this.visible = true
+    })
   }
 }
 </script>

@@ -1,5 +1,7 @@
 <template>
-  <div class="splash-device-box" :style="deviceBoxStyle"></div>
+  <div class="splash-device-box"
+       v-if="scene"
+       :style="deviceBoxStyle"></div>
 </template>
 
 <script>

@@ -43,6 +43,7 @@ module.exports = function (ctx) {
     framework: {
       components: [
         'QBtn',
+        'QCheckbox',
         'QChipsInput',
         'QField',
         'QIcon',
@@ -63,6 +64,7 @@ module.exports = function (ctx) {
         'QTabs',
         'QToolbar',
         'QToolbarTitle',
+        'QTooltip'
       ],
       directives: [
         'Ripple'

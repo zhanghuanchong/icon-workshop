@@ -1,15 +1,34 @@
 <template>
-  <q-layout-header>
-    <q-toolbar color="white">
-      <q-field label="平台" label-width="4">
-        <q-select v-model="platforms"
-                  class="w-110"
-                  multiple
-                  :options="allPlatforms"
-                  placeholder="至少选一个"></q-select>
+  <q-layout-header class="splash-layout-header">
+    <q-toolbar color="white" text-color="dark">
+      <q-field label="平台：">
+        <q-checkbox v-model="platforms"
+                    checked-icon="mdi-apple"
+                    unchecked-icon="mdi-apple mdi-inactive"
+                    label="iOS"
+                    val="ios"></q-checkbox>
+        <q-checkbox v-model="platforms"
+                    checked-icon="mdi-android"
+                    unchecked-icon="mdi-android mdi-inactive"
+                    label="Android"
+                    val="android"
+                    class="ml-10"></q-checkbox>
       </q-field>
 
-      <q-field label="方向" label-width="4">
+      <q-field label="方向：" class="ml-15">
+        <q-checkbox v-model="orientations"
+                    checked-icon="mdi-cellphone-iphone"
+                    unchecked-icon="mdi-cellphone-iphone mdi-inactive"
+                    val="portrait">
+          <q-tooltip>竖屏</q-tooltip>
+        </q-checkbox>
+        <q-checkbox v-model="orientations"
+                    checked-icon="mdi-cellphone-iphone mdi-rotate-90"
+                    unchecked-icon="mdi-cellphone-iphone mdi-inactive mdi-rotate-90"
+                    val="landscape"
+                    class="ml-10">
+          <q-tooltip>横屏</q-tooltip>
+        </q-checkbox>
       </q-field>
 
       <q-btn color="primary"
@@ -28,20 +47,25 @@ export default {
   data () {
     return {
       platforms: ['ios', 'android'],
-      allPlatforms: [
-        {
-          label: 'iOS',
-          value: 'ios'
-        }, {
-          label: 'Android',
-          value: 'android'
-        }
-      ]
+      orientations: ['portrait', 'landscape']
     }
   }
 }
 </script>
 
 <style lang="scss">
+.splash-layout-header {
+  .q-field-label {
+    width: auto;
+    padding-right: 0;
+  }
 
+  .q-field-content {
+    width: auto;
+  }
+
+  .q-option-label {
+    margin-left: 4px;
+  }
+}
 </style>
