@@ -1,7 +1,7 @@
 <template>
   <q-layout-drawer
     behavior="desktop"
-    :width="80"
+    :width="160"
     v-model="visible"
   >
   </q-layout-drawer>
