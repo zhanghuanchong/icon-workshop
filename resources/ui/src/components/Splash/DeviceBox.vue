@@ -23,7 +23,7 @@ export default {
 <style lang="scss">
   .splash-device-box {
     width: 320px;
-    height: 480px;
+    height: 568px;
     background: black;
     box-shadow: 0 0 20px silver;
   }

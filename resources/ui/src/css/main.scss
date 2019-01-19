@@ -2,3 +2,16 @@
   color: silver;
 }
 
+.q-tab.horizontal {
+  flex-direction: row;
+  min-height: 52px;
+
+  .q-tab-label-parent {
+    margin-top: 0;
+    margin-left: 6px;
+  }
+}
+
+.on-left {
+  margin-right: 8px;
+}

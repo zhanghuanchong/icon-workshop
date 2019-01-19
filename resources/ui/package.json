@@ -13,7 +13,9 @@
     "build": "quasar build -t mat -m spa"
   },
   "dependencies": {
+    "await-to-js": "^2.1.1",
     "axios": "^0.18.0",
+    "qs": "^6.6.0",
     "uuid": "^3.3.2",
     "vue-i18n": "^7.3.3"
   },

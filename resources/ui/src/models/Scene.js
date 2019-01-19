@@ -4,7 +4,8 @@ import Base from './Base'
 /**
  * @extends Base
  * @property {string} backgroundColor '#ffffff'
- * @property {array} objects Object
+ * @property {array} platforms ['ios', 'android']
+ * @property {array} orientations ['portrait', 'landscape']
  */
 export default class Scene extends Base {
   /**
@@ -16,6 +17,8 @@ export default class Scene extends Base {
     _.assignIn(this, {
       proto: 'Scene',
       backgroundColor: '#ffffff',
+      platforms: ['ios', 'android'],
+      orientations: ['portrait', 'landscape'],
       hidden: false,
       objects: []
     }, options)

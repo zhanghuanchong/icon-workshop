@@ -1,7 +1,11 @@
 <template>
   <q-layout-header class="splash-layout-header">
     <q-toolbar color="white" text-color="dark">
-      <q-field label="平台：">
+      <q-field label="背景：">
+        <q-color v-model="backgroundColor"></q-color>
+      </q-field>
+
+      <q-field label="平台：" class="ml-15">
         <q-checkbox v-model="platforms"
                     checked-icon="mdi-apple"
                     unchecked-icon="mdi-apple mdi-inactive"
@@ -31,7 +35,7 @@
         </q-checkbox>
       </q-field>
 
-      <q-btn color="primary"
+      <q-btn color="positive"
              push
              class="ml-auto"
              icon="mdi-auto-fix"
@@ -46,6 +50,7 @@ export default {
   name: 'SplashLayoutHeader',
   data () {
     return {
+      backgroundColor: '#ffffff',
       platforms: ['ios', 'android'],
       orientations: ['portrait', 'landscape']
     }
