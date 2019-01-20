@@ -5,7 +5,7 @@
     behavior="desktop"
     v-model="visible"
   >
-    <q-tabs align="justify">
+    <q-tabs align="justify" class="rd-0">
       <q-tab default slot="title"
              class="horizontal"
              name="layers"

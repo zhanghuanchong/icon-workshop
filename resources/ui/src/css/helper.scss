@@ -43,12 +43,12 @@
 }
 
 // Border
-.rd-4 {
-  border-radius: 4px;
-}
+$radius: 0, 3, 5, 10;
 
-.b-radius-15 {
-  border-radius: 15px;
+@each $r in $radius {
+  .rd-#{$r} {
+    border-radius: $r * 1px;
+  }
 }
 
 .br-1 {

@@ -4,7 +4,7 @@
     :width="160"
     v-model="visible"
   >
-    <q-tabs align="justify">
+    <q-tabs align="justify" class="rd-0">
       <q-tab slot="title" name="preview"
              class="horizontal"
              icon="mdi-tablet-cellphone"
