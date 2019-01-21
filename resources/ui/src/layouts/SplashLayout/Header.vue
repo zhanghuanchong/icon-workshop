@@ -58,6 +58,11 @@ export default {
 
 <style lang="scss">
 .splash-layout-header {
+
+  .q-toolbar {
+    flex-wrap: wrap;
+  }
+
   .q-field-label {
     width: auto;
     padding-right: 0;

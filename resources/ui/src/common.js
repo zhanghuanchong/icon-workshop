@@ -5,7 +5,7 @@ import qs from 'qs'
 import store from './store'
 import _ from 'lodash'
 
-async function request (url, method = 'get', data = {}, silent = false, responseType = 'json') {
+async function request (url, method = 'get', data = {}, other = {}, silent = false, responseType = 'json') {
   let params = null
   let contentType = 'application/json'
 
@@ -24,7 +24,8 @@ async function request (url, method = 'get', data = {}, silent = false, response
   let server = window.location.origin
   url = `${server}${url}`
   console.log(`%c${url}`, 'font-weight: bold')
-  let [err, resp] = await to(axios.request({
+
+  const config = _.assignIn({
     url,
     method,
     data,
@@ -34,7 +35,9 @@ async function request (url, method = 'get', data = {}, silent = false, response
       'Content-type': contentType
     },
     params: params
-  }))
+  }, other)
+
+  let [err, resp] = await to(axios.request(config))
   if (err || !resp || !resp.data) {
     if (err && err.response) {
       err = err.response.data

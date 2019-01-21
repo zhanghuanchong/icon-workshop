@@ -7,6 +7,8 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <UploadDialog></UploadDialog>
   </q-layout>
 </template>
 
@@ -14,13 +16,15 @@
 import Header from './SplashLayout/Header'
 import LeftDrawer from './SplashLayout/LeftDrawer'
 import RightDrawer from './SplashLayout/RightDrawer'
+import UploadDialog from '../components/UploadDialog'
 
 export default {
   name: 'MainLayout',
   components: {
     Header,
     LeftDrawer,
-    RightDrawer
+    RightDrawer,
+    UploadDialog
   },
   data () {
     return {

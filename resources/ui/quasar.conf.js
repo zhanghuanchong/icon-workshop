@@ -1,5 +1,10 @@
 // Configuration for your app
 
+const proxy = {
+  target: 'http://icon.hans',
+  changeOrigin: true
+}
+
 module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
@@ -37,7 +42,11 @@ module.exports = function (ctx) {
     devServer: {
       // https: true,
       port: 8060,
-      open: true // opens browser window automatically
+      open: true, // opens browser window automatically
+      proxy: {
+        // proxy all requests starting with /api
+        '/api': proxy,
+      }
     },
     // framework: 'all' --- includes everything; for dev only!
     framework: {
@@ -46,6 +55,7 @@ module.exports = function (ctx) {
         'QCheckbox',
         'QChipsInput',
         'QColor',
+        'QDialog',
         'QField',
         'QIcon',
         'QItem',
@@ -58,6 +68,7 @@ module.exports = function (ctx) {
         'QListHeader',
         'QPage',
         'QPageContainer',
+        'QProgress',
         'QRouteTab',
         'QSelect',
         'QTab',
@@ -72,6 +83,7 @@ module.exports = function (ctx) {
       ],
       // Quasar plugins
       plugins: [
+        'Dialog',
         'Notify'
       ]
       // iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'

@@ -14,7 +14,10 @@
       <q-tab-pane name="layers" class="ph-8 pv-6">
         <div class="column">
           <q-btn color="secondary" icon="mdi-plus"
-                 label="图片"></q-btn>
+                 @click="chooseImage"
+                 label="图片">
+            <q-tooltip>支持 jpg/png/gif</q-tooltip>
+          </q-btn>
           <q-btn color="secondary" icon="mdi-plus"
                  class="mt-8"
                  label="文字"></q-btn>
@@ -25,11 +28,26 @@
 </template>
 
 <script>
+// import Image from '../../models/Objects/Image'
+
 export default {
   name: 'SplashLayoutRightDrawer',
   data () {
     return {
       visible: true
+    }
+  },
+  methods: {
+    chooseImage () {
+      this.$root.$emit('show-upload-dialog', {
+        type: 'image',
+        _cb: file => {
+          console.log(file)
+          // this.$store.commit('Scene/addObject', new Image({
+          //   url: file.url
+          // }))
+        }
+      })
     }
   },
   mounted () {

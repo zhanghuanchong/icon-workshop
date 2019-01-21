@@ -3,8 +3,9 @@ import BaseObject from './BaseObject'
 
 /**
  * @extends BaseObject
+ * @property {string} url - Image url
  */
-export default class Layer extends BaseObject {
+export default class Image extends BaseObject {
   /**
    * @param {object} options
    * @constructor
@@ -12,11 +13,12 @@ export default class Layer extends BaseObject {
   constructor (options = {}) {
     super(options)
     _.assignIn(this, {
-      proto: 'Layer'
+      proto: 'Image',
+      url: null
     }, options)
   }
 
   get description () {
-    return '图层'
+    return '图片'
   }
 }

@@ -33,3 +33,5 @@ Route::post('/admin/login', 'AdminController@postLogin');
 Route::get('/job/delete-expired-files', 'JobController@getDeleteExpiredFiles');
 Route::get('/vote', 'VoteController@getIndex');
 Route::post('/vote', 'VoteController@postIndex');
+
+Route::post('/api/file/upload', 'CommonController@uploadFile');
