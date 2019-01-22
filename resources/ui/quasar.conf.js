@@ -46,6 +46,7 @@ module.exports = function (ctx) {
       proxy: {
         // proxy all requests starting with /api
         '/api': proxy,
+        '/files': proxy,
       }
     },
     // framework: 'all' --- includes everything; for dev only!

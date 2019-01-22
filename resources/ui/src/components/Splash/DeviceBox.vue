@@ -1,7 +1,9 @@
 <template>
   <div class="splash-device-box"
        v-if="scene"
-       :style="deviceBoxStyle"></div>
+       :style="deviceBoxStyle">
+    <img :src="im.url" alt="" v-for="im in images" :key="im.id">
+  </div>
 </template>
 
 <script>
@@ -15,6 +17,16 @@ export default {
       return {
         background: this.scene.backgroundColor
       }
+    },
+    images () {
+      return this.scene.objects.filter(o => {
+        return o.proto === 'Image'
+      })
+    },
+    strings () {
+      return this.scene.objects.filter(o => {
+        return o.proto === 'String'
+      })
     }
   }
 }

@@ -9,5 +9,5 @@ export function updateChild (state, o) {
 }
 
 export function addObject (state, o) {
-  state.scene.addObject(o)
+  state.scene.objects.push(o)
 }

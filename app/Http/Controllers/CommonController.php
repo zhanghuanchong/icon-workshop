@@ -39,6 +39,6 @@ class CommonController extends BaseController
         $ext = $file->getClientOriginalExtension();
         $file->move($folder, $id . '.' . $ext);
 
-        return $this->json('/files/tmp/' . $id . '.' . $ext);
+        return $this->json('/files/temp/' . $id . '.' . $ext);
     }
 }
