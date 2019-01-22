@@ -31,9 +31,6 @@ export default {
       leftDrawer: true,
       rightDrawer: true
     }
-  },
-  mounted () {
-    this.$store.dispatch('Splash/init')
   }
 }
 </script>

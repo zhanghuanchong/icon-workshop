@@ -28,7 +28,7 @@
 </template>
 
 <script>
-// import Image from '../../models/Objects/Image'
+import Image from '../../models/Objects/Image'
 
 export default {
   name: 'SplashLayoutRightDrawer',
@@ -42,10 +42,9 @@ export default {
       this.$root.$emit('show-upload-dialog', {
         type: 'image',
         _cb: file => {
-          console.log(file)
-          // this.$store.commit('Scene/addObject', new Image({
-          //   url: file.url
-          // }))
+          this.$store.commit('Splash/addObject', new Image({
+            url: file
+          }))
         }
       })
     }

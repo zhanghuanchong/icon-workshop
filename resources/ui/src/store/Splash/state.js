@@ -1,7 +1,5 @@
-import Scene from '../../models/Scene'
-
 export default {
-  scene: new Scene(),
+  scene: null,
   orientation: 'portrait',
   device: 'iphonex'
 }

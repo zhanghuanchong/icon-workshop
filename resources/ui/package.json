@@ -18,7 +18,8 @@
     "moment": "^2.23.0",
     "qs": "^6.6.0",
     "uuid": "^3.3.2",
-    "vue-i18n": "^7.3.3"
+    "vue-i18n": "^7.3.3",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
