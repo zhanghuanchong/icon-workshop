@@ -1,6 +1,7 @@
 <template>
   <q-layout-drawer
     class="splash-layout-right-drawer"
+    :class="{selected: object}"
     side="right"
     :width="160"
     behavior="desktop"
@@ -14,7 +15,7 @@
 
       <q-tab-pane name="layers" class="p-0">
         <VuePerfectScrollbar v-once>
-          <div class="column">
+          <div class="column ph-8 pt-6">
             <q-btn color="secondary" icon="mdi-plus"
                    @click="chooseImage"
                    label="图片">
@@ -30,7 +31,7 @@
       </q-tab-pane>
     </q-tabs>
 
-    <ObjectSetting></ObjectSetting>
+    <ObjectSetting v-if="object"></ObjectSetting>
   </q-layout-drawer>
 </template>
 
@@ -50,6 +51,11 @@ export default {
   data () {
     return {
       visible: true
+    }
+  },
+  computed: {
+    object () {
+      return this.$store.state.Splash.object
     }
   },
   methods: {
@@ -81,9 +87,16 @@ export default {
 
   .tabs-layers {
     .ps-container {
-      padding: 6px 8px;
-      height: calc(100vh - 356px);
+      height: calc(100vh - 67px);
       overflow: auto;
+    }
+  }
+
+  &.selected {
+    .tabs-layers {
+      .ps-container {
+        height: calc(100vh - 367px);
+      }
     }
   }
 }

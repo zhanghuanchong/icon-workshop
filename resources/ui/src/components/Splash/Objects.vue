@@ -1,6 +1,8 @@
 <template>
-  <q-list no-border highlight separator striped class="objects-list">
-    <q-item v-for="o in objects" :key="o.id">
+  <q-list no-border highlight separator class="objects-list">
+    <q-item v-for="o in objects" :key="o.id"
+            :class="{selected: isSelected(o)}"
+            @click.native="toggle(o)">
       <q-item-side>
         <img :src="o.url" alt="">
       </q-item-side>
@@ -15,6 +17,26 @@ export default {
   computed: {
     objects () {
       return this.$store.state.Splash.scene.objects
+    },
+    current: {
+      get () {
+        return this.$store.state.Splash.object
+      },
+      set (object) {
+        this.$store.commit('Splash/setCurrentObject', object)
+      }
+    }
+  },
+  methods: {
+    isSelected (object) {
+      return this.current && this.current.id === object.id
+    },
+    toggle (object) {
+      if (this.isSelected(object)) {
+        this.current = null
+      } else {
+        this.current = object
+      }
     }
   }
 }
@@ -26,8 +48,12 @@ export default {
     padding: 8px 0;
     cursor: pointer;
 
+    &.selected {
+      background: rgba(150, 150, 150, 0.4);
+    }
+
     .q-item-side {
-      width: 50px;
+      width: 64px;
       justify-content: center;
       align-items: center;
       display: flex;

@@ -6,14 +6,19 @@
            icon="mdi-cogs" label="属性" />
 
     <q-tab-pane name="setting" class="ph-8 pv-6">
-      请选择一个图层
+
     </q-tab-pane>
   </q-tabs>
 </template>
 
 <script>
 export default {
-  name: 'ObjectSetting'
+  name: 'ObjectSetting',
+  computed: {
+    object () {
+      return this.$store.state.Splash.object
+    }
+  }
 }
 </script>
 

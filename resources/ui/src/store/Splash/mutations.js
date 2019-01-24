@@ -10,4 +10,9 @@ export function updateChild (state, o) {
 
 export function addObject (state, o) {
   state.scene.objects.push(o)
+  state.object = o
+}
+
+export function setCurrentObject (state, o) {
+  state.object = o
 }
