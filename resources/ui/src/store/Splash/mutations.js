@@ -13,6 +13,13 @@ export function addObject (state, o) {
   state.object = o
 }
 
+export function updateObject (state, o) {
+  const old = _.find(state.scene.objects, {id: o.id})
+  if (old) {
+    _.assignIn(old, o)
+  }
+}
+
 export function setCurrentObject (state, o) {
   state.object = o
 }

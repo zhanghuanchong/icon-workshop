@@ -19,8 +19,8 @@ export default class BaseObject extends Base {
     super(options)
     _.assignIn(this, {
       proto: 'BaseObject',
-      left: 0,
-      top: 0,
+      left: 50,
+      top: 50,
       width: undefined,
       height: undefined,
       scale: 1,
