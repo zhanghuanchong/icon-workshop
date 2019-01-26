@@ -1,5 +1,6 @@
 <template>
-  <q-page class="flex flex-center splash-page-index">
+  <q-page class="flex flex-center splash-page-index"
+          @click.native="reset">
     <DeviceBox></DeviceBox>
   </q-page>
 </template>
@@ -11,6 +12,11 @@ export default {
   name: 'SplashPageIndex',
   components: {
     DeviceBox
+  },
+  methods: {
+    reset () {
+      this.$store.commit('Splash/setCurrentObject', null)
+    }
   }
 }
 </script>

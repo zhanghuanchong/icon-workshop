@@ -6,7 +6,7 @@
          class="object"
          :class="objectClass(im)"
          :style="objectStyle(im)"
-         @click="select(im)"
+         @click.stop="select(im)"
          v-for="im in images" :key="im.id">
   </div>
 </template>
