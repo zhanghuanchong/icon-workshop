@@ -53,6 +53,7 @@ module.exports = function (ctx) {
     framework: {
       components: [
         'QBtn',
+        'QBtnToggle',
         'QCheckbox',
         'QChipsInput',
         'QColor',

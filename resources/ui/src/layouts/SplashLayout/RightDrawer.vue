@@ -23,6 +23,7 @@
             </q-btn>
             <q-btn color="secondary" icon="mdi-plus"
                    class="mt-8"
+                   v-if="false"
                    label="文字"></q-btn>
           </div>
 
