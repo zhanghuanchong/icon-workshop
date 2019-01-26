@@ -15,11 +15,16 @@
 export default {
   name: 'DeviceBox',
   computed: {
+    splash () {
+      return this.$store.state.Splash
+    },
     scene () {
       return this.$store.state.Splash.scene
     },
     deviceBoxStyle () {
       return {
+        width: `${this.splash.width}px`,
+        height: `${this.splash.height}px`,
         background: this.scene.backgroundColor
       }
     },
@@ -64,9 +69,7 @@ export default {
   @import "../../css/variable";
 
   .splash-device-box {
-    width: 320px;
-    height: 568px;
-    background: black;
+    background: white;
     box-shadow: 0 0 20px silver;
     position: relative;
 

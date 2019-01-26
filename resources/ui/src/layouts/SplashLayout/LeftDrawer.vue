@@ -15,6 +15,21 @@
           <q-btn-toggle v-model="orientation"
                         :options="orientations"></q-btn-toggle>
         </q-field>
+        <q-field label="屏幕尺寸（px）" label-width="12" class="mt-15">
+          <div class="row mt-5">
+            <q-input type="number" v-model="width"
+                     class="col-5" align="center"
+                     min="320" max="5000"></q-input>
+            <span class="text-center col-2 pt-3">x</span>
+            <q-input type="number" v-model="height"
+                     class="col-5" align="center"
+                     min="320" max="5000"></q-input>
+          </div>
+        </q-field>
+        <q-field label="常用设备" label-width="12" class="mt-15">
+          <div class="row mt-5">
+          </div>
+        </q-field>
       </q-tab-pane>
     </q-tabs>
   </q-layout-drawer>
@@ -34,6 +49,8 @@ export default {
   },
   computed: {
     ...bindState('Splash', 'orientation'),
+    ...bindState('Splash', 'width'),
+    ...bindState('Splash', 'height'),
 
     targetOrientations () {
       return this.$store.state.Splash.scene.orientations
