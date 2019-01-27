@@ -11,11 +11,7 @@
              label="预览" default />
 
       <q-tab-pane name="preview">
-        <q-field label="设备方向" label-width="12" class="field-content-center">
-          <q-btn-toggle v-model="orientation"
-                        :options="orientations"></q-btn-toggle>
-        </q-field>
-        <q-field label="屏幕尺寸（px）" label-width="12" class="mt-15">
+        <q-field label="屏幕尺寸（px）" label-width="12">
           <div class="row mt-5">
             <q-input type="number" v-model="width"
                      class="col-5" align="center"
@@ -26,6 +22,13 @@
                      min="320" max="5000"></q-input>
           </div>
         </q-field>
+
+        <q-btn color="primary"
+               class="full-width mt-10"
+               label="切换横竖屏"
+               @click="swap"
+               icon="mdi-swap-horizontal"></q-btn>
+
         <q-field label="常用设备" label-width="12" class="mt-15">
           <div class="row mt-5">
           </div>
@@ -37,56 +40,23 @@
 
 <script>
 import { bindState } from '../../common'
-import _ from 'lodash'
 
 export default {
   name: 'SplashLayoutLeftDrawer',
   data () {
     return {
-      visible: true,
-      orientations: []
+      visible: true
     }
   },
   computed: {
-    ...bindState('Splash', 'orientation'),
     ...bindState('Splash', 'width'),
-    ...bindState('Splash', 'height'),
-
-    targetOrientations () {
-      return this.$store.state.Splash.scene.orientations
-    }
-  },
-  watch: {
-    targetOrientations: {
-      immediate: true,
-      handler () {
-        this.updateOrientations()
-      }
-    }
+    ...bindState('Splash', 'height')
   },
   methods: {
-    updateOrientations () {
-      const result = []
-      if (_.includes(this.targetOrientations, 'portrait')) {
-        result.push({
-          value: 'portrait',
-          icon: 'mdi-cellphone-iphone'
-        })
-      }
-      if (_.includes(this.targetOrientations, 'landscape')) {
-        result.push({
-          value: 'landscape',
-          icon: 'mdi-cellphone-iphone mdi-rotate-90'
-        })
-      }
-      if (!_.find(result, { value: this.orientation })) {
-        let reset = null
-        if (result.length) {
-          reset = result[0].value
-        }
-        this.orientation = reset
-      }
-      this.orientations = result
+    swap () {
+      const a = this.width
+      this.width = this.height
+      this.height = a
     }
   },
   mounted () {

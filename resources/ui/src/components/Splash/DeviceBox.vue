@@ -69,6 +69,7 @@ export default {
   @import "../../css/variable";
 
   .splash-device-box {
+    transition: all 0.3s;
     background: white;
     box-shadow: 0 0 20px silver;
     position: relative;
