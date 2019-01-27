@@ -1,5 +1,6 @@
 <template>
   <q-layout-drawer
+    class="splash-layout-left-drawer"
     behavior="desktop"
     :width="160"
     v-model="visible"
@@ -30,9 +31,15 @@
                icon="mdi-swap-horizontal"></q-btn>
 
         <q-field label="常用设备" label-width="12" class="mt-15">
-          <div class="row mt-5">
-            <Device></Device>
-          </div>
+          <q-list no-border highlight separator link class="devices">
+            <q-item v-for="d in devices" :key="d.name" @click.native="preview(d)">
+              <q-item-side :image="d.image"></q-item-side>
+              <q-item-main>
+                <q-item-tile label>{{ d.name }}</q-item-tile>
+                <q-item-tile sublabel>{{ d.width }} x {{ d.height }}</q-item-tile>
+              </q-item-main>
+            </q-item>
+          </q-list>
         </q-field>
       </q-tab-pane>
     </q-tabs>
@@ -41,16 +48,44 @@
 
 <script>
 import { bindState } from '../../common'
-import Device from '../../components/Device'
 
 export default {
   name: 'SplashLayoutLeftDrawer',
-  components: {
-    Device
-  },
   data () {
     return {
-      visible: true
+      visible: true,
+      devices: [
+        {
+          name: 'iPhone X/Xs/XR',
+          image: 'statics/devices/iPhoneX.png',
+          width: 375,
+          height: 812
+        },
+        {
+          name: 'iPhone 6/7/8 Plus',
+          image: 'statics/devices/iPhone8Plus.png',
+          width: 414,
+          height: 736
+        },
+        {
+          name: 'iPhone 6/7/8',
+          image: 'statics/devices/iPhone8.png',
+          width: 375,
+          height: 667
+        },
+        {
+          name: 'iPhone 5s/SE',
+          image: 'statics/devices/iPhoneSE.png',
+          width: 320,
+          height: 568
+        },
+        {
+          name: 'iPad',
+          image: 'statics/devices/iPad.png',
+          width: 768,
+          height: 1024
+        }
+      ]
     }
   },
   computed: {
@@ -62,6 +97,10 @@ export default {
       const a = this.width
       this.width = this.height
       this.height = a
+    },
+    preview (device) {
+      this.width = device.width
+      this.height = device.height
     }
   },
   mounted () {
@@ -73,5 +112,19 @@ export default {
 </script>
 
 <style lang="scss">
+.splash-layout-left-drawer {
+  .q-list.devices {
+    padding: 0;
+    margin-left: -12px;
+    margin-right: -12px;
 
+    .q-item {
+      padding: 8px;
+    }
+    .q-item-image {
+      width: 40px;
+      min-width: 40px;
+    }
+  }
+}
 </style>
