@@ -31,6 +31,7 @@
 
         <q-field label="常用设备" label-width="12" class="mt-15">
           <div class="row mt-5">
+            <Device></Device>
           </div>
         </q-field>
       </q-tab-pane>
@@ -40,9 +41,13 @@
 
 <script>
 import { bindState } from '../../common'
+import Device from '../../components/Device'
 
 export default {
   name: 'SplashLayoutLeftDrawer',
+  components: {
+    Device
+  },
   data () {
     return {
       visible: true

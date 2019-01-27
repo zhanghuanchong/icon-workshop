@@ -11,6 +11,8 @@ export default {
 </script>
 
 <style lang="scss">
+  @import "~marvel-devices.css";
+
   @import "./css/helper";
   @import "./css/main";
 </style>
