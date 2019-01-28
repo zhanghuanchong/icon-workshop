@@ -72,7 +72,7 @@ export default {
     transition: all 0.3s;
     background: white;
     box-shadow: 0 0 20px silver;
-    position: relative;
+    position: absolute;
 
     .object {
       position: absolute;

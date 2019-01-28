@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center splash-page-index"
           @click.native="reset">
-    <VuePerfectScrollbar v-once>
+    <VuePerfectScrollbar>
       <div class="center-container">
         <DeviceBox></DeviceBox>
       </div>

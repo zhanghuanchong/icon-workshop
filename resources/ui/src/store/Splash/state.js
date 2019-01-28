@@ -4,5 +4,6 @@ export default {
   orientation: 'portrait',
   device: 'iphone6',
   width: 375,
-  height: 667
+  height: 667,
+  scale: 1
 }

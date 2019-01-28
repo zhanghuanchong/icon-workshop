@@ -1,6 +1,6 @@
 <template>
   <q-layout-header class="splash-layout-header">
-    <VuePerfectScrollbar v-once>
+    <VuePerfectScrollbar>
       <q-toolbar color="white" text-color="dark">
         <q-field label="背景：">
           <q-color v-model="backgroundColor"></q-color>

@@ -12,8 +12,15 @@
              label="预览" default />
 
       <q-tab-pane name="preview" class="p-0">
-        <VuePerfectScrollbar v-once>
-          <q-field label="屏幕尺寸（px）" label-width="12">
+        <VuePerfectScrollbar>
+          <q-field label="缩放视图" label-width="12">
+            <span class="right-label">{{ scale }}倍</span>
+            <q-slider v-model="scale"
+                      :min="0" :max="3"
+                      :step="0.01"></q-slider>
+          </q-field>
+
+          <q-field label="屏幕尺寸（px）" class="mt-10" label-width="12">
             <div class="row mt-5">
               <q-input type="number" v-model="width"
                        class="col-5" align="center"
@@ -95,6 +102,7 @@ export default {
     }
   },
   computed: {
+    ...bindState('Splash', 'scale'),
     ...bindState('Splash', 'width'),
     ...bindState('Splash', 'height')
   },
@@ -119,13 +127,26 @@ export default {
 
 <style lang="scss">
 .splash-layout-left-drawer {
+  .q-field {
+    position: relative;
+
+    .right-label {
+      position: absolute;
+      top: 0;
+      right: 0;
+      line-height: 28px;
+      font-weight: bold;
+      color: var(--q-color-primary);
+    }
+  }
+
   .q-list.devices {
     padding: 0;
     margin-left: -10px;
     margin-right: -10px;
 
     .q-item {
-      padding: 8px 10px;
+      padding: 8px 10px 5px;
     }
 
     .q-item-image {

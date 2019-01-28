@@ -14,7 +14,7 @@
              icon="mdi-layers" label="图层" />
 
       <q-tab-pane name="layers" class="p-0">
-        <VuePerfectScrollbar v-once>
+        <VuePerfectScrollbar>
           <div class="column ph-8 pt-6">
             <q-btn color="secondary" icon="mdi-plus"
                    @click="chooseImage"
