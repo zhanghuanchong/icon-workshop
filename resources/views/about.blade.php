@@ -22,7 +22,7 @@
                 </p>
                 <ul style="list-style:none">
                     <li><i class="fa fa-envelope-o"></i>
-                        <a href="mailto:admin@wuruihong.com" class="ml-10">admin@wuruihong.com</a></li>
+                        <a href="mailto:" class="ml-10 admin-email">ceo at wuruihong.com</a></li>
                     <li class="mt-10"><i class="fa fa-road"></i>
                         <a href="https://github.com/zhanghuanchong/icon-workshop/projects/1"
                            class="ml-10" target="_blank">开发路线</a></li>
@@ -50,3 +50,12 @@
         window.state = 'about';
     </script>
 @endsection
+
+@section('scripts')
+    <script>
+      $(function () {
+        var mail = 'ceo' + '@' + 'wuruihong.com';
+        $('.admin-email').attr('href', 'mailto:' + mail).text(mail);
+      });
+    </script>
+@stop
