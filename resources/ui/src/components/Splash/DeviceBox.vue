@@ -25,7 +25,8 @@ export default {
       return {
         width: `${this.splash.width}px`,
         height: `${this.splash.height}px`,
-        background: this.scene.backgroundColor
+        background: this.scene.backgroundColor,
+        transform: `scale(${this.splash.scale})`
       }
     },
     images () {

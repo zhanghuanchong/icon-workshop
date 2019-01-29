@@ -16,7 +16,7 @@
           <q-field label="缩放视图" label-width="12">
             <span class="right-label">{{ scale }}倍</span>
             <q-slider v-model="scale"
-                      :min="0" :max="3"
+                      :min="0.2" :max="3"
                       :step="0.01"></q-slider>
           </q-field>
 

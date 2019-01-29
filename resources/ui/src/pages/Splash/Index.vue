@@ -1,8 +1,8 @@
 <template>
   <q-page class="flex flex-center splash-page-index"
           @click.native="reset">
-    <VuePerfectScrollbar>
-      <div class="center-container">
+    <VuePerfectScrollbar ref="scrollbar">
+      <div class="center-container" :style="containerStyle">
         <DeviceBox></DeviceBox>
       </div>
     </VuePerfectScrollbar>
@@ -19,9 +19,39 @@ export default {
     DeviceBox,
     VuePerfectScrollbar
   },
+  computed: {
+    splash () {
+      return this.$store.state.Splash
+    },
+    containerStyle () {
+      const padding = 50
+      return {
+        minWidth: `${this.splash.width + padding * 2}px`,
+        minHeight: `${this.splash.height + padding * 2}px`
+      }
+    }
+  },
+  watch: {
+    'splash.width' () {
+      this.resetScrollbar()
+    },
+    'splash.height' () {
+      this.resetScrollbar()
+    }
+  },
   methods: {
     reset () {
       this.$store.commit('Splash/setCurrentObject', null)
+    },
+    resetScrollbar () {
+      this.$nextTick(() => {
+        const bar = this.$refs.scrollbar
+        if (bar && bar.$el) {
+          const $el = bar.$el
+          $el.scrollLeft = ($el.scrollWidth - $el.clientWidth) / 2
+          $el.scrollTop = ($el.scrollHeight - $el.clientHeight) / 2
+        }
+      })
     }
   }
 }
