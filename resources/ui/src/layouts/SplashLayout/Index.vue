@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import Header from './SplashLayout/Header'
-import LeftDrawer from './SplashLayout/LeftDrawer'
-import RightDrawer from './SplashLayout/RightDrawer'
-import UploadDialog from '../components/UploadDialog'
+import Header from './Header'
+import LeftDrawer from './LeftDrawer'
+import RightDrawer from './RightDrawer'
+import UploadDialog from '../../components/UploadDialog'
 
 export default {
   name: 'MainLayout',

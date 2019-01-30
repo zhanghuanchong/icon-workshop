@@ -80,6 +80,7 @@ module.exports = function (ctx) {
         'QTab',
         'QTabPane',
         'QTabs',
+        'QToggle',
         'QToolbar',
         'QToolbarTitle',
         'QTooltip'

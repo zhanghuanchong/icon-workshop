@@ -20,6 +20,10 @@
                       :step="0.01"></q-slider>
           </q-field>
 
+          <q-field label="自动缩放" label-width="8" class="field-content-right">
+            <q-toggle v-model="autoScale"></q-toggle>
+          </q-field>
+
           <q-field label="屏幕尺寸（px）" class="mt-10" label-width="12">
             <div class="row mt-5">
               <q-input type="number" v-model="width"
@@ -103,6 +107,7 @@ export default {
   },
   computed: {
     ...bindState('Splash', 'scale'),
+    ...bindState('Splash', 'autoScale'),
     ...bindState('Splash', 'width'),
     ...bindState('Splash', 'height')
   },

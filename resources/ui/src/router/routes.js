@@ -2,7 +2,7 @@
 const routes = [
   {
     path: '/splash',
-    component: () => import('layouts/SplashLayout.vue'),
+    component: () => import('layouts/SplashLayout/Index.vue'),
     children: [
       { path: '', component: () => import('pages/Splash/Index.vue') }
     ]

@@ -12,6 +12,9 @@
 <script>
 import DeviceBox from '../../components/Splash/DeviceBox'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
+import _ from 'lodash'
+
+const padding = 50
 
 export default {
   name: 'SplashPageIndex',
@@ -24,7 +27,6 @@ export default {
       return this.$store.state.Splash
     },
     containerStyle () {
-      const padding = 50
       return {
         minWidth: `${this.splash.width + padding * 2}px`,
         minHeight: `${this.splash.height + padding * 2}px`
@@ -33,24 +35,40 @@ export default {
   },
   watch: {
     'splash.width' () {
-      this.resetScrollbar()
+      this.resetLayout()
     },
     'splash.height' () {
-      this.resetScrollbar()
+      this.resetLayout()
     }
   },
   methods: {
     reset () {
       this.$store.commit('Splash/setCurrentObject', null)
     },
-    resetScrollbar () {
+    resetLayout () {
       this.$nextTick(() => {
-        const bar = this.$refs.scrollbar
-        if (bar && bar.$el) {
-          const $el = bar.$el
-          $el.scrollLeft = ($el.scrollWidth - $el.clientWidth) / 2
-          $el.scrollTop = ($el.scrollHeight - $el.clientHeight) / 2
-        }
+        this.resetScrollbar()
+        this.scaleDeviceContainer()
+      })
+    },
+    resetScrollbar () {
+      const bar = this.$refs.scrollbar
+      if (bar && bar.$el) {
+        const $el = bar.$el
+        $el.scrollLeft = ($el.scrollWidth - $el.clientWidth) / 2
+        $el.scrollTop = ($el.scrollHeight - $el.clientHeight) / 2
+      }
+    },
+    scaleDeviceContainer () {
+      if (!this.splash.autoScale) {
+        return
+      }
+      const $container = this.$el.querySelector('.ps-container')
+      const rw = $container.clientWidth / (this.splash.width + padding * 2)
+      const rh = $container.clientHeight / (this.splash.height + padding * 2)
+      const scale = _.round(Math.min(rw, rh, 1), 2)
+      this.$store.commit('Splash/update', {
+        scale
       })
     }
   }
