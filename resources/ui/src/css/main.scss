@@ -27,3 +27,20 @@
     text-align: right;
   }
 }
+
+.q-field {
+  position: relative;
+
+  .right-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 28px;
+    font-weight: bold;
+    color: var(--q-color-primary);
+
+    .q-btn {
+      margin-top: -2px;
+    }
+  }
+}

@@ -7,17 +7,38 @@
 
     <q-tab-pane name="setting" class="ph-8 pv-6">
       <q-field label="横坐标" label-width="12">
-        <span class="right-label">{{ object.left }}%</span>
+        <span class="right-label">
+          <q-btn flat round
+                 v-if="object.left !== 50"
+                 @click="object.left = 50; save()"
+                 size="sm"
+                 icon="mdi-restore"></q-btn>
+          {{ object.left }}%
+        </span>
         <q-slider v-model="object.left" @input="save"
                   :min="0" :max="100"></q-slider>
       </q-field>
       <q-field label="纵坐标" label-width="12">
-        <span class="right-label">{{ object.top }}%</span>
+        <span class="right-label">
+          <q-btn flat round
+                 v-if="object.top !== 50"
+                 @click="object.top = 50; save()"
+                 size="sm"
+                 icon="mdi-restore"></q-btn>
+          {{ object.top }}%
+        </span>
         <q-slider v-model="object.top" @input="save"
                   :min="0" :max="100"></q-slider>
       </q-field>
       <q-field label="缩放" label-width="12">
-        <span class="right-label">{{ object.scale }}倍</span>
+        <span class="right-label">
+          <q-btn flat round
+                 v-if="object.scale !== 1"
+                 @click="object.scale = 1; save()"
+                 size="sm"
+                 icon="mdi-restore"></q-btn>
+          {{ object.scale }}倍
+        </span>
         <q-slider v-model="object.scale" @input="save"
                   :min="0" :max="2" :step="0.01"></q-slider>
       </q-field>
@@ -45,18 +66,5 @@ export default {
 .object-setting-tab {
   height: 300px;
   margin-top: auto;
-
-  .q-field {
-    position: relative;
-
-    .right-label {
-      position: absolute;
-      top: 0;
-      right: 0;
-      line-height: 28px;
-      font-weight: bold;
-      color: var(--q-color-primary);
-    }
-  }
 }
 </style>

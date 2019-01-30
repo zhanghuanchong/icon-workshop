@@ -14,7 +14,14 @@
       <q-tab-pane name="preview" class="p-0">
         <VuePerfectScrollbar>
           <q-field label="缩放视图" label-width="12">
-            <span class="right-label">{{ scale }}倍</span>
+            <span class="right-label">
+              <q-btn flat round
+                     v-if="scale !== 1"
+                     @click="scale = 1"
+                     size="sm"
+                     icon="mdi-restore"></q-btn>
+              {{ scale }}倍
+            </span>
             <q-slider v-model="scale"
                       :min="0.2" :max="3"
                       :step="0.01"></q-slider>
@@ -132,19 +139,6 @@ export default {
 
 <style lang="scss">
 .splash-layout-left-drawer {
-  .q-field {
-    position: relative;
-
-    .right-label {
-      position: absolute;
-      top: 0;
-      right: 0;
-      line-height: 28px;
-      font-weight: bold;
-      color: var(--q-color-primary);
-    }
-  }
-
   .q-list.devices {
     padding: 0;
     margin-left: -10px;
