@@ -21,4 +21,7 @@ class SplashService extends BaseService
         $this->splash = $splash;
         parent::__construct();
     }
+
+    public function generate()
+    {}
 }

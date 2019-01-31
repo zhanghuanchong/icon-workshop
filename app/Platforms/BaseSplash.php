@@ -2,16 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: hans
- * Date: 2018/10/4
- * Time: 09:55
+ * Date: 2019/1/31
+ * Time: 18:46
  */
 
 namespace App\Platforms;
 
 
-abstract class BaseIcon extends BaseAsset
+abstract class BaseSplash extends BaseAsset
 {
     public static function getAssetName() {
-        return 'Icon';
+        return 'Splash';
     }
 }
