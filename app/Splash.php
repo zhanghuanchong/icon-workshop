@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\Services\SplashService;
 use Emadadly\LaravelUuid\Uuids;
 
 /**
@@ -33,4 +34,9 @@ class Splash extends BaseModel
     public $casts = [
         'config' => 'array',
     ];
+
+    public function getService()
+    {
+        return new SplashService($this);
+    }
 }
