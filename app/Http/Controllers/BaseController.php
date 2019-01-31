@@ -16,12 +16,22 @@ class BaseController extends Controller {
 		$GLOBALS['_VER_'] = $version;
 	}
 
-    protected function json($param, $error = FALSE)
+    protected function json($success = true, $message = null, $data = null)
     {
         return Response::json(array(
-            'e' => $error,
-            'd' => $param
+            'success' => $success,
+            'message' => $message,
+            'data' => $data,
         ));
     }
 
+    protected function success($data = null, $message = null)
+    {
+        return $this->json(true, $message, $data);
+    }
+
+    protected function failed($message = null, $data = null)
+    {
+        return $this->json(false, $message, $data);
+    }
 }

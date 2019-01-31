@@ -8,15 +8,15 @@
                     if (typeof(response) == 'string') {
                         json = JSON.parse(response);
                     }
-                    if (json.e) {
+                    if (!json.success) {
                         swal({
-                            title : json.d,
+                            title : json.message,
                             type : 'error',
                             confirmButtonText : '确定'
                         }, failCallback);
                     } else {
                         if (typeof(successCallback) == 'function') {
-                            successCallback(json.d);
+                            successCallback(json.data);
                         }
                     }
                 } catch (e) {

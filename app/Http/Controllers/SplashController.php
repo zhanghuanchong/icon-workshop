@@ -14,6 +14,6 @@ class SplashController extends BaseController
 
     public function generate()
     {
-        return $this->json([]);
+        return $this->success([]);
     }
 }

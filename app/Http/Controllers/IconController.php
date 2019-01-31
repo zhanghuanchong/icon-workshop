@@ -17,7 +17,7 @@ class IconController extends BaseController {
             if ($file->isValid()) {
                 $size = $file->getClientSize();
                 if ($size > 10485760 /* 1024 * 1024 * 10 */) {
-                    return $this->json('请压缩文件至 10M 以下后重试.', TRUE);
+                    return $this->failed('请压缩文件至 10M 以下后重试.');
                 }
 
                 $id = str_random(8);
@@ -44,10 +44,10 @@ class IconController extends BaseController {
                 $design->save();
                 $design->prepare();
 
-                return $this->json($id);
+                return $this->success($id);
             }
         }
-        return $this->json('文件无效！', TRUE);
+        return $this->failed('文件无效！');
 	}
 
     public function postGenerate()
@@ -66,7 +66,7 @@ class IconController extends BaseController {
 
         $design->generateIcons();
 
-        return $this->json(NULL);
+        return $this->success();
     }
 
     public function getDetail ($id)

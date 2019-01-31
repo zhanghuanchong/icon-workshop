@@ -72,7 +72,7 @@ export default {
   methods: {
     async generate () {
       this.$q.loading.show()
-      const resp = await request(`/api/splash/generate`, {
+      const resp = await request(`/api/splash/generate`, 'post', {
         scene: this.$store.state.Splash.scene
       })
       this.$q.loading.hide()

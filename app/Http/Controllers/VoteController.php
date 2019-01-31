@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BaseController;
+use App\Requirement;
 use Illuminate\Support\Facades\Input;
 
 class VoteController extends BaseController
@@ -15,6 +17,6 @@ class VoteController extends BaseController
         $r->status = Requirement::STATUS_NEW;
         $r->save();
 
-        return $this->json($r);
+        return $this->success($r);
     }
 }
