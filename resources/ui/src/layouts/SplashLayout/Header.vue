@@ -38,6 +38,8 @@
 
         <q-btn color="positive"
                push
+               @click="generate"
+               :disable="$v.$invalid"
                class="ml-auto"
                icon="mdi-auto-fix"
                icon-right="mdi-chevron-right"
@@ -48,7 +50,7 @@
 </template>
 
 <script>
-import { bindStateChild } from '../../common'
+import { bindStateChild, request } from '../../common'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 
 export default {
@@ -58,6 +60,24 @@ export default {
   },
   computed: {
     ...bindStateChild('Splash', 'scene')
+  },
+  validations: {
+    platforms: {
+      has: arr => arr.length > 0
+    },
+    orientations: {
+      has: arr => arr.length > 0
+    }
+  },
+  methods: {
+    async generate () {
+      this.$q.loading.show()
+      const resp = await request(`/api/splash/generate`, {
+        scene: this.$store.state.Splash.scene
+      })
+      this.$q.loading.hide()
+      console.log(resp)
+    }
   }
 }
 </script>

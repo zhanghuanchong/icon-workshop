@@ -35,3 +35,4 @@ Route::get('/vote', 'VoteController@getIndex');
 Route::post('/vote', 'VoteController@postIndex');
 
 Route::post('/api/file/upload', 'CommonController@uploadFile');
+Route::post('/api/splash/generate', 'SplashController@generate');

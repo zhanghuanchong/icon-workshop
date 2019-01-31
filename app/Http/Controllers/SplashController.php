@@ -11,4 +11,9 @@ class SplashController extends BaseController
     {
         return View::make('splash');
     }
+
+    public function generate()
+    {
+        return $this->json([]);
+    }
 }
