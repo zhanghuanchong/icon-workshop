@@ -24,6 +24,9 @@ use Emadadly\LaravelUuid\Uuids;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Splash whereIp($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Splash whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Splash whereUserAgent($value)
+ * @property string $uuid
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Splash uuid($uuid, $first = true)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Splash whereUuid($value)
  */
 class Splash extends BaseModel
 {

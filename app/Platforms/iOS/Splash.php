@@ -178,6 +178,7 @@ class Splash extends BaseSplash
             [
                 'orientation' => 'portrait',
                 'idiom'       => 'ipad',
+                'filename'    => 'Default-No-StatusBar~ipad.png',
                 'extent'      => 'to-status-bar',
                 'scale'       => '1x',
                 'width'       => 768,
@@ -197,6 +198,7 @@ class Splash extends BaseSplash
             [
                 'orientation' => 'landscape',
                 'idiom'       => 'ipad',
+                'filename'    => 'Default-Landscape-No-StatusBar~ipad.png',
                 'extent'      => 'to-status-bar',
                 'scale'       => '1x',
                 'width'       => 1024,
@@ -216,6 +218,7 @@ class Splash extends BaseSplash
             [
                 'orientation' => 'portrait',
                 'idiom'       => 'ipad',
+                'filename'    => 'Default-No-StatusBar@2x~ipad.png',
                 'extent'      => 'to-status-bar',
                 'scale'       => '2x',
                 'width'       => 1536,
@@ -235,6 +238,7 @@ class Splash extends BaseSplash
             [
                 'orientation' => 'landscape',
                 'idiom'       => 'ipad',
+                'filename'    => 'Default-Landscape-No-StatusBar@2x~ipad.png',
                 'extent'      => 'to-status-bar',
                 'scale'       => '2x',
                 'width'       => 2048,

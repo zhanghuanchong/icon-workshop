@@ -26,4 +26,12 @@ class SplashController extends BaseController
 
         return $this->success($splash->id);
     }
+
+    public function regenerate($uuid)
+    {
+        $splash = Splash::whereUuid($uuid)->firstOrFail();
+        $splash->getService()->generate();
+
+        return $this->success($splash->id);
+    }
 }

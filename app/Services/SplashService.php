@@ -9,7 +9,9 @@
 namespace App\Services;
 
 
+use App\Platforms\BaseSplash;
 use App\Splash;
+use Image;
 
 class SplashService extends BaseService
 {
@@ -24,43 +26,43 @@ class SplashService extends BaseService
 
     public function generate()
     {
-        /*
-         * {
-            "proto": "Scene",
-            "backgroundColor": "#ffffff",
-            "platforms": [
-                "android",
-                "ios"
-            ],
-            "orientations": [
-                "landscape",
-                "portrait"
-            ],
-            "objects": [
-                {
-                    "proto": "Image",
-                    "url": "/files/temp/FYSqCwkpyliREALb.png",
-                    "left": 50,
-                    "top": 12,
-                    "scale": 0.55,
-                },
-                {
-                    "proto": "Image",
-                    "url": "/files/temp/ALIGUOVpAA5Rg1sh.png",
-                    "left": 50,
-                    "top": 50,
-                    "scale": 0.12,
-                },
-                {
-                    "proto": "Image",
-                    "url": "/files/temp/SOcokaWFZvVYSKCJ.png",
-                    "left": 50,
-                    "top": 90,
-                    "scale": 1,
-                }
-            ]
-        }
-         */
         $config = $this->splash->config;
+        $dir = public_path('files') . '/' . $this->splash->folder . '/' . $this->splash->uuid . '/';
+        foreach ($config['platforms'] as $platform) {
+            $splashConfig = BaseSplash::getInstance($platform);
+            foreach ($splashConfig->getSizes() as $item) {
+                $width = $item['width'];
+                $height = $item['height'];
+                $orientation = $width > $height ? 'landscape' : 'portrait';
+                if (!in_array($orientation, $config['orientations'])) {
+                    continue;
+                }
+
+                $fileDir = $dir . $platform . '/' . $item['folder'] . '/';
+                static::ensureDir($fileDir);
+                $filePath = $fileDir . $item['filename'];
+
+                if (!file_exists($filePath)) {
+                    // TODO: 检测文件是否已经生成，如已生成，跳过，直接写配置文件
+                    $base = Image::canvas($width, $height, $config['backgroundColor']);
+                    // TODO: 根据缩放倍数缩放 $base
+                    foreach ($config['objects'] as $object) {
+                        if ($object['proto'] === 'Image') {
+                            $img = Image::make(public_path() . $object['url']);
+                            $scale = $object['scale'] ?? 1;
+                            $img->resize($img->width() * $scale, $img->height() * $scale);
+
+                            $base->insert($img, 'top-left',
+                                (int)($width * $object['left'] / 100),
+                                (int)($height * $object['top'] / 100));
+                        }
+                    }
+
+                    $base->save($filePath);
+                }
+
+                // TODO: 修改配置文件
+            }
+        }
     }
 }
