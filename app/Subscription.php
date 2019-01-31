@@ -9,6 +9,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Mail\Message;
 use Mail;
 
 /**
@@ -43,11 +44,15 @@ class Subscription extends Model {
     public function sendZip()
     {
         $design = $this->design;
-        $path = $design->package();
+        try {
+            $path = $design->getService()->package();
+        } catch (\Exception $e) {
+            return;
+        }
         $data = array(
             'path' => $path
         );
-        Mail::send('emails.icon', $data, function($message) use ($path, $design)
+        Mail::send('emails.icon', $data, function(Message $message) use ($path, $design)
         {
             $subject = '批量生成应用图标：' . $design->original_name;
             $message->to($this->mail)->subject($subject);

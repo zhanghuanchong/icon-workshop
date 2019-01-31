@@ -76,7 +76,9 @@ export default {
         scene: this.$store.state.Splash.scene
       })
       this.$q.loading.hide()
-      console.log(resp)
+      if (resp.success) {
+        console.log(JSON.stringify(resp.data))
+      }
     }
   }
 }

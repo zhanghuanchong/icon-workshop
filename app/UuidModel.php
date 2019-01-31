@@ -8,10 +8,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use Nathanmac\GUID\Facades\GUID;
 
-class UuidModel extends Model {
+class UuidModel extends BaseModel {
 
     /**
      * Indicates if the IDs are auto-incrementing.
@@ -33,7 +32,7 @@ class UuidModel extends Model {
          * Attach to the 'creating' Model Event to provide a UUID
          * for the `id` field (provided by $model->getKeyName())
          */
-        static::creating(function ($model) {
+        static::creating(function (UuidModel $model) {
             $model->{$model->getKeyName()} = (string)$model->generateNewId();
         });
     }
@@ -41,7 +40,7 @@ class UuidModel extends Model {
     /**
      * Get a new version 4 (random) UUID.
      *
-     * @return \Nathanmac\GUID\Facades\GUID
+     * @return string
      */
     public function generateNewId()
     {

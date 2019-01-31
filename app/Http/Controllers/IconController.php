@@ -10,6 +10,12 @@ use Response;
 
 class IconController extends BaseController {
 
+    /**
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \ErrorException
+     */
 	public function postUpload (Request $request)
 	{
         if ($request->hasFile('file')) {
@@ -42,7 +48,7 @@ class IconController extends BaseController {
                 $file->move($folder, 'origin.' . $ext);
 
                 $design->save();
-                $design->prepare();
+                $design->getService()->prepare();
 
                 return $this->success($id);
             }
@@ -64,7 +70,11 @@ class IconController extends BaseController {
         $design->radius = (float)Input::get('radius');
         $design->save();
 
-        $design->generateIcons();
+        try {
+            $design->getService()->generateIcons();
+        } catch (\ImagickException $e) {
+            return $this->failed($e->getMessage());
+        }
 
         return $this->success();
     }
@@ -85,7 +95,7 @@ class IconController extends BaseController {
             $platforms = explode(',', $design->platform);
         }
         $data = array(
-            'generated' => $design->isGenerated(),
+            'generated' => $design->getService()->isGenerated(),
             'design' => $design,
             'platforms' => $platforms
         );
@@ -98,13 +108,18 @@ class IconController extends BaseController {
         return Response::json($data);
     }
 
+    /**
+     * @param $id
+     *
+     * @throws \ImagickException
+     */
     public function getApiGenerate($id)
     {
         /**
          * @var $design Design
          */
         $design = Design::findOrFail($id);
-        $design->generateIcons();
+        $design->getService()->generateIcons();
     }
 
     public function getDownload ($id, $regenerate = FALSE)
@@ -114,7 +129,13 @@ class IconController extends BaseController {
         if (!$design) {
             return '原设计图已过期！';
         }
-        $path = $design->package($regenerate);
+
+        try {
+            $path = $design->getService()->package($regenerate);
+        } catch (\Exception $e) {
+            return '打包失败！' . $e->getMessage();
+        }
+
         if (!$path) {
             return '文件未找到！';
         }
