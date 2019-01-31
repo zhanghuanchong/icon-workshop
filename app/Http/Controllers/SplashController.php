@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Splash;
 use Illuminate\Http\Request;
 use View;
 
@@ -62,6 +63,12 @@ class SplashController extends BaseController
     ]
 }
          */
-        return $this->success($request->get('scene'));
+        $splash = new Splash();
+        $splash->folder = date('Ym');
+        $splash->config = $request->get('scene');
+        $splash->user_agent = $request->server('HTTP_USER_AGENT');
+        $splash->ip = $request->getClientIp();
+        $splash->save();
+        return $this->success($splash->id);
     }
 }
