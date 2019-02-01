@@ -28,11 +28,23 @@ class SplashService extends BaseService
     {
         $config = $this->splash->config;
         $dir = public_path('files') . '/' . $this->splash->folder . '/' . $this->splash->uuid . '/';
+        $BASE_SIZE = 750;
         foreach ($config['platforms'] as $platform) {
+            $contents = [
+                'images' => [],
+                'info' => [
+                    'version' => 1,
+                    'author' => 'https://icon.wuruihong.com',
+                ],
+            ];
+            $fileDir = $dir . $platform . '/';
             $splashConfig = BaseSplash::getInstance($platform);
             foreach ($splashConfig->getSizes() as $item) {
                 $width = $item['width'];
                 $height = $item['height'];
+                $short = min($width, $height);
+                $baseScale = $short / $BASE_SIZE * 2;
+
                 $orientation = $width > $height ? 'landscape' : 'portrait';
                 if (!in_array($orientation, $config['orientations'])) {
                     continue;
@@ -43,25 +55,34 @@ class SplashService extends BaseService
                 $filePath = $fileDir . $item['filename'];
 
                 if (!file_exists($filePath)) {
-                    // TODO: 检测文件是否已经生成，如已生成，跳过，直接写配置文件
                     $base = Image::canvas($width, $height, $config['backgroundColor']);
-                    // TODO: 根据缩放倍数缩放 $base
                     foreach ($config['objects'] as $object) {
                         if ($object['proto'] === 'Image') {
                             $img = Image::make(public_path() . $object['url']);
-                            $scale = $object['scale'] ?? 1;
-                            $img->resize($img->width() * $scale, $img->height() * $scale);
+                            $scale = ($object['scale'] ?? 1) * $baseScale;
 
-                            $base->insert($img, 'top-left',
-                                (int)($width * $object['left'] / 100),
-                                (int)($height * $object['top'] / 100));
+                            $w = $img->width() * $scale;
+                            $h = $img->height() * $scale;
+                            $img->resize($w, $h);
+
+                            $base->insert(
+                                $img,
+                                'top-left',
+                                (int)($width * $object['left'] / 100 - $w / 2),
+                                (int)($height * $object['top'] / 100 - $h / 2)
+                            );
                         }
                     }
 
                     $base->save($filePath);
                 }
 
-                // TODO: 修改配置文件
+                unset($item['width'], $item['height']);
+                $contents['images'][] = $item;
+            }
+
+            if ($platform === 'ios') {
+                file_put_contents($fileDir . 'Contents.json', json_encode($contents, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
             }
         }
     }

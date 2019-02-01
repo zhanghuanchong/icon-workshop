@@ -87,9 +87,9 @@ export default {
           this.progress = Math.round(e.loaded * 100 / e.total)
         }
       })
-      if (!resp.e && this.visible) {
+      if (resp.success && this.visible) {
         if (this.origin && this.origin._cb) {
-          this.origin._cb(resp.d)
+          this.origin._cb(resp.data)
         }
 
         this._hide()
