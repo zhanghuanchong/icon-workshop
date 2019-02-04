@@ -71,6 +71,9 @@ export default {
         scale
       })
     }
+  },
+  mounted () {
+    this.resetLayout()
   }
 }
 </script>
