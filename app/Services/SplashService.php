@@ -28,7 +28,7 @@ class SplashService extends BaseService
     {
         $config = $this->splash->config;
         $dir = public_path('files') . '/' . $this->splash->folder . '/' . $this->splash->uuid . '/';
-        $BASE_SIZE = 750;
+        $BASE_SIZE = 375;
         foreach ($config['platforms'] as $platform) {
             $contents = [
                 'images' => [],
@@ -43,7 +43,16 @@ class SplashService extends BaseService
                 $width = $item['width'];
                 $height = $item['height'];
                 $short = min($width, $height);
-                $baseScale = $short / $BASE_SIZE * 2;
+                $baseScale = $short / $BASE_SIZE;
+
+                $rate = $width / $height;
+                if ($rate >= 1) {
+                    $baseScale *= 0.625;
+                } else if ($rate >= 0.75) {
+                    $baseScale *= 0.75;
+                } else if ($rate >= 0.66) {
+                    $baseScale *= 0.875;
+                }
 
                 $orientation = $width > $height ? 'landscape' : 'portrait';
                 if (!in_array($orientation, $config['orientations'])) {
@@ -77,7 +86,7 @@ class SplashService extends BaseService
                     $base->save($filePath);
                 }
 
-                unset($item['width'], $item['height']);
+                unset($item['width'], $item['height'], $item['folder']);
                 $contents['images'][] = $item;
             }
 
