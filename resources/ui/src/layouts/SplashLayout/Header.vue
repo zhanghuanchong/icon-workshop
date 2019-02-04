@@ -89,7 +89,7 @@ export default {
   overflow-x: auto;
 
   .q-toolbar {
-    min-width: 560px;
+    min-width: 600px;
   }
 
   .q-field-label {

@@ -20,6 +20,16 @@ export function updateObject (state, o) {
   }
 }
 
+export function removeObject (state, o) {
+  const index = _.findIndex(state.scene.objects, { id: o.id })
+  if (index >= 0) {
+    state.scene.objects.splice(index, 1)
+  }
+  if (state.object && state.object.id === o.id) {
+    setCurrentObject(state, null)
+  }
+}
+
 export function setCurrentObject (state, o) {
   state.object = o
 }

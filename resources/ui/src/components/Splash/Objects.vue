@@ -7,6 +7,11 @@
         <img :src="o.url" alt="">
       </q-item-side>
       <q-item-main>{{ o.description }}</q-item-main>
+      <q-item-side right>
+        <q-btn round icon="mdi-close"
+               @click.stop="remove(o)"
+               flat size="xs"></q-btn>
+      </q-item-side>
     </q-item>
   </q-list>
 </template>
@@ -37,6 +42,9 @@ export default {
       } else {
         this.current = object
       }
+    },
+    remove (object) {
+      this.$store.commit('Splash/removeObject', object)
     }
   }
 }
@@ -53,19 +61,27 @@ export default {
     }
 
     .q-item-side {
-      width: 64px;
+      margin-left: 8px;
+      width: 40px;
       justify-content: center;
       align-items: center;
       display: flex;
 
       > img {
-        max-width: 50px;
-        max-height: 33px;
+        max-width: 40px;
+        max-height: 31px;
+      }
+
+      &.q-item-side-right {
+        width: auto;
+        min-width: 27px;
+        margin-left: 3px;
+        margin-right: 4px;
       }
     }
 
     .q-item-main {
-      margin-left: 8px;
+      margin-left: 6px;
     }
   }
 }
