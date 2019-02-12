@@ -96,9 +96,9 @@ module.exports = function (ctx) {
         'Dialog',
         'Notify',
         'Loading'
-      ]
+      ],
       // iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'
-      // i18n: 'de' // Quasar language
+      i18n: 'zh-hans' // Quasar language
     },
     animations: 'all', // --- includes all animations
     ssr: {

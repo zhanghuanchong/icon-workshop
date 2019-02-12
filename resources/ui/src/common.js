@@ -167,6 +167,14 @@ function isNumeric (x) {
   return ((typeof x === 'number' || typeof x === 'string') && !isNaN(Number(x)))
 }
 
+function redirectRoot (url) {
+  if (window.parent !== window) {
+    window.parent.location.href = url
+  } else {
+    window.location.href = url
+  }
+}
+
 export {
   request,
   notifyResponse,
@@ -174,5 +182,6 @@ export {
   bindState,
   bindStateChild,
   bindStateSelect,
-  isNumeric
+  isNumeric,
+  redirectRoot
 }

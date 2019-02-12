@@ -12,6 +12,7 @@ namespace App\Services;
 use App\Platforms\BaseSplash;
 use App\Splash;
 use Image;
+use Zipper;
 
 class SplashService extends BaseService
 {
@@ -94,5 +95,26 @@ class SplashService extends BaseService
                 file_put_contents($fileDir . 'Contents.json', json_encode($contents, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
             }
         }
+    }
+
+    /**
+     * @param bool $regenerate
+     *
+     * @return string
+     * @throws \Exception
+     */
+    public function package($regenerate = FALSE) {
+        $folder = public_path('files') . '/' . $this->splash->folder . '/' . $this->splash->uuid . '/';
+        $path = $folder . 'splashes.zip';
+        if (!file_exists($path) || $regenerate) {
+            /** @var \Chumper\Zipper\Zipper $zip */
+            $zip = Zipper::make($path);
+            foreach($this->splash->platform as $f) {
+                $zip->folder($f)->add($folder . $f);
+            }
+
+            $zip->close();
+        }
+        return $path;
     }
 }

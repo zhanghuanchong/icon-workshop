@@ -42,4 +42,9 @@ class Splash extends BaseModel
     {
         return new SplashService($this);
     }
+
+    public function getPlatformAttribute()
+    {
+        return $this->config['platforms'] ?? [];
+    }
 }

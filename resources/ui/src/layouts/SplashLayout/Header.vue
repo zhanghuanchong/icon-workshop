@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { bindStateChild, request } from '../../common'
+import { bindStateChild, request, redirectRoot } from '../../common'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 
 export default {
@@ -77,7 +77,13 @@ export default {
       })
       this.$q.loading.hide()
       if (resp.success) {
-        console.log(JSON.stringify(resp.data))
+        this.$q.notify({
+          type: 'positive',
+          message: '生成成功！即将开始下载...',
+          position: 'top',
+          icon: 'mdi-download'
+        })
+        redirectRoot(`/splash/download/${resp.data}`)
       }
     }
   }
