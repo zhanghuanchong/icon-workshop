@@ -100,17 +100,36 @@
         <a href="https://github.com/zhanghuanchong/icon-workshop/issues/new" target="_blank" style="color:white">Github 反馈</a>　
         <a href="/about" style="color:white">留言</a>　
         版权所有　Copyright(C) 2015　All Rights Reserved　豫ICP备14010348号-1
+
         @if(!App::environment('local'))
-        <script>
-            var _hmt = _hmt || [];
-            (function() {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?eaef3d108dc9fdbadae588b43951721d";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
+            <script>
+                var _hmt = _hmt || [];
+                (function() {
+                    var hm = document.createElement("script");
+                    hm.src = "https://hm.baidu.com/hm.js?eaef3d108dc9fdbadae588b43951721d";
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(hm, s);
+                })();
+            </script>
         @endif
+
+        <script>
+          var popAdItv = setInterval(function () {
+            var pop = $('#pop_ad');
+            if (pop.length) {
+              pop.remove();
+              clearInterval(popAdItv);
+            }
+          }, 500);
+
+          var adFeedItv = setInterval(function () {
+            var feeds = $('#cy-cmt-list [node-type=ad-pc-feed]');
+            if (feeds.length) {
+              feeds.remove();
+              clearInterval(adFeedItv);
+            }
+          }, 500);
+        </script>
     </p>
 </footer>
 
