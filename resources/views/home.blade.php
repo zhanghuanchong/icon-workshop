@@ -1,6 +1,11 @@
 @extends('master')
 @section('container')
     <div class="container" ng-controller="HomeCtrl">
+        <div class="alert alert-success">
+            <a href="/splash">新上线应用启动图生成工具，公测中，欢迎试用并提供反馈！</a>
+            <a href="/splash" class="btn btn-raised pull-right" style="margin: -8px 0; color:#1976d2">立即试用</a>
+        </div>
+
         <form class="jumbotron form-horizontal" action="/icon/upload" method="post" id="if_form">
             <h3 class="text-primary">
                 <strong ng-bind="slogan"></strong>

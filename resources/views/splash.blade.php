@@ -28,6 +28,15 @@
             </div>
         @endif
 
+        <div class="alert alert-success">
+            公测中，欢迎试用！
+            <a href="javascript:"
+               onclick="$('#SOHUCS')[0].scrollIntoView()"
+               class="btn btn-raised pull-right"
+               style="margin: -8px 0; color:#1976d2; margin-left:20px;">提供反馈</a>
+            <a href="javascript:" class="btn btn-raised pull-right" style="margin: -8px 0; color:#1976d2">视频演示</a>
+        </div>
+
         <iframe src="/dist/spa-mat/index.html" id="main-frame" frameborder="0"></iframe>
 
         <div id="SOHUCS" sid="splash"></div>

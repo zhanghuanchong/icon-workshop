@@ -94,7 +94,7 @@
 
 @yield('container')
 
-<footer class="navbar navbar-default">
+<footer class="navbar navbar-default" style="margin-bottom: 0">
     <p style="margin-bottom: 0">
         <a href="http://blog.wuruihong.com" target="_blank" style="color:white">博客</a>　
         <a href="https://github.com/zhanghuanchong/icon-workshop/issues/new" target="_blank" style="color:white">Github 反馈</a>　
@@ -114,21 +114,9 @@
         @endif
 
         <script>
-          var popAdItv = setInterval(function () {
-            var pop = $('#pop_ad');
-            if (pop.length) {
-              pop.remove();
-              clearInterval(popAdItv);
-            }
-          }, 500);
-
-          var adFeedItv = setInterval(function () {
-            var feeds = $('#cy-cmt-list [node-type=ad-pc-feed]');
-            if (feeds.length) {
-              feeds.remove();
-              clearInterval(adFeedItv);
-            }
-          }, 500);
+          setInterval(function () {
+            $('#pop_ad, #cy-cmt-list [node-type=ad-pc-feed], .module-cmt-notice').remove();
+          }, 1000);
         </script>
     </p>
 </footer>
