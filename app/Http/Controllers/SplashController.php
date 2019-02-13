@@ -55,4 +55,9 @@ class SplashController extends BaseController
         }
         return Response::download($path);
     }
+
+    public function demo()
+    {
+        return View::make('splash/demo');
+    }
 }

@@ -39,3 +39,4 @@ Route::post('/api/splash/generate', 'SplashController@generate');
 
 Route::get('/api/splash/regenerate/{uuid}', 'SplashController@regenerate');
 Route::get('/splash/download/{uuid}', 'SplashController@download');
+Route::get('/splash/demo', 'SplashController@demo');

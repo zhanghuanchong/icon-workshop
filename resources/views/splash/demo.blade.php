@@ -28,33 +28,9 @@
             </div>
         @endif
 
-        <div class="alert alert-success">
-            公测中，欢迎试用！
-            <a href="javascript:"
-               onclick="$('#SOHUCS')[0].scrollIntoView()"
-               class="btn btn-raised pull-right"
-               style="margin: -8px 0; color:#1976d2; margin-left:20px;">提供反馈</a>
-            <a href="/splash/demo" target="_blank" class="btn btn-raised pull-right" style="margin: -8px 0; color:#1976d2">视频演示</a>
-        </div>
-
-        <iframe src="/dist/spa-mat/index.html" id="main-frame" frameborder="0"></iframe>
-
-        <div id="SOHUCS" sid="splash"></div>
-        <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
-        <script type="text/javascript">
-          window.changyan.api.config({
-            appid: 'cysYYpGQc',
-            conf: 'prod_e3f50564abc49adec1eeba0d0a97d66b'
-          });
-        </script>
+        <video src="/img/splash/demo.mp4" controls autoplay style="width:100%"></video>
     </div>
     <script>
       window.state = 'splash';
     </script>
-    <style>
-        #main-frame {
-            width: 100%;
-            height: 700px;
-        }
-    </style>
 @endsection
