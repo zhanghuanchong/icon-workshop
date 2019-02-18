@@ -12,7 +12,7 @@
              label="预览" default />
 
       <q-tab-pane name="preview" class="p-0">
-        <VuePerfectScrollbar>
+        <VuePerfectScrollbar :settings="{suppressScrollX: true}">
           <q-field label="缩放视图" label-width="12">
             <span class="right-label">
               <q-btn flat round
@@ -157,6 +157,12 @@ export default {
   .ps-container {
     padding: 10px;
     height: calc(100vh - 52px);
+  }
+
+  .q-field {
+    .q-if-inner > .relative-position {
+      width: 100%;
+    }
   }
 }
 </style>
