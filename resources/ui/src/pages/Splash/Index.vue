@@ -66,7 +66,10 @@ export default {
       const $container = this.$el.querySelector('.ps-container')
       const rw = $container.clientWidth / (this.splash.width + padding * 2)
       const rh = $container.clientHeight / (this.splash.height + padding * 2)
-      const scale = _.round(Math.min(rw, rh, 1), 2)
+      let scale = _.round(Math.min(rw, rh, 1), 2)
+      if (scale <= 0) {
+        scale = 1
+      }
       this.$store.commit('Splash/update', {
         scale
       })
