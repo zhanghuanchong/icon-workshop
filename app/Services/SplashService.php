@@ -11,6 +11,7 @@ namespace App\Services;
 
 use App\Platforms\BaseSplash;
 use App\Splash;
+use File;
 use Image;
 use Zipper;
 
@@ -116,5 +117,29 @@ class SplashService extends BaseService
             $zip->close();
         }
         return $path;
+    }
+
+    public function deleteCache()
+    {
+        $dir = public_path('files') . '/' . $this->splash->folder . '/' . $this->splash->id;
+        if (!File::exists($dir)) {
+            return;
+        }
+        $platforms = File::directories($dir);
+        foreach($platforms as $platform) {
+            File::deleteDirectory($platform);
+        }
+        $zip = $dir . '/splashes.zip';
+        if (File::exists($zip)) {
+            File::delete($zip);
+        }
+    }
+
+    public function deleteFolder()
+    {
+        $dir = public_path('files') . '/' . $this->splash->folder . '/' . $this->splash->id;
+        if (File::exists($dir)) {
+            File::deleteDirectory($dir);
+        }
     }
 }

@@ -130,4 +130,9 @@ class Design extends BaseModel {
         $this->getService()->deleteFolder();
         parent::delete();
     }
+
+    public function deleteCache()
+    {
+        $this->getService()->deleteCache();
+    }
 }

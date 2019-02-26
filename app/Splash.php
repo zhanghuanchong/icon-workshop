@@ -47,4 +47,15 @@ class Splash extends BaseModel
     {
         return $this->config['platforms'] ?? [];
     }
+
+    public function delete()
+    {
+        $this->getService()->deleteFolder();
+        parent::delete();
+    }
+
+    public function deleteCache()
+    {
+        $this->getService()->deleteCache();
+    }
 }

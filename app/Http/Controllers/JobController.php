@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Design;
+use App\Splash;
 use Carbon\Carbon;
 
 /**
@@ -15,6 +16,7 @@ class JobController extends BaseController
 {
     public function getDeleteExpiredFiles()
     {
+        //////////////////// Icon /////////////////////
         // 删除1天前的所有数据
         Design::where('created_at', '<', Carbon::today()->subDay())->get()->each(function (Design $design) {
             $design->delete();
@@ -23,6 +25,17 @@ class JobController extends BaseController
         // 删除1小时前的Cache
         Design::where('created_at', '<', Carbon::today()->subHour())->get()->each(function (Design $design) {
             $design->deleteCache();
+        });
+
+        //////////////////// Splash /////////////////////
+        // 删除1天前的所有数据
+        Splash::where('created_at', '<', Carbon::today()->subDay())->get()->each(function (Splash $splash) {
+            $splash->delete();
+        });
+
+        // 删除1小时前的Cache
+        Splash::where('created_at', '<', Carbon::today()->subHour())->get()->each(function (Splash $splash) {
+            $splash->deleteCache();
         });
     }
 }

@@ -21,7 +21,7 @@ class CommonController extends BaseController
 
         $file = $request->file('file');
         if (!$file->isValid()) {
-            return $this->failed('文件无效！');
+            return $this->failed('文件上传失败，请联系管理员！');
         }
 
         $size = $file->getClientSize();
