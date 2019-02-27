@@ -66,6 +66,7 @@
                                 echo '<li><a href="/guide/' . $k . '">' . $v . '</a></li>';
                             }
                         ?>
+                        <li><a href="/splash/demo">启动图生成工具</a></li>
                     </ul>
                 </li>
                 <li ng-class="stateCls('faq')"><a href="/faq">常见问题</a></li>

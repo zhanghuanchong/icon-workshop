@@ -1,6 +1,8 @@
 @extends('master')
 @section('container')
     <div class="container container-article">
+        <h2 style="margin-bottom: 30px;">启动图生成工具视频演示</h2>
+
         @if(!App::environment('local'))
             <div class="row">
                 <div class="col-md-8">

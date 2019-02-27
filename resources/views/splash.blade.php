@@ -29,7 +29,7 @@
         @endif
 
         <div class="alert alert-success">
-            公测中，欢迎试用！
+            第一次使用请先观看 <a style="text-decoration: underline" href="/splash/demo">视频演示</a>，请提前准备好图片或文字资料。
             <a href="javascript:"
                onclick="$('#SOHUCS')[0].scrollIntoView()"
                class="btn btn-raised pull-right"
