@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <a href='javascript:;' ng-click="androidName=fileName();" class="withripple" style="margin-right:10px">上传的文件名</a>
-                                    <a href='javascript:;' ng-click="androidName='ic_launcher';" class="withripple">默认</a>
+                                    <a href='javascript:;' ng-click="androidName='ic_launcher';" class="withripple">使用默认</a>
                                 </div>
                             </div>
                         </div>

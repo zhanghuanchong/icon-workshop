@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import { DEFAULT_STATE } from './state'
 
 export function update (state, o) {
   _.assignIn(state, o)
@@ -32,4 +33,8 @@ export function removeObject (state, o) {
 
 export function setCurrentObject (state, o) {
   state.object = o
+}
+
+export function init (state) {
+  _.assignIn(state, DEFAULT_STATE)
 }

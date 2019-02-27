@@ -36,11 +36,17 @@
           </q-checkbox>
         </q-field>
 
+        <q-btn flat
+               class="ml-auto"
+               icon="mdi-broom"
+               @click="clean"
+               label="清空"></q-btn>
+
         <q-btn color="positive"
                push
                @click="generate"
                :disable="$v.$invalid"
-               class="ml-auto"
+               class="ml-10"
                icon="mdi-auto-fix"
                icon-right="mdi-chevron-right"
                label="生成"></q-btn>
@@ -85,6 +91,15 @@ export default {
         })
         redirectRoot(`/splash/download/${resp.data}`)
       }
+    },
+    clean () {
+      this.$q.dialog({
+        title: '提示',
+        message: '确定要清空设置和图片，重新开始？',
+        cancel: true
+      }).then(() => {
+        this.$store.dispatch('Splash/init')
+      }).catch(() => {})
     }
   }
 }
@@ -95,7 +110,7 @@ export default {
   overflow-x: auto;
 
   .q-toolbar {
-    min-width: 600px;
+    min-width: 660px;
   }
 
   .q-field-label {
