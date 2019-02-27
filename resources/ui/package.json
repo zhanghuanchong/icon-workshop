@@ -20,8 +20,10 @@
     "perfect-scrollbar": "^1.4.0",
     "qs": "^6.6.0",
     "uuid": "^3.3.2",
+    "vue-google-adsense": "^1.4.5",
     "vue-i18n": "^7.3.3",
     "vue-perfect-scrollbar": "^0.1.0",
+    "vue-script2": "^2.0.3",
     "vuelidate": "^0.7.4",
     "vuex-persistedstate": "^2.5.4"
   },

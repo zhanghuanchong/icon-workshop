@@ -9,6 +9,7 @@
     </q-page-container>
 
     <UploadDialog></UploadDialog>
+    <LoadingModal></LoadingModal>
   </q-layout>
 </template>
 
@@ -17,6 +18,7 @@ import Header from './Header'
 import LeftDrawer from './LeftDrawer'
 import RightDrawer from './RightDrawer'
 import UploadDialog from '../../components/UploadDialog'
+import LoadingModal from '../../components/LoadingModal'
 
 export default {
   name: 'MainLayout',
@@ -24,7 +26,8 @@ export default {
     Header,
     LeftDrawer,
     RightDrawer,
-    UploadDialog
+    UploadDialog,
+    LoadingModal
   },
   data () {
     return {

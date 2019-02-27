@@ -11,7 +11,8 @@ module.exports = function (ctx) {
     plugins: [
       'i18n',
       'axios',
-      'vuelidate'
+      'vuelidate',
+      'ad'
     ],
     css: [
       'app.styl'
@@ -73,12 +74,14 @@ module.exports = function (ctx) {
         'QLayoutDrawer',
         'QList',
         'QListHeader',
+        'QModal',
         'QPage',
         'QPageContainer',
         'QProgress',
         'QRouteTab',
         'QSelect',
         'QSlider',
+        'QSpinner',
         'QTab',
         'QTabPane',
         'QTabs',

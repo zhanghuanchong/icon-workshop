@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { bindStateChild, request, redirectRoot } from '../../common'
+import { bindStateChild } from '../../common'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 
 export default {
@@ -77,20 +77,26 @@ export default {
   },
   methods: {
     async generate () {
-      this.$q.loading.show()
-      const resp = await request(`/api/splash/generate`, 'post', {
-        scene: this.$store.state.Splash.scene
+      this.$root.$emit('show-loading-modal', {
+        message: '生成中，请稍候...',
+        onCancel: () => {
+          this.$root.$emit('hide-loading-modal')
+        }
       })
-      this.$q.loading.hide()
-      if (resp.success) {
-        this.$q.notify({
-          type: 'positive',
-          message: '生成成功！即将开始下载...',
-          position: 'top',
-          icon: 'mdi-download'
-        })
-        redirectRoot(`/splash/download/${resp.data}`)
-      }
+      // this.$q.loading.show()
+      // const resp = await request(`/api/splash/generate`, 'post', {
+      //   scene: this.$store.state.Splash.scene
+      // })
+      // this.$q.loading.hide()
+      // if (resp.success) {
+      //   this.$q.notify({
+      //     type: 'positive',
+      //     message: '生成成功！即将开始下载...',
+      //     position: 'top',
+      //     icon: 'mdi-download'
+      //   })
+      //   redirectRoot(`/splash/download/${resp.data}`)
+      // }
     },
     clean () {
       this.$q.dialog({
