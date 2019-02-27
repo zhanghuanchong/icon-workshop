@@ -40,7 +40,7 @@ class AdminController extends BaseController {
 	public function postLogin()
 	{
 		$pwd = Input::get('password');
-		if ($pwd != '880714') {
+		if ($pwd != '') {
             return $this->failed('密码错误!');
         }
         if (!$this->verifyCode()) {

@@ -30,7 +30,10 @@ Route::post('/icon/post-subscribe', 'IconController@postSubscribe');
 Route::get('/admin', 'AdminController@getIndex');
 Route::get('/admin/verify-code', 'AdminController@getVerifyCode');
 Route::post('/admin/login', 'AdminController@postLogin');
+
 Route::get('/job/delete-expired-files', 'JobController@getDeleteExpiredFiles');
+Route::get('/job/remove-old-splash-files', 'JobController@removeOldSplashFiles');
+
 Route::get('/vote', 'VoteController@getIndex');
 Route::post('/vote', 'VoteController@postIndex');
 

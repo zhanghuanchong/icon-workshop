@@ -18,24 +18,37 @@ class JobController extends BaseController
     {
         //////////////////// Icon /////////////////////
         // 删除1天前的所有数据
-        Design::where('created_at', '<', Carbon::today()->subDay())->get()->each(function (Design $design) {
+        Design::where('created_at', '<', Carbon::now()->subDay())->get()->each(function (Design $design) {
             $design->delete();
         });
 
         // 删除1小时前的Cache
-        Design::where('created_at', '<', Carbon::today()->subHour())->get()->each(function (Design $design) {
+        Design::where('created_at', '<', Carbon::now()->subHour())->get()->each(function (Design $design) {
             $design->deleteCache();
         });
 
         //////////////////// Splash /////////////////////
         // 删除1天前的所有数据
-        Splash::where('created_at', '<', Carbon::today()->subDay())->get()->each(function (Splash $splash) {
+        Splash::where('created_at', '<', Carbon::now()->subDay())->get()->each(function (Splash $splash) {
             $splash->delete();
         });
 
         // 删除1小时前的Cache
-        Splash::where('created_at', '<', Carbon::today()->subHour())->get()->each(function (Splash $splash) {
+        Splash::where('created_at', '<', Carbon::now()->subHour())->get()->each(function (Splash $splash) {
             $splash->deleteCache();
         });
+    }
+
+    public function removeOldSplashFiles()
+    {
+        $before = Carbon::now()->subDay()->getTimestamp();
+        $dirs = \File::directories(public_path('files') . '/201902/');
+        foreach ($dirs as $dir) {
+            $time = \File::lastModified($dir);
+            if ($time < $before) {
+                \File::deleteDirectory($dir);
+                var_dump($dir);
+            }
+        }
     }
 }
