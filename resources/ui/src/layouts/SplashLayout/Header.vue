@@ -52,18 +52,30 @@
                label="生成"></q-btn>
       </q-toolbar>
     </VuePerfectScrollbar>
+
+    <LoadingModal v-if="generating"
+                  :visible="loadingModal"
+                  message="生成中，请稍候..."
+                  @cancel="cancel"
+                  :cancellable="true"></LoadingModal>
   </q-layout-header>
 </template>
 
 <script>
-import { bindStateChild } from '../../common'
+import { bindStateChild, request, redirectRoot } from '../../common'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
+import LoadingModal from '../../components/LoadingModal'
 
 export default {
   name: 'SplashLayoutHeader',
   components: {
-    VuePerfectScrollbar
+    VuePerfectScrollbar,
+    LoadingModal
   },
+  data: () => ({
+    generating: false,
+    loadingModal: false
+  }),
   computed: {
     ...bindStateChild('Splash', 'scene')
   },
@@ -77,26 +89,29 @@ export default {
   },
   methods: {
     async generate () {
-      this.$root.$emit('show-loading-modal', {
-        message: '生成中，请稍候...',
-        onCancel: () => {
-          this.$root.$emit('hide-loading-modal')
-        }
+      this.generating = true
+      this.loadingModal = true
+      const resp = await request(`/api/splash/generate`, 'post', {
+        scene: this.$store.state.Splash.scene
       })
-      // this.$q.loading.show()
-      // const resp = await request(`/api/splash/generate`, 'post', {
-      //   scene: this.$store.state.Splash.scene
-      // })
-      // this.$q.loading.hide()
-      // if (resp.success) {
-      //   this.$q.notify({
-      //     type: 'positive',
-      //     message: '生成成功！即将开始下载...',
-      //     position: 'top',
-      //     icon: 'mdi-download'
-      //   })
-      //   redirectRoot(`/splash/download/${resp.data}`)
-      // }
+      this.cancel()
+      if (resp.success) {
+        this.$q.notify({
+          type: 'positive',
+          message: '生成成功！即将开始下载...',
+          position: 'top',
+          icon: 'mdi-download'
+        })
+        if (location.hostname !== 'localhost') {
+          redirectRoot(`/splash/download/${resp.data}`)
+        }
+      }
+    },
+    cancel () {
+      this.loadingModal = false
+      setTimeout(() => {
+        this.generating = false
+      }, 1000)
     },
     clean () {
       this.$q.dialog({
