@@ -56,13 +56,13 @@
     <LoadingModal v-if="generating"
                   :visible="loadingModal"
                   message="生成中，请稍候..."
-                  @cancel="cancel"
+                  @cancel="cancel(true)"
                   :cancellable="true"></LoadingModal>
   </q-layout-header>
 </template>
 
 <script>
-import { bindStateChild, request, redirectRoot } from '../../common'
+import { bindStateChild, request, redirectRoot, cancelSource } from '../../common'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 import LoadingModal from '../../components/LoadingModal'
 
@@ -74,7 +74,8 @@ export default {
   },
   data: () => ({
     generating: false,
-    loadingModal: false
+    loadingModal: false,
+    cancelSource: null
   }),
   computed: {
     ...bindStateChild('Splash', 'scene')
@@ -91,8 +92,10 @@ export default {
     async generate () {
       this.generating = true
       this.loadingModal = true
+      this.cancelSource = cancelSource()
       const resp = await request(`/api/splash/generate`, 'post', {
-        scene: this.$store.state.Splash.scene
+        scene: this.$store.state.Splash.scene,
+        __cancelSource: this.cancelSource
       })
       this.cancel()
       if (resp.success) {
@@ -107,11 +110,15 @@ export default {
         }
       }
     },
-    cancel () {
+    cancel (cancelRequest = false) {
       this.loadingModal = false
       setTimeout(() => {
         this.generating = false
       }, 1000)
+
+      if (cancelRequest && this.cancelSource) {
+        this.cancelSource.cancel()
+      }
     },
     clean () {
       this.$q.dialog({

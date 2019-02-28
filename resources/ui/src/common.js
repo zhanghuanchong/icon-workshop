@@ -5,9 +5,22 @@ import qs from 'qs'
 import store from './store'
 import _ from 'lodash'
 
+function cancelSource () {
+  const CancelToken = axios.CancelToken
+  return CancelToken.source()
+}
+
 async function request (url, method = 'get', data = {}, other = {}, silent = false, responseType = 'json') {
   let params = null
   let contentType = 'application/json'
+
+  const otherArg = {}
+  if (data && data.__cancelSource) {
+    otherArg.cancelToken = data.__cancelSource.token
+    delete data.__cancelSource
+  }
+
+  console.log(otherArg)
 
   method = method.toLowerCase()
   if (method === 'get' || method === 'delete') {
@@ -36,8 +49,7 @@ async function request (url, method = 'get', data = {}, other = {}, silent = fal
     },
     params: params
   }, other)
-
-  let [err, resp] = await to(axios.request(config))
+  let [err, resp] = await to(axios.request(config, otherArg))
   if (err || !resp || !resp.data) {
     if (err && err.response) {
       err = err.response.data
@@ -176,6 +188,7 @@ function redirectRoot (url) {
 }
 
 export {
+  cancelSource,
   request,
   notifyResponse,
   notifySuccess,
