@@ -64,6 +64,7 @@
 <script>
 import { bindStateChild, request, redirectRoot, cancelSource } from '../../common'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
+import _ from 'lodash'
 import LoadingModal from '../../components/LoadingModal'
 
 export default {
@@ -94,8 +95,9 @@ export default {
       this.loadingModal = true
       this.cancelSource = cancelSource()
       const resp = await request(`/api/splash/generate`, 'post', {
-        scene: this.$store.state.Splash.scene,
-        __cancelSource: this.cancelSource
+        scene: this.$store.state.Splash.scene
+      }, {
+        cancelToken: this.cancelSource.token
       })
       this.cancel()
       if (resp.success) {
@@ -110,14 +112,15 @@ export default {
         }
       }
     },
-    cancel (cancelRequest = false) {
+    cancel (cancelMessage = false) {
       this.loadingModal = false
       setTimeout(() => {
         this.generating = false
       }, 1000)
 
-      if (cancelRequest && this.cancelSource) {
-        this.cancelSource.cancel()
+      if (cancelMessage && this.cancelSource) {
+        this.cancelSource.cancel(_.isString(cancelMessage) ? cancelMessage : undefined)
+        this.cancelSource = null
       }
     },
     clean () {

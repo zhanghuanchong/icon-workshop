@@ -13,15 +13,6 @@ function cancelSource () {
 async function request (url, method = 'get', data = {}, other = {}, silent = false, responseType = 'json') {
   let params = null
   let contentType = 'application/json'
-
-  const otherArg = {}
-  if (data && data.__cancelSource) {
-    otherArg.cancelToken = data.__cancelSource.token
-    delete data.__cancelSource
-  }
-
-  console.log(otherArg)
-
   method = method.toLowerCase()
   if (method === 'get' || method === 'delete') {
     params = data
@@ -49,7 +40,7 @@ async function request (url, method = 'get', data = {}, other = {}, silent = fal
     },
     params: params
   }, other)
-  let [err, resp] = await to(axios.request(config, otherArg))
+  let [err, resp] = await to(axios.request(config))
   if (err || !resp || !resp.data) {
     if (err && err.response) {
       err = err.response.data
@@ -86,7 +77,7 @@ function notifyResponse (resp) {
       message: resp
     }
   }
-  if (resp.success === false && resp.error && resp.message) {
+  if (resp.success === false && resp.message) {
     const config = {
       title: '错误',
       message: resp.message,

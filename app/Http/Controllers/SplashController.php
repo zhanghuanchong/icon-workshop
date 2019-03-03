@@ -16,8 +16,6 @@ class SplashController extends BaseController
 
     public function generate(Request $request)
     {
-        sleep(5);
-
         $splash = new Splash();
         $splash->folder = date('Ym');
         $splash->config = $request->get('scene');
