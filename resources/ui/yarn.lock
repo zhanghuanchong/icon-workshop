@@ -7158,6 +7158,11 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
+screenfull@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/screenfull/-/screenfull-4.0.1.tgz#f3c13c41eb852cd29a63b01cf6e02a4fede137e2"
+  integrity sha512-9Poi+mjYVWbMFtt7JFGvXo9r/HVo2eweKnmAFQ0A++YjoCKaErDbvLjwtTF7Slazdx9K7VCxqWbNn22V2a1J/g==
+
 scss-tokenizer@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"

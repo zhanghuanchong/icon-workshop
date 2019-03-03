@@ -10,14 +10,16 @@
           <q-checkbox v-model="platforms"
                       checked-icon="mdi-apple"
                       unchecked-icon="mdi-apple mdi-inactive"
-                      label="iOS"
-                      val="ios"></q-checkbox>
+                      val="ios">
+            <q-tooltip>iOS</q-tooltip>
+          </q-checkbox>
           <q-checkbox v-model="platforms"
                       checked-icon="mdi-android"
                       unchecked-icon="mdi-android mdi-inactive"
-                      label="Android"
                       val="android"
-                      class="ml-10"></q-checkbox>
+                      class="ml-10">
+            <q-tooltip>Android</q-tooltip>
+          </q-checkbox>
         </q-field>
 
         <q-field label="方向：" class="ml-15">
@@ -37,7 +39,13 @@
         </q-field>
 
         <q-btn flat
+               round
                class="ml-auto"
+               :icon="fullscreen ? 'mdi-fullscreen-exit' : 'mdi-fullscreen'"
+               @click="resize"></q-btn>
+
+        <q-btn flat
+               class="ml-10"
                icon="mdi-broom"
                @click="clean"
                label="清空"></q-btn>
@@ -65,6 +73,7 @@
 import { bindStateChild, request, redirectRoot, cancelSource } from '../../common'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 import _ from 'lodash'
+import screenfull from 'screenfull'
 import LoadingModal from '../../components/LoadingModal'
 
 export default {
@@ -76,7 +85,8 @@ export default {
   data: () => ({
     generating: false,
     loadingModal: false,
-    cancelSource: null
+    cancelSource: null,
+    fullscreen: false
   }),
   computed: {
     ...bindStateChild('Splash', 'scene')
@@ -131,6 +141,17 @@ export default {
       }).then(() => {
         this.$store.dispatch('Splash/init')
       }).catch(() => {})
+    },
+    resize () {
+      if (screenfull.enabled) {
+        if (screenfull.isFullscreen) {
+          screenfull.exit()
+          this.fullscreen = false
+        } else {
+          screenfull.request()
+          this.fullscreen = true
+        }
+      }
     }
   }
 }
@@ -141,7 +162,7 @@ export default {
   overflow-x: auto;
 
   .q-toolbar {
-    min-width: 660px;
+    min-width: 680px;
   }
 
   .q-field-label {
