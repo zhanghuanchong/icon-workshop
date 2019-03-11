@@ -66,24 +66,29 @@
                   message="生成中，请稍候..."
                   @cancel="cancel(true)"
                   :cancellable="true"></LoadingModal>
+    <DownloadDialog v-if="downloading"
+                    @close="downloading = false"></DownloadDialog>
   </q-layout-header>
 </template>
 
 <script>
-import { bindStateChild, request, redirectRoot, cancelSource } from '../../common'
+import { bindStateChild, request, cancelSource } from '../../common'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 import _ from 'lodash'
 import screenfull from 'screenfull'
 import LoadingModal from '../../components/LoadingModal'
+import DownloadDialog from '../../components/DownloadDialog'
 
 export default {
   name: 'SplashLayoutHeader',
   components: {
     VuePerfectScrollbar,
-    LoadingModal
+    LoadingModal,
+    DownloadDialog
   },
   data: () => ({
     generating: false,
+    downloading: false,
     loadingModal: false,
     cancelSource: null,
     fullscreen: false
@@ -111,15 +116,8 @@ export default {
       })
       this.cancel()
       if (resp.success) {
-        this.$q.notify({
-          type: 'positive',
-          message: '生成成功！即将开始下载...',
-          position: 'top',
-          icon: 'mdi-download'
-        })
-        if (location.hostname !== 'localhost') {
-          redirectRoot(`/splash/download/${resp.data}`)
-        }
+        this.downloading = true
+        this.$root.$emit('show-download-dialog', resp)
       }
     },
     cancel (cancelMessage = false) {

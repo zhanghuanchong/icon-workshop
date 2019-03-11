@@ -55,6 +55,7 @@
         #main-frame {
             width: 100%;
             height: 700px;
+            box-shadow: 0 0 5px #027BE3;
         }
     </style>
 @endsection

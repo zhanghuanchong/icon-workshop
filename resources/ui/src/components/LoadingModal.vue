@@ -53,6 +53,7 @@ export default {
 
   .loading-modal-ad-ins {
     display: inline-block;
+    margin: 0 auto;
     width: 300px;
     height: 250px;
   }
