@@ -31,7 +31,10 @@ Route::get('/admin', 'AdminController@getIndex');
 Route::get('/admin/verify-code', 'AdminController@getVerifyCode');
 Route::post('/admin/login', 'AdminController@postLogin');
 
-Route::get('/job/delete-expired-files', 'JobController@getDeleteExpiredFiles');
+Route::get('/job/delete-expired-design-files', 'JobController@deleteExpiredDesignFiles');
+Route::get('/job/delete-expired-design-caches', 'JobController@deleteExpiredDesignCaches');
+Route::get('/job/delete-expired-splash-files', 'JobController@deleteExpiredSplashFiles');
+Route::get('/job/delete-expired-splash-caches', 'JobController@deleteExpiredSplashCaches');
 Route::get('/job/remove-old-splash-files', 'JobController@removeOldSplashFiles');
 
 Route::get('/vote', 'VoteController@getIndex');

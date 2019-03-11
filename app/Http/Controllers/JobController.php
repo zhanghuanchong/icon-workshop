@@ -14,25 +14,34 @@ use Carbon\Carbon;
  */
 class JobController extends BaseController
 {
-    public function getDeleteExpiredFiles()
+    public function deleteExpiredDesignFiles()
     {
         //////////////////// Icon /////////////////////
         // 删除1天前的所有数据
         Design::where('created_at', '<', Carbon::now()->subDay())->get()->each(function (Design $design) {
             $design->delete();
         });
+    }
 
+    public function deleteExpiredDesignCaches()
+    {
         // 删除1小时前的Cache
         Design::where('created_at', '<', Carbon::now()->subHour())->get()->each(function (Design $design) {
             $design->deleteCache();
         });
+    }
 
+    public function deleteExpiredSplashFiles()
+    {
         //////////////////// Splash /////////////////////
         // 删除1天前的所有数据
         Splash::where('created_at', '<', Carbon::now()->subDay())->get()->each(function (Splash $splash) {
             $splash->delete();
         });
+    }
 
+    public function deleteExpiredSplashCaches()
+    {
         // 删除1小时前的Cache
         Splash::where('created_at', '<', Carbon::now()->subHour())->get()->each(function (Splash $splash) {
             $splash->deleteCache();
