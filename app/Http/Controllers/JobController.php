@@ -51,7 +51,8 @@ class JobController extends BaseController
     public function removeOldSplashFiles()
     {
         $before = Carbon::now()->subDay()->getTimestamp();
-        $dirs = \File::directories(public_path('files') . '/201902/');
+        $folder = Carbon::now()->format('Ym');
+        $dirs = \File::directories(public_path('files') . '/' . $folder . '/');
         foreach ($dirs as $dir) {
             $time = \File::lastModified($dir);
             if ($time < $before) {
