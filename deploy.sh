@@ -3,7 +3,7 @@ git pull
 
 composer install
 
-php artisan migrate
+php artisan migrate --force
 php artisan view:clear
 php artisan route:clear
 php artisan config:clear
