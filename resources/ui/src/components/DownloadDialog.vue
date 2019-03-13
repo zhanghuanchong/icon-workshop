@@ -34,6 +34,12 @@ export default {
   ],
   methods: {
     download () {
+      this.$q.notify({
+        type: 'positive',
+        message: '即将开始下载...',
+        position: 'top',
+        icon: 'mdi-download'
+      })
       if (location.hostname !== 'localhost') {
         redirectRoot(`/splash/download/${this.origin.data}`)
       }
@@ -47,10 +53,16 @@ export default {
 </script>
 
 <style lang="scss">
-  .download-dialog-ad-ins {
-    display: inline-block;
-    margin: 0 auto;
-    width: 336px;
-    height: 280px;
+  .download-dialog {
+    .modal-body.modal-scroll {
+      max-height: 300px;
+    }
+
+    .download-dialog-ad-ins {
+      display: inline-block;
+      margin: 0 auto;
+      width: 336px;
+      height: 280px;
+    }
   }
 </style>

@@ -117,7 +117,9 @@ export default {
       this.cancel()
       if (resp.success) {
         this.downloading = true
-        this.$root.$emit('show-download-dialog', resp)
+        this.$nextTick(() => {
+          this.$root.$emit('show-download-dialog', resp)
+        })
       }
     },
     cancel (cancelMessage = false) {
