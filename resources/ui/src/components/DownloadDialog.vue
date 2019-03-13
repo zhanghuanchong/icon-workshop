@@ -7,6 +7,7 @@
     <span slot="title">生成成功！</span>
     <div slot="body">
       <Adsense
+        v-if="ad"
         ins-class="download-dialog-ad-ins"
         data-ad-client="ca-pub-5072970286349933"
         data-ad-slot="4784101167"
@@ -32,6 +33,11 @@ export default {
   mixins: [
     Singleton
   ],
+  data () {
+    return {
+      ad: false
+    }
+  },
   methods: {
     download () {
       this.$q.notify({
@@ -46,7 +52,13 @@ export default {
       this._hide()
     },
     hide () {
+      this.ad = false
       this.$emit('close')
+    },
+    show () {
+      this.$nextTick(() => {
+        this.ad = true
+      })
     }
   }
 }
@@ -57,12 +69,12 @@ export default {
     .modal-body.modal-scroll {
       max-height: 300px;
     }
+  }
 
-    .download-dialog-ad-ins {
-      display: inline-block;
-      margin: 0 auto;
-      width: 336px;
-      height: 280px;
-    }
+  .download-dialog-ad-ins {
+    display: block;
+    margin: 0 auto;
+    width: 336px;
+    height: 280px;
   }
 </style>
