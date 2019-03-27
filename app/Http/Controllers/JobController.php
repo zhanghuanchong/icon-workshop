@@ -61,4 +61,11 @@ class JobController extends BaseController
             }
         }
     }
+
+    public function removeMagickTmp()
+    {
+        $output = [];
+        exec('rm -rf /tmp/magick-* 2>&1', $output);
+        var_dump($output);
+    }
 }

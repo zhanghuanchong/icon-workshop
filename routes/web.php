@@ -36,6 +36,7 @@ Route::get('/job/delete-expired-design-caches', 'JobController@deleteExpiredDesi
 Route::get('/job/delete-expired-splash-files', 'JobController@deleteExpiredSplashFiles');
 Route::get('/job/delete-expired-splash-caches', 'JobController@deleteExpiredSplashCaches');
 Route::get('/job/remove-old-splash-files', 'JobController@removeOldSplashFiles');
+Route::get('/job/remove-magick-tmp', 'JobController@removeMagickTmp');
 
 Route::get('/vote', 'VoteController@getIndex');
 Route::post('/vote', 'VoteController@postIndex');

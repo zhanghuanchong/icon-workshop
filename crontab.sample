@@ -1,1 +1,6 @@
-12 0 * * * wget --no-check-certificate -q --spider http://icon.wuruihong.com/job/delete-expired-files
+12 * * * * wget --no-check-certificate -q --spider https://icon.wuruihong.com/job/delete-expired-design-files
+14 * * * * wget --no-check-certificate -q --spider https://icon.wuruihong.com/job/delete-expired-design-caches
+16 * * * * wget --no-check-certificate -q --spider https://icon.wuruihong.com/job/delete-expired-splash-files
+18 * * * * wget --no-check-certificate -q --spider https://icon.wuruihong.com/job/delete-expired-splash-caches
+22 */4 * * * wget --no-check-certificate -q --spider https://icon.wuruihong.com/job/remove-old-splash-files
+3 2 * * * wget --no-check-certificate -q --spider https://icon.wuruihong.com/job/remove-magick-tmp
