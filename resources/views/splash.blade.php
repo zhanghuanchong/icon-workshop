@@ -37,7 +37,7 @@
             <a href="/splash/demo" target="_blank" class="btn btn-raised pull-right" style="margin: -8px 0; color:#1976d2">视频演示</a>
         </div>
 
-        <iframe src="/dist/spa-mat/index.html" id="main-frame" frameborder="0"></iframe>
+        <iframe src="/dist/spa-mat/index.html?_={{ $GLOBALS['_VER_'] }}" id="main-frame" frameborder="0"></iframe>
 
         <div id="SOHUCS" sid="splash"></div>
         <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
