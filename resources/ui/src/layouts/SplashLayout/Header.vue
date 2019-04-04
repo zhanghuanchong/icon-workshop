@@ -42,7 +42,9 @@
                round
                class="ml-auto"
                :icon="fullscreen ? 'mdi-fullscreen-exit' : 'mdi-fullscreen'"
-               @click="resize"></q-btn>
+               @click="resize">
+          <q-tooltip>{{ fullscreen ? '还原' : '最大化' }}</q-tooltip>
+        </q-btn>
 
         <q-btn flat
                class="ml-10"
@@ -75,7 +77,6 @@
 import { bindStateChild, request, cancelSource } from '../../common'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 import _ from 'lodash'
-import screenfull from 'screenfull'
 import LoadingModal from '../../components/LoadingModal'
 import DownloadDialog from '../../components/DownloadDialog'
 
@@ -145,14 +146,9 @@ export default {
       }).catch(() => {})
     },
     resize () {
-      if (screenfull.enabled) {
-        if (screenfull.isFullscreen) {
-          screenfull.exit()
-          this.fullscreen = false
-        } else {
-          screenfull.request()
-          this.fullscreen = true
-        }
+      if (window.parent && window.parent !== window) {
+        this.fullscreen = !this.fullscreen
+        window.parent.postMessage(`iframe-fullscreen-${this.fullscreen ? 'on' : 'off'}`, location.origin)
       }
     }
   }

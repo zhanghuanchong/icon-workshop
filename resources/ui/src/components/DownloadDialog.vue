@@ -78,7 +78,7 @@ export default {
           this.loading = false
           clearInterval(itv)
         }
-      }, 200)
+      }, 300)
     }
   }
 }

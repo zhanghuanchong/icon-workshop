@@ -5,6 +5,15 @@
             <div class="col-sm-9">
                 <h1>更新日志</h1>
                 <dl>
+                    <dt>2019-04-05</dt>
+                    <dd>
+                        <ul>
+                            <li>更新：启动图生成工具 添加对 iPhone Xs Max 和 iPhone XR 的支持；</li>
+                            <li>更新：启动图生成工具 完善界面“最大化”功能。</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
                     <dt>2019-02-13</dt>
                     <dd>
                         <ul>

@@ -50,12 +50,36 @@
     </div>
     <script>
       window.state = 'splash';
+
+      window.addEventListener('message', function (evt) {
+        if (evt.origin !== location.origin) {
+          return;
+        }
+        if (evt.data === 'iframe-fullscreen-on') {
+          $('body').addClass('iframe-fullscreen');
+        } else if (evt.data === 'iframe-fullscreen-off') {
+          $('body').removeClass('iframe-fullscreen');
+        }
+      }, false);
     </script>
     <style>
         #main-frame {
             width: 100%;
             height: 700px;
             box-shadow: 0 0 5px #027BE3;
+        }
+
+        body.iframe-fullscreen {
+            overflow: hidden;
+        }
+
+        body.iframe-fullscreen #main-frame {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 99999999999;
         }
     </style>
 @endsection
