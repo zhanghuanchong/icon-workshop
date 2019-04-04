@@ -16,8 +16,12 @@
 
     <template slot="buttons" slot-scope="props">
       <q-btn flat label="取消" @click="_hide" />
-      <q-btn label="点击下载" push
+      <q-btn label="点击下载"
+             push
+             class="min-w-120"
              icon="mdi-download"
+             :loading="loading"
+             :percentage="percent"
              color="primary"
              @click="download" />
     </template>
@@ -35,7 +39,9 @@ export default {
   ],
   data () {
     return {
-      ad: false
+      ad: false,
+      loading: false,
+      percent: 0
     }
   },
   methods: {
@@ -49,16 +55,30 @@ export default {
       if (location.hostname !== 'localhost') {
         redirectRoot(`/splash/download/${this.origin.data}`)
       }
-      this._hide()
+      this.loading = true
+      this.percent = 100
+      setTimeout(() => {
+        this._hide()
+      }, 2000)
     },
     hide () {
       this.ad = false
       this.$emit('close')
     },
     show () {
+      this.loading = true
+      this.percent = 0
       this.$nextTick(() => {
         this.ad = true
       })
+
+      const itv = setInterval(() => {
+        this.percent += 10
+        if (this.percent > 100) {
+          this.loading = false
+          clearInterval(itv)
+        }
+      }, 200)
     }
   }
 }

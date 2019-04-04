@@ -80,7 +80,13 @@ export default {
       visible: true,
       devices: [
         {
-          name: 'iPhone X/Xs/XR',
+          name: 'iPhone Xs Max/XR',
+          image: 'statics/devices/iPhoneXR.png',
+          width: 414,
+          height: 896
+        },
+        {
+          name: 'iPhone X/Xs',
           image: 'statics/devices/iPhoneX.png',
           width: 375,
           height: 812

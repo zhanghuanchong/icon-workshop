@@ -114,13 +114,15 @@ export default {
       }, {
         cancelToken: this.cancelSource.token
       })
-      this.cancel()
-      if (resp.success) {
-        this.downloading = true
-        this.$nextTick(() => {
-          this.$root.$emit('show-download-dialog', resp)
-        })
-      }
+      setTimeout(() => {
+        this.cancel()
+        if (resp.success) {
+          this.downloading = true
+          this.$nextTick(() => {
+            this.$root.$emit('show-download-dialog', resp)
+          })
+        }
+      }, 3000)
     },
     cancel (cancelMessage = false) {
       this.loadingModal = false
