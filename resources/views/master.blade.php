@@ -113,12 +113,6 @@
                 })();
             </script>
         @endif
-
-        <script>
-          setInterval(function () {
-            $('#pop_ad, #cy-cmt-list [node-type=ad-pc-feed], .module-cmt-notice').remove();
-          }, 1000);
-        </script>
     </p>
 </footer>
 
