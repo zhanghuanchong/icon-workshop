@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "await-to-js": "^2.1.1",
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "marvel-devices.css": "^1.0.0",
     "moment": "^2.23.0",
     "perfect-scrollbar": "^1.4.0",
@@ -39,10 +39,13 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.3.0",
+    "fstream": "^1.0.12",
+    "js-yaml": "^3.13.1",
     "node-sass": "^4.10.0",
     "quasar-cli": "^0.17.0",
     "sass-loader": "^7.1.0",
     "strip-ansi": "=3.0.1",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-dev-server": "^3.1.11"
   },
   "engines": {
