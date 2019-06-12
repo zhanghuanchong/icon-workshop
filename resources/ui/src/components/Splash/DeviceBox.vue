@@ -2,18 +2,32 @@
   <div class="splash-device-box"
        v-if="scene"
        :style="deviceBoxStyle">
-    <img :src="im.url" alt=""
-         class="object"
-         :class="objectClass(im)"
-         :style="objectStyle(im)"
-         @click.stop="select(im)"
-         v-for="im in images" :key="im.id">
+    <vue-draggable-resizable v-for="im in images"
+                             @dragstop="onDragStop(im, arguments)"
+                             @resizestop="onResizeStop(im, arguments)"
+                             :key="im.id"
+                             :ref="`vdr_${im.id}`"
+                             :x="drX(im)"
+                             :y="drY(im)"
+                             :w="drWidth(im)"
+                             :h="drHeight(im)"
+                             :lock-aspect-ratio="true">
+      <img :src="im.url" alt=""
+           class="object image"
+           :class="objectClass(im)"
+           @click.stop="select(im)">
+    </vue-draggable-resizable>
   </div>
 </template>
 
 <script>
+import VueDraggableResizable from 'vue-draggable-resizable'
+
 export default {
   name: 'DeviceBox',
+  components: {
+    VueDraggableResizable
+  },
   computed: {
     splash () {
       return this.$store.state.Splash
@@ -41,20 +55,8 @@ export default {
     },
     selected () {
       return this.$store.state.Splash.object
-    }
-  },
-  methods: {
-    objectClass (o) {
-      if (this.selected && o.id !== this.selected.id) {
-        return 'inactive'
-      }
-      if (this.selected && o.id === this.selected.id) {
-        return 'active'
-      }
     },
-    objectStyle (o) {
-      let scale = o.scale
-
+    baseScale () {
       const width = this.splash.width
       const height = this.splash.height
       const short = Math.min(width, height)
@@ -68,15 +70,47 @@ export default {
       } else if (rate >= 0.66) {
         baseScale *= 0.875
       }
-
-      return {
-        left: `${o.left}%`,
-        top: `${o.top}%`,
-        transform: `translate(-50%, -50%) scale(${baseScale * scale})`
+      return baseScale
+    }
+  },
+  methods: {
+    objectClass (o) {
+      if (this.selected && o.id !== this.selected.id) {
+        return 'inactive'
+      }
+      if (this.selected && o.id === this.selected.id) {
+        return 'active'
       }
     },
     select (o) {
       this.$store.commit('Splash/setCurrentObject', o)
+    },
+    drX (o) {
+      return o.left / 100 * this.splash.width - this.drWidth(o) / 2
+    },
+    drY (o) {
+      return o.top / 100 * this.splash.height - this.drHeight(o) / 2
+    },
+    drWidth (o) {
+      return o.scale * o.width
+    },
+    drHeight (o) {
+      return o.scale * o.height
+    },
+    onDragStop (o, arg) {
+      const left = arg[0]
+      const top = arg[1]
+      const pl = Math.round((left + this.drWidth(o) / 2) / this.splash.width * 100)
+      const pt = Math.round((top + this.drHeight(o) / 2) / this.splash.height * 100)
+      this.$store.commit('Splash/updateObject', {
+        id: o.id,
+        left: pl,
+        top: pt
+      })
+    },
+    onResizeStop (o, arg) {
+      const [ left, top, width, height ] = arg
+      console.log(o, left, top, width, height)
     }
   }
 }
@@ -93,13 +127,25 @@ export default {
 
     .object {
       position: absolute;
-      transform: translate(-50%, -50%);
+
+      &.image {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
 
       &.inactive {
         opacity: 0.5;
       }
+    }
+
+    .vdr {
+      border: 1px solid transparent;
+      cursor: move;
+
       &.active {
-        outline: 3px solid $light-primary;
+        border: 1px dashed #000;
       }
     }
   }
