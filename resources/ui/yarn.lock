@@ -8381,11 +8381,6 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-draggable-resizable@^2.0.0-rc2:
-  version "2.0.0-rc2"
-  resolved "https://registry.yarnpkg.com/vue-draggable-resizable/-/vue-draggable-resizable-2.0.0-rc2.tgz#492925541eabebeb5b805b2fafb358ff27927d24"
-  integrity sha512-ctVl5elVhRT3Py1vFqCOcbdCyFdbPq9Y0SQJ/96/MWcBQ4vod2pJNwWe00BS8H2iT7hCUaUJfMcMH8200L1jmg==
-
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"

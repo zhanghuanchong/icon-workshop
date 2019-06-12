@@ -12,7 +12,6 @@ export default {
 
 <style lang="scss">
   @import "~marvel-devices.css";
-  @import "~vue-draggable-resizable/dist/VueDraggableResizable.css";
 
   @import "./css/helper";
   @import "./css/main";

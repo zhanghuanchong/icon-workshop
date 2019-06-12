@@ -9,7 +9,6 @@ https://icon.wuruihong.com
 * Laravel 5.6
 * Angular 1
 * Material Design
-* Vue / Quasar Framework
 
 ### Author
 https://github.com/zhanghuanchong

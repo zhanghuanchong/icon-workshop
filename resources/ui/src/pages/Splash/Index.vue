@@ -43,9 +43,6 @@ export default {
   },
   methods: {
     reset () {
-      if (window.document.querySelector('.splash-page-index .splash-device-box .vdr.active')) {
-        return
-      }
       this.$store.commit('Splash/setCurrentObject', null)
     },
     resetLayout () {
