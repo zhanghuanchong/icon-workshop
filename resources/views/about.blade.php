@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        @include('comment', ['name' => '1'])
+        @include('comment', ['name' => 'about'])
     </div>
     <script>
         window.state = 'about';

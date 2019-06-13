@@ -1,8 +1,13 @@
-<div id="SOHUCS" sid="{{ $name }}"></div>
-<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: 'cysYYpGQc',
-        conf: 'prod_e3f50564abc49adec1eeba0d0a97d66b'
-    });
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div id="vcomments"></div>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'EV3B7qpoac7VfyENfi1U0XXC-gzGzoHsz',
+    appKey: 'A78Q7lpOQ4AgaJPwfh2n08xd',
+    avatar: 'robohash',
+    placeholder: '您发现了什么问题或者有什么建议？',
+    recordIP: true
+  })
 </script>

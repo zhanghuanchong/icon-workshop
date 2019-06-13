@@ -28,7 +28,7 @@ var path = {
   ],
   css_src: [
     'public/css/bootstrap-material-design.min.css',
-    'public/css/loading-bar.min.css" rel="stylesheet',
+    'public/css/loading-bar.min.css',
     'public/bower/ng-dialog/css/ngDialog.min.css',
     'public/bower/ng-dialog/css/ngDialog-theme-default.min.css',
     'public/bower/angular-material/angular-material.min.css',
@@ -61,10 +61,6 @@ gulp.task('clean', function(){
   ]);
 });
 
-gulp.task('build', ['clean'], function () {
-  gulp.start(['css', 'js']);
-});
+gulp.task('build', gulp.series('clean', gulp.parallel(['css', 'js'])));
 
-gulp.task('default', function () {
-  gulp.start('build');
-});
+gulp.task('default', gulp.parallel('build'));

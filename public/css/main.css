@@ -1,3 +1,6 @@
+html {
+  font-size: 16px;
+}
 body {
   font-family: '微软雅黑', 'Microsoft YaHei', '黑体', Roboto, Helvetica, Arial, sans-serif;
   padding-top: 80px;
