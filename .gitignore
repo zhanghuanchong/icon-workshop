@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/bower
+/public/ads.txt
 /asset
 /storage/*.key
 /vendor
