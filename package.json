@@ -26,6 +26,7 @@
         "merge2": "^1.0.2",
         "natives": "^1.1.6",
         "popper.js": "^1.12",
+        "stringstream": "^1.0.0",
         "vue": "^2.5.7"
     },
     "dependencies": {}
