@@ -8,13 +8,6 @@
     position="top"
   >
 
-    <div class="ad">
-      <Adsense
-        ins-class="loading-modal-ad-ins"
-        data-ad-client="ca-pub-5072970286349933"
-        data-ad-slot="8595854677"
-      ></Adsense>
-    </div>
     <div class="loading">
       <q-spinner size="20px"></q-spinner>
       <span class="ml-10">{{ message || '操作进行中，请稍候...' }}</span>
@@ -44,7 +37,6 @@ export default {
       padding: 20px;
 
       .loading {
-        margin: 20px 0 0;
         display: flex;
         align-items: center;
       }

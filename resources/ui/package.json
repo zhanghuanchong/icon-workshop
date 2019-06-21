@@ -1,61 +1,43 @@
 {
-  "name": "icon-factory-ui",
-  "version": "1.0.0",
-  "description": "图标工场 - 移动应用图标生成工具，一键生成所有尺寸的应用图标",
-  "productName": "图标工场",
-  "cordovaId": "com.wuruihong.icon",
-  "author": "Hans Zhang <devwingcom@gmail.com>",
-  "private": true,
-  "scripts": {
-    "lint": "eslint --ext .js,.vue src",
-    "test": "echo \"No test specified\" && exit 0",
-    "dev": "quasar dev -t mat -m spa",
-    "build": "quasar build -t mat -m spa"
-  },
-  "dependencies": {
-    "await-to-js": "^2.1.1",
-    "axios": "^0.19.0",
-    "marvel-devices.css": "^1.0.0",
-    "moment": "^2.23.0",
-    "perfect-scrollbar": "^1.4.0",
-    "qs": "^6.6.0",
-    "screenfull": "^4.0.1",
-    "uuid": "^3.3.2",
-    "vue-google-adsense": "^1.4.5",
-    "vue-i18n": "^7.3.3",
-    "vue-perfect-scrollbar": "^0.1.0",
-    "vue-script2": "^2.0.3",
-    "vuelidate": "^0.7.4",
-    "vuex-persistedstate": "^2.5.4"
-  },
-  "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.18.2",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-vue": "^4.3.0",
-    "fstream": "^1.0.12",
-    "js-yaml": "^3.13.1",
-    "node-sass": "^4.10.0",
-    "quasar-cli": "^0.17.0",
-    "sass-loader": "^7.1.0",
-    "strip-ansi": "=3.0.1",
-    "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-dev-server": "^3.1.11"
-  },
-  "engines": {
-    "node": ">= 8.9.0",
-    "npm": ">= 5.6.0",
-    "yarn": ">= 1.6.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 10"
-  ]
+    "name": "launchimage",
+    "version": "1.0.0",
+    "description": "APP启动图生成 - 移动应用启动图生成工具，一键生成所有尺寸的应用启动图",
+    "productName": "APP启动图生成",
+    "private": true,
+    "scripts": {
+        "dev": "quasar dev -t mat -m spa",
+        "build": "quasar build -t mat -m spa"
+    },
+    "dependencies": {
+        "await-to-js": "^2.1.1",
+        "axios": "^0.18.0",
+        "marvel-devices.css": "^1.0.0",
+        "moment": "^2.23.0",
+        "perfect-scrollbar": "^1.4.0",
+        "qs": "^6.6.0",
+        "screenfull": "^4.0.1",
+        "uuid": "^3.3.2",
+        "vue-i18n": "^7.3.3",
+        "vue-perfect-scrollbar": "^0.1.0",
+        "vue-script2": "^2.0.3",
+        "vuelidate": "^0.7.4",
+        "vuex-persistedstate": "^2.5.4"
+    },
+    "devDependencies": {
+        "node-sass": "^4.10.0",
+        "quasar-cli": "^0.17.0",
+        "sass-loader": "^7.1.0",
+        "strip-ansi": "=3.0.1",
+        "webpack-dev-server": "^3.1.11"
+    },
+    "engines": {
+        "node": ">= 8.9.0",
+        "npm": ">= 5.6.0",
+        "yarn": ">= 1.6.0"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 10"
+    ]
 }

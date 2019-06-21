@@ -11,38 +11,38 @@ import Base from '../Base'
  * @property {number} version
  */
 export default class BaseObject extends Base {
-  /**
-   * @param {object} options
-   * @constructor
-   */
-  constructor (options = {}) {
-    super(options)
-    _.assignIn(this, {
-      proto: 'BaseObject',
-      left: 50,
-      top: 50,
-      width: undefined,
-      height: undefined,
-      scale: 1,
-      version: 0
-    }, options)
-  }
-
-  position () {
-    return {
-      left: this.left,
-      top: this.top
+    /**
+     * @param {object} options
+     * @constructor
+     */
+    constructor (options = {}) {
+        super(options)
+        _.assignIn(this, {
+            proto: 'BaseObject',
+            left: 50,
+            top: 50,
+            width: undefined,
+            height: undefined,
+            scale: 1,
+            version: 0
+        }, options)
     }
-  }
 
-  size () {
-    return {
-      width: this.width,
-      height: this.height
+    position () {
+        return {
+            left: this.left,
+            top: this.top
+        }
     }
-  }
 
-  get description () {
-    return '对象'
-  }
+    size () {
+        return {
+            width: this.width,
+            height: this.height
+        }
+    }
+
+    get description () {
+        return '对象'
+    }
 }
