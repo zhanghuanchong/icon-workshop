@@ -54,7 +54,7 @@
               <q-item v-for="d in devices" :key="d.name" @click.native="preview(d)">
                 <q-item-side :image="d.image"></q-item-side>
                 <q-item-main>
-                  <q-item-tile label>{{ d.name }}</q-item-tile>
+                  <q-item-tile label v-html="d.name"></q-item-tile>
                   <q-item-tile sublabel>{{ d.width }} x {{ d.height }}</q-item-tile>
                 </q-item-main>
               </q-item>
@@ -114,6 +114,24 @@ export default {
           image: 'statics/devices/iPad.png',
           width: 768,
           height: 1024
+        },
+        {
+          name: '华为P30 pro<br/>OPPO Reno',
+          image: 'statics/devices/huaweiP30pro.png',
+          width: 1080,
+          height: 2340
+        },
+        {
+          name: 'Mate 20 Pro<br/>一加7 Pro',
+          image: 'statics/devices/oneplus7Pro.png',
+          width: 1440,
+          height: 3120
+        },
+        {
+          name: '小米6<br/>一加5',
+          image: 'statics/devices/oneplus5.png',
+          width: 1080,
+          height: 1920
         }
       ]
     }

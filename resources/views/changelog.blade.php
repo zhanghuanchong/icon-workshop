@@ -8,7 +8,7 @@
                     <dt>2019-06-22</dt>
                     <dd>
                         <ul>
-                            <li>更新：启动图生成工具 支持直接拖放图片。感谢贡献者：<a href="https://github.com/kuaifan" target="_blank">https://github.com/kuaifan</a></li>
+                            <li>更新：启动图生成工具 添加更多设备预览图。感谢贡献者：<a href="https://github.com/kuaifan" target="_blank">https://github.com/kuaifan</a></li>
                         </ul>
                     </dd>
                 </dl>
