@@ -1,3 +1,1 @@
-# Quasar App
-
-> WIP
+# APP LaunchImage
