@@ -4,24 +4,6 @@ import createPersistedState from 'vuex-persistedstate'
 import Scene from '../models/Scene'
 import { deserialize } from '../models'
 import Splash from './Splash'
-
-if (window.location.hostname !== 'localhost') {
-  const redirect = 'http://icon.wuruihong.com'
-  if (window.parent === window) {
-    window.location.href = redirect
-  }
-
-  try {
-    const hostname = window.parent.location.hostname
-    if (!['localhost', 'icon.local', 'icon.wuruihong.com'].includes(hostname)) {
-      window.location.href = redirect
-    }
-  } catch (e) {
-    console.log(e)
-    window.location.href = redirect
-  }
-}
-
 Vue.use(Vuex)
 
 /*

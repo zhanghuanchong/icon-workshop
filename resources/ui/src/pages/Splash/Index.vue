@@ -1,101 +1,113 @@
 <template>
-  <q-page class="flex flex-center splash-page-index"
-          @click.native="reset">
-    <VuePerfectScrollbar ref="scrollbar">
-      <div class="center-container" :style="containerStyle">
-        <DeviceBox></DeviceBox>
-      </div>
-    </VuePerfectScrollbar>
-  </q-page>
+    <q-page class="flex flex-center splash-page-index"
+            @mousedown.native="mousedown"
+            @mouseup.native="mouseup">
+        <VuePerfectScrollbar ref="scrollbar">
+            <div class="center-container" :style="containerStyle">
+                <DeviceBox></DeviceBox>
+            </div>
+        </VuePerfectScrollbar>
+    </q-page>
 </template>
 
 <script>
-import DeviceBox from '../../components/Splash/DeviceBox'
-import VuePerfectScrollbar from 'vue-perfect-scrollbar'
-import _ from 'lodash'
+    import DeviceBox from '../../components/Splash/DeviceBox'
+    import VuePerfectScrollbar from 'vue-perfect-scrollbar'
+    import _ from 'lodash'
 
-const padding = 50
+    const padding = 50
 
-export default {
-  name: 'SplashPageIndex',
-  components: {
-    DeviceBox,
-    VuePerfectScrollbar
-  },
-  computed: {
-    splash () {
-      return this.$store.state.Splash
-    },
-    containerStyle () {
-      return {
-        minWidth: `${this.splash.width + padding * 2}px`,
-        minHeight: `${this.splash.height + padding * 2}px`
-      }
+    export default {
+        name: 'SplashPageIndex',
+        components: {
+            DeviceBox,
+            VuePerfectScrollbar
+        },
+        computed: {
+            splash () {
+                return this.$store.state.Splash
+            },
+            containerStyle () {
+                return {
+                    minWidth: `${this.splash.width + padding * 2}px`,
+                    minHeight: `${this.splash.height + padding * 2}px`
+                }
+            }
+        },
+        watch: {
+            'splash.width' () {
+                this.resetLayout()
+            },
+            'splash.height' () {
+                this.resetLayout()
+            }
+        },
+        methods: {
+            mousedown() {
+                this.isRest = true;
+            },
+            mouseup() {
+                if (this.isRest) {
+                    this.$store.commit('Splash/setCurrentObject', null)
+                }
+                this.isRest = false;
+            },
+            resetLayout () {
+                this.$nextTick(() => {
+                    this.resetScrollbar()
+                    this.scaleDeviceContainer()
+                })
+            },
+            resetScrollbar () {
+                const bar = this.$refs.scrollbar
+                if (bar && bar.$el) {
+                    const $el = bar.$el
+                    $el.scrollLeft = ($el.scrollWidth - $el.clientWidth) / 2
+                    $el.scrollTop = ($el.scrollHeight - $el.clientHeight) / 2
+                }
+            },
+            scaleDeviceContainer () {
+                if (!this.splash.autoScale) {
+                    return
+                }
+                const $container = this.$el.querySelector('.ps-container')
+                const rw = $container.clientWidth / (this.splash.width + padding * 2)
+                const rh = $container.clientHeight / (this.splash.height + padding * 2)
+                let scale = _.round(Math.min(rw, rh, 1), 2)
+                if (scale <= 0) {
+                    scale = 1
+                }
+                this.$store.commit('Splash/update', {
+                    scale
+                })
+            }
+        },
+        data() {
+            return {
+                isRest: false,
+            }
+        },
+        mounted () {
+            this.resetLayout()
+        }
     }
-  },
-  watch: {
-    'splash.width' () {
-      this.resetLayout()
-    },
-    'splash.height' () {
-      this.resetLayout()
-    }
-  },
-  methods: {
-    reset () {
-      this.$store.commit('Splash/setCurrentObject', null)
-    },
-    resetLayout () {
-      this.$nextTick(() => {
-        this.resetScrollbar()
-        this.scaleDeviceContainer()
-      })
-    },
-    resetScrollbar () {
-      const bar = this.$refs.scrollbar
-      if (bar && bar.$el) {
-        const $el = bar.$el
-        $el.scrollLeft = ($el.scrollWidth - $el.clientWidth) / 2
-        $el.scrollTop = ($el.scrollHeight - $el.clientHeight) / 2
-      }
-    },
-    scaleDeviceContainer () {
-      if (!this.splash.autoScale) {
-        return
-      }
-      const $container = this.$el.querySelector('.ps-container')
-      const rw = $container.clientWidth / (this.splash.width + padding * 2)
-      const rh = $container.clientHeight / (this.splash.height + padding * 2)
-      let scale = _.round(Math.min(rw, rh, 1), 2)
-      if (scale <= 0) {
-        scale = 1
-      }
-      this.$store.commit('Splash/update', {
-        scale
-      })
-    }
-  },
-  mounted () {
-    this.resetLayout()
-  }
-}
 </script>
 
 <style lang="scss">
-  .splash-page-index {
-    background: #eee;
+    .splash-page-index {
+        background: #eee;
 
-    > .ps-container {
-      width: 100%;
-      height: calc(100vh - 50px);
+        > .ps-container {
+            width: 100%;
+            height: calc(100vh - 50px);
 
-      .center-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-      }
+            .center-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
-  }
 </style>

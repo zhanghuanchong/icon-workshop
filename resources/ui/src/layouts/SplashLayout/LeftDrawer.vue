@@ -54,7 +54,7 @@
               <q-item v-for="d in devices" :key="d.name" @click.native="preview(d)">
                 <q-item-side :image="d.image"></q-item-side>
                 <q-item-main>
-                  <q-item-tile label>{{ d.name }}</q-item-tile>
+                  <q-item-tile label v-html="d.name"></q-item-tile>
                   <q-item-tile sublabel>{{ d.width }} x {{ d.height }}</q-item-tile>
                 </q-item-main>
               </q-item>
@@ -71,104 +71,122 @@ import { bindState } from '../../common'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 
 export default {
-  name: 'SplashLayoutLeftDrawer',
-  components: {
-    VuePerfectScrollbar
-  },
-  data () {
-    return {
-      visible: true,
-      devices: [
-        {
-          name: 'iPhone Xs Max/XR',
-          image: 'statics/devices/iPhoneXR.png',
-          width: 414,
-          height: 896
-        },
-        {
-          name: 'iPhone X/Xs',
-          image: 'statics/devices/iPhoneX.png',
-          width: 375,
-          height: 812
-        },
-        {
-          name: 'iPhone 6/7/8 Plus',
-          image: 'statics/devices/iPhone8Plus.png',
-          width: 414,
-          height: 736
-        },
-        {
-          name: 'iPhone 6/7/8',
-          image: 'statics/devices/iPhone8.png',
-          width: 375,
-          height: 667
-        },
-        {
-          name: 'iPhone 5s/SE',
-          image: 'statics/devices/iPhoneSE.png',
-          width: 320,
-          height: 568
-        },
-        {
-          name: 'iPad',
-          image: 'statics/devices/iPad.png',
-          width: 768,
-          height: 1024
-        }
-      ]
-    }
-  },
-  computed: {
-    ...bindState('Splash', 'scale'),
-    ...bindState('Splash', 'autoScale'),
-    ...bindState('Splash', 'width'),
-    ...bindState('Splash', 'height')
-  },
-  methods: {
-    swap () {
-      const a = this.width
-      this.width = this.height
-      this.height = a
+    name: 'SplashLayoutLeftDrawer',
+    components: {
+        VuePerfectScrollbar
     },
-    preview (device) {
-      this.width = device.width
-      this.height = device.height
+    data() {
+        return {
+            visible: true,
+            devices: [
+                {
+                    name: 'iPhone Xs Max/XR',
+                    image: 'statics/devices/iPhoneXR.png',
+                    width: 414,
+                    height: 896
+                },
+                {
+                    name: 'iPhone X/Xs',
+                    image: 'statics/devices/iPhoneX.png',
+                    width: 375,
+                    height: 812
+                },
+                {
+                    name: 'iPhone 6/7/8 Plus',
+                    image: 'statics/devices/iPhone8Plus.png',
+                    width: 414,
+                    height: 736
+                },
+                {
+                    name: 'iPhone 6/7/8',
+                    image: 'statics/devices/iPhone8.png',
+                    width: 375,
+                    height: 667
+                },
+                /*{
+                    name: 'iPhone 5s/SE',
+                    image: 'statics/devices/iPhoneSE.png',
+                    width: 320,
+                    height: 568
+                },*/
+                {
+                    name: 'iPad',
+                    image: 'statics/devices/iPad.png',
+                    width: 768,
+                    height: 1024
+                },
+                {
+                    name: '华为P30 pro<br/>OPPO Reno',
+                    image: 'statics/devices/huaweiP30pro.png',
+                    width: 1080,
+                    height: 2340
+                },
+                {
+                    name: '一加7 Pro<br/>Mate 20 Pro',
+                    image: 'statics/devices/oneplus7Pro.png',
+                    width: 1440,
+                    height: 3120
+                },
+                {
+                    name: '一加5<br/>小米6',
+                    image: 'statics/devices/oneplus5.png',
+                    width: 1080,
+                    height: 1920
+                }
+            ]
+        }
+    },
+    computed: {
+        ...bindState('Splash', 'scale'),
+        ...bindState('Splash', 'autoScale'),
+        ...bindState('Splash', 'width'),
+        ...bindState('Splash', 'height')
+    },
+    methods: {
+        swap() {
+            const a = this.width
+            this.width = this.height
+            this.height = a
+        },
+        preview(device) {
+            this.width = device.width
+            this.height = device.height
+        }
+    },
+    mounted() {
+        this.$nextTick(() => {
+            this.visible = true
+        })
     }
-  },
-  mounted () {
-    this.$nextTick(() => {
-      this.visible = true
-    })
-  }
 }
 </script>
 
 <style lang="scss">
-.splash-layout-left-drawer {
-  .q-list.devices {
-    padding: 0;
-    margin-left: -10px;
-    margin-right: -10px;
+    .splash-layout-left-drawer {
+        .q-list.devices {
+            padding: 0;
+            margin-left: -10px;
+            margin-right: -10px;
 
-    .q-item {
-      padding: 8px 10px 5px;
+            .q-item {
+                padding: 8px 10px 5px;
+            }
+
+            .q-item-image {
+                width: 40px;
+                min-width: 40px;
+            }
+        }
+
+        .ps-container {
+            padding: 10px;
+            height: calc(100vh - 52px);
+        }
+
+        .q-field {
+            .q-if-inner > .relative-position {
+                width: 100%;
+            }
+        }
     }
-
-    .q-item-image {
-      width: 40px;
-      min-width: 40px;
-    }
-  }
-
-  .ps-container {
-    padding: 10px;
-    height: calc(100vh - 52px);
-  }
-
-  .q-field {
-    .q-if-inner > .relative-position {
-      width: 100%;
-    }
-  }
-}
 </style>
