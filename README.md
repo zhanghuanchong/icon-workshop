@@ -22,9 +22,13 @@ https://icon.wuruihong.com
   * 支持插入文本
 * 生成应用商店屏幕截图
 
-### Author
+### Contributors
 
-https://github.com/zhanghuanchong
+Primary author:
+* https://github.com/zhanghuanchong
+
+Other contributors:
+* https://github.com/kuaifan
 
 ### License
 

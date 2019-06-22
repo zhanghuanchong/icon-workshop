@@ -5,6 +5,14 @@
             <div class="col-sm-9">
                 <h1>更新日志</h1>
                 <dl>
+                    <dt>2019-06-22</dt>
+                    <dd>
+                        <ul>
+                            <li>更新：启动图生成工具 支持直接拖放图片。感谢贡献者：<a href="https://github.com/kuaifan" target="_blank">https://github.com/kuaifan</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
                     <dt>2019-05-16</dt>
                     <dd>
                         <ul>
@@ -196,7 +204,7 @@
             </div>
         </div>
 
-        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src="//c.lcfile.com/static/js/3.0.4/av-min.js"></script>
         <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
         <div id="vcomments"></div>
         <script>

@@ -8,7 +8,7 @@
                     欢迎您对本工具提出宝贵的意见和建议!
                 </p>
                 <p class="mt-10 lh-28 flex">
-                    如果帮到你了，欢迎
+                    如果帮到你了，请
                     <span class="ml-10">
                         <a class="github-button" href="https://github.com/zhanghuanchong/icon-workshop"
                            data-size="large" data-show-count="true"
@@ -26,6 +26,12 @@
                     <li class="mt-10"><i class="fa fa-road"></i>
                         <a href="https://github.com/zhanghuanchong/icon-workshop/projects/1"
                            class="ml-10" target="_blank">开发路线</a></li>
+                </ul>
+                <p class="mt-10">感谢以下开源社区贡献者：</p>
+                <ul style="margin-bottom: 20px">
+                    <li>
+                        <a href="https://github.com/kuaifan" target="_blank">https://github.com/kuaifan</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-8" style="padding-top: 70px;">
