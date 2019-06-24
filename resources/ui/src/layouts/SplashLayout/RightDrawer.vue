@@ -27,7 +27,7 @@
                    label="文字"></q-btn>
           </div>
 
-          <Objects></Objects>
+          <ObjectList></ObjectList>
         </VuePerfectScrollbar>
       </q-tab-pane>
     </q-tabs>
@@ -38,14 +38,14 @@
 
 <script>
 import Image from '../../models/Objects/Image'
-import Objects from '../../components/Splash/Objects'
+import ObjectList from '../../components/Splash/ObjectList'
 import ObjectSetting from '../../components/Splash/ObjectSetting'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 
 export default {
   name: 'SplashLayoutRightDrawer',
   components: {
-    Objects,
+    ObjectList,
     ObjectSetting,
     VuePerfectScrollbar
   },

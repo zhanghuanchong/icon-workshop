@@ -2,18 +2,23 @@
   <div class="splash-device-box"
        v-if="scene"
        :style="deviceBoxStyle">
-    <img :src="im.url" alt=""
-         class="object"
-         :class="objectClass(im)"
-         :style="objectStyle(im)"
-         @click.stop="select(im)"
-         v-for="im in images" :key="im.id">
+    <DeviceObject v-for="im in images"
+                  :key="im.id"
+                  @click.native.stop="select(im)"
+                  :class="objectClass(im)"
+                  :style="objectStyle(im)"
+                  :object="im"></DeviceObject>
   </div>
 </template>
 
 <script>
+import DeviceObject from './DeviceObject'
+
 export default {
   name: 'DeviceBox',
+  components: {
+    DeviceObject
+  },
   computed: {
     splash () {
       return this.$store.state.Splash
@@ -83,24 +88,10 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "../../css/variable";
-
   .splash-device-box {
     transition: all 0.3s;
     background: white;
     box-shadow: 0 0 20px silver;
     position: absolute;
-
-    .object {
-      position: absolute;
-      transform: translate(-50%, -50%);
-
-      &.inactive {
-        opacity: 0.5;
-      }
-      &.active {
-        outline: 3px solid $light-primary;
-      }
-    }
   }
 </style>

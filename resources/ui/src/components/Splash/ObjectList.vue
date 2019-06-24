@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'Objects',
+  name: 'ObjectList',
   computed: {
     objects () {
       return this.$store.state.Splash.scene.objects
