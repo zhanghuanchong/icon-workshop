@@ -1,7 +1,7 @@
 <template>
   <q-list no-border highlight separator class="objects-list">
     <draggable v-model="objects">
-      <transition-group>
+      <transition-group name="flip-list">
         <q-item v-for="o in objects" :key="o.id"
                 :class="{selected: isSelected(o)}"
                 @click.native="toggle(o)">
@@ -110,6 +110,10 @@ export default {
     .q-item-main {
       margin-left: 6px;
     }
+  }
+
+  .flip-list-move {
+    transition: transform 0.3s;
   }
 }
 </style>
