@@ -9,6 +9,7 @@
                     <dd>
                         <ul>
                             <li>更新：启动图生成工具 添加更多设备预览图。感谢贡献者：<a href="https://github.com/kuaifan" target="_blank">https://github.com/kuaifan</a></li>
+                            <li>更新：启动图生成工具 支持拖动改变图层的上下（Z轴）顺序。</li>
                         </ul>
                     </dd>
                 </dl>

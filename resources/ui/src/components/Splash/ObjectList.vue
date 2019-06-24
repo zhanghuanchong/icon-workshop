@@ -1,27 +1,46 @@
 <template>
   <q-list no-border highlight separator class="objects-list">
-    <q-item v-for="o in objects" :key="o.id"
-            :class="{selected: isSelected(o)}"
-            @click.native="toggle(o)">
-      <q-item-side>
-        <img :src="o.url" alt="">
-      </q-item-side>
-      <q-item-main>{{ o.description }}</q-item-main>
-      <q-item-side right>
-        <q-btn round icon="mdi-close"
-               @click.stop="remove(o)"
-               flat size="xs"></q-btn>
-      </q-item-side>
+    <draggable v-model="objects">
+      <transition-group>
+        <q-item v-for="o in objects" :key="o.id"
+                :class="{selected: isSelected(o)}"
+                @click.native="toggle(o)">
+          <q-item-side>
+            <img :src="o.url" alt="">
+          </q-item-side>
+          <q-item-main>{{ o.description }}</q-item-main>
+          <q-item-side right>
+            <q-btn round icon="mdi-close"
+                   @click.stop="remove(o)"
+                   flat size="xs"></q-btn>
+          </q-item-side>
+        </q-item>
+      </transition-group>
+    </draggable>
+    <q-item class="tip">
+      <q-item-main>
+        <q-item-tile label>拖动可改变顺序</q-item-tile>
+      </q-item-main>
     </q-item>
   </q-list>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+
 export default {
   name: 'ObjectList',
+  components: {
+    draggable
+  },
   computed: {
-    objects () {
-      return this.$store.state.Splash.scene.objects
+    objects: {
+      get () {
+        return this.$store.state.Splash.scene.objects
+      },
+      set (objects) {
+        this.$store.commit('Splash/updateObjects', objects)
+      }
     },
     current: {
       get () {
@@ -58,6 +77,14 @@ export default {
 
     &.selected {
       background: rgba(150, 150, 150, 0.4);
+    }
+
+    &.tip {
+      font-size: 12px;
+      color: silver;
+      text-align: center;
+      cursor: default;
+      background: white;
     }
 
     .q-item-side {

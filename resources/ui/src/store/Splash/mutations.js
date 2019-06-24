@@ -21,6 +21,10 @@ export function updateObject (state, o) {
   }
 }
 
+export function updateObjects (state, objects) {
+  state.scene.objects = objects
+}
+
 export function removeObject (state, o) {
   const index = _.findIndex(state.scene.objects, { id: o.id })
   if (index >= 0) {
