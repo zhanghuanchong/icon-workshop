@@ -18,7 +18,7 @@ export default class Scene extends Base {
       proto: 'Scene',
       backgroundColor: '#ffffff',
       platforms: ['ios', 'android'],
-      orientations: ['portrait', 'landscape'],
+      orientations: ['portrait'],
       hidden: false,
       objects: []
     }, options)

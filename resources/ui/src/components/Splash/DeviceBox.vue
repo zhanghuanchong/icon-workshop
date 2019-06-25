@@ -114,7 +114,7 @@
             resizing(index, size) {
                 let left = Math.round(100 * size[0] / this.splash.width * 100) / 100;
                 let top = Math.round(100 * size[1] / this.splash.height * 100) / 100;
-                let scale = Math.round(size[3] / (this.images[index].width * this.baseScale()) * 100) / 100;
+                let scale = Math.round(size[2] / (this.images[index].width * this.baseScale()) * 100) / 100;
                 this.$set(this.images[index], 'left', left);
                 this.$set(this.images[index], 'top', top);
                 this.$set(this.images[index], 'scale', scale);
