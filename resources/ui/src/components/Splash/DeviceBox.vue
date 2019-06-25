@@ -5,8 +5,6 @@
     <DeviceObject v-for="im in images"
                   :key="im.id"
                   @click.native.stop="select(im)"
-                  :class="objectClass(im)"
-                  :style="objectStyle(im)"
                   :object="im"></DeviceObject>
     <div class="device-border" :style="deviceBorderStyle"></div>
   </div>
@@ -48,28 +46,9 @@ export default {
       return this.scene.objects.filter(o => {
         return o.proto === 'String'
       })
-    },
-    selected () {
-      return this.$store.state.Splash.object
     }
   },
   methods: {
-    objectClass (o) {
-      if (this.selected && o.id !== this.selected.id) {
-        return 'inactive'
-      }
-      if (this.selected && o.id === this.selected.id) {
-        return 'active'
-      }
-    },
-    objectStyle (o) {
-      const scale = o.scale * this.baseScale
-      return {
-        left: `${o.left}%`,
-        top: `${o.top}%`,
-        transform: `translate(-50%, -50%) scale(${scale})`
-      }
-    },
     select (o) {
       this.$store.commit('Splash/setCurrentObject', o)
     }

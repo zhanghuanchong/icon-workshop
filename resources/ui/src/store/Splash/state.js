@@ -7,7 +7,8 @@ const DEFAULT_STATE = {
   width: 375,
   height: 667,
   scale: 1,
-  autoScale: true
+  autoScale: true,
+  draggingObject: null
 }
 
 export {

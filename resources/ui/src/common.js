@@ -166,6 +166,17 @@ function bindStateSelect (module, field, newField = null, nullable = true) {
   return o
 }
 
+function EventHandlerMixin (eventName, method = 'reload') {
+  return {
+    mounted () {
+      return this.$root.$on(eventName, this[method])
+    },
+    beforeDestroy () {
+      return this.$root.$off(eventName, this[method])
+    }
+  }
+}
+
 function isNumeric (x) {
   return ((typeof x === 'number' || typeof x === 'string') && !isNaN(Number(x)))
 }
@@ -186,6 +197,7 @@ export {
   bindState,
   bindStateChild,
   bindStateSelect,
+  EventHandlerMixin,
   isNumeric,
   redirectRoot
 }

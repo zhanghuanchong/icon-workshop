@@ -44,6 +44,7 @@ export default {
   methods: {
     reset () {
       this.$store.commit('Splash/setCurrentObject', null)
+      this.$root.$emit('splash-reset-current-object')
     },
     resetLayout () {
       this.$nextTick(() => {
