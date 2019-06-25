@@ -31,7 +31,7 @@
         <div class="alert alert-success">
             第一次使用请先观看 <a style="text-decoration: underline" href="/splash/demo">视频演示</a>，请提前准备好图片或文字资料。
             <a href="javascript:"
-               onclick="$('#SOHUCS')[0].scrollIntoView()"
+               onclick="$('#vcomments')[0].scrollIntoView()"
                class="btn btn-raised pull-right"
                style="margin: -8px 0; color:#1976d2; margin-left:20px;">提供反馈</a>
             <a href="/splash/demo" target="_blank" class="btn btn-raised pull-right" style="margin: -8px 0; color:#1976d2">视频演示</a>
