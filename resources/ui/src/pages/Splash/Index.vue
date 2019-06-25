@@ -83,7 +83,7 @@ export default {
 
 <style lang="scss">
   .splash-page-index {
-    background: #eee;
+    background: #ccc;
 
     > .ps-container {
       width: 100%;

@@ -8,30 +8,35 @@
                   :class="objectClass(im)"
                   :style="objectStyle(im)"
                   :object="im"></DeviceObject>
+    <div class="device-border" :style="deviceBorderStyle"></div>
   </div>
 </template>
 
 <script>
 import DeviceObject from './DeviceObject'
+import Splash from '../../mixins/Splash'
 
 export default {
   name: 'DeviceBox',
   components: {
     DeviceObject
   },
+  mixins: [
+    Splash
+  ],
   computed: {
-    splash () {
-      return this.$store.state.Splash
-    },
-    scene () {
-      return this.$store.state.Splash.scene
-    },
     deviceBoxStyle () {
       return {
         width: `${this.splash.width}px`,
         height: `${this.splash.height}px`,
         background: this.scene.backgroundColor,
         transform: `scale(${this.splash.scale})`
+      }
+    },
+    deviceBorderStyle () {
+      return {
+        width: `${this.splash.width}px`,
+        height: `${this.splash.height}px`
       }
     },
     images () {
@@ -58,26 +63,11 @@ export default {
       }
     },
     objectStyle (o) {
-      let scale = o.scale
-
-      const width = this.splash.width
-      const height = this.splash.height
-      const short = Math.min(width, height)
-      let baseScale = short / 375
-
-      const rate = width / height
-      if (rate >= 1) {
-        baseScale *= 0.625
-      } else if (rate >= 0.75) {
-        baseScale *= 0.75
-      } else if (rate >= 0.66) {
-        baseScale *= 0.875
-      }
-
+      const scale = o.scale * this.baseScale
       return {
         left: `${o.left}%`,
         top: `${o.top}%`,
-        transform: `translate(-50%, -50%) scale(${baseScale * scale})`
+        transform: `translate(-50%, -50%) scale(${scale})`
       }
     },
     select (o) {
@@ -93,5 +83,14 @@ export default {
     background: white;
     box-shadow: 0 0 20px silver;
     position: absolute;
+
+    .device-border {
+      position: absolute;
+      left: 0;
+      top: 0;
+      outline: #666 solid 1px;
+      box-shadow: #666 0 0 30px;
+      pointer-events: none;
+    }
   }
 </style>
