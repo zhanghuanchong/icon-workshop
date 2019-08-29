@@ -7,7 +7,7 @@
     appId: 'EV3B7qpoac7VfyENfi1U0XXC-gzGzoHsz',
     appKey: 'A78Q7lpOQ4AgaJPwfh2n08xd',
     avatar: 'robohash',
-    placeholder: '您发现了什么问题或者有什么建议？',
+    placeholder: '您发现了什么问题或者有什么建议？建议在 GitHub 上提交 Issue 并附上截图或设计文件，谢谢。',
     recordIP: true
   })
 </script>
