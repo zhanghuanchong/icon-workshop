@@ -16,6 +16,67 @@ class Icon extends BaseIcon
 
     public function getSizes()
     {
-        // TODO: Implement getFormats() method.
+        return [
+            [
+                'size' => 16,
+                'scale' => 1,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'mac',
+            ],
+            [
+                'size' => 16,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'mac',
+            ],
+            [
+                'size' => 32,
+                'scale' => 1,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'mac',
+            ],
+            [
+                'size' => 32,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'mac',
+            ],
+            [
+                'size' => 128,
+                'scale' => 1,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'mac',
+            ],
+            [
+                'size' => 128,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'mac',
+            ],
+            [
+                'size' => 256,
+                'scale' => 1,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'mac',
+            ],
+            [
+                'size' => 256,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'mac',
+            ],
+            [
+                'size' => 512,
+                'scale' => 1,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'mac',
+            ],
+            [
+                'size' => 512,
+                'scale' => 2,
+                'folder' => 'AppIcon.appiconset',
+                'idiom' => 'mac',
+            ],
+        ];
     }
 }

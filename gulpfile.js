@@ -55,10 +55,13 @@ gulp.task('js', function () {
     .pipe(gulp.dest(path.dest + 'js/'));
 });
 
-gulp.task('clean', function(){
-  del.bind(null, [
-    path.dest
-  ]);
+gulp.task('clean', function() {
+  return new Promise((resolve => {
+    del.bind(null, [
+      path.dest
+    ]);
+    resolve();
+  }))
 });
 
 gulp.task('build', gulp.series('clean', gulp.parallel(['css', 'js'])));

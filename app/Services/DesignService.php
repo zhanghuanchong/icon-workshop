@@ -41,7 +41,7 @@ class DesignService extends BaseService
         }
 
         $root = public_path('files') . '/' . $this->design->folder . '/' . $this->design->id . '/';
-        $appleFormats = array('ios', 'iwatch');
+        $appleFormats = array('ios', 'iwatch', 'mac');
         $specialKeys = array('role', 'subtype');
         $img = Image::make($root . 'origin.' . $this->design->ext);
         $maxLength = 1024;
@@ -111,7 +111,7 @@ class DesignService extends BaseService
                 $length = $s['size'] * $scale;
                 if ($format === Platform::WINDOWS_PHONE ||
                     isset($s['bg']) ||
-                    in_array($format, $appleFormats, true))
+                    in_array($format, ['ios', 'iwatch'], true))
                 {
                     $_img = &$imgBg;
                 } else if ($imgRound) {
@@ -188,14 +188,6 @@ class DesignService extends BaseService
                     $_img->save($folder . $length . 'x' . $length . '.png');
                 }
             }
-
-//            if (in_array('win_ico', $formats)) {
-//                // TODO
-//            }
-//
-//            if (in_array('mac_icns', $formats)) {
-//                // TODO
-//            }
         }
     }
 

@@ -17,8 +17,7 @@ class Platform
     const WEB_APP = 'webapp';
     const PHONEGAP = 'phonegap';
     const WINDOWS_PHONE = 'windowsphone';
-    const WIN_ICO = 'win_ico';
-    const MAC_ICNS = 'mac_icns';
+    const MAC = 'mac';
     const QUASAR = 'quasar';
 
     const NAMES = [
@@ -28,8 +27,7 @@ class Platform
         'webapp' => 'WebApp',
         'phonegap' => 'Cordova',
         'windowsphone' => 'WindowsPhone',
-        'win_ico' => 'Windows',
-        'mac_icns' => 'macOS',
+        'mac' => 'macOS',
         'quasar' => 'Quasar',
     ];
 }

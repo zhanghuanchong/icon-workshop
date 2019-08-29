@@ -86,7 +86,7 @@ textarea {
 #if_form .progress .progress-tip {
   position: absolute;
   top: 0;
-  transition: left .6s ease;
+  transition: left 0.6s ease;
 }
 #if_form .control-label {
   font-size: 16px;
@@ -323,6 +323,10 @@ span.string {
 #tp_contents .mobile_preview.iphonex_mobile_preview {
   height: 910px;
 }
+#tp_contents .mobile_preview.mac_mobile_preview {
+  width: 800px;
+  height: 470px;
+}
 #tp_android .description {
   border-top-width: 0;
   line-height: 1.8em;
@@ -336,7 +340,8 @@ span.string {
 #tp_webapp .icons-row .icon-row,
 #tp_phonegap .icons-row .icon-row,
 #tp_windowsphone .icons-row .icon-row,
-#tp_quasar .icons-row .icon-row {
+#tp_quasar .icons-row .icon-row,
+#tp_mac .icons-row .icon-row {
   vertical-align: middle;
   height: 56px;
   line-height: 56px;
@@ -346,7 +351,8 @@ span.string {
 #tp_webapp .sub-icon > div,
 #tp_phonegap .sub-icon > div,
 #tp_windowsphone .sub-icon > div,
-#tp_quasar .sub-icon > div {
+#tp_quasar .sub-icon > div,
+#tp_mac .sub-icon > div {
   padding: 0;
 }
 #tp_ios img,
@@ -354,7 +360,8 @@ span.string {
 #tp_webapp img,
 #tp_phonegap img,
 #tp_windowsphone img,
-#tp_quasar img {
+#tp_quasar img,
+#tp_mac img {
   background-clip: padding-box;
 }
 #tp_ios img.x1,
@@ -362,7 +369,8 @@ span.string {
 #tp_webapp img.x1,
 #tp_phonegap img.x1,
 #tp_windowsphone img.x1,
-#tp_quasar img.x1 {
+#tp_quasar img.x1,
+#tp_mac img.x1 {
   width: 29px;
   height: 29px;
   border-radius: 6px;
@@ -372,7 +380,8 @@ span.string {
 #tp_webapp img.x2,
 #tp_phonegap img.x2,
 #tp_windowsphone img.x2,
-#tp_quasar img.x2 {
+#tp_quasar img.x2,
+#tp_mac img.x2 {
   width: 40px;
   height: 40px;
   border-radius: 9px;
@@ -382,7 +391,8 @@ span.string {
 #tp_webapp img.x3,
 #tp_phonegap img.x3,
 #tp_windowsphone img.x3,
-#tp_quasar img.x3 {
+#tp_quasar img.x3,
+#tp_mac img.x3 {
   width: 56px;
   height: 56px;
   border-radius: 12px;
@@ -392,7 +402,8 @@ span.string {
 #tp_webapp img.x4,
 #tp_phonegap img.x4,
 #tp_windowsphone img.x4,
-#tp_quasar img.x4 {
+#tp_quasar img.x4,
+#tp_mac img.x4 {
   width: 61px;
   height: 61px;
   border-radius: 13px;
@@ -402,7 +413,8 @@ span.string {
 #tp_webapp img.x5,
 #tp_phonegap img.x5,
 #tp_windowsphone img.x5,
-#tp_quasar img.x5 {
+#tp_quasar img.x5,
+#tp_mac img.x5 {
   width: 80px;
   height: 80px;
   border-radius: 17px;
@@ -436,6 +448,9 @@ span.string {
   height: 75px;
   border-radius: 14px;
   margin-top: -20px;
+}
+#tp_mac img {
+  border-radius: 0 !important;
 }
 #tp_custom .inline-block {
   width: 25%;
@@ -480,7 +495,7 @@ footer {
 #jumbotron_img_loading .circle {
   background-color: rgba(0, 0, 0, 0);
   border: 10px solid rgba(0, 183, 229, 0.9);
-  opacity: .9;
+  opacity: 0.9;
   border-right: 10px solid rgba(0, 0, 0, 0);
   border-left: 10px solid rgba(0, 0, 0, 0);
   border-radius: 128px;
@@ -494,7 +509,7 @@ footer {
 #jumbotron_img_loading .circle1 {
   background-color: rgba(0, 0, 0, 0);
   border: 10px solid rgba(0, 183, 229, 0.9);
-  opacity: .9;
+  opacity: 0.9;
   border-left: 10px solid rgba(0, 0, 0, 0);
   border-right: 10px solid rgba(0, 0, 0, 0);
   border-radius: 50px;
@@ -557,4 +572,3 @@ footer {
     -webkit-transform: rotate(360deg);
   }
 }
-/*# sourceMappingURL=main.css.map */

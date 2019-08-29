@@ -14,6 +14,10 @@
                 name: 'Windows Phone',
                 folder: 'windowsphone'
             },
+            mac: {
+                name: 'macOS',
+                folder: 'mac/AppIcon.appiconset'
+            },
             iwatch: {
                 name: 'iWatch',
                 folder: 'iwatch/AppIcon.appiconset'

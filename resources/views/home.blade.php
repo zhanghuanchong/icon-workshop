@@ -2,8 +2,9 @@
 @section('container')
     <div class="container" ng-controller="HomeCtrl">
         <div class="alert alert-success">
-            <a href="/splash">新上线应用启动图生成工具，欢迎使用！</a>
-            <a href="/splash" class="btn btn-raised pull-right" style="margin: -8px 0; color:#1976d2">立即使用</a>
+            <ul>
+                <li>更新：iOS 平台默认不再生成 iOS 5,6 的图标，并支持手动开启。</li>
+            </ul>
         </div>
 
         <form class="jumbotron form-horizontal" action="/icon/upload" method="post" id="if_form">
@@ -45,11 +46,10 @@
                                 <option value="android" selected>Android</option>
                                 <option value="phonegap">PhoneGap (Cordova)</option>
                                 <option value="webapp">Web App</option>
+                                <option value="mac">macOS</option>
                                 <option value="iwatch">iWatch</option>
                                 <option value="windowsphone">Windows Phone</option>
                                 <option value="quasar">Quasar</option>
-                                {{--<option value="win_ico">Windows ico</option>--}}
-                                {{--<option value="mac_icns">Mac icns</option>--}}
                             </select>
                         </div>
                     </div>
