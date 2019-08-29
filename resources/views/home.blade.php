@@ -2,10 +2,7 @@
 @section('container')
     <div class="container" ng-controller="HomeCtrl">
         <div class="alert alert-success">
-            <ul>
-                <li>更新：iOS 平台默认不再生成 iOS 5,6 的图标，并支持手动开启；</li>
-                <li>更新：添加 macOS 平台支持。</li>
-            </ul>
+            更新：iOS 平台默认不再生成 iOS 5,6 的图标，支持手动开启；添加 macOS 平台支持。
         </div>
 
         <form class="jumbotron form-horizontal" action="/icon/upload" method="post" id="if_form">
