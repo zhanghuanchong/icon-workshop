@@ -7,7 +7,7 @@
 
         <form class="jumbotron form-horizontal" action="/icon/upload" method="post" id="if_form">
             <h3 class="text-primary">
-                <strong ng-bind="slogan"></strong>
+                <strong>一键生成所有尺寸的应用图标/启动图</strong>
             </h3>
             <div id="jumbotron_img_box">
                 <img src="/img/launcher.png" alt="" id="jumbotron_img"/>
