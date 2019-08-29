@@ -54,6 +54,20 @@
                         </div>
                     </div>
 
+                    <div class="form-group" ng-show="hasIOS">
+                        <label class="control-label col-md-3 no-margin">iOS 旧尺寸:</label>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="checkbox checkbox-primary" style="padding-top: 5px; padding-left: 14px;">
+                                    <label>
+                                        <input type="checkbox" name="old_ios" ng-model="oldIos">
+                                        <span style="font-size: 0.85rem">包含 iOS7 之前的尺寸，包括：50, 57, 72, 50@2x, 57@2x, 72@2x</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="text-center" style="margin-top: 10px;">
                         <a href='javascript:;' class="withripple" ng-click="showOptional = !showOptional;">
                             可选参数 <i class="fa" ng-class="showOptional ? 'fa-caret-up' : 'fa-caret-down'"></i></a>
@@ -68,7 +82,9 @@
                              open-on-input="true"
                              md-color-alpha-channel="false"
                              click-outside-to-close="true"></div>
-                        <div class="col-md-offset-3 col-md-9" style="margin-top: -5px; color: silver">适用于iOS 及 Windows Phone。 默认是白色。</div>
+                        <div class="col-md-offset-3 col-md-9" style="margin-top: -5px; color: silver">
+                            适用于iOS 及 Windows Phone。 默认是白色。<span style="color: orangered;">iOS 不支持透明背景。</span>
+                        </div>
                     </div>
                     <div class="form-group" ng-show="hasAndroid && showOptional">
                         <label class="control-label col-md-3 no-margin">Android目录:</label>

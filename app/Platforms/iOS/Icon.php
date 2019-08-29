@@ -9,6 +9,7 @@
 namespace App\Platforms\iOS;
 
 
+use App\Design;
 use App\Platforms\BaseIcon;
 
 class Icon extends BaseIcon
@@ -62,12 +63,14 @@ class Icon extends BaseIcon
                 'size' => 57,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'iphone',
+                'level' => Design::IOS_LEVEL_5,
             ],
             [
                 'size' => 57,
                 'scale' => 2,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'iphone',
+                'level' => Design::IOS_LEVEL_5,
             ],
             [
                 'size' => 60,
@@ -122,23 +125,27 @@ class Icon extends BaseIcon
                 'size' => 50,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'ipad',
+                'level' => Design::IOS_LEVEL_5,
             ],
             [
                 'size' => 50,
                 'scale' => 2,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'ipad',
+                'level' => Design::IOS_LEVEL_5,
             ],
             [
                 'size' => 72,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'ipad',
+                'level' => Design::IOS_LEVEL_5,
             ],
             [
                 'size' => 72,
                 'scale' => 2,
                 'folder' => 'AppIcon.appiconset',
                 'idiom' => 'ipad',
+                'level' => Design::IOS_LEVEL_5,
             ],
             [
                 'size' => 76,
@@ -164,4 +171,15 @@ class Icon extends BaseIcon
             ],
         ];
     }
+
+    public function getSizesForDesign(Design $design)
+    {
+        $all = $this->getSizes();
+        $level = $design->ios_level ?: Design::IOS_LEVEL_7;
+        $all = array_filter($all, static function ($item) use ($level) {
+            return !isset($item['level']) || $item['level'] === $level;
+        });
+        return $all;
+    }
+
 }

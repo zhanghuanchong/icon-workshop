@@ -27,6 +27,7 @@ use Emadadly\LaravelUuid\Uuids;
  * @property string $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Splash uuid($uuid, $first = true)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Splash whereUuid($value)
+ * @property-read mixed $platform
  */
 class Splash extends BaseModel
 {

@@ -15,7 +15,7 @@
     </div>
 
     <template slot="buttons" slot-scope="props">
-      <q-btn flat label="取消" @click="_hide" />
+      <q-btn flat label="关闭" @click="_hide" />
       <q-btn label="点击下载"
              push
              class="min-w-120"
@@ -55,11 +55,6 @@ export default {
       if (location.hostname !== 'localhost') {
         redirectRoot(`/splash/download/${this.origin.data}`)
       }
-      this.loading = true
-      this.percent = 100
-      setTimeout(() => {
-        this._hide()
-      }, 2000)
     },
     hide () {
       this.ad = false

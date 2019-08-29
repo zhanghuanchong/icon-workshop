@@ -65,6 +65,7 @@ class IconController extends BaseController {
         $design->platform = implode(',', $platforms);
         $design->sizes = json_encode(Input::get('sizes'));
         $design->bg_color = Input::get('bgColor');
+        $design->ios_level = Input::get('iosLevel', '7+');
         $design->android_folder = Input::get('androidFolder');
         $design->android_name = Input::get('androidName', 'ic_launcher');
         $design->radius = (float)Input::get('radius');

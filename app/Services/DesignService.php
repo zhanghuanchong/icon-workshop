@@ -69,7 +69,7 @@ class DesignService extends BaseService
             $imgRound->backup();
         }
 
-        $bgColor = $this->design->bg_color ? $this->design->bg_color : '#ffffff';
+        $bgColor = $this->design->bg_color ?: '#ffffff';
         $canvas = Image::canvas($img->width(), $img->height(), $bgColor);
         $imgBg = $canvas->insert($img);
         $imgBgCore = $imgBg->getCore();
@@ -82,15 +82,13 @@ class DesignService extends BaseService
             if (!BaseIcon::isPlatformExists($format)) {
                 continue;
             }
-            $format_root = $root . $format . '/';
-            if (!file_exists($format_root)) {
-                mkdir($format_root);
-            }
+            $format_root = Util::ensureDir($root . $format . '/');
+            /** @var BaseIcon $platform */
             $platform = BaseIcon::getInstance($format);
-            $sizes = $platform->getSizes();
+            $sizes = $platform->getSizesForDesign($this->design);
             $json_folder = '';
             $json = array();
-            if (in_array($format, $appleFormats)) {
+            if (in_array($format, $appleFormats, TRUE)) {
                 $json = array(
                     'images' => array(),
                     'info' => array(
@@ -99,23 +97,21 @@ class DesignService extends BaseService
                     )
                 );
             }
-            $webappLinks = $format == 'webapp' ? array() : NULL;
+            $webappLinks = $format === 'webapp' ? array() : NULL;
             foreach($sizes as $s) {
                 $folder = $format_root;
                 if (isset($s['folder'])) {
-                    if ($format == 'android' && $this->design->android_folder) {
+                    if ($format === 'android' && $this->design->android_folder) {
                         $s['folder'] = str_replace('drawable', $this->design->android_folder, $s['folder']);
                     }
 
-                    $folder = $format_root . $s['folder'] . '/';
-                    if (!file_exists($folder)) {
-                        mkdir($folder, 0777, true);
-                    }
+                    $folder = Util::ensureDir($format_root . $s['folder'] . '/');
                 }
-                $scale = isset($s['scale']) ? $s['scale'] : 1;
+                $scale = $s['scale'] ?? 1;
                 $length = $s['size'] * $scale;
-                if (in_array($format, $appleFormats) || isset($s['bg'])
-                    || $format == 'windowsphone')
+                if ($format === Platform::WINDOWS_PHONE ||
+                    isset($s['bg']) ||
+                    in_array($format, $appleFormats, true))
                 {
                     $_img = &$imgBg;
                 } else if ($imgRound) {
@@ -132,11 +128,11 @@ class DesignService extends BaseService
                 } else if (isset($s['name'])) {
                     $name = $s['name'];
                 } else {
-                    $name = 'icon-' . $s['size'] . ($scale == 1 ? '' : '@' . $scale . 'x');
+                    $name = 'icon-' . $s['size'] . ($scale === 1 ? '' : '@' . $scale . 'x');
                 }
                 $_img->save($folder . $name . '.png');
 
-                if ($format == 'webapp') {
+                if ($format === 'webapp') {
                     $webappLinks[] = array(
                         'sizes' => $length . 'x' . $length,
                         'href' => $name . '.png'
@@ -163,7 +159,7 @@ class DesignService extends BaseService
                 $s = array();
                 foreach($webappLinks as $w) {
                     $_ = '<link rel="apple-touch-icon"';
-                    if ($w['sizes'] != '60x60') {
+                    if ($w['sizes'] !== '60x60') {
                         $_ .= ' sizes="' . $w['sizes'] . '"';
                     }
                     $_ .= ' href="' . $w['href'] . '" />';
@@ -171,7 +167,7 @@ class DesignService extends BaseService
                 }
                 file_put_contents($format_root . 'readme.txt', implode("\r\n", $s));
             }
-            if (in_array($format, $appleFormats) || $format === Platform::PHONEGAP) {
+            if ($format === Platform::PHONEGAP || in_array($format, $appleFormats, TRUE)) {
                 $json_string = json_encode($json, JSON_PRETTY_PRINT);
                 file_put_contents($json_folder . 'Contents.json', $json_string);
             }
@@ -179,11 +175,7 @@ class DesignService extends BaseService
 
         $sizes = $this->design->sizes;
         if ($alsoSizes && $sizes) {
-            $folder = $root . Design::CUSTOM_FOLDER . '/';
-            if (!file_exists($folder)) {
-                mkdir($folder, 0777, true);
-            }
-
+            $folder = Util::ensureDir($root . Design::CUSTOM_FOLDER . '/');
             foreach($sizes as $size) {
                 if (isset($size['length'])) {
                     $length = $size['length'];
@@ -207,7 +199,7 @@ class DesignService extends BaseService
         }
     }
 
-    protected function optimize(\Intervention\Image\Image &$_img, $length) {
+    protected function optimize(\Intervention\Image\Image $_img, $length) {
         if ($length <= 30) {
             $_img->sharpen(5);
         } else if ($length <= 50) {
@@ -224,7 +216,7 @@ class DesignService extends BaseService
     public function package($regenerate = FALSE) {
         $folder = public_path('files') . '/' . $this->design->folder . '/' . $this->design->id . '/';
         $path = $folder . 'icons.zip';
-        if (!file_exists($path) || $regenerate) {
+        if ($regenerate || !file_exists($path)) {
             /** @var \Chumper\Zipper\Zipper $zip */
             $zip = Zipper::make($path);
             $formats = explode(',', $this->design->platform);

@@ -14,9 +14,12 @@
         "intervention/image": "^2.4",
         "jenssegers/agent": "^2.6",
         "laravel/framework": "5.6.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "ext-imagick": "*",
+        "ext-json": "*"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-master",
         "barryvdh/laravel-debugbar": "^3.1",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
@@ -54,6 +57,15 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "ide": [
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta",
+            "@php artisan ide-helper:eloquent",
+            "@php artisan ide-helper:models -W"
+        ],
+        "im": [
+            "@php artisan ide-helper:models -W"
         ]
     },
     "config": {

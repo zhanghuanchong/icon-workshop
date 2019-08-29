@@ -48,10 +48,15 @@ use Image;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereUserAgent($value)
  * @mixin \Eloquent
+ * @property string|null $ios_level
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereIosLevel($value)
  */
 class Design extends BaseModel {
 
-    const CUSTOM_FOLDER = 'custom';
+    public const CUSTOM_FOLDER = 'custom';
+
+    public const IOS_LEVEL_5 = '5+';
+    public const IOS_LEVEL_7 = '7+';
 
     public $incrementing = false;
 

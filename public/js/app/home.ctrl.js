@@ -34,6 +34,7 @@
                 $scope.showOptional = false; //true;
                 $scope.sizes = [];
                 $scope.bgColor = null;
+                $scope.oldIos = false;
                 $scope.androidFolder = 'mipmap';
                 $scope.androidName = 'ic_launcher';
                 $scope.hasAndroid = true;
@@ -264,6 +265,7 @@
                     sizes: sizes,
                     radius: $scope.radius,
                     bgColor: $scope.bgColor,
+                    iosLevel: $scope.oldIos ? '5+' : '7+',
                     androidFolder: $scope.androidFolder,
                     androidName: $.trim($scope.androidName)
                 }).success(function(){
