@@ -5,6 +5,14 @@
             <div class="col-sm-9">
                 <h1>更新日志</h1>
                 <dl>
+                    <dt>2019-09-02</dt>
+                    <dd>
+                        <ul>
+                            <li>更新：开启 <a href="/donate">捐赠</a> 页面，感谢您对图标工场的支持。</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
                     <dt>2019-08-29</dt>
                     <dd>
                         <ul>

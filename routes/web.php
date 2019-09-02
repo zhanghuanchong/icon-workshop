@@ -38,6 +38,8 @@ Route::get('/job/delete-expired-splash-caches', 'JobController@deleteExpiredSpla
 Route::get('/job/remove-old-splash-files', 'JobController@removeOldSplashFiles');
 Route::get('/job/remove-magick-tmp', 'JobController@removeMagickTmp');
 
+Route::get('/donate', 'DonateController@index');
+
 Route::get('/vote', 'VoteController@getIndex');
 Route::post('/vote', 'VoteController@postIndex');
 

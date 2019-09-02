@@ -2,7 +2,9 @@
 @section('container')
     <div class="container" ng-controller="HomeCtrl">
         <div class="alert alert-success">
-            更新：iOS 平台默认不再生成 iOS 5,6 的图标，支持手动开启；添加 macOS 平台支持。
+            如果您感觉到图标工场能带来帮助，可以考虑
+            <a href="/donate" style="text-decoration: underline">捐赠我们</a>
+            ，这将是图标工场持续改进的保障。
         </div>
 
         <form class="jumbotron form-horizontal" action="/icon/upload" method="post" id="if_form">

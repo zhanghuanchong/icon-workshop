@@ -35,6 +35,8 @@
     <script src="/js/lib/html5shiv.js"></script>
     <script src="/js/lib/respond.min.js"></script>
     <![endif]-->
+
+    @yield('head')
 </head>
 
 <body ng-app="rhIcon" ng-controller="RootCtrl" ng-cloak>
@@ -80,6 +82,9 @@
                 </li>
                 <li ng-class="stateCls('splash')">
                     <a href="/splash">启动图<span class="red-dot"></span></a>
+                </li>
+                <li ng-class="stateCls('donate')">
+                    <a href="/donate">捐赠<span class="red-dot"></span></a>
                 </li>
                 <li><a href="http://blog.wuruihong.com" target="_blank">博客</a></li>
                 <li ng-class="stateCls('about')"><a href="/about">关于我们</a></li>
