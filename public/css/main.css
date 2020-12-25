@@ -143,6 +143,9 @@ textarea {
 .row-margin > div {
   padding-top: 10px;
 }
+.row-introduce img {
+  height: 80px;
+}
 .container.container-article {
   margin-bottom: 40px;
 }

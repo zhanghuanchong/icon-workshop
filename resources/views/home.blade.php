@@ -190,23 +190,32 @@
             <input type="file" id="if" style="float:right; visibility: hidden" onchange="$('#if_form').scope().selectedFile(this);"/>
         </form>
 
-        <div class="row row-margin">
-            <div class="col-md-4 text-center">
-                <img src="/img/folder.png" /><br><br>
+        <div class="row row-margin row-introduce">
+            <div class="col-sm-3 text-center">
+                <img src="/img/icons/app.png" /><br><br>
                 同时生成
-                <strong class="label label-info">iOS</strong>、<strong class="label label-info">安卓</strong>、
-                <strong class="label label-info">PhoneGap</strong> 和 <strong class="label label-info">Windows Phone</strong> 应用的图标。遵循
+                <strong class="label label-info">iOS</strong>、<strong class="label label-info">Android</strong> 和
+                <strong class="label label-info">PhoneGap</strong> 应用的图标。遵循
                 <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html" target="_blank">Apple</a>、
-                <a href="https://developer.android.com/design/style/iconography.html#launcher" target="_blank">Google</a>、
-                <a href="https://msdn.microsoft.com/en-us/library/windows/apps/jj662924(v=vs.105).aspx" target="_blank">Microsoft</a>
-                官方标准。
+                <a href="https://developer.android.com/design/style/iconography.html#launcher" target="_blank">Google</a>
+                官方标准
             </div>
-            <div class="col-md-4 text-center">
-                <img src="/img/eye.png" /><br><br>
+            <div class="col-sm-3 text-center">
+                <img src="/img/icons/design.png" /><br><br>
+                也支持
+                <span class="label label-info">Web App</span>
+                <span class="label label-info">macOS</span>
+                <span class="label label-info">iWatch</span>
+                <span class="label label-info">Quasar</span>
+                <span class="label label-info">Windows Phone</span>
+                等平台
+            </div>
+            <div class="col-sm-3 text-center">
+                <img src="/img/icons/preview.png" /><br><br>
                 快速预览将要在不同设备上显示的应用图标。使您无需部署即可通过预览来调整设计样式。
             </div>
-            <div class="col-md-4 text-center">
-                <img src="/img/opt.png" /><br><br>
+            <div class="col-sm-3 text-center">
+                <img src="/img/icons/efficiency.png" /><br><br>
                 优化图标，尤其是尺寸较小的图标。保证清晰度，并优化图片内存占用，减小包体积，提高性能。
             </div>
         </div>
