@@ -123,7 +123,7 @@ class DesignService extends BaseService
                 $_img->resize($length, $length);
                 $this->optimize($_img, $length);
 
-                if ($format === 'android' && $this->design->android_name) {
+                if ($format === 'android' && $this->design->android_name && isset($s['name']) && $s['name'] === 'ic_launcher') {
                     $name = $this->design->sanitized_android_name;
                 } else if (isset($s['name'])) {
                     $name = $s['name'];
