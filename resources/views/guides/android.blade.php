@@ -29,7 +29,6 @@
                 @endif
             </div>
         </div>
-        @include('comment', ['name' => 'android'])
     </div>
 
     <script>

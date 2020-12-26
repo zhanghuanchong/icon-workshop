@@ -86,7 +86,6 @@
                 <li ng-class="stateCls('donate')">
                     <a href="/donate">捐赠<span class="red-dot"></span></a>
                 </li>
-                <li><a href="http://blog.wuruihong.com" target="_blank">博客</a></li>
                 <li ng-class="stateCls('about')"><a href="/about">关于我们</a></li>
             </ul>
         </div>
@@ -101,13 +100,10 @@
 @yield('container')
 
 <footer class="navbar navbar-default" style="margin-bottom: 0">
-    <p>
-        <a href="http://blog.wuruihong.com" target="_blank" style="color:white">博客</a>　
-        <a href="https://github.com/zhanghuanchong/icon-workshop/issues/new" target="_blank" style="color:white">Github 反馈</a>　
-        <a href="/about" style="color:white">留言</a>
-    </p>
     <p style="margin-bottom: 0">
         Copyright &copy; since 2015　All Rights Reserved　豫ICP备14010348号-1
+        <a href="https://github.com/zhanghuanchong/icon-workshop/issues/new"
+           target="_blank" style="color:white; margin-left: 10px">Github 反馈</a>　
     </p>
 </footer>
 

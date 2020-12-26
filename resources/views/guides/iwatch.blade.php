@@ -20,7 +20,6 @@
                 @endif
             </div>
         </div>
-        @include('comment', ['name' => 'iwatch'])
     </div>
 
     <script>

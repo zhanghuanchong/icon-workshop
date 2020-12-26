@@ -42,8 +42,6 @@
         <div class="alert alert-success" style="margin-top: 15px">
             感谢开源社区贡献者：<a href="https://github.com/kuaifan" target="_blank">https://github.com/kuaifan</a>
         </div>
-
-        @include('comment', ['name' => 'splash'])
     </div>
     <script>
       window.state = 'splash';
