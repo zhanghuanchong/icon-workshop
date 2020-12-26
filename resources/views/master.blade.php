@@ -108,18 +108,6 @@
     </p>
     <p style="margin-bottom: 0">
         Copyright &copy; since 2015　All Rights Reserved　豫ICP备14010348号-1
-
-        @if(!App::environment('local'))
-            <script>
-                var _hmt = _hmt || [];
-                (function() {
-                    var hm = document.createElement("script");
-                    hm.src = "https://hm.baidu.com/hm.js?eaef3d108dc9fdbadae588b43951721d";
-                    var s = document.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(hm, s);
-                })();
-            </script>
-        @endif
     </p>
 </footer>
 
