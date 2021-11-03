@@ -11,12 +11,12 @@ namespace App\Services;
 use App\Design;
 use App\Platforms\BaseIcon;
 use App\Platforms\Platform;
-use Chumper\Zipper\Facades\Zipper;
 use Image;
 use Imagick;
 use File;
 use ImagickDraw;
 use ImagickPixel;
+use PhpZip\ZipFile;
 
 class DesignService extends BaseService
 {
@@ -209,19 +209,19 @@ class DesignService extends BaseService
         $folder = public_path('files') . '/' . $this->design->folder . '/' . $this->design->id . '/';
         $path = $folder . 'icons.zip';
         if ($regenerate || !file_exists($path)) {
-            /** @var \Chumper\Zipper\Zipper $zip */
-            $zip = Zipper::make($path);
+            $zip = new ZipFile();
             $formats = explode(',', $this->design->platform);
             foreach($formats as $f) {
-                $zip->folder($f)->add($folder . $f);
+                $zip->addDir($folder . $f, $f);
             }
 
             $custom_folder = $folder . Design::CUSTOM_FOLDER;
             if (file_exists($custom_folder)) {
-                $zip->folder(Design::CUSTOM_FOLDER)->add($custom_folder);
+                $zip->addDir($custom_folder, Design::CUSTOM_FOLDER);
             }
 
-            $zip->close();
+            $zip->saveAsFile($path)
+                ->close();
         }
         return $path;
     }

@@ -18,6 +18,7 @@
         "laravel/helpers": "^1.4",
         "laravel/tinker": "^2.6",
         "laravel/ui": "^3.3",
+        "nelexa/zip": "^3.3",
         "nunomaduro/collision": "^5.10"
     },
     "require-dev": {

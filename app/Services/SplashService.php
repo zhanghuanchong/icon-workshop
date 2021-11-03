@@ -13,7 +13,7 @@ use App\Platforms\BaseSplash;
 use App\Splash;
 use File;
 use Image;
-use Zipper;
+use PhpZip\ZipFile;
 
 class SplashService extends BaseService
 {
@@ -108,13 +108,13 @@ class SplashService extends BaseService
         $folder = public_path('files') . '/' . $this->splash->folder . '/' . $this->splash->uuid . '/';
         $path = $folder . 'splashes.zip';
         if (!file_exists($path) || $regenerate) {
-            /** @var \Chumper\Zipper\Zipper $zip */
-            $zip = Zipper::make($path);
+            $zip = new ZipFile();
             foreach($this->splash->platform as $f) {
-                $zip->folder($f)->add($folder . $f);
+                $zip->addDir($folder . $f, $f);
             }
 
-            $zip->close();
+            $zip->saveAsFile($path)
+                ->close();
         }
         return $path;
     }
