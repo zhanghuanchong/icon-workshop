@@ -28,6 +28,13 @@ use Emadadly\LaravelUuid\Uuids;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Splash uuid($uuid, $first = true)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Splash whereUuid($value)
  * @property-read mixed $platform
+ * @property string|null $order_id
+ * @property int|null $user_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Splash newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Splash newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Splash query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Splash whereOrderId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Splash whereUserId($value)
  */
 class Splash extends BaseModel
 {

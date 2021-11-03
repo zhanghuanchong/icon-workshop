@@ -33,6 +33,9 @@ use Mail;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Subscription whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Subscription whereUserAgent($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|Subscription newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Subscription newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Subscription query()
  */
 class Subscription extends Model {
 

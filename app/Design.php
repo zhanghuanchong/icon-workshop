@@ -50,6 +50,18 @@ use Image;
  * @mixin \Eloquent
  * @property string|null $ios_level
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Design whereIosLevel($value)
+ * @property float $padding
+ * @property string|null $badge
+ * @property string|null $shield
+ * @property int|null $user_id
+ * @property-read int|null $subscribers_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Design newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Design newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Design query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Design whereBadge($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design wherePadding($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design whereShield($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Design whereUserId($value)
  */
 class Design extends BaseModel {
 
