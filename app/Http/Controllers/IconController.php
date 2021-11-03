@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Design;
-use Illuminate\Support\Facades\Input;
 use \Illuminate\Http\Request;
 use Redirect;
 use Response;
@@ -21,7 +20,7 @@ class IconController extends BaseController {
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             if ($file->isValid()) {
-                $size = $file->getClientSize();
+                $size = $file->getSize();
                 if ($size > 10485760 /* 1024 * 1024 * 10 */) {
                     return $this->failed('请压缩文件至 10M 以下后重试.');
                 }
@@ -56,19 +55,19 @@ class IconController extends BaseController {
         return $this->failed('文件无效！');
 	}
 
-    public function postGenerate()
+    public function postGenerate(Request $request)
     {
-        $platforms = Input::get('platforms');
+        $platforms = $request->get('platforms');
 
         /** @var Design $design */
-        $design = Design::find(Input::get('id'));
+        $design = Design::find($request->get('id'));
         $design->platform = implode(',', $platforms);
-        $design->sizes = json_encode(Input::get('sizes'));
-        $design->bg_color = Input::get('bgColor');
-        $design->ios_level = Input::get('iosLevel', '7+');
-        $design->android_folder = Input::get('androidFolder');
-        $design->android_name = Input::get('androidName', 'ic_launcher');
-        $design->radius = (float)Input::get('radius');
+        $design->sizes = json_encode($request->get('sizes'));
+        $design->bg_color = $request->get('bgColor');
+        $design->ios_level = $request->get('iosLevel', '7+');
+        $design->android_folder = $request->get('androidFolder');
+        $design->android_name = $request->get('androidName', 'ic_launcher');
+        $design->radius = (float)$request->get('radius');
         $design->save();
 
         try {
@@ -143,13 +142,13 @@ class IconController extends BaseController {
         return Response::download($path);
     }
 
-    public function postSubscribe()
+    public function postSubscribe(Request $request)
     {
         /*$subscription = new Subscription;
-        $subscription->mail = Input::get('mail');
-        $subscription->design_id = Input::get('design_id');
-        $subscription->user_agent = Input::server('HTTP_USER_AGENT');
-        $subscription->ip = Input::getClientIp();
+        $subscription->mail = $request->get('mail');
+        $subscription->design_id = $request->get('design_id');
+        $subscription->user_agent = $request->server('HTTP_USER_AGENT');
+        $subscription->ip = $request->getClientIp();
 
         $subscription->save();
 

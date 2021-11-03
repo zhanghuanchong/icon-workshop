@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\BaseController;
+namespace App\Http\Controllers;
+
 use App\Requirement;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use View;
 
 class VoteController extends BaseController
 {
@@ -10,9 +12,9 @@ class VoteController extends BaseController
         return View::make('vote');
     }
 
-    public function postIndex() {
+    public function postIndex(Request $request) {
         $r = new Requirement();
-        $r->title = Input::get('title');
+        $r->title = $request->get('title');
         $r->vote = 0;
         $r->status = Requirement::STATUS_NEW;
         $r->save();

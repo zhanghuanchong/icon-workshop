@@ -1,8 +1,12 @@
 <?php
 
+namespace App\Http\Controllers;
+
 
 use App\Http\Controllers\BaseController;
-use Illuminate\Support\Facades\Input;
+use GeetestLib;
+use Illuminate\Http\Request;
+use Redirect;
 
 require_once __DIR__ . '/../../library/class.geetestlib.php';
 require_once __DIR__ . '/../../../config/geetest.php';
@@ -24,12 +28,12 @@ class AdminController extends BaseController {
 		echo $GtSdk->get_response_str();
 	}
 
-	private function verifyCode()
+	private function verifyCode(Request $request)
 	{
 		$GtSdk = new GeetestLib(CAPTCHA_ID, PRIVATE_KEY);
-		$challenge = Input::get('geetest_challenge');
-		$validate = Input::get('geetest_validate');
-		$seccode = Input::get('geetest_seccode');
+		$challenge = $request->get('geetest_challenge');
+		$validate = $request->get('geetest_validate');
+		$seccode = $request->get('geetest_seccode');
 
 		if (Session::get('gtserver') == 1) {
 			return $GtSdk->success_validate($challenge, $validate, $seccode, static::USER_ID);
@@ -37,9 +41,9 @@ class AdminController extends BaseController {
 		return $GtSdk->fail_validate($challenge, $validate, $seccode);
 	}
 
-	public function postLogin()
+	public function postLogin(Request $request)
 	{
-		$pwd = Input::get('password');
+		$pwd = $request->get('password');
 		if ($pwd != '') {
             return $this->failed('密码错误!');
         }
