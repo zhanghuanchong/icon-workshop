@@ -212,12 +212,12 @@ class DesignService extends BaseService
             $zip = new ZipFile();
             $formats = explode(',', $this->design->platform);
             foreach($formats as $f) {
-                $zip->addDir($folder . $f, $f);
+                $zip->addDirRecursive($folder . $f, $f);
             }
 
             $custom_folder = $folder . Design::CUSTOM_FOLDER;
             if (file_exists($custom_folder)) {
-                $zip->addDir($custom_folder, Design::CUSTOM_FOLDER);
+                $zip->addDirRecursive($custom_folder, Design::CUSTOM_FOLDER);
             }
 
             $zip->saveAsFile($path)

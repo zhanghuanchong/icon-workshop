@@ -110,7 +110,7 @@ class SplashService extends BaseService
         if (!file_exists($path) || $regenerate) {
             $zip = new ZipFile();
             foreach($this->splash->platform as $f) {
-                $zip->addDir($folder . $f, $f);
+                $zip->addDirRecursive($folder . $f, $f);
             }
 
             $zip->saveAsFile($path)
