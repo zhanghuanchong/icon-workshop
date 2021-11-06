@@ -11,8 +11,8 @@ https://icon.wuruihong.com
 
 ### 技术栈
 
-* Laravel 5.6
-* Angular 1 + Material Design
+* Laravel 8
+* Angular + Material Design
 * Vue / Quasar Framework
 
 ### TODO
